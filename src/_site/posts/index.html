@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pixelthing</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="pixelthing">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="pixelthing">
+  </head>
+  <body>
+  
+
+<span class="ruler-vh"></span>
+<script>
+  // measure the viewport, vh and browser chrome.
+  var getAppChromeHeight = function() {
+    var vhHeight = document.querySelector('.ruler-vh').offsetHeight;
+    var vpHeight = window.innerHeight;
+    console.log('vhHeight', vhHeight)
+    console.log('vpHeight', vpHeight)
+    return vhHeight - vpHeight;
+  }
+  var setAppChromeVar = function(cssValue) {
+   console.log('chrome height', cssValue)
+    document.documentElement.style.setProperty('--nav-height', cssValue + 'px')
+  }
+  var chromeHeight = getAppChromeHeight();
+  setAppChromeVar(chromeHeight);
+</script>  
+
+<script>
+document.querySelector('body').classList.add('mag');
+</script>  
+
+  
+  
+    <header>
+      <h3 class="home"><a href="/">pixelthing</a></h3>
+      <h3 class="post-title-scrolled">
+        <span class="post-title-scrolled__inner">here here here</span>
+      </h3>
+      <ul class="nav">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item nav-item-active"><a href="/posts/">Archive</a></li>
+        <li class="nav-item"><a href="/about/">About Me</a></li>
+      </ul>
+    </header>
+
+    <main class="tmpl-home">
+
+      <!-- Delete this message -->
+      <div class="warning">
+        <ol>
+          <li>Edit the <code>_data/metadata.json</code> with your blog’s information.</li>
+          <li>(Optional) Edit <code>.eleventy.js</code> with your <a href="https://www.11ty.dev/docs/config/">configuration preferences</a>.</li>
+          <li>Delete this message from <code>_includes/layouts/base.njk</code>.</li>
+        </ol>
+        <p><em>This is an <a href="https://www.11ty.dev/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
+      </div>
+      <!-- Stop deleting -->
+
+      
+<h1>Archive</h1>
+
+
+<ol reversed class="postlist" style="counter-reset: start-from 5">
+
+  <li class="postlist-item">
+    <a href="/posts/fourthpost/" class="postlist-link">Web dev with an iPad in 2020</a>
+    <time class="postlist-date" datetime="2020-12-30">30 Dec 2020</time>
+    
+      <a href="/tags/second-tag/" class="post-tag">second-tag</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/posts/thirdpost/" class="postlist-link">This is my third post.</a>
+    <time class="postlist-date" datetime="2018-08-24">24 Aug 2018</time>
+    
+      <a href="/tags/second-tag/" class="post-tag">second-tag</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/posts/secondpost/" class="postlist-link">This is my second post.</a>
+    <time class="postlist-date" datetime="2018-07-04">04 Jul 2018</time>
+    
+      <a href="/tags/number-2/" class="post-tag">number-2</a>
+  </li>
+
+  <li class="postlist-item">
+    <a href="/posts/firstpost/" class="postlist-link">This is my first post.</a>
+    <time class="postlist-date" datetime="2018-05-01">01 May 2018</time>
+    
+      <a href="/tags/another-tag/" class="post-tag">another-tag</a>
+  </li>
+
+</ol>
+
+
+
+    </main>
+
+    <footer></footer>
+    
+    <script src="/js/post-title-scroll.js" async></script>
+
+    <!-- Current page: /posts/ -->
+  </body>
+</html>
