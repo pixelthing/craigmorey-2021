@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+    <title>About Me</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="pixelthing">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="pixelthing">
   </head>
   <body>
   
@@ -38,21 +38,32 @@ document.querySelector('body').classList.add('mag');
   
   
     <header>
-      <h3 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h3>
+      <h3 class="home"><a href="/">pixelthing</a></h3>
       <h3 class="post-title-scrolled">
         <span class="post-title-scrolled__inner">here here here</span>
       </h3>
-
-      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
       <ul class="nav">
-      {%- for entry in collections.all | eleventyNavigation %}
-        <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
-      {%- endfor %}
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/posts/">Archive</a></li>
+        <li class="nav-item nav-item-active"><a href="/about/">About Me</a></li>
       </ul>
     </header>
 
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
-      {{ content | safe }}
+    <main class="tmpl-post">
+      
+<div id="page1" class="page">
+<time datetime="2020-12-27">2020-12 </time>
+<div class="posttags">c</div>
+<h1>About Me</h1>
+<p>I am a person that writes stuff.</p>
+
+</div>
+
+ <!--<hr>
+<ul class="otherposts">
+</ul> -->
+
+<script src="/js/magazine.js" async></script>
     </main>
 
     <footer>
@@ -65,6 +76,6 @@ document.querySelector('body').classList.add('mag');
     
     <script src="/js/post-title-scroll.js" async></script>
 
-    <!-- Current page: {{ page.url | url }} -->
+    <!-- Current page: /about/ -->
   </body>
 </html>

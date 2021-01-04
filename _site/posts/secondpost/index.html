@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is my second post.</title>
+    <meta name="description" content="This is a post on My Blog about leveraging agile frameworks.">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="pixelthing">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="pixelthing">
+  </head>
+  <body>
+  
+
+<span class="ruler-vh"></span>
+<script>
+  // measure the viewport, vh and browser chrome.
+  var getAppChromeHeight = function() {
+    var vhHeight = document.querySelector('.ruler-vh').offsetHeight;
+    var vpHeight = window.innerHeight;
+    console.log('vhHeight', vhHeight)
+    console.log('vpHeight', vpHeight)
+    return vhHeight - vpHeight;
+  }
+  var setAppChromeVar = function(cssValue) {
+   console.log('chrome height', cssValue)
+    document.documentElement.style.setProperty('--nav-height', cssValue + 'px')
+  }
+  var chromeHeight = getAppChromeHeight();
+  setAppChromeVar(chromeHeight);
+</script>  
+
+<script>
+document.querySelector('body').classList.add('mag');
+</script>  
+
+  
+  
+    <header>
+      <h3 class="home"><a href="/">pixelthing</a></h3>
+      <h3 class="post-title-scrolled">
+        <span class="post-title-scrolled__inner">here here here</span>
+      </h3>
+      <ul class="nav">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/posts/">Archive</a></li>
+        <li class="nav-item"><a href="/about/">About Me</a></li>
+      </ul>
+    </header>
+
+    <main class="tmpl-post">
+      
+<div id="page1" class="page">
+<time datetime="2018-07-04">2018-07 </time>
+<div class="posttags">c</div>
+<h1>This is my second post.</h1>
+<p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+<h2 id="section-header">Section Header <a class="direct-link" href="#section-header">#</a></h2>
+<p><a href="/posts/firstpost/">First post</a><br>
+<a href="/posts/thirdpost/">Third post</a></p>
+<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+<p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+
+</div>
+
+ <!--<hr>
+<ul class="otherposts"><li>Next: <a href="/posts/thirdpost/">This is my third post.</a></li><li>Previous: <a href="/posts/firstpost/">This is my first post.</a></li>
+</ul> -->
+
+<script src="/js/magazine.js" async></script>
+    </main>
+
+    <footer>
+      <address class="footer-author">
+        <em>pixelthing</em> is the personal blog of <span rel="author">Craig Morey</span> - data analyst snd visualiser from Gothenburg, Sweden. 
+        <div> Blog template is my own, feel free to view source and use it for 
+      </address>
+      non-commercial reasons.</div>
+    </footer>
+    
+    <script src="/js/post-title-scroll.js" async></script>
+
+    <!-- Current page: /posts/secondpost/ -->
+  </body>
+</html>
