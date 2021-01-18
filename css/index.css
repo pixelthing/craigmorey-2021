@@ -197,12 +197,14 @@ footer {
   display: inline-block;
   vertical-align: text-top;
   text-transform: uppercase;
-  font-size: 0.625em; /* 10px /16 */
-  padding: 2px 4px;
-  margin-left: 0.8em; /* 8px /10 */
-  background-color: var(--red);
+  font-family: sans-serif;
+  font-size: 0.625em;
+  font-weight: bold;
+  padding: 0.15em 0.5em 0.25em;
+  margin-right: 0.8em;
+  background-color: var(--darkgray);
   color: var(--white);
-  border-radius: 0.25em; /* 3px /12 */
+  border-radius: 0.25em;
   text-decoration: none;
 }
 a[href].post-tag,
@@ -221,7 +223,7 @@ a[href].post-tag:visited {
 
 /* Direct Links / Markdown Headers */
 .direct-link {
-''  font-family: sans-serif;
+  font-family: sans-serif;
   text-decoration: none;
   font-style: normal;
   margin-left: .1em;
@@ -332,7 +334,7 @@ h3 {
 time + h1 {
   margin-top: 0.5rem;
 }
-.posttags + h1 {
+.post__meta + h1 {
   margin-top: 0.5rem;
 }
 
@@ -377,24 +379,26 @@ hr {
   position: relative;
   display: block;
   width:calc(100vw - 4rem);
-  padding-bottom: var(--gutter);
   padding-top: 4rem;
-  border-bottom: 1px solid #ccc;
 }
 @media (min-width: 40rem) and (min-height: 20rem) {
   .mag .page {
     columns: 17.5em;
     column-fill: auto;
     column-gap: 2em;
-    height: calc(100vh - var(--nav-height)); 
-    min-height: calc(100vh - var(--nav-height));
+    height: calc(100vh - var(--nav-height));
+    padding-bottom: var(--gutter);
     font-size:0.8em;
     overflow: hidden;
     scroll-snap-align: start;
     xxbackground: #fcc;
   }
+  border-bottom: 1px solid #ccc;
   .mag .page:nth-child(odd) { 
     xxbackground: #ffc;
+  }
+  .mag .page:not(:last-of-type) { 
+    border-bottom: 1px solid var(--lightgray);
   }
   .mag .page p {
     margin-top: 0;
@@ -403,7 +407,8 @@ hr {
   .mag .page blockquote p {
     text-align: left;
   }
-  .mag .page h1 {
+  .mag .page h1,
+  .mag .page .post__meta {
     column-span: all;
   }
   .mag .page h2 { 

@@ -2,8 +2,10 @@
 title: Web dev with an iPad in 2020
 description: This is a post on My Blog about touchpoints and circling wagons.
 date: 2020-12-30
-tags: ['webdev','ipadpro']
-layout: layouts/post.njk
+tags:
+  - webdev
+  - ipadpro
+layout: layouts/magazine.njk
 ---
 
 At this time of the year I normally go deep on what’s changed if you’re a front-end web developer with an iPad. This year, I’m not going to do that, largely because I don’t have a set-up that’s representative of a 2020 iPad Pro (I have a 10.5”), but also because this year of all years, I think I’m justified in taking time off over the christmas holiday and not spending it explaining every possible workflow. 

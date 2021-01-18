@@ -17,62 +17,62 @@
   </url>
   
   <url>
+    <loc>https://example.com/posts/2020-12-webdev-with-an-ipad/</loc>
+    <lastmod>2020-12-30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/README-11ty/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2021-01-06</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/about/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2021-01-06</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/posts/</loc>
-    <lastmod>2020-12-27</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2021-01-06</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/page-list/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2021-01-06</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2021-01-06</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/webdev/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2021-01-06</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/ipadpro/</loc>
-    <lastmod>2020-12-27</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/number-2/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2021-01-06</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/another-tag/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2021-01-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/number-2/</loc>
+    <lastmod>2021-01-06</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/second-tag/</loc>
-    <lastmod>2020-12-27</lastmod>
+    <lastmod>2021-01-06</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/posts/2020-12-webdev-with-an-ipad/</loc>
-    <lastmod>2020-12-30</lastmod>
+    <loc>https://example.com/</loc>
+    <lastmod>2021-01-10</lastmod>
   </url>
 </urlset>
