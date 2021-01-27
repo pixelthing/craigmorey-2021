@@ -23,12 +23,7 @@ body {
 }
 p:last-child {
   margin-bottom: 0;
-}
-p,
-.tmpl-post li,
-img {
-  max-width: 37.5em; /* 600px /16 */
-}
+}$
 p,
 .tmpl-post li {
   line-height: 1.45;
@@ -334,6 +329,10 @@ h3 {
 time + h1 {
   margin-top: 0.5rem;
 }
+h3:first-child,
+figure + h3 {
+  margin-top: 0px;
+}
 .post__meta + h1 {
   margin-top: 0.5rem;
 }
@@ -347,10 +346,10 @@ blockquote {
   position:relative;
   margin: 1em;
   font-size: 1.5em;
-  font-family: "Optima",georgia;
+  xfont-family: "Optima",georgia;
   font-weight: 600;
   font-style: italic;
-  letter-spacing: -0.01em;
+  xletter-spacing: -0.01em;
   break-inside: avoid;
 }
 blockquote::before {
@@ -367,7 +366,7 @@ blockquote * {
 }
 hr {
   margin: 1.5em 0;
-  border:1px dashed var(--gray);
+  border:1px double var(--gray);
   border-width: 1px 0 0 0;
 }
 
@@ -412,8 +411,8 @@ hr {
     column-span: all;
   }
   .mag .page h2 { 
-    -webkit-column-break-before: always;
-    break-before: always;
+    x-webkit-column-break-before: always;
+    xbreak-before: always;
   }
   .mag .page h3 + p { 
     -webkit-column-break-before: avoid;
@@ -460,6 +459,38 @@ hr {
     padding: 0 0.25em;
     font-style: italic;
   }
+}
+
+figure {
+  display: block;
+  margin: 0;
+}
+figcaption {
+  margin: 0.5em 0;
+  text-align: center;
+  font-style: italic;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+.fig-hero {
+  column-span: all;
+  margin: 0 0 var(--gutter);
+  display: block;
+  max-width: 100vw;
+}
+.fig-hero img {
+  width: 100%;
+}
+.fig-column {
+  x-webkit-column-break-before: always;
+  x-webkit-column-break-after: always;
+  xbreak-before: always;
+  xbreak-after: always;
+}
+.fig-column img {
+  width: 100%;
 }
 
 .warning {
