@@ -124,6 +124,7 @@ pre {
 
 /* Footer */
 footer {
+  margin-top: var(--gutter);
   padding: var(--gutter);
   background: var(--lightgray);
   font-size: 0.8em;
@@ -374,6 +375,15 @@ hr {
 .nav-item {
   display: none;
 }
+
+.post {
+  position: relative;
+  display: block;
+  max-width:40em;
+  margin: 0 auto;
+  padding-top: 4rem;
+}
+
 .page {
   position: relative;
   display: block;
@@ -473,6 +483,7 @@ figcaption {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 .fig-hero {
   column-span: all;

@@ -10,7 +10,7 @@ layout: layouts/magazine.njk
 
 <figure class="fig-hero">
   <picture>
-    <img src="../../img/2020-08-hero1.jpeg" />
+    <img src="../../img/2020-08-hero1.jpeg" width="5999" height="2048" />
   </picture>
 </figure>
 

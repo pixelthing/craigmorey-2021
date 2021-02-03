@@ -80,7 +80,7 @@
 		<id>https://example.com/posts/getting-critical-data-noticed/</id>
 		<content type="html">&lt;figure class=&quot;fig-hero&quot;&gt;
   &lt;picture&gt;
-    &lt;img src=&quot;https://example.com/img/2020-08-hero1.jpeg&quot;&gt;
+    &lt;img src=&quot;https://example.com/img/2020-08-hero1.jpeg&quot; width=&quot;5999&quot; height=&quot;2048&quot;&gt;
   &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;h3 id=&quot;with-remote-working%2C-data-needs-to-exist-where-its-audience-lives.&quot;&gt;With remote-working, data needs to exist where its audience lives. &lt;a class=&quot;direct-link&quot; href=&quot;#with-remote-working%2C-data-needs-to-exist-where-its-audience-lives.&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -121,6 +121,34 @@ chartyios.app in an iOS14 widget&lt;/p&gt;
 &lt;p&gt;Just like the cinema example earlier, you could have more constituent parts than just two — you might have “the bite” leading to an in-app overview that helps you decide if it’s just an anomaly, or needs further investigation in a third dashboard. Just so long as the user gets the right messages &lt;em&gt;promptly&lt;/em&gt; that leads to the right outcome.&lt;/p&gt;
 &lt;p&gt;What we’re trying to do is to bring data to the screens the audience is &lt;em&gt;already looking at&lt;/em&gt; — instead of forcing the audience to &lt;em&gt;journey&lt;/em&gt; to the data. By doing this, we could start to not only deliver on the idea of “more data”, but to deliver a non-intrusive way of actually getting it noticed.&lt;/p&gt;
 &lt;p&gt;The results of data getting regular attention will lead to it being much, much more useful.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>iPadOS14 wish list for web devs</title>
+		<link href="https://example.com/posts/2020-05-ipados14-wish-list-for-web-devs/"/>
+		<updated>2020-05-23T22:00:00+02:00</updated>
+		<id>https://example.com/posts/2020-05-ipados14-wish-list-for-web-devs/</id>
+		<content type="html">&lt;p&gt;Historically, I’ve had a rotten track record for predicting future features. And everyone has their take for iPadOS14 — many focusing on the UI or fabled iPad Pro apps like Xcode or Logic Pro. As a web/data developer with iPads in the hands of various family members, I guess I have a slightly different list of wishes:&lt;/p&gt;
+&lt;h2 id=&quot;what-would-make-ipados-a-good-web-dev-platform&quot;&gt;What would make iPadOS a good web dev platform &lt;a class=&quot;direct-link&quot; href=&quot;#what-would-make-ipados-a-good-web-dev-platform&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Real multi-monitor support. With pointer now implemented in iPadOS, all the pieces are in place. We don’t need desktop spanning, just the ability to adjust where the cursor leaves one screen and appears on another, so we can drop apps across a wider canvas of screens. A 11&amp;quot; in my bag and a 27&amp;quot; on the desktop — but without the compromises that currently means.&lt;/li&gt;
+&lt;li&gt;More classes of app that are allowed to run in the background. This is so very important for web dev — we desperately need web servers and compilers to run reliably in the background without requiring hacks like building location awareness into apps to fool the OS into allowing it.&lt;/li&gt;
+&lt;li&gt;A first party sand-boxed (virtualised?) command line. Actually, it’s not as impossible as it sounds, ISH does this already, but wow, Node/NPM compatibility would be nice.&lt;/li&gt;
+&lt;li&gt;Other web browser engines to be blessed for use in iOS (Chromium/Firefox), or alternatively Safari web inspector to make the jump to iPadOS. Top level devtools are desperately needed on iOS.&lt;/li&gt;
+&lt;li&gt;An onscreen keyboard that was tailored to coding would be amazing. Tempted to create one myself.&lt;/li&gt;
+&lt;li&gt;Microsoft to walk on stage at the keynote and announce VSCode for iPad (or Panic to announce Nova for iPad — either would do!)&lt;/li&gt;
+&lt;li&gt;Slack to similarly come on stage and announce video conferencing and screen sharing is coming to iOS.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;and-also%E2%80%A6&quot;&gt;And also… &lt;a class=&quot;direct-link&quot; href=&quot;#and-also%E2%80%A6&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Shipping with multi window &amp;amp; gestures off by default. 80% of the audience don’t care &amp;amp; don’t like it, but want the old, simple iPad experience. The remaining 20% of us want so much more from iPadOS. We can find the settings to turn on those super powers.&lt;/li&gt;
+&lt;li&gt;Data back-up options (even if it’s limited to just time machine).&lt;/li&gt;
+&lt;li&gt;Of course, tweaks for more coherent multi-tasking. There have been some amazing demos recently online tying to pull the concepts together and make them discoverable, and I’d take any of them.&lt;/li&gt;
+&lt;li&gt;Multi user — a stretch I know and it would mean a very long beta. But really, not many in reality can afford a device per child.&lt;/li&gt;
+&lt;li&gt;Recognising hardware keyboards and allowing different settings for them, or shortcuts access to swapping keyboard layouts (non-english typists would appreciate this).&lt;/li&gt;
+&lt;li&gt;Having some control over audio — like being able choose the mic at OS level. Handy for these WFH times, and also podcasting.&lt;/li&gt;
+&lt;/ul&gt;
 </content>
 	</entry>
 	

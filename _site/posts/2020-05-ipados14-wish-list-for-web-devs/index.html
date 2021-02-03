@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPadOS14 wish list for web devs</title>
+    <meta name="description" content="This is a post on My Blog about win-win survival strategies.">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="pixelthing">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="pixelthing">
+  </head>
+  <body>
+  
+
+<span class="ruler-vh"></span>
+<script>
+  // measure the viewport, vh and browser chrome.
+  var getAppChromeHeight = function() {
+    var vhHeight = document.querySelector('.ruler-vh').offsetHeight;
+    var vpHeight = window.innerHeight;
+    console.log('vhHeight', vhHeight)
+    console.log('vpHeight', vpHeight)
+    return vhHeight - vpHeight;
+  }
+  var setAppChromeVar = function(cssValue) {
+   console.log('chrome height', cssValue)
+    document.documentElement.style.setProperty('--nav-height', cssValue + 'px')
+  }
+  var chromeHeight = getAppChromeHeight();
+  setAppChromeVar(chromeHeight);
+</script>  
+
+<script>
+document.querySelector('body').classList.add('mag');
+</script>  
+
+  
+  
+    <header>
+      <h3 class="home"><a href="/">pixelthing</a></h3>
+      <h3 class="post-title-scrolled">
+        <span class="post-title-scrolled__inner">here here here</span>
+      </h3>
+      <ul class="nav">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/posts/">Archive</a></li>
+        <li class="nav-item"><a href="/about/">About Me</a></li>
+      </ul>
+    </header>
+
+    <main class="tmpl-post">
+      <div class="post">
+<div class="post__meta">
+  <time datetime="2020-05-24">2020-05 </time>
+  <span class="post__tags"><a href="/tags/ipadpro/" class="post-tag">ipadpro</a><a href="/tags/webdev/" class="post-tag">webdev</a></span>
+</div>
+<h1>iPadOS14 wish list for web devs</h1>
+<p>Historically, I’ve had a rotten track record for predicting future features. And everyone has their take for iPadOS14 — many focusing on the UI or fabled iPad Pro apps like Xcode or Logic Pro. As a web/data developer with iPads in the hands of various family members, I guess I have a slightly different list of wishes:</p>
+<h2 id="what-would-make-ipados-a-good-web-dev-platform">What would make iPadOS a good web dev platform <a class="direct-link" href="#what-would-make-ipados-a-good-web-dev-platform">#</a></h2>
+<ul>
+<li>Real multi-monitor support. With pointer now implemented in iPadOS, all the pieces are in place. We don’t need desktop spanning, just the ability to adjust where the cursor leaves one screen and appears on another, so we can drop apps across a wider canvas of screens. A 11&quot; in my bag and a 27&quot; on the desktop — but without the compromises that currently means.</li>
+<li>More classes of app that are allowed to run in the background. This is so very important for web dev — we desperately need web servers and compilers to run reliably in the background without requiring hacks like building location awareness into apps to fool the OS into allowing it.</li>
+<li>A first party sand-boxed (virtualised?) command line. Actually, it’s not as impossible as it sounds, ISH does this already, but wow, Node/NPM compatibility would be nice.</li>
+<li>Other web browser engines to be blessed for use in iOS (Chromium/Firefox), or alternatively Safari web inspector to make the jump to iPadOS. Top level devtools are desperately needed on iOS.</li>
+<li>An onscreen keyboard that was tailored to coding would be amazing. Tempted to create one myself.</li>
+<li>Microsoft to walk on stage at the keynote and announce VSCode for iPad (or Panic to announce Nova for iPad — either would do!)</li>
+<li>Slack to similarly come on stage and announce video conferencing and screen sharing is coming to iOS.</li>
+</ul>
+<h2 id="and-also%E2%80%A6">And also… <a class="direct-link" href="#and-also%E2%80%A6">#</a></h2>
+<ul>
+<li>Shipping with multi window &amp; gestures off by default. 80% of the audience don’t care &amp; don’t like it, but want the old, simple iPad experience. The remaining 20% of us want so much more from iPadOS. We can find the settings to turn on those super powers.</li>
+<li>Data back-up options (even if it’s limited to just time machine).</li>
+<li>Of course, tweaks for more coherent multi-tasking. There have been some amazing demos recently online tying to pull the concepts together and make them discoverable, and I’d take any of them.</li>
+<li>Multi user — a stretch I know and it would mean a very long beta. But really, not many in reality can afford a device per child.</li>
+<li>Recognising hardware keyboards and allowing different settings for them, or shortcuts access to swapping keyboard layouts (non-english typists would appreciate this).</li>
+<li>Having some control over audio — like being able choose the mic at OS level. Handy for these WFH times, and also podcasting.</li>
+</ul>
+
+</div>
+
+ <!--<hr>
+<ul class="otherposts"><li>Next: <a href="/posts/getting-critical-data-noticed/">Getting critical data noticed</a></li><li>Previous: <a href="/posts/thirdpost/">This is my third post.</a></li>
+</ul> -->
+
+    </main>
+
+    <footer>
+      <address class="footer-author">
+        <em>pixelthing</em> is the personal blog of <span rel="author">Craig Morey</span> - data analyst snd visualiser from Gothenburg, Sweden. 
+        <div> Blog template is my own, feel free to view source and use it for 
+      </address>
+      non-commercial reasons.</div>
+    </footer>
+    
+    <script src="/js/post-title-scroll.js" async></script>
+
+    <!-- Current page: /posts/2020-05-ipados14-wish-list-for-web-devs/ -->
+  </body>
+</html>

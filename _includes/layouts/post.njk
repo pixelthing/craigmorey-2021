@@ -2,10 +2,11 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<div id="page1" class="page">
-  {{ collection.tagList }}
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date.getFullYear() }}-{{ ((page.date.getMonth() + 1) + '').padStart(2,'0') }} </time>
-<div class="posttags">c{% for tag in collections.tagList %}a{%- if collections.tagList.indexOf(tag) != -1 -%}{% set tagUrl %}/tags/{{ tag }}/{% endset %}<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>{%- endif -%}{% endfor %}</div>
+<div class="post">
+<div class="post__meta">
+  <time datetime="{{ date | htmlDateString }}">{{ date.getFullYear() }}-{{ ((date.getMonth() + 1) + '').padStart(2,'0') }} </time>
+  <span class="post__tags">{% for tag in tags %}{%- if collections.tagList.indexOf(tag) != -1 -%}{% set tagUrl %}/tags/{{ tag }}/{% endset %}<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>{%- endif -%}{% endfor %}</span>
+</div>
 <h1>{{ title }}</h1>
 {{ content | safe }}
 </div>
@@ -17,5 +18,3 @@ templateClass: tmpl-post
   {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
   {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
 </ul> -->
-
-<script src="/js/magazine.js" async></script>
