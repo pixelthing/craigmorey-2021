@@ -17,6 +17,16 @@
   </url>
   
   <url>
+    <loc>https://example.com/posts/2020-05-ipados14-wish-list-for-web-devs/</loc>
+    <lastmod>2020-05-24</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/getting-critical-data-noticed/</loc>
+    <lastmod>2020-08-20</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/posts/2020-12-webdev-with-an-ipad/</loc>
     <lastmod>2020-12-30</lastmod>
   </url>
@@ -47,12 +57,12 @@
   </url>
   
   <url>
-    <loc>https://example.com/tags/webdev/</loc>
+    <loc>https://example.com/tags/ipadpro/</loc>
     <lastmod>2021-01-06</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/ipadpro/</loc>
+    <loc>https://example.com/tags/webdev/</loc>
     <lastmod>2021-01-06</lastmod>
   </url>
   
@@ -63,6 +73,16 @@
   
   <url>
     <loc>https://example.com/tags/number-2/</loc>
+    <lastmod>2021-01-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/analytics/</loc>
+    <lastmod>2021-01-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/dashboards/</loc>
     <lastmod>2021-01-06</lastmod>
   </url>
   
