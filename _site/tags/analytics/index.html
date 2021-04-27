@@ -21,11 +21,12 @@
     var vpHeight = window.innerHeight;
     console.log('vhHeight', vhHeight)
     console.log('vpHeight', vpHeight)
+    document.documentElement.style.setProperty('--vp-height', vpHeight + 'px');
     return vhHeight - vpHeight;
   }
   var setAppChromeVar = function(cssValue) {
-   console.log('chrome height', cssValue)
-    document.documentElement.style.setProperty('--nav-height', cssValue + 'px')
+    console.log('chrome height', cssValue)
+    document.documentElement.style.setProperty('--nav-height', cssValue + 'px');
   }
   var chromeHeight = getAppChromeHeight();
   setAppChromeVar(chromeHeight);
@@ -57,7 +58,7 @@ document.querySelector('body').classList.add('mag');
 <ol reversed class="postlist" style="counter-reset: start-from 2">
 
   <li class="postlist-item">
-    <a href="/posts/getting-critical-data-noticed/" class="postlist-link">Getting critical data noticed</a>
+    <a href="/posts/2020-08-getting-critical-data-noticed/" class="postlist-link">Getting critical data noticed</a>
     <time class="postlist-date" datetime="2020-08-20">20 Aug 2020</time>
     
       <a href="/tags/analytics/" class="post-tag">analytics</a>

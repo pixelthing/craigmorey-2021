@@ -75,9 +75,9 @@
 	
 	<entry>
 		<title>Getting critical data noticed</title>
-		<link href="https://example.com/posts/getting-critical-data-noticed/"/>
+		<link href="https://example.com/posts/2020-08-getting-critical-data-noticed/"/>
 		<updated>2020-08-19T22:00:00+02:00</updated>
-		<id>https://example.com/posts/getting-critical-data-noticed/</id>
+		<id>https://example.com/posts/2020-08-getting-critical-data-noticed/</id>
 		<content type="html">&lt;figure class=&quot;fig-hero&quot;&gt;
   &lt;picture&gt;
     &lt;img src=&quot;https://example.com/img/2020-08-hero1.jpeg&quot; width=&quot;5999&quot; height=&quot;2048&quot;&gt;

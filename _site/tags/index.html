@@ -21,11 +21,12 @@
     var vpHeight = window.innerHeight;
     console.log('vhHeight', vhHeight)
     console.log('vpHeight', vpHeight)
+    document.documentElement.style.setProperty('--vp-height', vpHeight + 'px');
     return vhHeight - vpHeight;
   }
   var setAppChromeVar = function(cssValue) {
-   console.log('chrome height', cssValue)
-    document.documentElement.style.setProperty('--nav-height', cssValue + 'px')
+    console.log('chrome height', cssValue)
+    document.documentElement.style.setProperty('--nav-height', cssValue + 'px');
   }
   var chromeHeight = getAppChromeHeight();
   setAppChromeVar(chromeHeight);
@@ -61,15 +62,6 @@ document.querySelector('body').classList.add('mag');
   <a href="/tags/webdev/" class="post-tag">webdev</a>
 
   
-  <a href="/tags/another-tag/" class="post-tag">another-tag</a>
-
-  
-  <a href="/tags/analytics/" class="post-tag">analytics</a>
-
-  
-  <a href="/tags/dashboards/" class="post-tag">dashboards</a>
-
-  
   <a href="/tags/analytics/" class="post-tag">analytics</a>
 
   
@@ -80,6 +72,9 @@ document.querySelector('body').classList.add('mag');
 
   
   <a href="/tags/number-2/" class="post-tag">number-2</a>
+
+  
+  <a href="/tags/another-tag/" class="post-tag">another-tag</a>
 
 
 

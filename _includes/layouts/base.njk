@@ -21,11 +21,12 @@
     var vpHeight = window.innerHeight;
     console.log('vhHeight', vhHeight)
     console.log('vpHeight', vpHeight)
+    document.documentElement.style.setProperty('--vp-height', vpHeight + 'px');
     return vhHeight - vpHeight;
   }
   var setAppChromeVar = function(cssValue) {
-   console.log('chrome height', cssValue)
-    document.documentElement.style.setProperty('--nav-height', cssValue + 'px')
+    console.log('chrome height', cssValue)
+    document.documentElement.style.setProperty('--nav-height', cssValue + 'px');
   }
   var chromeHeight = getAppChromeHeight();
   setAppChromeVar(chromeHeight);

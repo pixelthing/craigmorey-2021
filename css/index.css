@@ -1,4 +1,5 @@
 :root {
+  /* colors */
   --red: #C5004A;
   --darkred: #7F0036;
   --lightgray: #e0e0e0;
@@ -7,6 +8,8 @@
   --navy: #17050F;
   --blue: #082840;
   --white: #fff;
+  
+  /* dimensions */
   --gutter: 2rem;
   --mag-min-width: 30rem;
 }
@@ -19,11 +22,13 @@ body {
   margin: 0;
   font-family: georgia;
   color: var(--darkgray);
-  background-color: var(--white);
+  background-color: var(--lightgray); 
+  background-image: linear-gradient(to bottom, white 99%, var(--lightgray) 99%);
+  background-repeat: no-repeat;
 }
 p:last-child {
   margin-bottom: 0;
-}$
+}
 p,
 .tmpl-post li {
   line-height: 1.45;
@@ -36,6 +41,7 @@ a[href]:visited {
 }
 main {
   padding: var(--gutter);
+  min-height:100vh;
 }
 main :first-child {
   margin-top: 0;
@@ -238,6 +244,7 @@ a[href].direct-link:focus:visited,
 /******/
 
 :root {
+  --vp-height:100vh;
   --nav-height:0;
 }
 .ruler-vh {
@@ -249,9 +256,9 @@ a[href].direct-link:focus:visited,
 @media (min-width: 40rem) and (min-height: 20rem) {
   html,body {
     position: fixed;
-    height:100vh;
-    width:100%;
-    overflow:scroll;
+    height: 100vh;
+    width: 100%;
+    overflow: scroll;
   }  
 }
 body {
@@ -402,7 +409,6 @@ hr {
     scroll-snap-align: start;
     xxbackground: #fcc;
   }
-  border-bottom: 1px solid #ccc;
   .mag .page:nth-child(odd) { 
     xxbackground: #ffc;
   }
@@ -427,6 +433,11 @@ hr {
   .mag .page h3 + p { 
     -webkit-column-break-before: avoid;
     break-before: avoid;
+  }
+  .mag footer {
+      scroll-snap-align: start;
+      min-height: var(--vp-height);
+      padding-top: 80px;
   }
 }
 

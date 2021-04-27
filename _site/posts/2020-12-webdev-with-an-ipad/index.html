@@ -21,11 +21,12 @@
     var vpHeight = window.innerHeight;
     console.log('vhHeight', vhHeight)
     console.log('vpHeight', vpHeight)
+    document.documentElement.style.setProperty('--vp-height', vpHeight + 'px');
     return vhHeight - vpHeight;
   }
   var setAppChromeVar = function(cssValue) {
-   console.log('chrome height', cssValue)
-    document.documentElement.style.setProperty('--nav-height', cssValue + 'px')
+    console.log('chrome height', cssValue)
+    document.documentElement.style.setProperty('--nav-height', cssValue + 'px');
   }
   var chromeHeight = getAppChromeHeight();
   setAppChromeVar(chromeHeight);
@@ -113,7 +114,7 @@ document.querySelector('body').classList.add('mag');
 </div>
 
  <!--<hr>
-<ul class="otherposts"><li>Previous: <a href="/posts/getting-critical-data-noticed/">Getting critical data noticed</a></li>
+<ul class="otherposts"><li>Previous: <a href="/posts/2020-08-getting-critical-data-noticed/">Getting critical data noticed</a></li>
 </ul> -->
 
 <script src="/js/magazine.js" async></script>
