@@ -14,9 +14,9 @@
 	
 	<entry>
 		<title>Web dev with an iPad in 2020</title>
-		<link href="https://example.com/posts/2020-12-webdev-with-an-ipad/"/>
+		<link href="https://example.com/posts/2020-12-ipad-webdev20/"/>
 		<updated>2020-12-29T23:00:00+01:00</updated>
-		<id>https://example.com/posts/2020-12-webdev-with-an-ipad/</id>
+		<id>https://example.com/posts/2020-12-ipad-webdev20/</id>
 		<content type="html">&lt;p&gt;At this time of the year I normally go deep on what’s changed if you’re a front-end web developer with an iPad. This year, I’m not going to do that, largely because I don’t have a set-up that’s representative of a 2020 iPad Pro (I have a 10.5”), but also because this year of all years, I think I’m justified in taking time off over the christmas holiday and not spending it explaining every possible workflow.&lt;/p&gt;
 &lt;p&gt;But 2020 - despite feeling like a flat curve of time - has been surprisingly busy in the iPad world. Here are some highlights that effect you as a developer with an iPad in the hand.&lt;/p&gt;
 &lt;h3 id=&quot;ios13.4-%26-magic-keyboard&quot;&gt;iOS13.4 &amp;amp; Magic keyboard &lt;a class=&quot;direct-link&quot; href=&quot;#ios13.4-%26-magic-keyboard&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -149,6 +149,602 @@ chartyios.app in an iOS14 widget&lt;/p&gt;
 &lt;li&gt;Recognising hardware keyboards and allowing different settings for them, or shortcuts access to swapping keyboard layouts (non-english typists would appreciate this).&lt;/li&gt;
 &lt;li&gt;Having some control over audio — like being able choose the mic at OS level. Handy for these WFH times, and also podcasting.&lt;/li&gt;
 &lt;/ul&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Making GTM better</title>
+		<link href="https://example.com/posts/2020-05-making-gtm-better/"/>
+		<updated>2020-05-19T22:00:00+02:00</updated>
+		<id>https://example.com/posts/2020-05-making-gtm-better/</id>
+		<content type="html">&lt;p&gt;Google Tag Manager is a strange beast. Its purpose is essentially abstraction -- to provide a layer between a website and multiple types of site measurement. It’s been used brilliantly, loosely, badly and plain-old abusively in many cases, but it is trying to make it possible for non-developers to (for instance) be able to quickly set-up Google Analytics tracking on a button, as well as experts to set up more in-depth measurement. But like all interfaces that try and simplify things without losing complex functionality, it can quickly dissolve into very domain specific language that seems unintelligible from the outside.&lt;br&gt;
+And that’s where I am at the moment, using GTM to try and build logical tags of reliable data from horribly un-semantic, React-built spaghetti-code web sites that needs lots of custom JS in GTM to interpret them.&lt;br&gt;
+Because I was a front-end developer in a previous life with some UX background, I understand that no UI/UX is perfect and there is always more that you learn the more you fix it. I’d like to think I could make a few suggestions to the GTM team at Google that would make my day (and hopefully yours) much easier:&lt;br&gt;
+Having a &amp;quot;preview&amp;quot; button in a tag/trigger/var panel (plus a &amp;quot;save&amp;quot; button in the expanded code panel) would save a huge amount of time in the round trip of trying to build or debug something (see below). The current roundtrip for doing this is an unnecessary cognitive load, I often get back to the tagged page and wonder what it was I changed because of all the steps I’d taken since I’d made the change. Plus it’s a huge time-sink when you multiply it by the many, many times a day you have to carry out a round trip. Imagine a button saving 30 minutes off your day, every day -- that would be worth celebrating.&lt;/p&gt;
+&lt;p&gt;The edit-preview-edit round trip (sorry, you’ll need sound -- haven’t captioned it yet)&lt;br&gt;
+Similar to the above -- I really like the orange banner that reminds me I’m in preview mode -- it’s good use of &amp;quot;ugly&amp;quot; UX (forgive me -- I mean &amp;quot;in your face&amp;quot; is not often pretty, but it’s useful). But I can’t count how many times I have been looking at a tagged page and have been confused as to why some tag isn’t working, before wondering if I actually refreshed the preview state or not. I’d suggest making the preview button and refresh link aware of the status of updates, as below:&lt;/p&gt;
+&lt;p&gt;The preview button and preview refresh link if no changes since the last refresh.&lt;/p&gt;
+&lt;p&gt;Suggested preview button and refresh link style if updates have been made and not yet previewed.&lt;br&gt;
+Could the debug panel in the tagged page also be made aware of changes that have been previewed, and even have an optional setting to hot-reload the page if the preview is refreshed?&lt;/p&gt;
+&lt;p&gt;Suggestion for the a &amp;quot;reload&amp;quot; button in the debug panel to be aware of preview refreshes, prompting you to re-load the page to see the update.&lt;br&gt;
+Working on laptop screens means a lot of scrolling up and down to click on the &amp;quot;preview&amp;quot; button, and then down a long list to try and find the tag or variable you were working on. I’d debate that the preview button should be sticky to the top of the window, even if it does take up a small amount of screen space. Suggestion: a height-based CSS media query resulting in relative positioned preview button/bar up until about 500px viewport height, and then position:sticky for any taller. This would not steal space from the smallest viewports but provide a better UX for most laptops.&lt;br&gt;
+Alternatively, or additionally, to the above point, highlight the last tags, triggers and variables you were working on in the lists (eg, a yellow row highlight, as below) to reduce cognitive load when scrolling through a long list and assisting you to quickly return to the items you are currently editing.&lt;/p&gt;
+&lt;p&gt;Highlighting items that have recently been updated to make them easier to return to in a long list.&lt;br&gt;
+Really important: In lists of tags/triggers/variables, I wish columns remembered the way I sorted them. When I’m at my busiest, I like the columns sorted by &amp;quot;last edited&amp;quot; -- that way I can see the items I’m working on right now. But I have to click the column twice every time I come back to the list because they always return to ascending name order. And honestly -- about those two clicks -- I’d debate there are more people who are developing tags and want to see the latest tags first (and so first click should be latest first), and less people trying to root out old tags (as is currently, with first click resulting in oldest first). But I’m hoping Google could correct me on that by consulting their own metrics of GTM usage.&lt;/p&gt;
+&lt;p&gt;I wish every time I came back to this list, it was still sorted as &amp;quot;last edited first&amp;quot;.&lt;br&gt;
+The two tables of variables. Having them split into &amp;quot;Built-in&amp;quot; and &amp;quot;User defined&amp;quot; (as below) still confuses me many times a day -- I often search for the variable I’m working on in the top table, and then realise my mistake and have to do it all over again in the bottom table -- because that’s the chemical memory I have learnt from the other lists. I’d debate the benefit of splitting the tables at all. They could be just be mixed up together and then we can have another column for &amp;quot;built-in/user&amp;quot; (and an icon, text boldness or text colour could also discriminate clearly between the two types). If the difference between the two types was of utmost important to an GTM dev/admin, you could sort by that column -- and if column sorting was remembered (as in the point above), that would essentially give you the same UI as you have now, only as a user setting instead of a default.&lt;/p&gt;
+&lt;p&gt;The Variables panel -- split into &amp;quot;Built-in&amp;quot; and &amp;quot;User-defined&amp;quot;. My nemesis.&lt;br&gt;
+The trigger list has a column for &amp;quot;number of tags using this trigger&amp;quot; (see below). Please, please could we have a similar column in the variables list (&amp;quot;number of times this variable is used&amp;quot;) -- it helps us clean the vars as we prune older tags, and sweep up discarded vars whilst we are developing new tags. It would also help us understand quickly if we were using more built-in variables than we needed.&lt;/p&gt;
+&lt;p&gt;The &amp;quot;usage number&amp;quot; in the trigger list. Could we have this in the Variable list too?&lt;br&gt;
+Having a name search across all tags/triggers/vars. Often I’m developing tags which work in concert with triggers and vars, so I name them in a similar way, eg &amp;quot;accordion-click-tag&amp;quot;, &amp;quot;accordion-click-trigger&amp;quot;. But to see them all, I need to go into three different panels (tags, triggers, vars). You might say that they would all appear together in the &amp;quot;overview&amp;quot; panel, but thats only the case if I’ve made changes to all three of them since the last deploy.&lt;br&gt;
+Search (and even at a push -- replace) across all content in text fields &amp;amp; custom JS. On a regular basis I know that I have already built a method somewhere in my workspace, but I’m not able to find it without opening up lots of tags or vars. We can see from the amazing job GTM does with tokenising and auto-replacing var names in our custom scripts that the content is indexed, so could we search that index as well?&lt;br&gt;
+Copying and pasting from the data layer in the debug panel. You can’t, and it’s a real pain:&lt;/p&gt;
+&lt;p&gt;You can’t copy and paste from the data layer in the debug panel.&lt;br&gt;
+I love that I can be editing a tag, click on the trigger at the of the panel bottom, edit the trigger in a slide-over panel, then return instantly to the tag. This is how the slide-over panel UI of GTM really wins. But so often I’d like to have the same ability to do this with moustached variables in text fields or in custom JS. Consider the one below. Sometimes I’d simply like to check what  actually is, and sometimes I know I’ve got to edit it before I save this tag. But that means closing this tag (often in a half finished state), loading the list of variables, finding the variable you want, opening it, reviewing or editing the var, saving it, loading the list of tags, finding the tag you want, and finally reopening it in a new panel. That’s quite a round trip -- considering if I wanted to review the trigger for the same tag, I’d just click it then close it. My suggestion is a contextual menu to open the variable in a new slide-over. All the code to build that UI is in the GTM web app already. Quickest UX win ever.&lt;/p&gt;
+&lt;p&gt;I wish I could inspect  without spending the next two minutes clicking buttons.&lt;br&gt;
+Here’s a real loopy idea. Tabs. So you can work on the tag, trigger and vars all at the same time, without having to jump between panels. I know it’s probably a UI convention that doesn’t work well with the &amp;quot;endless slide-over panels&amp;quot; UI that exists in GTM -- and maybe the previous point would reduce the need for it -- but just consider the workflow efficiencies. Some of us are working around this already with multiple tabs in the browser -- and that can only lead to bad syncing and state problems.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>2019 iPad Webdev - CD with Netlify</title>
+		<link href="https://example.com/posts/2020-01-ipad-webdev19-vscode-hosted/"/>
+		<updated>2020-01-05T23:00:00+01:00</updated>
+		<id>https://example.com/posts/2020-01-ipad-webdev19-vscode-hosted/</id>
+		<content type="html">&lt;blockquote&gt;
+&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;update-2020%E2%80%9304%E2%80%9317&quot;&gt;Update 2020–04–17 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020%E2%80%9304%E2%80%9317&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Checkout &lt;a href=&quot;https://servediter.app/&quot;&gt;serveediter.app&lt;/a&gt;, a neat native app that wraps up everything mentioned below along with a super cheap VPS subscription. It’s early days but it’s much more stable than the experience I had and it looks promising.&lt;/p&gt;
+&lt;h3 id=&quot;update-2020%E2%80%9301%E2%80%9310&quot;&gt;Update 2020–01–10 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020%E2%80%9301%E2%80%9310&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Reddit users have pointed me in the direction of &lt;a href=&quot;https://visualstudio.microsoft.com/services/visual-studio-online/&quot;&gt;Visual Studio Online&lt;/a&gt;, which is Microsoft’s official online version of VS Code, and has been in public preview since November 2019. It works great in desktop browsers (including having keyboard shortcuts)-- but so far it is not letting me access it with iPadOS; it says &amp;quot;currently unsupported&amp;quot; and tries to download &amp;quot;undefined&amp;quot; on sign-in. But along with the release notes talking about testing on iPad, it seems to be a good sign that Visual Studio Online will soon be supported on iPadOS. Until then, the below method (or Owen Williams’ method) seems the only way of achieving VS Code on an iPad.&lt;/p&gt;
+&lt;h3 id=&quot;update-2021%E2%80%9301%E2%80%9304&quot;&gt;Update 2021–01–04 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2021%E2%80%9301%E2%80%9304&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Also check out &lt;a href=&quot;https://gitpod.io/&quot;&gt;gitpod.io&lt;/a&gt;, an online service that also gives you a super quick way of accessing and editing github repos.&lt;/p&gt;
+&lt;p&gt;Using VS Code 1.39.0 In the &lt;a href=&quot;https://github.com/cdr/code-server/releases/tag/2.1692-vsc1.39.2&quot;&gt;cdr server package release 2.1692&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So this is a bombshell.&lt;/p&gt;
+&lt;p&gt;I can run &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Microsoft VS Code&lt;/a&gt; on my iPad. Real, actual VS Code, down to the built-in git client, terminal, extensions and multi-file search. I was first alerted to the possibility by &lt;a href=&quot;https://link.medium.com/4nycoirfU2&quot;&gt;Owen Williams&lt;/a&gt;’ article back in June.&lt;/p&gt;
+&lt;p&gt;Well, don’t get too excited, it’s 90% the real thing.&lt;/p&gt;
+&lt;p&gt;Running VS Code (hosted) as a standalone web app.&lt;/p&gt;
+&lt;p&gt;You see, the earliest versions of VS Code were based on a fork of &lt;a href=&quot;https://atom.io/&quot;&gt;GitHub’s Atom&lt;/a&gt;, a JS based editor. And even though VS Code has come a long way, it’s interface is still just HTML, CSS and JS, even if the heavy lifting is dealt with behind the scenes (mostly in GO?). And that means it’s essentially a web app that can be served to a web browser and even linked from your home screen as a standalone web-app.&lt;/p&gt;
+&lt;p&gt;But the problem with it being not only a web-app but a relatively unsanctioned one at that, is that the developer experience has a few downsides:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You need to be online (or at least serve it from a separate computer).&lt;/li&gt;
+&lt;li&gt;You need to keep it running on the server (we’ll talk about this in a moment), as well as secure from other users.&lt;/li&gt;
+&lt;li&gt;Every time you return to the app, you briefly see a &amp;quot;reconnecting&amp;quot; dialog as the app wakes and looks for the VS code app server.&lt;/li&gt;
+&lt;li&gt;Your experience is directly related to the speed of connection to your server.&lt;/li&gt;
+&lt;li&gt;You can’t use any keyboard short-cuts (that’s a big ouch).&lt;/li&gt;
+&lt;li&gt;You can’t touch/drag scroll bars.&lt;/li&gt;
+&lt;li&gt;The settings menu is currently buggy (you can’t change any setting, but there’s a workaround here in the footnotes)&lt;/li&gt;
+&lt;li&gt;The main hamburger menu disappears once you’ve used it (oops).&lt;/li&gt;
+&lt;li&gt;Various repaint glitches, touch-targets not all sized for touch screen usage, other small weirdnesses of running a very complex beta web-app.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Extensions in VS Code. In terms of functionality, the hosted version is missing almost nothing over the app.&lt;/p&gt;
+&lt;p&gt;Many of these are purely beta-testing bugs, but &lt;a href=&quot;https://code.visualstudio.com/updates/v1_41#_browser-support&quot;&gt;there’s evidence that Microsoft are actively testing this set-up with iPads&lt;/a&gt;, so expect to see improvements in the future. Could this eventually be a native app? I’d venture that getting it to work in a native app package with the file picker API etc is definitely within sight, but forking the capabilities of the app to be so very different when running natively on the iPad (eg could the iOS version do debugging, git, terminal, extensions in the same way?) are more likely to be holding Microsoft back from launching it. Who knows, but if anyone could get Apple to bend rules to suit webdev, it’s 2020 Microsoft.&lt;/p&gt;
+&lt;p&gt;Now we’ve covered the downsides, what are the benefits?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Built in git-client, so you can pull, commit and push demo from your IDE directly on the remote server.&lt;/li&gt;
+&lt;li&gt;Built in terminal, so you can run your Node.js toolchain on the remote server from within your IDE.&lt;/li&gt;
+&lt;li&gt;err.. VS Code -- that means a top-tier code editor with almost endless extensions and theming.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Multi file search and replace. One of many things missing in native iOS code editor apps.&lt;/p&gt;
+&lt;p&gt;In practice, once you’re set-up and in a flow, you’re pulling, editing, saving, running Node.js tool chains all within VS Code as a standalone web-app (without need to think that it’s all happening remotely), then alt-tabbing to Safari/&lt;a href=&quot;https://apps.pdyn.net/inspect/&quot;&gt;Inspect Browser&lt;/a&gt; to check the results, then alt-tabbing back to VS Code exactly where you left it, to commit and push right there in the IDE. You’ll get used to briefly seeing the &amp;quot;reconnecting&amp;quot; dialogs, but on a good connection, it’s a minor annoyance. It’s surprisingly seamless.&lt;/p&gt;
+&lt;p&gt;Starting up and using VS Code on a VPS from an iPad.&lt;/p&gt;
+&lt;h3 id=&quot;but-hang-on%E2%80%A6&quot;&gt;But hang on… &lt;a class=&quot;direct-link&quot; href=&quot;#but-hang-on%E2%80%A6&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This is technically impressive, but in truth it has nothing to do with the iPad -- everything is happening on the server, so your precious iPad could be replaced by any web browser on any platform -- from a Chrome OS laptop to a Raspberry Pi mini-PC. It’s the browser equivalent of firing up Emacs, ssh-ing to a server and only leaving it to check the results.&lt;/p&gt;
+&lt;p&gt;That doesn’t mean it doesn’t hit our main requirement (ie, doing &amp;quot;real work&amp;quot; on my mobile device of choice), it’s just that it feels a little like cheating.&lt;/p&gt;
+&lt;p&gt;Running a simple python web server within the terminal inside VS Code.&lt;/p&gt;
+&lt;h3 id=&quot;how-to.&quot;&gt;How to. &lt;a class=&quot;direct-link&quot; href=&quot;#how-to.&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;First you need a Linux server to run it from. It could be a computer on your internal network, a remote server you have access to, or most probably a VPS (a Virtual Private Server -- a remote Linux account that your rent). This will probably take some sys-admin knowledge to set-up and prepare.&lt;/li&gt;
+&lt;li&gt;To even start with a VPS, you’ll need a decent SSH/Mosh client on your iPad. Use &lt;a href=&quot;https://termius.com/&quot;&gt;Termius&lt;/a&gt; if you like a slick iOS GUI, or &lt;a href=&quot;https://www.blink.sh/&quot;&gt;Blink&lt;/a&gt; if you live and die by the command line (and you want the stickiest connections ever).&lt;/li&gt;
+&lt;li&gt;If you are using a remote server, the chances are that you will be starting up the VSCode server via an SSH connection, and if that connection is severed, your access to VSCode will eventually also time-out with your dead connection. So it’s best to make that connection as stable as possible by adding a &lt;a href=&quot;https://mosh.org/&quot;&gt;Mosh&lt;/a&gt; to your remote server.&lt;/li&gt;
+&lt;li&gt;Now you need to get the hosted VSCode binary onto your remote server. If your server supports a recent version of Docker, there’s a &lt;a href=&quot;https://github.com/cdr/code-server&quot;&gt;simple Docker command you can run here&lt;/a&gt;. But for my VPS, it didn’t work, but &lt;a href=&quot;https://github.com/cdr/code-server&quot;&gt;downloading, expanding and running the binary version worked&lt;/a&gt; just fine.&lt;/li&gt;
+&lt;li&gt;We’re ready to test it all out. Log into the remote server and run the code-server binary (or the docker command if that’s the version you downloaded). It will start up VSCode on port 8008, and will tell you the random password to use to log-in. Because this version of VSCode is often served in public, it defaults to needing a password, before nasty people start doing nasty things to your code.&lt;/li&gt;
+&lt;li&gt;In Safari on your iPad you can go to the IP or domain of your remote server at port 8008, and you’ll see a log-in screen (see below). Before you enter the password, go into the Safari action/share sheet and save this web app to your homescreen. It’s not a full PWA, but it will make a standalone web app link that will give you more screen space (none of the Safari UI) and make it easier to switch between editor and browser.&lt;/li&gt;
+&lt;li&gt;Now you can open the VSCode web app from your homescreen and enter the random password that was shown to you in the command line when you started up the VSCode server. And suddenly you have VSCode on your iPad!&lt;/li&gt;
+&lt;li&gt;If you have a project already checked out on your remote server, you can open it up using &amp;quot;File&amp;quot; in the hamburger menu top-left of the VSCode screen. If you don’t yet have a project on your remote server, use an SFTP client or even a code editor like &lt;a href=&quot;https://www.textasticapp.com/&quot;&gt;Textastic&lt;/a&gt; to transfer your project up to the server.&lt;/li&gt;
+&lt;li&gt;If that project is a Git repo, VSCode will attempt to get the git status of the project (if your remote server doesn’t have an SSH key for your git service, your terminal app will be sitting there requesting your Git password).&lt;/li&gt;
+&lt;li&gt;One last thing. You’ll get pretty fed up quickly with that password on VSCode. If you’re running VSCode in a safe enviroment (LAN server, Raspberry Pi), the instructions to remove the password are given on the command line where you see the randomized password. Otherwise, pick a password and set it up in what they call an environment variable. On the remote server, type:&lt;br&gt;
+echo &amp;quot;export PASSWORD=YourPassword&amp;quot; &amp;gt;&amp;gt; /etc/profile&lt;br&gt;
+…where YourPassword is… well you get the idea. Next time you start up the VSCode server and get to the log-in, you won’t need to copy/paste that random password, you’ll have your own.&lt;/li&gt;
+&lt;li&gt;Ok, this is the last thing. Using this out in the open is still a security risk even with the password on it. I wouldn’t risk setting it up to run all the time if I can help it. Shut it down when you’ve finished your session.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The password entry for hosted VSCode as seen in a browser. By default, the password is set randomly and shown in the terminal session that started the server.&lt;/p&gt;
+&lt;h3 id=&quot;optional-extras&quot;&gt;Optional Extras &lt;a class=&quot;direct-link&quot; href=&quot;#optional-extras&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Could I marry this workflow with a Raspberry Pi (or any local Linux computer) instead of a VPS? Heck yes, and you wouldn’t need the Mosh server or passwords every time you launch VS Code. A Raspberry Pi 4B with decent memory should be more than capable -- although I haven’t tried it… yet.&lt;/li&gt;
+&lt;li&gt;I haven’t tried it yet, but I suspect it’s not impossible to make a siri shortcut that uses Blink to open the connection to the VPS, start up the VSCode server and then opens the standalone web app on you iPad, all in one icon tap. And then you might need another to shut the server down once you’ve finished.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Raspberry Pi 3B+ powered by an Anker battery pack. Could it be your VSCode in a box?&lt;/p&gt;
+&lt;h3 id=&quot;links&quot;&gt;Links &lt;a class=&quot;direct-link&quot; href=&quot;#links&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/cdr/code-server&quot;&gt;GitHub - cdr/code-server: VS Code in the browser&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://link.medium.com/4nycoirfU2&quot;&gt;Owen Williams’ Medium article on using hosted VS Code with an iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Full Microsoft Visual Studio site&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;footnote&quot;&gt;Footnote &lt;a class=&quot;direct-link&quot; href=&quot;#footnote&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;There’s a classic front end bug in the settings in the current version of hosted VS Code (that’s bound to be fixed soon) where you can’t interact with the settings (select menus, checkboxes,etc). It’s probably a z-index thing, you know the bug. But happily, the VS code team have done a great job with accessibility, so you can click on the settings section you want, then use the tab key to cycle through the settings options, arrow keys to use select menus, and the space key to action things like checkboxes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>2019 iPad Webdev - Raspberry Pi</title>
+		<link href="https://example.com/posts/2020-01-ipad-webdev19-raspberry-pi/"/>
+		<updated>2020-01-05T23:00:00+01:00</updated>
+		<id>https://example.com/posts/2020-01-ipad-webdev19-raspberry-pi/</id>
+		<content type="html">&lt;blockquote&gt;
+&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;update-2021%E2%80%9301%E2%80%9304&quot;&gt;Update 2021–01–04 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2021%E2%80%9301%E2%80%9304&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/sausheong/setting-up-a-raspberry-pi-4-as-an-development-machine-for-your-ipad-pro-3813f872fccc&quot;&gt;This Medium article&lt;/a&gt; (paywall, unfirtunately) is the best resource I’ve found for setting up all the possible iPad/Pi combinations.&lt;br&gt;
+This could qualify as one of the hacks of the year and has gained quite a lot of traction in the last six months.&lt;/p&gt;
+&lt;p&gt;The idea is pretty simple. Once you’ve got used to playing with a VPS (Virtual Private Server — a remote Linux account you rent) as the web development accessory to your iPad, you start to wonder if that Linux server could be closer to you. Much closer. And smaller — almost as if you could carry it in your pocket.&lt;/p&gt;
+&lt;p&gt;Well, that describes a Raspberry Pi. Of course any UNIX/Linux computer would do, but it just so happens that Pi’s are cheap ($€£35–100 depending on the level of spec and comfort) and very well supported with community documentation.&lt;/p&gt;
+&lt;p&gt;I’d been playing with Raspberry Pi’s as part of dashboard appliances, and was just considering using them as an off-board Linux server to a iPad when I realised smarter people were way ahead of me. The first time I saw a Raspberry Pi used specifically for development with an iPad, it was from the supremely talented Brent Jackson in July:&lt;/p&gt;
+&lt;p&gt;It blew my mind because I’m not sure how he’d arrived at it, but it was a fully formed workflow using USB-C to not only power the Pi, but as ethernet over USB as well (he even documented the types of cable he had success with and those that didn’t work out). Here’s &lt;a href=&quot;https://threader.app/thread/1147555688933154816&quot;&gt;the whole Twitter thread on Threader&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It took off from there. I had an iPad Pro 10.5” with Lighning connectors, so USB-C power and network weren’t going to work for me, but I could connect to them over WiFi easily enough. And I found I didn’t need to stretch to the Pi 4B, the Pi 3B+ model that I already owned was fast enough for most work, and as a bonus had much lower power demands, so using a 10Ah 12Watt Anker battery pack (not a PD one with crazy output) was enough to run it. If you plugged it into a monitor, it would complain about power during boot-up, but in general headless usage, it never hit any limits.&lt;/p&gt;
+&lt;p&gt;For a plane trip in September, I decided to try and get it working without any internet — just the iPad, the Pi and the battery pack, totally off-line. I eventually got the Pi to act as a WiFi NAT and DHCP server, essentially acting as a router with no connection to route, leaving just the iPad and the Pi as the only IPs on our mini network. It worked great and I could literally carry it in my pocket whilst working on it. If you’d like to try this “offline” set-up, there’s a link at the bottom of this article.&lt;/p&gt;
+&lt;p&gt;Once &lt;a href=&quot;https://secureshellfish.app/&quot;&gt;Secure Shellfish&lt;/a&gt; came out, sending files to and from a Raspberry Pi was as easy as if it was an external drive, Shellfish just made it another file provider in the “Files” app.&lt;/p&gt;
+&lt;p&gt;Shellfish set-up to connect to my Rasbperry Pi 3B+&lt;br&gt;
+And since Brent’s first tweet, I’ve seen the Pi pop up again and again as an iPad accessory. Rob at the &lt;a href=&quot;https://www.youtube.com/channel/UCT-GpMtIFhX9EMA0Eauevhw&quot;&gt;TechCraft YouTube channel&lt;/a&gt; has made several videos about setting up the Pi for use with an iPad, both with USB-C and Wifi connections. In fact, I’m not going to try to explain the set-up, because he does a much better job.&lt;/p&gt;
+&lt;h3 id=&quot;pros&quot;&gt;Pros &lt;a class=&quot;direct-link&quot; href=&quot;#pros&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;You get a full Linux server that you can customise in any way you want.&lt;/li&gt;
+&lt;li&gt;It’s ridiculously portable, and can even be used in a workflow when you’re fully offline, under battery power.&lt;/li&gt;
+&lt;li&gt;Unlike a VPS, the quality of your internet connection is of no consequence.&lt;/li&gt;
+&lt;li&gt;You can buy and own it for less than the cost of one years’ rental of a cheap VPS.&lt;br&gt;
+Geek cred.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;cons&quot;&gt;Cons &lt;a class=&quot;direct-link&quot; href=&quot;#cons&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;It’s another thing to carry, another thing to charge, another thing that can be damaged or lost.&lt;/li&gt;
+&lt;li&gt;You need to be willing to get pretty dirty with Linux command line&lt;/li&gt;
+&lt;li&gt;Back-up is your responsibility.&lt;/li&gt;
+&lt;li&gt;The Pi 4B can get pretty hot — best to bare in mind that if you need to stay mobile, it won’t appreciate working in a pocket or a bag for long periods.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;optional-extras&quot;&gt;Optional extras &lt;a class=&quot;direct-link&quot; href=&quot;#optional-extras&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;You can spec or modify these suckers until your heart’s content.&lt;/li&gt;
+&lt;li&gt;Tether it with USB-C for charging and network? Use Wi-Fi+battery and leave it in the bag? It’s up to you what works best.&lt;/li&gt;
+&lt;li&gt;Using a Raspberry Pi with the &lt;a href=&quot;https://medium.com/p/18f482f3a976&quot;&gt;VPS/VSCode method&lt;/a&gt; would be pretty knockout. You might want to use a higher spec Pi 4B with some decent memory though.&lt;/li&gt;
+&lt;li&gt;You might want to use the Raspberry Pi as your development process, and then the CD/Netlify method as the next step, when you want to deploy your code to stage or production.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;links&quot;&gt;Links &lt;a class=&quot;direct-link&quot; href=&quot;#links&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://threader.app/thread/1147555688933154816&quot;&gt;Thread of Brent Jackson’s USB-C Raspberry Pi 4B&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gist.github.com/pixelthing/2d9d335cdd3632210febf2d2a15b5365&quot;&gt;My set-up instructions to start-up a Pi in “offline” WiFi NAT mode, that you could connect your iPad to&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/ebYB9rVHaeg&quot;&gt;TechCraft set-up of a Raspberry Pi for a USB-C iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/YbvSS8MJm2s&quot;&gt;TechCraft set-up of a Raspberry Pi for a Lightning iPad&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>2019 iPad Webdev - Play.js</title>
+		<link href="https://example.com/posts/2020-01-ipad-webdev19-playjs/"/>
+		<updated>2020-01-05T23:00:00+01:00</updated>
+		<id>https://example.com/posts/2020-01-ipad-webdev19-playjs/</id>
+		<content type="html">&lt;blockquote&gt;
+&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;update-2020%E2%80%9305%E2%80%9328&quot;&gt;Update 2020–05–28 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020%E2%80%9305%E2%80%9328&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Play.js 2.0 has launched and it’s a full re-write with many of the small annoyances that I mention in this article having been fixed. Plus Vue.js is now supported out of the box. &lt;a href=&quot;https://apps.apple.com/us/app/play-js/id1423330822#?platform=ipad&quot;&gt;It’s well worth checking out&lt;/a&gt;, and there’s a short review in this &lt;a href=&quot;https://link.medium.com/8PoMYziJLcb&quot;&gt;2020 article&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://playdotjs.com/&quot;&gt;Using Play.js 1.14.1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://playdotjs.com/&quot;&gt;Play.js&lt;/a&gt; is so close to being my holy grail of iOS webdev apps, and if you are a React front-end dev, it might well be yours right now.&lt;/p&gt;
+&lt;p&gt;It’s not just an editor, it’s a fully integrated environment that lets you run Node.js processes and install Node.js modules. Yes really -- this is the app &lt;a href=&quot;https://blog.usejournal.com/fe-webdev-on-ipad-pro-2018-c55283f01e4c&quot;&gt;I have been imagining for several years&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Two windows of play.js, running the index.js in the left window, which spawned the internal browser in the right window with the results. And bottom left is the Node.js console.&lt;/p&gt;
+&lt;p&gt;But, it has some caveats. It curently has a specific focus on three audiences: Node.js app dev, React Native dev, and React webdev (which is currently marked as in &amp;quot;beta&amp;quot;). There is wiggle room to get some other projects working, but I haven’t had much success trying to get Gulp or Vue.js projects running.&lt;/p&gt;
+&lt;p&gt;The way Play.js works is a little unconventional if you’re used to working with front-end tooling in the command line, although if you’ve used &lt;a href=&quot;http://omz-software.com/pythonista/&quot;&gt;Pythonista&lt;/a&gt; on iOS it might be familiar. If your project has a package.json file and an index.js file in the project root -- you click on the play button, and the dependencies will download, and the script will run in an internal browser.&lt;/p&gt;
+&lt;p&gt;It’s almost magic.&lt;/p&gt;
+&lt;p&gt;Here’s the magic in action. Press &amp;quot;play&amp;quot; and the app installs the modules and runs index.js&lt;/p&gt;
+&lt;p&gt;This is running front-end tooling locally on your iPad without any use of a remote or Virtual Private Server (VPS), and without having to limit yourself to developing a flat file site. For this reason alone (plus if you want to develop server-side node apps), play.js has quite a faithful following.&lt;/p&gt;
+&lt;p&gt;The default project menu, before you expand it. do you know which is the right React project to run?&lt;/p&gt;
+&lt;h3 id=&quot;in-practice&quot;&gt;In practice &lt;a class=&quot;direct-link&quot; href=&quot;#in-practice&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I have to admit that although I do almost every type of Front-End development, building production ready projects in React remains a blind side for me, so my usage of the app is a little on the surface level. I’ll come back with a new review when it supports VueX ;-)&lt;/p&gt;
+&lt;p&gt;But it essentially does what it says on the tin. The test React projects that I’ve checked out from GitHub with Working Copy are easily accessed in Play.js with &amp;quot;edit-in-place&amp;quot;. If the index.js file is in the root and it has a package.json file, pressing play installs the modules and runs the Node.js tool chain.&lt;/p&gt;
+&lt;p&gt;The file sidebar. The top directory with &amp;quot;..&amp;quot; goes up a level.&lt;/p&gt;
+&lt;p&gt;The file sidebar is esoteric by design, and having &amp;quot;back to parent directory&amp;quot; buttons as ellipsis’, it would probably appeal more to Linux junkies than strict &lt;a href=&quot;https://developer.apple.com/design/human-interface-guidelines/&quot;&gt;iOS HIG&lt;/a&gt; followers -- but that’s ok.&lt;/p&gt;
+&lt;p&gt;Apps that have their own file list style still have their quirks. When you add new files an folders, there is no affordance that they have been successfully added -- no toast, no scrolling the file list to them, no opening them for editing. In one session, I eventually found 27 new empty files I’d created without knowing, that I would have seen if I wasn’t working in a large project that required you to scroll to see files beginning with &amp;quot;N&amp;quot; for &amp;quot;New_file&amp;quot;. Small stuff, easily fixed (I hope!).&lt;/p&gt;
+&lt;p&gt;The editor has come a very long way in a year. Building a code editor is always a case of re-inventing the wheel one spoke at a time, but it has progressed from one where the undo function was actually scrambling code for me, to one which feels like it’s aiming for the best of the best. Symbol auto-suggestion seems solid, as does tabbing and syntax colouring. There’s work to be done -- it’s not my favourite code editor on the iPad (yet) -- but the rate of updates leaves no doubt that more is coming.&lt;/p&gt;
+&lt;p&gt;The traffic-light close/minimise buttons (echoing window controls in OSX) make me smile, but I wonder about the utility of any buttons you have to click twice -- once to enlarge them, a second time to use them.&lt;/p&gt;
+&lt;p&gt;The Git controls in the sidebar. Also note the traffic light buttons.&lt;/p&gt;
+&lt;p&gt;Unusually for almost any iOS code editor (please tell me if I’m wrong), it has great Git support, allowing you commit and push from within the editor. The benefit of which becomes apparent next.&lt;/p&gt;
+&lt;p&gt;Leaving the app will sometimes have iOS killing it from memory -- mainly due to memory pressure I guess. Which is a shame not just because Play.js has to then reload when you return to it, but often because it can’t auto-load the project you left it with. So you have to navigate to the project and file you were working on. The answer to this is of course to try and stay in the app and not leave it-- and the author has done amazing work with adding consoles, browsers and Git support to reduce the need to leave the app.&lt;/p&gt;
+&lt;p&gt;The in-app browser (that cleverly opens itself in a new window docked to the side of the code) doesn’t have any special functions apart from having a button to load the same page in an external browser (Safari). I wish we could specify the browser to load the results in -- being able to use &lt;a href=&quot;https://apps.pdyn.net/inspect/&quot;&gt;Inspect Browser&lt;/a&gt; would instead would help a great deal with debugging.&lt;/p&gt;
+&lt;p&gt;The project/app list (default view).&lt;/p&gt;
+&lt;p&gt;If I’m honest, the most confusing part for me is the project menu. By default it’s a row of unlabelled icons. You can optionally expand them to be a grid of labelled icons. I thought I was colour and icon orientated, but I still can’t get used to remembering if it was the pink or the red React project I wanted to load.&lt;/p&gt;
+&lt;p&gt;The last thing to mention is that all the example React projects in the app have the code commented that watching has been disabled due to memory constraints. Having a tool chain that isn’t able to live-reload code when a change occurs is a pain -- but I wonder if this is set because Play.js follows the iOS convention of not having a &amp;quot;save&amp;quot; button, but auto-saving on every key change. Certainly, adding watchers back in crashes the app after some quick code edits. I wonder if this is why GoCoEdit is the only IDE that does live-preview -- because it’s also the only IDE that asks you to physically click &amp;quot;save&amp;quot;, so isn’t trying to update all the time you have your hands on the keyboard.&lt;/p&gt;
+&lt;h3 id=&quot;pros&quot;&gt;Pros &lt;a class=&quot;direct-link&quot; href=&quot;#pros&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;One iPad is all you need to run and develop your web React project. No servers, no cables, no extra computers. Online or offline.&lt;/li&gt;
+&lt;li&gt;And you didn’t even have to type npm i&lt;/li&gt;
+&lt;li&gt;With built in Git, you can pull and push changes without leaving the app. I can’t think of another iOS native IDE that does that.&lt;/li&gt;
+&lt;li&gt;It’s definitely trying to look at a traditional command line bound problem and solve it in an innovative way.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;cons&quot;&gt;Cons &lt;a class=&quot;direct-link&quot; href=&quot;#cons&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The type of projects you can use it for are narrow in breadth (but they are very popular types of project -- React native, React web, Node.js)&lt;/li&gt;
+&lt;li&gt;Still developing in lots of ways (functionality, UI, stability). But high goals.&lt;/li&gt;
+&lt;li&gt;Probably not as ultimately flexible as a real Linux server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;optional-extras&quot;&gt;Optional extras &lt;a class=&quot;direct-link&quot; href=&quot;#optional-extras&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Add a &lt;a href=&quot;https://medium.com/p/ed9eb66579ec&quot;&gt;continuous deployment (CD) workflow with Netlify&lt;/a&gt; to deploy to an external staging server once you’re happy with your work, just by committing your changes with a branch (or doing a merge). And you can even do that in Play.js itself, you don’t even need to fire up a Got client.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;links&quot;&gt;Links &lt;a class=&quot;direct-link&quot; href=&quot;#links&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Link to Play.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>2019 iPad Webdev - GoCoEdit</title>
+		<link href="https://example.com/posts/2020-01-ipad-webdev19-panic-coda/"/>
+		<updated>2020-01-05T23:00:00+01:00</updated>
+		<id>https://example.com/posts/2020-01-ipad-webdev19-panic-coda/</id>
+		<content type="html">&lt;blockquote&gt;
+&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://gocoedit.app/&quot;&gt;Using GoCoEdit 16.1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;What an extraordinary conundrum GoCoEdit is.&lt;br&gt;
+It’s about as far from a conventional iOS app as it’s possible to make, but it is one of the most complete native IDEs -- in terms of features -- there is on the platform.&lt;br&gt;
+In truth it’s a clever combination of hundreds of hours of work and several different OSS libraries -- primarily Codemirror, a mature JS based code editor (and don’t snigger, it’s used in Chrome &amp;amp; Firefox devtools, plus Brackets, Codeanywhere and Jupyter).&lt;/p&gt;
+&lt;p&gt;GoCoEdit’s interesting take on UI. Are those buttons wrapped CSS flexbox?&lt;br&gt;
+This OSS base is possibly one of the reasons the app feels so un-iPad-like. The file-list sidebar looks more like a Java app than an iPadOS one, with very few gestures anywhere (there’s no swiping items in lists, for example), dialogs and menu items are in unusual, uppercase, non-rounded rectangles, and every piece of UI is in a very un-iOS monospace font. I almost discarded it as a hobby project before I gave it a chance, because I mistakenly interpreted &amp;quot;different&amp;quot; as &amp;quot;amateurish&amp;quot;.&lt;br&gt;
+But I’m glad I did give it some time, because it has masses of thought put into it’s workflow, and lots of hidden depths.&lt;/p&gt;
+&lt;p&gt;Despite not looking like the usual sidebar, it does support OS level file drag and drop, allowing you to copy folders directly into (and out of) it. Dragging folders from the &amp;quot;files&amp;quot; app into the file list works fine and you can drag them into the &amp;quot;external&amp;quot; heading, but they don’t seem to be &amp;quot;edit in place&amp;quot; because if I make any changes, Working Copy doesn’t recognise them, so the files must have been copied -- not linked? It could just be a mistake that you can drag them into &amp;quot;external&amp;quot; at all.&lt;br&gt;
+&amp;quot;Edit in place&amp;quot; is definitely available in the &amp;quot;open from&amp;quot; option at the top of the file sidebar, and it correctly allows me to edit files in a checked-out Working Copy repo and commit/push any changes back (In WC, not in GoCoEdit itself), painlessly.&lt;/p&gt;
+&lt;p&gt;GoCoEdit’s auto-suggest is spot on, here offering the correct symbols to a Vue.js object.&lt;br&gt;
+It also has keyboard shortcuts that have been thoroughly considered to keep your hands away from the screen, as well as a code snippet system that lets you speed up repetitive tasks. On top of that it supports Siri Shortcuts, including having it’s own x-callback hooks. This is an app that is obviously in heavy use by the developer, it seems to scratch so many specific itches, it can only be so.&lt;br&gt;
+The editor interface itself is one of the most full-featured anywhere on iOS. It has auto-complete that is not only accurate (closing the correct tag for instance) but auto-suggests from symbols in the page/script/style sheet you’re editing. Line breaks auto-tab the next line in a useful and predictable manner. The extra symbol keyboard is one of the most comprehensive and easiest to use, and has a mysterious &amp;quot;dot&amp;quot; in the middle that acts like the iOS13 draggable caret -- hold down and drag your finger and the text selection caret moves with your finger, double tap it and it selects the line.&lt;/p&gt;
+&lt;p&gt;That does bring us to text selection, which is closer to the custom style in Panic Coda than to the new standard style in iOS13. Holding your finger down on any piece of text brings up a rectangular magnified loupe of the text. The blue bars at the start and end of a text selection don’t have the customary dots on them (an iOS13 problem?), and the context pop-over when you select text doesn’t have a &amp;quot;select all&amp;quot; option, a weird omission. But’s easier to think that this is a keyboard driven app -- selecting a whole doc of code is easier with command-A.&lt;br&gt;
+Unusually for any iOS app, GoCo doesn’t continuously auto-save but requires you to tap &amp;quot;save&amp;quot; to commit a change to it (either by command-s or by tapping the tick-mark in the top right -- yellow is unsaved, green is saved).&lt;/p&gt;
+&lt;p&gt;GoCoEdit editing a project directly from Working Copy, with live preview in Safari on the right.&lt;br&gt;
+GoCoEdit has a built in preview flat-file web server, and also offers an internal browser to show the results of your code. The in-app browser is modal, so it takes over the screen, but closing it leaves you back exactly where you left the editor (not always the case in some editors). The browser has a very limited responsive view, and a console that at least displays script line references and shallow JS objects -- so not bad at all.&lt;br&gt;
+But GoCoEdit also lets you choose Safari or Chrome to preview in as well, and this is where it gets really interesting. Many iOS code editors can start up an internal web server that other browsers can use, but GoCoEdit uses the standard port 80 -- not random ports as with most other apps. This makes it easier to test oAuth based apps -- which often require a predetermined host and port, and is the single feature that has made it my go-to editor for the moment.&lt;/p&gt;
+&lt;p&gt;GoCoEdit previewing a page in Safari on the right. Note that the app’s action menu shows &amp;quot;Safari&amp;quot; with a lightning symbol, indicating that it’s in live-preview mode, so will refresh on every save.&lt;br&gt;
+The sugar on the top is the extra option of live preview. If you dock Safari to the side of GoCoEdit, you can makes changes to the code, and every time you hit save, the browser automatically reloads the page. If you keep Safari in the slide-over sheet, every time you hit save, Safari sweeps in from the right as it’s re-loading -- giving you instand feedback without stealing your screen space. If you switch to another app and then return to GoCoEdit, you will be greeted with a red toast saying &amp;quot;live preview disabled&amp;quot;, but all it takes is hitting the &amp;quot;Safari&amp;quot; button in the top right action menu and you’re connected again.&lt;br&gt;
+I love this live-preview feature.&lt;br&gt;
+Of course, Safari has no devtools, so I’d love to see an option in GoCoEdit to have the same behaviour with Inspect Browser.&lt;/p&gt;
+&lt;p&gt;The custom button row in GoCoEdit. The centre dot moves the text selection carat, similar to a how a ThinkPad &amp;quot;pointing stick&amp;quot; works.&lt;br&gt;
+I find myself reminded of the early days of Sublime Text, where the user interface -- especially, as here, the file sidebar-- was so un Mac-like it made me cringe, but the utility of the application was undeniable.&lt;br&gt;
+If I had a 12.9&amp;quot; iPad I’d be tempted to be greedy and ask for vertical split panes so I could see two files at the same time (or multi-window usage as Textastic is working on), even if here on my 10.5&amp;quot;, that would be a crazy idea. But the app is that productive that I’m almost beyond complaining about the basics and I’m starting to ask for more features. Multi-file search and replace would be good though.&lt;br&gt;
+Development of the app seems to be continuing with several updates since iOS 13, so I hope it will continue apace. But this is heroic effort from yet another lone talented developer (so give them a break). The approach taken in this app, of leaning on OSS libraries and bridging them with custom code has allowed it’s feature count to leapfrog some other IDEs in the short term (take tag-closing or auto-suggest as an example), although as iOS11/12/13 has proved to many apps, staying away from the standard UIKit way of building the interface can quickly leave you behind when updates break your code. I hope that’s not the case here, there is some real pro-level functionality in this app, mixed in with some of the latest APIs (iOS13 &amp;quot;edit in place&amp;quot;, drag and drop, Siri Shortcuts).&lt;/p&gt;
+&lt;p&gt;It’s well worth the $€£10. And I don’t often say this, but leave a good review on the app store, it seems to be lacking a bit of exposure compared with the other IDEs.&lt;/p&gt;
+&lt;p&gt;I’m going to give it a go -- for a source controlled flat file project, it seems to be the whole package. It’s just… idiosyncratic.&lt;/p&gt;
+&lt;h3 id=&quot;pros&quot;&gt;Pros &lt;a class=&quot;direct-link&quot; href=&quot;#pros&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Integrated terminal&lt;/li&gt;
+&lt;li&gt;Internal server &amp;amp; browser for flat file preview, with live preview to external browsers.&lt;/li&gt;
+&lt;li&gt;Access to remote cloud services (dropbox, Google Drive, Onedrive, FTP/SFTP)&lt;/li&gt;
+&lt;li&gt;&amp;quot;edit in place&amp;quot; making it compatible with Git clients like Working Copy, and drag’n’drop copying in and out of the file list.&lt;br&gt;
+19 common themes (molokai, material, solarized, etc, plus the ability to make custom ones)&lt;br&gt;
+Multi-caret editing&lt;br&gt;
+Good tag completion and auto-suggesting from symbols.&lt;br&gt;
+Siri shortcuts with x-callback&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;cons&quot;&gt;Cons &lt;a class=&quot;direct-link&quot; href=&quot;#cons&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;quot;Unusual&amp;quot; user interface design.&lt;/li&gt;
+&lt;li&gt;A little slow at returning to the foreground after iOS has killed it in the background.&lt;/li&gt;
+&lt;li&gt;No multi-file search &amp;amp; replace.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;links&quot;&gt;Links &lt;a class=&quot;direct-link&quot; href=&quot;#links&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Link to GoCoEdit website&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>2019 iPad Webdev - Panic Coda/AWS</title>
+		<link href="https://example.com/posts/2020-01-ipad-webdev19-gocoedit/"/>
+		<updated>2020-01-05T23:00:00+01:00</updated>
+		<id>https://example.com/posts/2020-01-ipad-webdev19-gocoedit/</id>
+		<content type="html">&lt;blockquote&gt;
+&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://gocoedit.app/&quot;&gt;Using GoCoEdit 16.1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;What an extraordinary conundrum GoCoEdit is.&lt;/p&gt;
+&lt;p&gt;It’s about as far from a conventional iOS app as it’s possible to make, but it is one of the most complete native IDEs -- in terms of features -- there is on the platform.&lt;/p&gt;
+&lt;p&gt;In truth it’s a clever combination of hundreds of hours of work and several different OSS libraries -- primarily &lt;a href=&quot;https://codemirror.net/&quot;&gt;Codemirror&lt;/a&gt;, a mature JS based code editor (and don’t snigger, it’s used in Chrome &amp;amp; Firefox devtools, plus &lt;a href=&quot;http://brackets.io/&quot;&gt;Brackets&lt;/a&gt;, &lt;a href=&quot;https://codeanywhere.com/&quot;&gt;Codeanywhere&lt;/a&gt; and &lt;a href=&quot;https://jupyter.org/&quot;&gt;Jupyter&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;GoCoEdit’s interesting take on UI. Are those buttons wrapped CSS flexbox?&lt;/p&gt;
+&lt;p&gt;This OSS base is possibly one of the reasons the app feels so un-iPad-like. The file-list sidebar looks more like a Java app than an iPadOS one, with very few gestures anywhere (there’s no swiping items in lists, for example), dialogs and menu items are in unusual, uppercase, non-rounded rectangles, and every piece of UI is in a very un-iOS monospace font. I almost discarded it as a hobby project before I gave it a chance, because I mistakenly interpreted &amp;quot;different&amp;quot; as &amp;quot;amateurish&amp;quot;.&lt;/p&gt;
+&lt;p&gt;But I’m glad I did give it some time, because it has masses of thought put into it’s workflow, and lots of hidden depths.&lt;/p&gt;
+&lt;p&gt;Despite not looking like the usual sidebar, it does support OS level file drag and drop, allowing you to copy folders directly into (and out of) it. Dragging folders from the &amp;quot;files&amp;quot; app into the file list works fine and you can drag them into the &amp;quot;external&amp;quot; heading, but they don’t seem to be &amp;quot;edit in place&amp;quot; because if I make any changes, Working Copy doesn’t recognise them, so the files must have been copied -- not linked? It could just be a mistake that you can drag them into &amp;quot;external&amp;quot; at all.&lt;/p&gt;
+&lt;p&gt;&amp;quot;Edit in place&amp;quot; is definitely available in the &amp;quot;open from&amp;quot; option at the top of the file sidebar, and it correctly allows me to edit files in a checked-out Working Copy repo and commit/push any changes back (In WC, not in GoCoEdit itself), painlessly.&lt;/p&gt;
+&lt;p&gt;GoCoEdit’s auto-suggest is spot on, here offering the correct symbols to a Vue.js object.&lt;/p&gt;
+&lt;p&gt;It also has keyboard shortcuts that have been thoroughly considered to keep your hands away from the screen, as well as a code snippet system that lets you speed up repetitive tasks. On top of that it supports Siri Shortcuts, including having it’s own x-callback hooks. This is an app that is obviously in heavy use by the developer, it seems to scratch so many specific itches, it can only be so.&lt;/p&gt;
+&lt;p&gt;The editor interface itself is one of the most full-featured anywhere on iOS. It has auto-complete that is not only accurate (closing the correct tag for instance) but auto-suggests from symbols in the page/script/style sheet you’re editing. Line breaks auto-tab the next line in a useful and predictable manner. The extra symbol keyboard is one of the most comprehensive and easiest to use, and has a mysterious &amp;quot;dot&amp;quot; in the middle that acts like the iOS13 draggable caret -- hold down and drag your finger and the text selection caret moves with your finger, double tap it and it selects the line.&lt;/p&gt;
+&lt;p&gt;That does bring us to text selection, which is closer to the custom style in Panic Coda than to the new standard style in iOS13. Holding your finger down on any piece of text brings up a rectangular magnified loupe of the text. The blue bars at the start and end of a text selection don’t have the customary dots on them (an iOS13 problem?), and the context pop-over when you select text doesn’t have a &amp;quot;select all&amp;quot; option, a weird omission. But’s easier to think that this is a keyboard driven app -- selecting a whole doc of code is easier with command-A.&lt;/p&gt;
+&lt;p&gt;Unusually for any iOS app, GoCo doesn’t continuously auto-save but requires you to tap &amp;quot;save&amp;quot; to commit a change to it (either by command-s or by tapping the tick-mark in the top right -- yellow is unsaved, green is saved).&lt;/p&gt;
+&lt;p&gt;GoCoEdit editing a project directly from Working Copy, with live preview in Safari on the right.&lt;/p&gt;
+&lt;p&gt;GoCoEdit has a built in preview flat-file web server, and also offers an internal browser to show the results of your code. The in-app browser is modal, so it takes over the screen, but closing it leaves you back exactly where you left the editor (not always the case in some editors). The browser has a very limited responsive view, and a console that at least displays script line references and shallow JS objects -- so not bad at all.&lt;/p&gt;
+&lt;p&gt;But GoCoEdit also lets you choose Safari or Chrome to preview in as well, and this is where it gets really interesting. Many iOS code editors can start up an internal web server that other browsers can use, but GoCoEdit uses the standard port 80 -- not random ports as with most other apps. This makes it easier to test oAuth based apps -- which often require a predetermined host and port, and is the single feature that has made it my go-to editor for the moment.&lt;/p&gt;
+&lt;p&gt;GoCoEdit previewing a page in Safari on the right. Note that the app’s action menu shows &amp;quot;Safari&amp;quot; with a lightning symbol, indicating that it’s in live-preview mode, so will refresh on every save.&lt;/p&gt;
+&lt;p&gt;The sugar on the top is the extra option of live preview. If you dock Safari to the side of GoCoEdit, you can makes changes to the code, and every time you hit save, the browser automatically reloads the page. If you keep Safari in the slide-over sheet, every time you hit save, Safari sweeps in from the right as it’s re-loading -- giving you instand feedback without stealing your screen space. If you switch to another app and then return to GoCoEdit, you will be greeted with a red toast saying &amp;quot;live preview disabled&amp;quot;, but all it takes is hitting the &amp;quot;Safari&amp;quot; button in the top right action menu and you’re connected again.&lt;/p&gt;
+&lt;p&gt;I love this live-preview feature.&lt;/p&gt;
+&lt;p&gt;Of course, Safari has no devtools, so I’d love to see an option in GoCoEdit to have the same behaviour with Inspect Browser.&lt;/p&gt;
+&lt;p&gt;The custom button row in GoCoEdit. The centre dot moves the text selection carat, similar to a how a ThinkPad &amp;quot;pointing stick&amp;quot; works.&lt;/p&gt;
+&lt;p&gt;I find myself reminded of the early days of Sublime Text, where the user interface -- especially, as here, the file sidebar-- was so un Mac-like it made me cringe, but the utility of the application was undeniable.&lt;/p&gt;
+&lt;p&gt;If I had a 12.9&amp;quot; iPad I’d be tempted to be greedy and ask for vertical split panes so I could see two files at the same time (or multi-window usage as Textastic is working on), even if here on my 10.5&amp;quot;, that would be a crazy idea. But the app is that productive that I’m almost beyond complaining about the basics and I’m starting to ask for more features. Multi-file search and replace would be good though.&lt;/p&gt;
+&lt;p&gt;Development of the app seems to be continuing with several updates since iOS 13, so I hope it will continue apace. But this is heroic effort from yet another lone talented developer (so give them a break). The approach taken in this app, of leaning on OSS libraries and bridging them with custom code has allowed it’s feature count to leapfrog some other IDEs in the short term (take tag-closing or auto-suggest as an example), although as iOS11/12/13 has proved to many apps, staying away from the standard UIKit way of building the interface can quickly leave you behind when updates break your code. I hope that’s not the case here, there is some real pro-level functionality in this app, mixed in with some of the latest APIs (iOS13 &amp;quot;edit in place&amp;quot;, drag and drop, Siri Shortcuts).&lt;/p&gt;
+&lt;p&gt;It’s well worth the $€£10. And I don’t often say this, but leave a good review on the app store, it seems to be lacking a bit of exposure compared with the other IDEs.&lt;/p&gt;
+&lt;p&gt;I’m going to give it a go -- for a source controlled flat file project, it seems to be the whole package. It’s just… idiosyncratic.&lt;/p&gt;
+&lt;h3 id=&quot;pros&quot;&gt;Pros &lt;a class=&quot;direct-link&quot; href=&quot;#pros&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Integrated terminal&lt;/li&gt;
+&lt;li&gt;Internal server &amp;amp; browser for flat file preview, with live preview to external browsers.&lt;/li&gt;
+&lt;li&gt;Access to remote cloud services (dropbox, Google Drive, Onedrive, FTP/SFTP)&lt;/li&gt;
+&lt;li&gt;&amp;quot;edit in place&amp;quot; making it compatible with Git clients like Working Copy, and drag’n’drop copying in and out of the file list.&lt;/li&gt;
+&lt;li&gt;19 common themes (molokai, material, solarized, etc, plus the ability to make custom ones)&lt;/li&gt;
+&lt;li&gt;Multi-caret editing&lt;/li&gt;
+&lt;li&gt;Good tag completion and auto-suggesting from x symbols.&lt;/li&gt;
+&lt;li&gt;Siri shortcuts with x-callback&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;cons&quot;&gt;Cons &lt;a class=&quot;direct-link&quot; href=&quot;#cons&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;quot;Unusual&amp;quot; user interface design.&lt;/li&gt;
+&lt;li&gt;A little slow at returning to the foreground after iOS has killed it in the background.&lt;/li&gt;
+&lt;li&gt;No multi-file search &amp;amp; replace.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;links&quot;&gt;Links &lt;a class=&quot;direct-link&quot; href=&quot;#links&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://gocoedit.app/&quot;&gt;Link to GoCoEdit website&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>2019 iPad Webdev - CD with Netlify</title>
+		<link href="https://example.com/posts/2020-01-ipad-webdev19-cd-netlify/"/>
+		<updated>2020-01-05T23:00:00+01:00</updated>
+		<id>https://example.com/posts/2020-01-ipad-webdev19-cd-netlify/</id>
+		<content type="html">&lt;blockquote&gt;
+&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For web developers using an iPad, it’s best to think of this method as deploying your site to a VPS (virtual private server, a remote Linux account that you rent), without all that command line system administration nonsense. &lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify.com&lt;/a&gt; can do the things your iPad is bad at (Node.js tool chains, web serving), without you having to ever SSH to a server.&lt;/p&gt;
+&lt;p&gt;The process of getting code to pixels can be summed up as:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;checking out a repo and editing it on your iPad&lt;/li&gt;
+&lt;li&gt;pushing the changes on you iPad back to GitHub/GitLab/BitBucket/etc&lt;/li&gt;
+&lt;li&gt;somewhere in the cloud, the new change in a your repo triggers your tool chain to run and deploy the results to a web server.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Netlify deploy status (in Safari -- on left) and Inspect Browser showing the deployed site (right)&lt;/p&gt;
+&lt;p&gt;What we’re using (or &amp;quot;creatively&amp;quot; mis-using) is a Continuous Deployment (CD) system. CD is used to take the pain out of deploying to a staging or production server, the idea being that if the deploy is a simple switch – instead of a long email requesting a sys-admin’s time – there’s minimal friction stopping your site from being kept up-to-date and fresh.&lt;/p&gt;
+&lt;p&gt;Netlify (among other services) wrap this CD service up with a web server and CDN, making the whole process as simple as signing up for one free (within limits) service.&lt;/p&gt;
+&lt;p&gt;Although CD is generally used at a specific milestone – for example you’ve finished fiddling with the dev server and want to send it to staging – there’s no reason why we can’t use it for the fiddling part. In effect, Netlify can be our development server.&lt;/p&gt;
+&lt;h3 id=&quot;how-to&quot;&gt;How to &lt;a class=&quot;direct-link&quot; href=&quot;#how-to&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;(using Netlify, but other CD providers would be similar)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Have your project in one of the hosted Git services that Netlify works with (eg, GitHub, GitLab, BitBucket)&lt;/li&gt;
+&lt;li&gt;Sign-up to Netlify, connect your new account to the hosted Git provider.&lt;/li&gt;
+&lt;li&gt;In Netlify, select the project from your Git provider that you want to connect, the branch whose changes will trigger the deploy, the command line to run (eg gulp build), and the resulting folder of files to deploy to the web server.&lt;/li&gt;
+&lt;li&gt;Back on your iPad, check out your project with your Git client (eg Working Copy), and either edit the files in that, or in a code editor.&lt;/li&gt;
+&lt;li&gt;When you’ve made a change you want to see the result of, commit and push it. This will trigger Netlify to run a deploy.&lt;/li&gt;
+&lt;li&gt;Monitor your deploy in your Netlify account in Safari. Full deploy logs are available there for debugging.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Build settings for a project in Netlify&lt;/p&gt;
+&lt;h3 id=&quot;in-practice&quot;&gt;In practice &lt;a class=&quot;direct-link&quot; href=&quot;#in-practice&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I liked this method a lot. It was particularly good if you’re really mobile with only a sporadic internet connection – I found myself making small gulpfile changes in Working Copy on my iPhone whilst travelling with my family on a bus, knowing that if I get 30 seconds in the next few miles, I could check if the deploy worked. You can change a line of code locally, commit and push and know some server somewhere isn’t reliant on your connection to it to do it’s job.&lt;/p&gt;
+&lt;p&gt;Getting the first deploy on the server can take a while, but subsequent deploys are very quick; if not as instant as a local installation, they are generally closer to the speed of your toolchain rather than any latencies between servers.&lt;/p&gt;
+&lt;p&gt;However it still adds one more step to a round trip. If I were running Gulp locally, it would be re-compiling as soon as I hit save. With the CD method here, you additionally need to commit (with a message unless you’re an animal) and push before you have the momentary wait to see the results.&lt;/p&gt;
+&lt;p&gt;But the biggest problem I found was juggling all these elements constantly. I ended up with using Working Copy to push a change (and so trigger a deploy) and Textastic or GoCoEdit as the code editor, editing the files in Working Copy. On top of that I had two tabs or windows of Safari, one for viewing the resulting website, and one open with the Netlify deploy status, so I could be sure the deploy had succeeded and I was looking at the right version of the site.&lt;/p&gt;
+&lt;p&gt;Working Copy (left), Textastic (center), two Safari windows (in slide-over -- right) with the deployed site and deploy status.&lt;/p&gt;
+&lt;p&gt;I ended up with the code editor taking the most screen space, Working Copy docked to the left, and Safari in the slide-over window on the right so I could optionally view or dismiss it, and so I could rotate between the two Safari windows. It sort of worked – but the cognitive load of four windows and how and when to view them made me miss the simplicity of old-fashioned windows. Removing one element would make it so much easier – if I could push direct from any iOS editor without having to return to the Git client (nope), or if Netlify had an app that could just show a notification every time it deployed (nope). When I could, I just used the code editor in Working Copy – if you’re doing some bug fixing and need a quick turn-around, I’d recommend it, but it’s not quite the right IDE for long coding projects (not yet, anyway?).&lt;/p&gt;
+&lt;h3 id=&quot;pros&quot;&gt;Pros &lt;a class=&quot;direct-link&quot; href=&quot;#pros&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;We get a server that can run our tooling and web server, all in one free (!) service.&lt;/li&gt;
+&lt;li&gt;We never have to configure or upgrade that server (or even need to know how to)&lt;/li&gt;
+&lt;li&gt;We have a very simple and reliable way of pushing new code to the server.&lt;/li&gt;
+&lt;li&gt;Your connection to the internet doesn’t need to be super reliable or fast. Pushing changes to GitHub generally involves relatively small numbers of text files, and deploy progress can be monitored only when you choose to, as it all happens in the cloud.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;cons&quot;&gt;Cons &lt;a class=&quot;direct-link&quot; href=&quot;#cons&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;You have to be online, at least enough to push Git commits.&lt;/li&gt;
+&lt;li&gt;Your project needs to be a repo in GitHub/GitLab/BitBucket.&lt;/li&gt;
+&lt;li&gt;You have to be ok with regularly pushing changes to a branch just to see the results of them, where you might normally be refining them before you push.&lt;/li&gt;
+&lt;li&gt;Every code round-trip needs one additional step -- to commit and push the change.&lt;/li&gt;
+&lt;li&gt;Not a responsive workflow if you’re constantly updating large files.&lt;/li&gt;
+&lt;li&gt;As mentioned already, there’s quite a lot of windows to control, you need a code editor and a Git client on the iPad, and need at least two browser tabs for the Netlify deploy status and the deployed site.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;optional-extras&quot;&gt;Optional extras &lt;a class=&quot;direct-link&quot; href=&quot;#optional-extras&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;You could add a CD process like Netlify on top of the &lt;a href=&quot;https://medium.com/p/18f482f3a976&quot;&gt;VPS/Visual Code method&lt;/a&gt;, where pushing a commit directly in VSCode triggers a deploy, but all the benefits of Netlify being simple would disappear as it would already be on top of managing your own server. You’d only want to do this if you wanted the server that VSCode sits on to act as the development server, and CD to be used more conventionally, ie to deploy to staging/prod only once you’re happy for your dev code to be demonstrated to a wider audience.&lt;/li&gt;
+&lt;li&gt;If you’re looking for a simple, reliable, secure blog workflow, this seems to be the perfect method to write your content in a markdown editor like &lt;a href=&quot;https://ia.net/writer&quot;&gt;iA Writer&lt;/a&gt; and use a framework like &lt;a href=&quot;https://gohugo.io/&quot;&gt;Hugo.js&lt;/a&gt; to publish it. You can even collaborate with others on an &amp;quot;editing&amp;quot; branch in Git before you merge with the branch that would trigger the publishing to Netlify.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;links&quot;&gt;Links &lt;a class=&quot;direct-link&quot; href=&quot;#links&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/PaulGowder/status/1200927136594513920&quot;&gt;Paul Gowder enthusing about this method on Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>FE webdev on iPad (2019)</title>
+		<link href="https://example.com/posts/2020-01-ipad-webdev19/"/>
+		<updated>2020-01-04T23:00:00+01:00</updated>
+		<id>https://example.com/posts/2020-01-ipad-webdev19/</id>
+		<content type="html">&lt;blockquote&gt;
+&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;What a difference a year makes.&lt;/p&gt;
+&lt;p&gt;Last year I lead the 2018 round-up by saying that I could not recommend iOS for doing front-end web-dev unless your project fitted a very narrow list of criteria. A year later and that list of use-cases is not only wider, but the work you can get done is far deeper. We’re getting there.&lt;/p&gt;
+&lt;p&gt;What has changed has been a combination of things. iPadOS has – for sure – solved a lot of the fundamental problems that previously infuriated the simplest of workflows. But apps (almost exclusively one-person indie apps) have been incrementally developing to fill the gaps, and the innovative workflows discovered by iPad users have been pretty amazing.&lt;/p&gt;
+&lt;p&gt;Don’t be fooled – if I was coming to this platform for the first time as a professional web developer, I would still find iOS extremely limited and frustrating. But having seen where we’ve come from, I’m much more positive about the future.&lt;/p&gt;
+&lt;p&gt;This is a journey that – as yet – still has no clear destination. But it’s getting more pleasant by the month.&lt;/p&gt;
+&lt;p&gt;GoCoEdit and a Brydge 10.5&amp;quot; (the best keyboard for using on your lap)&lt;/p&gt;
+&lt;h3 id=&quot;hardware&quot;&gt;Hardware &lt;a class=&quot;direct-link&quot; href=&quot;#hardware&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In 2019, the regular iPads have essentially jumped a tier. All non-pro iPads are now different price-point compromises of the old 10.5&amp;quot; pro, with out-of-the-box keyboard and pen support. The 2019 iPad Air in particular is a Pro in all but name, but they are all &amp;quot;real-work&amp;quot; ready.&lt;/p&gt;
+&lt;p&gt;In the iPad Pro range, the top-end has remained unchanged. Or has it? Because the promised USB-C ecosystem is finally emerging and has collided with the new iPadOS. You can now plug your iPad into 5k monitors, hard drives, mice, microphones, USB-sticks, Raspberry Pis, plus a multitude of cheap, powerful, compact power supplies. And with either store-shelf or iPad-bespoke hubs, even with several peripherals at the same time. Your year-old iPad Pro had a free hardware upgrade in 2019.&lt;/p&gt;
+&lt;p&gt;Felt iPad carry case with dongles (HDMI, USB3.0, SD card) and Moko foldable stand.&lt;/p&gt;
+&lt;h3 id=&quot;ios-is-forked-for-the-ipad&quot;&gt;iOS is forked for the iPad &lt;a class=&quot;direct-link&quot; href=&quot;#ios-is-forked-for-the-ipad&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;iPadOS13 made the biggest difference to our ability to get things done this year. We’ve already talked about how the USB-C IO upgrades were nice for those with the latest iPad Pros. And the files app finally understands that you need to get files on and off your iPad in multiple ways. So many smaller details have made life easier for a developer, from the icons not re-arranging on rotating the screen, to Siri shortcuts being supercharged, to no-lag text selection, to keyboard commands everywhere.&lt;/p&gt;
+&lt;p&gt;But the biggest plus is the new Safari, not just purely for it’s &amp;quot;desktop class browsing&amp;quot; but because of the multitude of online tools that this has enabled. From &lt;a href=&quot;https://www.atlassian.com/software/jira&quot;&gt;Jira&lt;/a&gt; and &lt;a href=&quot;https://analytics.google.com/&quot;&gt;Google Analytics&lt;/a&gt; to &lt;a href=&quot;https://glitch.com/&quot;&gt;glitch.com&lt;/a&gt; and the hosted version of Visual Code, it’s made the iPad exponentially more capable. It’s like suddenly getting 80% of a ChromeOS tablet on top of your iPad.&lt;/p&gt;
+&lt;p&gt;Not everything is super rosey. The multi-tasking is powerful but cognitively taxing. The sandboxing means that apps still have to jump through crazy hoops to work together in a logical way. Background processes are still killed ridiculously early. iPad Pro RAM is unrealistically low compared to the cheapest of laptops. The command line is still &lt;em&gt;verboten&lt;/em&gt;. App Store rules are still vague and punitive.&lt;/p&gt;
+&lt;p&gt;A reminder to myself.&lt;/p&gt;
+&lt;h3 id=&quot;one-browser%2C-and-still-only-one&quot;&gt;One browser, and still only one &lt;a class=&quot;direct-link&quot; href=&quot;#one-browser%2C-and-still-only-one&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;One thing that didn’t change this year was the range of browsers on the platform. WebKit is still the only rendering engine available on iOS, Safari still has no devtools and you still can’t have Safari Technical Preview on iOS.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://twitter.com/slightlylate&quot;&gt;Google engineer Alex Russell&lt;/a&gt; has strong views on Safari and iOS – and a lot of fan boys (like me) can get twitter-rage as a response. But although I might not always agree, I like Alex. Not only is he smart but he backs up points with data, and that should always deserve your consideration, whether you agree with his conclusions or not.&lt;/p&gt;
+&lt;p&gt;And on one point, Alex is always right. Having one browser engine on iOS is a mistake. Quite apart from being an anti-trust suit in the waiting, the entire web capability of the platform is locked down to the decisions made in a single meeting room in Cupertino. Fairs fair, that weekly backlog meeting of project managers pretty much delivered the mobile web -- fully formed -- back in 2007 and has continued to push it forward. But now it’s time to let others have a competing voice.&lt;/p&gt;
+&lt;p&gt;If we also had Chromium on iOS, we wouldn’t be celebrating finally using &amp;quot;real&amp;quot; GoogleDocs in 2019, because we’d have had it years ago. We might also have 4K YouTube and devtools. And so would Safari, probably (because; competition). All of that would mean selling more iPads to pros. And Safari would still rule for most iPad users because even for a default it’s capable, fast, has low battery consumption, and it’s the webview in every single social app that you own. Do it, you cowards (it’s a meme, I don’t really talk or think like that).&lt;/p&gt;
+&lt;p&gt;We live in an imperfect world. The 9 month old crack on my 10.5&amp;quot;. At least it’s undetectable by touch over most of the screen. Here’s hoping the 2020 iPad Pro is coming soon.&lt;/p&gt;
+&lt;h3 id=&quot;methods-to-develop-sites-on-ipad&quot;&gt;Methods to develop sites on iPad &lt;a class=&quot;direct-link&quot; href=&quot;#methods-to-develop-sites-on-ipad&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Enough of the fundamentals. Let’s take some apps, some projects in source control, and mash them up into a workflow.&lt;/p&gt;
+&lt;p&gt;There are plenty of apps that carry out individual parts of a developer’s workflow just fine. This – after all – is how you often string together a workflow on a desktop OS; an editor, a browser, a git client, a server, etc. But iOS constraints mean single-function apps are often not productive. This is because if you need more than two apps in your flow, one will need to be in the background – at least part of the time – and background apps are killed ruthlessly after 3 minutes. This has lead to apps often having second or third talents that are best not to kill unexpectedly; for example editor apps having a terminal, or web server, or most often – both. It means one or two apps can stay in the foreground whilst they carry out the functions of many.&lt;/p&gt;
+&lt;p&gt;Killing background processes is an artificial constraint of the OS – iPads are no longer the resource constrained devices they used to be, so it would be good if Apple allowed more categories of apps to remain in the background in some way like audio apps can.&lt;/p&gt;
+&lt;p&gt;Next we also need apps to open files via the OS level &amp;quot;edit in place&amp;quot; API so that an IDE can work directly on files in a local repo (and just to be difficult, this API changed in iOS13, so any app that previously supported it needs an update). I consider this the basic requirement now of any pro app.&lt;/p&gt;
+&lt;p&gt;Microsoft VS Code running plug-ins on an iPad? Well, yes - kind of.&lt;/p&gt;
+&lt;p&gt;The following list of workflows is absolutely not a prescription for the best ways of working, or even to scratch the breadth of ways to do front-end web development on an iPad. Like last year, consider them recipes – a little light inspiration to consider remixing to your own taste.&lt;/p&gt;
+&lt;p&gt;And because they deserve they’re own space to understand their pros and cons, each is linked to their own article or screencast.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Working with a remote server or Virtual Private Server (VPS)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;One way to get around iOS not running a a command line and a front-end tool chain like Node.js, is to work with a server hosted elsewhere. This results in workflows that are based around a remote server or a VPS.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Full review: VPS, Microsoft VS Code (Hosted version), remote Git&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;VPS, Emacs, remote Git (I don’t have much to say apart from use Blink and Mosh, they’re awesome)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Full review: Continuous Deployment with Netlify, Github hooks, Working Copy, Textastic&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Full review: AWS S3, Panic Coda&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Screencast from 2018: VPS, Working Copy, Textastic (using Textastic to manually-upload)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Screencast from 2018: VPS, Working Copy, Textastic (using Working Copy to auto-upload)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Raspberry Pi 3B+ with Anker 10Ah battery pack. Pilot biro grip on the Apple Pencil.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Working on a semi-remote server&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Full review: Raspberry Pi as a replacement for a VPS.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Working fully local on the iPad&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Full review: Node.js/React: Working Copy, Play.js&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Full review: Flat websites: Working Copy, GoCoEdit&lt;br&gt;
+Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Screencast from 2018: Flat websites: Working Copy (webDAV server), Textastic&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Screencast from 2018: Flat websites: Textastic (preview server)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Screencast from 2018: Flat websites: Panic Coda (preview server)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;MacBook Pro 13&amp;quot; 2014, MacBook Air 2019, MacBook Air 11&amp;quot; 2011, iPad Pro 10.5&amp;quot;. Which is fastest?&lt;/p&gt;
+&lt;h3 id=&quot;honourable-mentions&quot;&gt;Honourable mentions &lt;a class=&quot;direct-link&quot; href=&quot;#honourable-mentions&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;There are a few other apps that have caught my eye this year, and are worth mentioning. I’m sure you could probably add many more for particular areas you work in – for instance there is a huge range of dedicated GitHub apps that let you monitor pull-requests and the like, documentation apps like &lt;a href=&quot;https://kapeli.com/dash_ios&quot;&gt;Dash&lt;/a&gt;, and full IDEs for languages such as Python (&lt;a href=&quot;http://omz-software.com/pythonista/&quot;&gt;Pythonista&lt;/a&gt;) and PHP (&lt;a href=&quot;https://solesignal.com/draftcode/&quot;&gt;Draftcode&lt;/a&gt;).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://workingcopyapp.com/&quot;&gt;Working Copy&lt;/a&gt;: still the best Git client on iOS, thankfully the most accomplished at integrating all the latest iOS APIs, because it’s the hub of most web-dev work on the iPad.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://secureshellfish.app/&quot;&gt;Secure Shellfish&lt;/a&gt;: from the developer of Working Copy, it makes SFTP servers appear as if they were just another drive in your Files app (or your app file picker).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://apps.pdyn.net/inspect/&quot;&gt;Inspect browser&lt;/a&gt;: The closest thing to Chrome dev-tools you’ll get on iOS, and getting closer all the time.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://termius.com/&quot;&gt;Termius&lt;/a&gt;, &lt;a href=&quot;https://www.blink.sh/&quot;&gt;Blink&lt;/a&gt;: Termius is the SSH tool for cross platform pros that prefer a GUI. Blink is for the genuine command line geeks who never want to see as much as a button, and is freakishly good at keeping a Mosh connection open -- it defies explanation.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://kodex.app/&quot;&gt;Kodex&lt;/a&gt;: A great standalone code editor. It doesn’t really fit any of my work (yet), but it’s has promise.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Play.js running a web React project, with it’s browser showing the result on the right. This really is Node.js running locally on iPadOS -- a major step forward.&lt;/p&gt;
+&lt;h3 id=&quot;what-we%E2%80%99re-missing&quot;&gt;What we’re missing &lt;a class=&quot;direct-link&quot; href=&quot;#what-we%E2%80%99re-missing&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Play.js might have finally brought Node.js and React (web) development to iOS, but it’s not (yet) a replacement for other tool chains. There’s still no way of locally running Gulp, Grunt, Rollup, Vue, Docker, K8s, etc, on an iPad, and that’s a lot of holes. If you need any of these, you’ll currently need to think about something like a VPS.&lt;/p&gt;
+&lt;p&gt;In the IDE apps, we’re still missing the basic capability of multi-file text search/replace. After all, the hardest task in programming is naming things. The tag-complete/auto-suggest is of variable quality across IDEs and app extension systems will not get traction on the platform if it remains this small (Coda had one, unfortunately it didn’t have many plug-ins).&lt;/p&gt;
+&lt;p&gt;All of the above things do exist in the hosted version of VS Code, as detailed above, largely because it all happens remotely on a Linux server. However it also comes with its own drawbacks – not least not currently having any keyboard shortcuts.&lt;/p&gt;
+&lt;p&gt;But at least we’re getting there in the IDE space. When it comes to Browser developer tools, we’re still a way off. The great &lt;a href=&quot;https://apps.pdyn.net/inspect/&quot;&gt;Inspect Browser&lt;/a&gt; is still gaining new functionality steadily, but we’re still a long way from having the same insight into what a web page is doing like we have on desktop. In particular, we’re missing perf tools, heap measurements, JS debugger, indexedDB storage viewing, PWA tools, code line references in console logs, and more.&lt;/p&gt;
+&lt;p&gt;Don’t feel locked into landscape mode -- the iPad is more flexible than that. (Textastic on screen)&lt;/p&gt;
+&lt;h3 id=&quot;%22the-ios-way%22&quot;&gt;&amp;quot;the iOS way&amp;quot; &lt;a class=&quot;direct-link&quot; href=&quot;#%22the-ios-way%22&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Apple still doesn’t appear to see the web development industry as part of the &amp;quot;Pro&amp;quot; in iPad Pro. They continue to lay obstructions that discourage web developers to do much more than dabble in iOS. This is never better demonstrated than by Carlos Vidal, the author of the Play.js app where he describes the struggle to build a web development IDE, with NPM:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;On top of this, in an attempt to support most of the npm features, Apple threw away the work of two months by rejecting the binary and asking me to go back to the drawing board and offer that experience &amp;quot;the iOS way&amp;quot;. (footnote 1)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Play.js is the closest thing to a local Node.js/NPM environment on iOS, and does it in a way that’s very far from carrying out &lt;code&gt;brew install&lt;/code&gt; and &lt;code&gt;npm i&lt;/code&gt; at a bash prompt. Write a package.json file, hit &amp;quot;play&amp;quot; and it’ll do the rest – it’s as close to the iOS way as you could be with a Node.js project.&lt;/p&gt;
+&lt;p&gt;The positive person in me says that this hard-arse stance has actually led to new ways of looking at workflows that we never even considered reevaluating before. Play.js is the embodiment of this.&lt;/p&gt;
+&lt;p&gt;Alternatively you could ask what the kind of direction is that to give. Leaving enigmatic platitudes that provide no guidance as an epitaph to months of work is not exactly going to inspire a generation of after-work app developers to enable a thriving industry and – in conclusion – sell more iPads. &amp;quot;Help us to help you&amp;quot;, I would plead to Apple.&lt;/p&gt;
+&lt;p&gt;On the charger in our hall. its just a bread bin with some holes and a three-way socket inside.&lt;/p&gt;
+&lt;h3 id=&quot;conclusion%2C-and-the-question-remains.&quot;&gt;Conclusion, and the question remains. &lt;a class=&quot;direct-link&quot; href=&quot;#conclusion%2C-and-the-question-remains.&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;So with all this hassle, let’s be honest, making iOS a webdev platform is still pushing at boundaries that don’t necessarily have a need to be pushed.&lt;/p&gt;
+&lt;p&gt;The latest generation of powerful ultra-light notebooks with familiar desktop OS’s (Windows, Mac, Linux) would allow you to drop your existing workflow straight into a more portable world.&lt;/p&gt;
+&lt;p&gt;Microsoft Surface (or similiar) devices would give you a transformable tablet that had a heavyweight OS. &lt;a href=&quot;https://www.howtogeek.com/424886/windows-10s-linux-kernel-is-now-available/&quot;&gt;Microsoft has embraced Linux&lt;/a&gt; in an extraordinary way in 2019, allowing you to marry .NET development with node/NPM based front-end pipelines on a single device.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/3CWUAisN-vo&quot;&gt;Google Chrome OS has actively courted web developers&lt;/a&gt; with an impressive Linux based flow (Docker/Kubernates? no problem). The &lt;a href=&quot;https://www.google.com/chromebook/device/google-pixelbook/&quot;&gt;Google Pixel&lt;/a&gt; is still attractive, even if most ChromeOS hardware is cheap &amp;amp; education orientated and their experiment in building a convertible slate has had &lt;a href=&quot;https://youtu.be/HOh6d_r63Bw&quot;&gt;crushingly bad reviews&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So with all these alternative options already available, the question remains. Why bother trying to stretch the envelope of iOS to do web development when even Apple seem to be actively discouraging it?&lt;/p&gt;
+&lt;p&gt;It’s not an easy one to logically explain away. But I find it a pleasure to use an iPad. It’s genuinely light, connected and increasingly capable of most tasks, plus Windows and ChromeOS (and their app ecosystems) suck at being tablets. So if the iPad is my preferred device to grab and go – whether to the Coffee shop or Columbia – why would I want to also take another computer on the off-chance I need to fix a bug and re-deploy, or even build that project from scratch that I’ve been itching to try? My iPad is definitely powerful enough, so why not?&lt;/p&gt;
+&lt;p&gt;The truth is that most good ideas in tech were just fanboys playing around with what were considered &amp;quot;bad&amp;quot; ideas, until they reached a tipping point and suddenly everyone was doing it. So who’s to say we don’t discover a &amp;quot;new norm&amp;quot; here? God knows we could do with rethinking web-dev tooling and abstracting some of it away. That’s exactly what play.js has done.&lt;/p&gt;
+&lt;p&gt;This could still be an evolutionary dead-end – but we don’t know that until we push and see how far we get. And with the progress I’ve seen in the last few years, I believe we could soon see a point when Apple understands what the iPad’s place is in this industry (just as they did with writing, photography and film).&lt;/p&gt;
+&lt;p&gt;If that happens, all bets are off.&lt;/p&gt;
+&lt;h3 id=&quot;links&quot;&gt;Links &lt;a class=&quot;direct-link&quot; href=&quot;#links&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://christine.website/blog/coding-on-an-ipad-2018-04-14-2018&quot;&gt;Christine Dodrill’s 2018 article on Emacs and Textastic on the iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://link.medium.com/J1C6zSKgU2&quot;&gt;Shane Dowling’s 2018 article on using GoCoEdit, Vim &amp;amp; Emacs on the iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jann.is/ipad-pro-for-programming/&quot;&gt;Jannis Hermanns 2017 article on developing remotely with an iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://typicalprogrammer.com/working-on-an-ipad-pro-as-my-main-computer&quot;&gt;Greg Jorgensen’s 2018 article about coding on the iPad…&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://news.ycombinator.com/item?id=16741522&quot;&gt;… and the Hacker News thread it resulted in.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://reddit.com/r/iPadPro&quot;&gt;iPad Pro Reddit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stories.appbot.co/hey-apple-i-tried-the-ipad-pro-as-a-dev-machine-its-almost-awesome-830e424bbed3&quot;&gt;Stuart Hall’s 2016 article that started it all off (for me)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCT-GpMtIFhX9EMA0Eauevhw&quot;&gt;Tech Craft YouTube channel, covering Pro iPad usage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ipadpros.net/&quot;&gt;iPadPros Podcast&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://theuntitledsite.com/&quot;&gt;Christopher Lawley’s tech/YouTube blog &amp;quot;The untitled site&amp;quot;, which often covers coding on the iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@pixelthing/a-perfect-ipad-keyboard-doesnt-exist-a4cbcc127bfa&quot;&gt;My own article on the tricky business of choosing an iPad keyboard&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Apple Magic Keyboard in a Fintie wrap &amp;amp; stand with an iPad Pro 10.5&amp;quot;&lt;/p&gt;
+&lt;h3 id=&quot;footnotes&quot;&gt;Footnotes &lt;a class=&quot;direct-link&quot; href=&quot;#footnotes&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Quote is directly taken from a Patreon page which is not currently live on the web -- but is reproduced with kind permission from the author.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/blockquote&gt;
 </content>
 	</entry>
 	

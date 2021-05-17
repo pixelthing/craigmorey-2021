@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2019 iPad Webdev - Raspberry Pi</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="pixelthing">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="pixelthing">
+  </head>
+  <body>
+  
+
+<span class="ruler-vh"></span>
+<script>
+  // measure the viewport, vh and browser chrome.
+  var getAppChromeHeight = function() {
+    var vhHeight = document.querySelector('.ruler-vh').offsetHeight;
+    var vpHeight = window.innerHeight;
+    console.log('vhHeight', vhHeight)
+    console.log('vpHeight', vpHeight)
+    document.documentElement.style.setProperty('--vp-height', vpHeight + 'px');
+    return vhHeight - vpHeight;
+  }
+  var setAppChromeVar = function(cssValue) {
+    console.log('chrome height', cssValue)
+    document.documentElement.style.setProperty('--nav-height', cssValue + 'px');
+  }
+  var chromeHeight = getAppChromeHeight();
+  setAppChromeVar(chromeHeight);
+</script>  
+
+<script>
+document.querySelector('body').classList.add('mag');
+</script>  
+
+  
+  
+    <header>
+      <h3 class="home"><a href="/">pixelthing</a></h3>
+      <h3 class="post-title-scrolled">
+        <span class="post-title-scrolled__inner">here here here</span>
+      </h3>
+      <ul class="nav">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/posts/">Archive</a></li>
+        <li class="nav-item"><a href="/about/">About Me</a></li>
+      </ul>
+    </header>
+
+    <main class="tmpl-post">
+      <div class="post">
+<div class="post__meta">
+  <span class="post__tags"><a href="/tags/ipadpro/" class="post-tag">ipadpro</a><a href="/tags/webdev/" class="post-tag">webdev</a></span>
+</div>
+<h1>2019 iPad Webdev - Raspberry Pi</h1>
+<blockquote>
+<p>Be sure to check out the 2020 version of front-end web dev on iPad.</p>
+</blockquote>
+<blockquote>
+<p>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</p>
+</blockquote>
+<h3 id="update-2021%E2%80%9301%E2%80%9304">Update 2021–01–04 <a class="direct-link" href="#update-2021%E2%80%9301%E2%80%9304">#</a></h3>
+<p><a href="https://medium.com/sausheong/setting-up-a-raspberry-pi-4-as-an-development-machine-for-your-ipad-pro-3813f872fccc">This Medium article</a> (paywall, unfirtunately) is the best resource I’ve found for setting up all the possible iPad/Pi combinations.<br>
+This could qualify as one of the hacks of the year and has gained quite a lot of traction in the last six months.</p>
+<p>The idea is pretty simple. Once you’ve got used to playing with a VPS (Virtual Private Server — a remote Linux account you rent) as the web development accessory to your iPad, you start to wonder if that Linux server could be closer to you. Much closer. And smaller — almost as if you could carry it in your pocket.</p>
+<p>Well, that describes a Raspberry Pi. Of course any UNIX/Linux computer would do, but it just so happens that Pi’s are cheap ($€£35–100 depending on the level of spec and comfort) and very well supported with community documentation.</p>
+<p>I’d been playing with Raspberry Pi’s as part of dashboard appliances, and was just considering using them as an off-board Linux server to a iPad when I realised smarter people were way ahead of me. The first time I saw a Raspberry Pi used specifically for development with an iPad, it was from the supremely talented Brent Jackson in July:</p>
+<p>It blew my mind because I’m not sure how he’d arrived at it, but it was a fully formed workflow using USB-C to not only power the Pi, but as ethernet over USB as well (he even documented the types of cable he had success with and those that didn’t work out). Here’s <a href="https://threader.app/thread/1147555688933154816">the whole Twitter thread on Threader</a>.</p>
+<p>It took off from there. I had an iPad Pro 10.5” with Lighning connectors, so USB-C power and network weren’t going to work for me, but I could connect to them over WiFi easily enough. And I found I didn’t need to stretch to the Pi 4B, the Pi 3B+ model that I already owned was fast enough for most work, and as a bonus had much lower power demands, so using a 10Ah 12Watt Anker battery pack (not a PD one with crazy output) was enough to run it. If you plugged it into a monitor, it would complain about power during boot-up, but in general headless usage, it never hit any limits.</p>
+<p>For a plane trip in September, I decided to try and get it working without any internet — just the iPad, the Pi and the battery pack, totally off-line. I eventually got the Pi to act as a WiFi NAT and DHCP server, essentially acting as a router with no connection to route, leaving just the iPad and the Pi as the only IPs on our mini network. It worked great and I could literally carry it in my pocket whilst working on it. If you’d like to try this “offline” set-up, there’s a link at the bottom of this article.</p>
+<p>Once <a href="https://secureshellfish.app/">Secure Shellfish</a> came out, sending files to and from a Raspberry Pi was as easy as if it was an external drive, Shellfish just made it another file provider in the “Files” app.</p>
+<p>Shellfish set-up to connect to my Rasbperry Pi 3B+<br>
+And since Brent’s first tweet, I’ve seen the Pi pop up again and again as an iPad accessory. Rob at the <a href="https://www.youtube.com/channel/UCT-GpMtIFhX9EMA0Eauevhw">TechCraft YouTube channel</a> has made several videos about setting up the Pi for use with an iPad, both with USB-C and Wifi connections. In fact, I’m not going to try to explain the set-up, because he does a much better job.</p>
+<h3 id="pros">Pros <a class="direct-link" href="#pros">#</a></h3>
+<ul>
+<li>You get a full Linux server that you can customise in any way you want.</li>
+<li>It’s ridiculously portable, and can even be used in a workflow when you’re fully offline, under battery power.</li>
+<li>Unlike a VPS, the quality of your internet connection is of no consequence.</li>
+<li>You can buy and own it for less than the cost of one years’ rental of a cheap VPS.<br>
+Geek cred.</li>
+</ul>
+<h3 id="cons">Cons <a class="direct-link" href="#cons">#</a></h3>
+<ul>
+<li>It’s another thing to carry, another thing to charge, another thing that can be damaged or lost.</li>
+<li>You need to be willing to get pretty dirty with Linux command line</li>
+<li>Back-up is your responsibility.</li>
+<li>The Pi 4B can get pretty hot — best to bare in mind that if you need to stay mobile, it won’t appreciate working in a pocket or a bag for long periods.</li>
+</ul>
+<h3 id="optional-extras">Optional extras <a class="direct-link" href="#optional-extras">#</a></h3>
+<ul>
+<li>You can spec or modify these suckers until your heart’s content.</li>
+<li>Tether it with USB-C for charging and network? Use Wi-Fi+battery and leave it in the bag? It’s up to you what works best.</li>
+<li>Using a Raspberry Pi with the <a href="https://medium.com/p/18f482f3a976">VPS/VSCode method</a> would be pretty knockout. You might want to use a higher spec Pi 4B with some decent memory though.</li>
+<li>You might want to use the Raspberry Pi as your development process, and then the CD/Netlify method as the next step, when you want to deploy your code to stage or production.</li>
+</ul>
+<h3 id="links">Links <a class="direct-link" href="#links">#</a></h3>
+<ul>
+<li><a href="https://threader.app/thread/1147555688933154816">Thread of Brent Jackson’s USB-C Raspberry Pi 4B</a></li>
+<li><a href="https://gist.github.com/pixelthing/2d9d335cdd3632210febf2d2a15b5365">My set-up instructions to start-up a Pi in “offline” WiFi NAT mode, that you could connect your iPad to</a></li>
+<li><a href="https://youtu.be/ebYB9rVHaeg">TechCraft set-up of a Raspberry Pi for a USB-C iPad</a></li>
+<li><a href="https://youtu.be/YbvSS8MJm2s">TechCraft set-up of a Raspberry Pi for a Lightning iPad</a></li>
+</ul>
+<blockquote>
+<p>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</p>
+</blockquote>
+
+</div>
+
+ <!--<hr>
+<ul class="otherposts"><li>Next: <a href="/posts/2020-01-ipad-webdev19-vscode-hosted/">2019 iPad Webdev - CD with Netlify</a></li><li>Previous: <a href="/posts/2020-01-ipad-webdev19-playjs/">2019 iPad Webdev - Play.js</a></li>
+</ul> -->
+
+    </main>
+
+    <footer>
+      <address class="footer-author">
+        <em>pixelthing</em> is the personal blog of <span rel="author">Craig Morey</span> - data analyst snd visualiser from Gothenburg, Sweden. 
+        <div> Blog template is my own, feel free to view source and use it for 
+      </address>
+      non-commercial reasons.</div>
+    </footer>
+    
+    <script src="/js/post-title-scroll.js" async></script>
+
+    <!-- Current page: /posts/2020-01-ipad-webdev19-raspberry-pi/ -->
+  </body>
+</html>

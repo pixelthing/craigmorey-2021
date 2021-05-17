@@ -1,5 +1,5 @@
 ---
-title: 2019 iPad Webdev: Play.js
+title: 2019 iPad Webdev - Play.js
 description: 
 date: 2020-01-06
 tags:

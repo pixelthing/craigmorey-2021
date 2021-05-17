@@ -17,6 +17,46 @@
   </url>
   
   <url>
+    <loc>https://example.com/posts/2020-01-ipad-webdev19/</loc>
+    <lastmod>2020-01-05</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/2020-01-ipad-webdev19-cd-netlify/</loc>
+    <lastmod>2020-01-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/2020-01-ipad-webdev19-gocoedit/</loc>
+    <lastmod>2020-01-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/2020-01-ipad-webdev19-panic-coda/</loc>
+    <lastmod>2020-01-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/2020-01-ipad-webdev19-playjs/</loc>
+    <lastmod>2020-01-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/2020-01-ipad-webdev19-raspberry-pi/</loc>
+    <lastmod>2020-01-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/2020-01-ipad-webdev19-vscode-hosted/</loc>
+    <lastmod>2020-01-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/2020-05-making-gtm-better/</loc>
+    <lastmod>2020-05-20</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/posts/2020-05-ipados14-wish-list-for-web-devs/</loc>
     <lastmod>2020-05-24</lastmod>
   </url>
@@ -27,7 +67,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/posts/2020-12-webdev-with-an-ipad/</loc>
+    <loc>https://example.com/posts/2020-12-ipad-webdev20/</loc>
     <lastmod>2020-12-30</lastmod>
   </url>
   
@@ -67,17 +107,27 @@
   </url>
   
   <url>
+    <loc>https://example.com/tags/datananalysis/</loc>
+    <lastmod>2021-01-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/googletagmanager/</loc>
+    <lastmod>2021-01-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/another-tag/</loc>
+    <lastmod>2021-01-06</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/tags/analytics/</loc>
     <lastmod>2021-01-06</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/dashboards/</loc>
-    <lastmod>2021-01-06</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/another-tag/</loc>
     <lastmod>2021-01-06</lastmod>
   </url>
   

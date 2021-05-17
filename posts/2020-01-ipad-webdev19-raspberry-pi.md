@@ -1,5 +1,5 @@
 ---
-title: 2019 iPad Webdev: Raspberry Pi
+title: 2019 iPad Webdev - Raspberry Pi
 description: 
 date: 2020-01-06
 tags:

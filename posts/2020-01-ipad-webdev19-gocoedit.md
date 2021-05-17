@@ -1,5 +1,5 @@
 ---
-title: 2019 iPad Webdev: Panic Coda/AWS
+title: 2019 iPad Webdev - Panic Coda/AWS
 description: 
 date: 2020-01-06
 tags:

@@ -1,5 +1,5 @@
 ---
-title: 2019 iPad Webdev: GoCoEdit
+title: 2019 iPad Webdev - GoCoEdit
 description: 
 date: 2020-01-06
 tags:

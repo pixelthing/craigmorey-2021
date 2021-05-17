@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2019 iPad Webdev - Play.js</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="pixelthing">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="pixelthing">
+  </head>
+  <body>
+  
+
+<span class="ruler-vh"></span>
+<script>
+  // measure the viewport, vh and browser chrome.
+  var getAppChromeHeight = function() {
+    var vhHeight = document.querySelector('.ruler-vh').offsetHeight;
+    var vpHeight = window.innerHeight;
+    console.log('vhHeight', vhHeight)
+    console.log('vpHeight', vpHeight)
+    document.documentElement.style.setProperty('--vp-height', vpHeight + 'px');
+    return vhHeight - vpHeight;
+  }
+  var setAppChromeVar = function(cssValue) {
+    console.log('chrome height', cssValue)
+    document.documentElement.style.setProperty('--nav-height', cssValue + 'px');
+  }
+  var chromeHeight = getAppChromeHeight();
+  setAppChromeVar(chromeHeight);
+</script>  
+
+<script>
+document.querySelector('body').classList.add('mag');
+</script>  
+
+  
+  
+    <header>
+      <h3 class="home"><a href="/">pixelthing</a></h3>
+      <h3 class="post-title-scrolled">
+        <span class="post-title-scrolled__inner">here here here</span>
+      </h3>
+      <ul class="nav">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/posts/">Archive</a></li>
+        <li class="nav-item"><a href="/about/">About Me</a></li>
+      </ul>
+    </header>
+
+    <main class="tmpl-post">
+      <div class="post">
+<div class="post__meta">
+  <span class="post__tags"><a href="/tags/ipadpro/" class="post-tag">ipadpro</a><a href="/tags/webdev/" class="post-tag">webdev</a></span>
+</div>
+<h1>2019 iPad Webdev - Play.js</h1>
+<blockquote>
+<p>Be sure to check out the 2020 version of front-end web dev on iPad.</p>
+</blockquote>
+<blockquote>
+<p>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</p>
+</blockquote>
+<h3 id="update-2020%E2%80%9305%E2%80%9328">Update 2020–05–28 <a class="direct-link" href="#update-2020%E2%80%9305%E2%80%9328">#</a></h3>
+<p>Play.js 2.0 has launched and it’s a full re-write with many of the small annoyances that I mention in this article having been fixed. Plus Vue.js is now supported out of the box. <a href="https://apps.apple.com/us/app/play-js/id1423330822#?platform=ipad">It’s well worth checking out</a>, and there’s a short review in this <a href="https://link.medium.com/8PoMYziJLcb">2020 article</a>.</p>
+<p><a href="https://playdotjs.com/">Using Play.js 1.14.1</a></p>
+<p><a href="https://playdotjs.com/">Play.js</a> is so close to being my holy grail of iOS webdev apps, and if you are a React front-end dev, it might well be yours right now.</p>
+<p>It’s not just an editor, it’s a fully integrated environment that lets you run Node.js processes and install Node.js modules. Yes really -- this is the app <a href="https://blog.usejournal.com/fe-webdev-on-ipad-pro-2018-c55283f01e4c">I have been imagining for several years</a>.</p>
+<p>Two windows of play.js, running the index.js in the left window, which spawned the internal browser in the right window with the results. And bottom left is the Node.js console.</p>
+<p>But, it has some caveats. It curently has a specific focus on three audiences: Node.js app dev, React Native dev, and React webdev (which is currently marked as in &quot;beta&quot;). There is wiggle room to get some other projects working, but I haven’t had much success trying to get Gulp or Vue.js projects running.</p>
+<p>The way Play.js works is a little unconventional if you’re used to working with front-end tooling in the command line, although if you’ve used <a href="http://omz-software.com/pythonista/">Pythonista</a> on iOS it might be familiar. If your project has a package.json file and an index.js file in the project root -- you click on the play button, and the dependencies will download, and the script will run in an internal browser.</p>
+<p>It’s almost magic.</p>
+<p>Here’s the magic in action. Press &quot;play&quot; and the app installs the modules and runs index.js</p>
+<p>This is running front-end tooling locally on your iPad without any use of a remote or Virtual Private Server (VPS), and without having to limit yourself to developing a flat file site. For this reason alone (plus if you want to develop server-side node apps), play.js has quite a faithful following.</p>
+<p>The default project menu, before you expand it. do you know which is the right React project to run?</p>
+<h3 id="in-practice">In practice <a class="direct-link" href="#in-practice">#</a></h3>
+<p>I have to admit that although I do almost every type of Front-End development, building production ready projects in React remains a blind side for me, so my usage of the app is a little on the surface level. I’ll come back with a new review when it supports VueX ;-)</p>
+<p>But it essentially does what it says on the tin. The test React projects that I’ve checked out from GitHub with Working Copy are easily accessed in Play.js with &quot;edit-in-place&quot;. If the index.js file is in the root and it has a package.json file, pressing play installs the modules and runs the Node.js tool chain.</p>
+<p>The file sidebar. The top directory with &quot;..&quot; goes up a level.</p>
+<p>The file sidebar is esoteric by design, and having &quot;back to parent directory&quot; buttons as ellipsis’, it would probably appeal more to Linux junkies than strict <a href="https://developer.apple.com/design/human-interface-guidelines/">iOS HIG</a> followers -- but that’s ok.</p>
+<p>Apps that have their own file list style still have their quirks. When you add new files an folders, there is no affordance that they have been successfully added -- no toast, no scrolling the file list to them, no opening them for editing. In one session, I eventually found 27 new empty files I’d created without knowing, that I would have seen if I wasn’t working in a large project that required you to scroll to see files beginning with &quot;N&quot; for &quot;New_file&quot;. Small stuff, easily fixed (I hope!).</p>
+<p>The editor has come a very long way in a year. Building a code editor is always a case of re-inventing the wheel one spoke at a time, but it has progressed from one where the undo function was actually scrambling code for me, to one which feels like it’s aiming for the best of the best. Symbol auto-suggestion seems solid, as does tabbing and syntax colouring. There’s work to be done -- it’s not my favourite code editor on the iPad (yet) -- but the rate of updates leaves no doubt that more is coming.</p>
+<p>The traffic-light close/minimise buttons (echoing window controls in OSX) make me smile, but I wonder about the utility of any buttons you have to click twice -- once to enlarge them, a second time to use them.</p>
+<p>The Git controls in the sidebar. Also note the traffic light buttons.</p>
+<p>Unusually for almost any iOS code editor (please tell me if I’m wrong), it has great Git support, allowing you commit and push from within the editor. The benefit of which becomes apparent next.</p>
+<p>Leaving the app will sometimes have iOS killing it from memory -- mainly due to memory pressure I guess. Which is a shame not just because Play.js has to then reload when you return to it, but often because it can’t auto-load the project you left it with. So you have to navigate to the project and file you were working on. The answer to this is of course to try and stay in the app and not leave it-- and the author has done amazing work with adding consoles, browsers and Git support to reduce the need to leave the app.</p>
+<p>The in-app browser (that cleverly opens itself in a new window docked to the side of the code) doesn’t have any special functions apart from having a button to load the same page in an external browser (Safari). I wish we could specify the browser to load the results in -- being able to use <a href="https://apps.pdyn.net/inspect/">Inspect Browser</a> would instead would help a great deal with debugging.</p>
+<p>The project/app list (default view).</p>
+<p>If I’m honest, the most confusing part for me is the project menu. By default it’s a row of unlabelled icons. You can optionally expand them to be a grid of labelled icons. I thought I was colour and icon orientated, but I still can’t get used to remembering if it was the pink or the red React project I wanted to load.</p>
+<p>The last thing to mention is that all the example React projects in the app have the code commented that watching has been disabled due to memory constraints. Having a tool chain that isn’t able to live-reload code when a change occurs is a pain -- but I wonder if this is set because Play.js follows the iOS convention of not having a &quot;save&quot; button, but auto-saving on every key change. Certainly, adding watchers back in crashes the app after some quick code edits. I wonder if this is why GoCoEdit is the only IDE that does live-preview -- because it’s also the only IDE that asks you to physically click &quot;save&quot;, so isn’t trying to update all the time you have your hands on the keyboard.</p>
+<h3 id="pros">Pros <a class="direct-link" href="#pros">#</a></h3>
+<ul>
+<li>One iPad is all you need to run and develop your web React project. No servers, no cables, no extra computers. Online or offline.</li>
+<li>And you didn’t even have to type npm i</li>
+<li>With built in Git, you can pull and push changes without leaving the app. I can’t think of another iOS native IDE that does that.</li>
+<li>It’s definitely trying to look at a traditional command line bound problem and solve it in an innovative way.</li>
+</ul>
+<h3 id="cons">Cons <a class="direct-link" href="#cons">#</a></h3>
+<ul>
+<li>The type of projects you can use it for are narrow in breadth (but they are very popular types of project -- React native, React web, Node.js)</li>
+<li>Still developing in lots of ways (functionality, UI, stability). But high goals.</li>
+<li>Probably not as ultimately flexible as a real Linux server.</li>
+</ul>
+<h3 id="optional-extras">Optional extras <a class="direct-link" href="#optional-extras">#</a></h3>
+<ul>
+<li>Add a <a href="https://medium.com/p/ed9eb66579ec">continuous deployment (CD) workflow with Netlify</a> to deploy to an external staging server once you’re happy with your work, just by committing your changes with a branch (or doing a merge). And you can even do that in Play.js itself, you don’t even need to fire up a Got client.</li>
+</ul>
+<h3 id="links">Links <a class="direct-link" href="#links">#</a></h3>
+<ul>
+<li>Link to Play.js</li>
+</ul>
+<blockquote>
+<p>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</p>
+</blockquote>
+
+</div>
+
+ <!--<hr>
+<ul class="otherposts"><li>Next: <a href="/posts/2020-01-ipad-webdev19-raspberry-pi/">2019 iPad Webdev - Raspberry Pi</a></li><li>Previous: <a href="/posts/2020-01-ipad-webdev19-panic-coda/">2019 iPad Webdev - GoCoEdit</a></li>
+</ul> -->
+
+    </main>
+
+    <footer>
+      <address class="footer-author">
+        <em>pixelthing</em> is the personal blog of <span rel="author">Craig Morey</span> - data analyst snd visualiser from Gothenburg, Sweden. 
+        <div> Blog template is my own, feel free to view source and use it for 
+      </address>
+      non-commercial reasons.</div>
+    </footer>
+    
+    <script src="/js/post-title-scroll.js" async></script>
+
+    <!-- Current page: /posts/2020-01-ipad-webdev19-playjs/ -->
+  </body>
+</html>

@@ -1,5 +1,5 @@
 ---
-title: 2019 iPad Webdev: CD with Netlify
+title: 2019 iPad Webdev - CD with Netlify
 description: 
 date: 2020-01-06
 tags:
