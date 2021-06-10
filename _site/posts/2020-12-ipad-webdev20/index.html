@@ -32,11 +32,6 @@
   setAppChromeVar(chromeHeight);
 </script>  
 
-<script>
-document.querySelector('body').classList.add('mag');
-</script>  
-
-  
   
     <header>
       <h3 class="home"><a href="/">pixelthing</a></h3>
@@ -51,7 +46,10 @@ document.querySelector('body').classList.add('mag');
     </header>
 
     <main class="tmpl-post">
-      <div id="page1" class="page">
+      <script>
+document.querySelector('body').classList.add('mag');
+</script>  
+<div id="page1" class="page">
 <div class="post__meta">
   <time datetime="2020-12-30">2020-12 </time>
   <span class="post__tags"><a href="/tags/webdev/" class="post-tag">webdev</a><a href="/tags/ipadpro/" class="post-tag">ipadpro</a></span>
@@ -113,7 +111,7 @@ document.querySelector('body').classList.add('mag');
 
 </div>
 
- <!--<hr>
+<!--<hr>
 <ul class="otherposts"><li>Previous: <a href="/posts/2020-08-getting-critical-data-noticed/">Getting critical data noticed</a></li>
 </ul> -->
 

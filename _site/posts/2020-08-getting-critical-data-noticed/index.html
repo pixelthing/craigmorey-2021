@@ -32,11 +32,6 @@
   setAppChromeVar(chromeHeight);
 </script>  
 
-<script>
-document.querySelector('body').classList.add('mag');
-</script>  
-
-  
   
     <header>
       <h3 class="home"><a href="/">pixelthing</a></h3>
@@ -51,7 +46,10 @@ document.querySelector('body').classList.add('mag');
     </header>
 
     <main class="tmpl-post">
-      <div id="page1" class="page">
+      <script>
+document.querySelector('body').classList.add('mag');
+</script>  
+<div id="page1" class="page">
 <div class="post__meta">
   <time datetime="2020-08-20">2020-08 </time>
   <span class="post__tags"><a href="/tags/analytics/" class="post-tag">analytics</a><a href="/tags/dashboards/" class="post-tag">dashboards</a></span>
@@ -103,7 +101,7 @@ chartyios.app in an iOS14 widget</p>
 
 </div>
 
- <!--<hr>
+<!--<hr>
 <ul class="otherposts"><li>Next: <a href="/posts/2020-12-ipad-webdev20/">Web dev with an iPad in 2020</a></li><li>Previous: <a href="/posts/2020-05-ipados14-wish-list-for-web-devs/">iPadOS14 wish list for web devs</a></li>
 </ul> -->
 

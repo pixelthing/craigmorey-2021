@@ -3,7 +3,7 @@ layout: layouts/base.njk
 templateClass: tmpl-post
 ---
 <script>
-document.querySelector(‘body’).classList.add(‘mag’);
+document.querySelector('body').classList.add('mag');
 </script>  
 <div id="page1" class="page">
 <div class="post__meta">
@@ -14,7 +14,7 @@ document.querySelector(‘body’).classList.add(‘mag’);
 {{ content | safe }}
 </div>
 
- <!--<hr>
+<!--<hr>
 <ul class="otherposts">
   {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
   {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
