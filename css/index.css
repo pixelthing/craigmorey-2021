@@ -29,8 +29,11 @@
     
     /* sections */
     --fg: #fff;
-    --bg: #333;
-    --bg-alt: #555; 
+    --bg: #111;
+    --bg-alt: #333; 
+    
+    --link: #ccf;
+    --linkv: #99c;
   }
 }
 
@@ -116,6 +119,13 @@ time {
   letter-spacing: 0.25em;
 }
 
+.ruler-vh {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 100vh;
+}
+
 /* Header */
 
 header {
@@ -133,7 +143,7 @@ header {
   line-height: 1rem;
   -webkit-backdrop-filter: blur(5px) grayscale(1);
   backdrop-filter: blur(5px) grayscale(1);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: calc(var(--bg) + 66);
 }
 
 .home {
@@ -149,6 +159,7 @@ header {
 .home a {
   display: block;
   color: #999 !important;
+  text-decoration: none;
 }
 
 .post-title-scrolled {

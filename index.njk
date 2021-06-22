@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 
 
-<div class="page">
+<div class="mag__page">
 
 {% set maxPosts = collections.posts.length | min(10) %}
 <h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
