@@ -17,7 +17,12 @@
 		<link href="https://example.com/posts/2020-12-ipad-webdev20/"/>
 		<updated>2020-12-29T23:00:00+01:00</updated>
 		<id>https://example.com/posts/2020-12-ipad-webdev20/</id>
-		<content type="html">&lt;p&gt;At this time of the year I normally go deep on what’s changed if you’re a front-end web developer with an iPad. This year, I’m not going to do that, largely because I don’t have a set-up that’s representative of a 2020 iPad Pro (I have a 10.5”), but also because this year of all years, I think I’m justified in taking time off over the christmas holiday and not spending it explaining every possible workflow.&lt;/p&gt;
+		<content type="html">&lt;figure class=&quot;fig-hero&quot;&gt;
+  &lt;picture&gt;
+    &lt;img src=&quot;https://example.com/img/2020-12-hero1.jpg&quot; width=&quot;5999&quot; height=&quot;2048&quot;&gt;
+  &lt;/picture&gt;
+&lt;/figure&gt;
+&lt;p&gt;At this time of the year I normally go deep on what’s changed if you’re a front-end web developer with an iPad. This year, I’m not going to do that, largely because I don’t have a set-up that’s representative of a 2020 iPad Pro (I have a 10.5”), but also because this year of all years, I think I’m justified in taking time off over the christmas holiday and not spending it explaining every possible workflow.&lt;/p&gt;
 &lt;p&gt;But 2020 - despite feeling like a flat curve of time - has been surprisingly busy in the iPad world. Here are some highlights that effect you as a developer with an iPad in the hand.&lt;/p&gt;
 &lt;h3 id=&quot;ios13.4-%26-magic-keyboard&quot;&gt;iOS13.4 &amp;amp; Magic keyboard &lt;a class=&quot;direct-link&quot; href=&quot;#ios13.4-%26-magic-keyboard&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I know that iOS14.4 is already appearing as a Public beta, but it was only back in March that the previous point4 upgrade dropped with the largest change for Pro iPads since the pencil. We received pointer support and (eventually) the Magic keyboard, which further blurred the lines between MacBook and iPad, both in functionality, and - for some - less favourably in portability.&lt;/p&gt;

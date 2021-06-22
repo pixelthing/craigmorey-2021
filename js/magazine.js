@@ -21,7 +21,7 @@ const magazine = function() {
         document.querySelectorAll('.page').forEach(el => { intersectionObserver.unobserve(el) });
       }
       // amalagamate all pages into the first page
-      const pages = document.querySelectorAll('.page');
+      const pages = document.querySelectorAll('.mag__page');
       if (pages.length > 1) {
         console.log('was prevously mag layout')
         const page1 = pages[0];
@@ -51,8 +51,8 @@ const flowText = (pageId,callBack) => {
   // create a new page, ready for any overflow paras
   const newPage = document.createElement('div');
   const newPageId = pageId + 1;
-  newPage.id = 'page' + newPageId;
-  newPage.classList.add('page');
+  newPage.id = 'magPage' + newPageId;
+  newPage.classList.add('mag__page');
   // construct a list of paras to move into next page
   let   overflowFound = 0;
   for(let i = 0; i < prePageNodesLength; i++) {
@@ -144,7 +144,7 @@ const flowText = (pageId,callBack) => {
       threshold: [0.51] 
     });
     // start observing
-    document.querySelectorAll('.page').forEach(el => { intersectionObserver.observe(el) });
+    document.querySelectorAll('.mag__page').forEach(el => { intersectionObserver.observe(el) });
   };
   
   return {
