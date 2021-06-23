@@ -278,10 +278,10 @@ blockquote {
   position:relative;
   margin: 1em;
   font-size: 1.5em;
-  xfont-family: "Optima",georgia;
-  font-weight: 600;
-  font-style: italic;
-  xletter-spacing: -0.01em;
+  font-family: var(--font-display);
+  xfont-weight: 600;
+  xfont-style: italic;
+  letter-spacing: -0.01em;
   break-inside: avoid;
 }
 blockquote::before {
@@ -289,7 +289,7 @@ blockquote::before {
   position: absolute;
   top: 0em;
   left:-0.55em;
-  font-family: "Hoefler Text",georgia;
+  font-family: var(--font-display);
   font-size: 2em;
   line-height: 1;
 }
@@ -350,10 +350,12 @@ img {
   column-span: all;
   margin: 0 0 var(--gutter);
   display: block;
-  max-width: 100vw;
+  max-width: 100%;
 }
 .fig-hero img {
   width: 100%;
+  max-height: 30vh;
+  object-fit: cover;
 }
 
 /* Warning */

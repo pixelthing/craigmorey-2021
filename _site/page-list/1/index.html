@@ -12,26 +12,7 @@
   </head>
   <body>
   
-
-<span class="ruler-vh"></span>
-<script>
-  // measure the viewport, vh and browser chrome.
-  var getAppChromeHeight = function() {
-    var vhHeight = document.querySelector('.ruler-vh').offsetHeight;
-    var vpHeight = window.innerHeight;
-    console.log('vhHeight', vhHeight)
-    console.log('vpHeight', vpHeight)
-    document.documentElement.style.setProperty('--vp-height', vpHeight + 'px');
-    return vhHeight - vpHeight;
-  }
-  var setAppChromeVar = function(cssValue) {
-    console.log('chrome height', cssValue)
-    document.documentElement.style.setProperty('--nav-height', cssValue + 'px');
-  }
-  var chromeHeight = getAppChromeHeight();
-  setAppChromeVar(chromeHeight);
-</script>  
-
+    <script src="/js/viewport.js" async></script>
   
     <header>
       <h3 class="home"><a href="/">pixelthing</a></h3>
@@ -66,6 +47,14 @@
     <td>Tagged “googletagmanager”</td>
   </tr>
   <tr>
+    <td><a href="/tags/analytics/"><code>/tags/analytics/</code></a></td>
+    <td>Tagged “analytics”</td>
+  </tr>
+  <tr>
+    <td><a href="/tags/dashboards/"><code>/tags/dashboards/</code></a></td>
+    <td>Tagged “dashboards”</td>
+  </tr>
+  <tr>
     <td><a href="/tags/another-tag/"><code>/tags/another-tag/</code></a></td>
     <td>Tagged “another-tag”</td>
   </tr>
@@ -76,14 +65,6 @@
   <tr>
     <td><a href="/tags/second-tag/"><code>/tags/second-tag/</code></a></td>
     <td>Tagged “second-tag”</td>
-  </tr>
-  <tr>
-    <td><a href="/tags/analytics/"><code>/tags/analytics/</code></a></td>
-    <td>Tagged “analytics”</td>
-  </tr>
-  <tr>
-    <td><a href="/tags/dashboards/"><code>/tags/dashboards/</code></a></td>
-    <td>Tagged “dashboards”</td>
   </tr>
   </tbody>
 </table>

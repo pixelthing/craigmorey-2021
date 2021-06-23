@@ -10,7 +10,7 @@ const postTitleSticky = () => {
   }
 
   const observer = () => {
-    console.log('post title scroll observer started');
+//    console.log('post title scroll observer started');
     var intersectionObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const target = document.querySelector('.post-title-scrolled__inner');

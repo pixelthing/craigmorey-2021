@@ -12,26 +12,7 @@
   </head>
   <body>
   
-
-<span class="ruler-vh"></span>
-<script>
-  // measure the viewport, vh and browser chrome.
-  var getAppChromeHeight = function() {
-    var vhHeight = document.querySelector('.ruler-vh').offsetHeight;
-    var vpHeight = window.innerHeight;
-    console.log('vhHeight', vhHeight)
-    console.log('vpHeight', vpHeight)
-    document.documentElement.style.setProperty('--vp-height', vpHeight + 'px');
-    return vhHeight - vpHeight;
-  }
-  var setAppChromeVar = function(cssValue) {
-    console.log('chrome height', cssValue)
-    document.documentElement.style.setProperty('--nav-height', cssValue + 'px');
-  }
-  var chromeHeight = getAppChromeHeight();
-  setAppChromeVar(chromeHeight);
-</script>  
-
+    <script src="/js/viewport.js" async></script>
   
     <header>
       <h3 class="home"><a href="/">pixelthing</a></h3>
