@@ -6,13 +6,18 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 //const Image = require("@11ty/eleventy-img");
-//const pluginSass = require("eleventy-plugin-sass");
+const pluginPostCSS = require("@dyve/eleventy-plugin-postcss");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
-//  eleventyConfig.addPlugin(pluginSass, sassPluginOptions);
+  const postCSSOptions = {
+    srcDir: 'css',
+    outDir: '_site/styles',
+    //plugins: [require("postcss-nesting").default],
+  }
+  eleventyConfig.addPlugin(pluginPostCSS, postCSSOptions);
 
   eleventyConfig.setDataDeepMerge(true);
 
