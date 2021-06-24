@@ -1,5 +1,5 @@
 ---
-title: 2019 iPad Webdev - CD with Netlify
+title: 2019 iPad Webdev - VSEditer
 description: 
 date: 2020-01-06
 tags:
@@ -8,9 +8,9 @@ tags:
 layout: layouts/post.njk
 ---
 
-> Be sure to check out the 2020 version of front-end web dev on iPad.
+<aside>Be sure to check out the 2020 version of front-end web dev on iPad. </aside>
 
-> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here
+<aside> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here </aside>
 
 ### Update 2020–04–17
 Checkout [serveediter.app](https://servediter.app), a neat native app that wraps up everything mentioned below along with a super cheap VPS subscription. It’s early days but it’s much more stable than the experience I had and it looks promising.

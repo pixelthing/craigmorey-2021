@@ -297,9 +297,19 @@ blockquote * {
   line-height: 1.2em;
 }
 hr {
+  position:relative;
   margin: 1.5em 0;
-  border:1px double var(--bg-alt);
-  border-width: 1px 0 0 0;
+  border:1px double var(--bg);
+}
+
+hr:before {
+  position: absolute;
+  left: 50%;
+  font-family: "bodoni ornaments";
+  font-size: 3em;
+  content:'∏';
+  line-height: 0;
+  transform: translatex(-50%) translatey(-0.25em);
 }
 
 /*

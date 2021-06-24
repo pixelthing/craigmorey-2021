@@ -192,16 +192,12 @@ Here’s a real loopy idea. Tabs. So you can work on the tag, trigger and vars a
 	</entry>
 	
 	<entry>
-		<title>2019 iPad Webdev - CD with Netlify</title>
+		<title>2019 iPad Webdev - VSEditer</title>
 		<link href="https://example.com/posts/2020-01-ipad-webdev19-vscode-hosted/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
 		<id>https://example.com/posts/2020-01-ipad-webdev19-vscode-hosted/</id>
-		<content type="html">&lt;blockquote&gt;
-&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
+		<content type="html">&lt;aside&gt;Be sure to check out the 2020 version of front-end web dev on iPad. &lt;/aside&gt;
+&lt;aside&gt; This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here &lt;/aside&gt;
 &lt;h3 id=&quot;update-2020%E2%80%9304%E2%80%9317&quot;&gt;Update 2020–04–17 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020%E2%80%9304%E2%80%9317&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Checkout &lt;a href=&quot;https://servediter.app/&quot;&gt;serveediter.app&lt;/a&gt;, a neat native app that wraps up everything mentioned below along with a super cheap VPS subscription. It’s early days but it’s much more stable than the experience I had and it looks promising.&lt;/p&gt;
 &lt;h3 id=&quot;update-2020%E2%80%9301%E2%80%9310&quot;&gt;Update 2020–01–10 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020%E2%80%9301%E2%80%9310&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -536,12 +532,8 @@ Siri shortcuts with x-callback&lt;/li&gt;
 		<link href="https://example.com/posts/2020-01-ipad-webdev19-cd-netlify/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
 		<id>https://example.com/posts/2020-01-ipad-webdev19-cd-netlify/</id>
-		<content type="html">&lt;blockquote&gt;
-&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
+		<content type="html">&lt;aside&gt;Be sure to check out the 2020 version of front-end web dev on iPad. &lt;/aside&gt;
+&lt;aside&gt; This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here &lt;/aside&gt;
 &lt;p&gt;For web developers using an iPad, it’s best to think of this method as deploying your site to a VPS (virtual private server, a remote Linux account that you rent), without all that command line system administration nonsense. &lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify.com&lt;/a&gt; can do the things your iPad is bad at (Node.js tool chains, web serving), without you having to ever SSH to a server.&lt;/p&gt;
 &lt;p&gt;The process of getting code to pixels can be summed up as:&lt;/p&gt;
 &lt;ol&gt;
