@@ -301,13 +301,12 @@ hr {
   margin: 1.5em 0;
   border:1px double var(--bg);
 }
-
 hr:before {
   position: absolute;
   left: 50%;
   font-family: "bodoni ornaments";
   font-size: 3em;
-  content:'∏';
+  content:'∂';/*'∏'*/;
   line-height: 0;
   transform: translatex(-50%) translatey(-0.25em);
 }
