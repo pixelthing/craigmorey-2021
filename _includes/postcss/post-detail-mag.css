@@ -1,0 +1,107 @@
+.ruler-vh {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 100vh;
+}
+
+.mag__page {
+  position: relative;
+  display: block;
+  width:calc(100vw - 4rem);
+  padding-top: 4rem;
+}
+
+@media (min-width: 40rem) and (min-height: 20rem) {
+
+  .mag, .mag body {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    overflow: scroll;
+  }  
+  
+  .mag .mag__page {
+    columns: 17.5em;
+    column-fill: auto;
+    column-gap: 2em;
+    height: calc(100vh - var(--nav-height));
+    padding-bottom: var(--gutter);
+    font-size:0.8em;
+    overflow: hidden;
+    scroll-snap-align: start;
+  }
+  /*
+  .mag .mag__page:nth-child(odd) { 
+    xxbackground: #ffc;
+  }
+  */
+  .mag .mag__page:not(:last-of-type) { 
+    border-bottom: 1px solid var(--bg-alt);
+  }
+  .mag .mag__page p {
+    margin-top: 0;
+    text-align: justify;
+  }
+  .mag .mag__page blockquote p {
+    text-align: left;
+  }
+  .mag .mag__page h1,
+  .mag .mag__page .post__meta {
+    column-span: all;
+  }
+  .mag .mag__page h3 + p { 
+    -webkit-column-break-before: avoid;
+    break-before: avoid;
+  }
+  .mag footer {
+      scroll-snap-align: start;
+      min-height: var(--vp-height);
+      padding-top: 80px;
+  }
+}
+
+.mag-counter {
+  position: absolute;  
+  top: 50%;
+  right: var(--gutter);
+  display: flex;
+  height: 1em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms;
+}
+
+@media (min-width: 40rem) and (min-height: 20rem) {
+  .mag-counter--active {
+    opacity: 1;
+  }
+  .mag-counter__current,
+  .mag-counter__delim,
+  .mag-counter__total {
+    position: relative;
+    display: inline-block;
+    height: 1em;    
+    overflow: hidden;
+    line-height: 1;
+    top: -0.5em;
+  }
+  .mag-counter__current {
+    text-align: right;
+  }
+  .mag-counter__current__inner {
+    display: block;
+    transition: transform 500ms;
+  }
+  .mag-counter__current span {
+    display: block;
+  }
+  .mag-counter__delim {
+    padding: 0 0.25em;
+    font-style: italic;
+  }
+}
+
+.fig-column img {
+  max-width: 100%;
+}

@@ -29,10 +29,14 @@
     "@11ty/eleventy-navigation": "^0.1.6",
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "@dyve/eleventy-plugin-postcss": "^1.0.0",
+    "cssnano": "^5.0.6",
     "luxon": "^1.21.3",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.2.5",
-    "postcss-nesting": "^8.0.1"
+    "postcss": "^8.3.5",
+    "postcss-import": "^14.0.2",
+    "postcss-mixins": "^8.1.0",
+    "postcss-nesting": "^8.0.1",
+    "precss": "^4.0.0"
   }
 }

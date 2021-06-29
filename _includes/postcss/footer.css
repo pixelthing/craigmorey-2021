@@ -1,0 +1,6 @@
+footer {
+  margin-top: var(--gutter);
+  padding: var(--gutter);
+  background: var(--bg-alt);
+  font-size: 0.8em;
+}

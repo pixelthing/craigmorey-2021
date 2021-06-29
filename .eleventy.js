@@ -6,18 +6,11 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 //const Image = require("@11ty/eleventy-img");
-const pluginPostCSS = require("@dyve/eleventy-plugin-postcss");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
-  eleventyConfig.addPlugin(pluginNavigation);
-  const postCSSOptions = {
-    srcDir: 'css',
-    outDir: '_site/styles',
-    //plugins: [require("postcss-nesting").default],
-  }
-  eleventyConfig.addPlugin(pluginPostCSS, postCSSOptions);
+  eleventyConfig.addPlugin(pluginNavigation);	
 
   eleventyConfig.setDataDeepMerge(true);
 
@@ -115,7 +108,7 @@ module.exports = function(eleventyConfig) {
       "md",
       "njk",
       "html",
-      "liquid"
+      "11ty.js"
     ],
 
     // If your site lives in a different subdirectory, change this.

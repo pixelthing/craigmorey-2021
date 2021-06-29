@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: var(--font-default);
+  color: var(--fg);
+  background-color: var(--bg); 
+  background-image: linear-gradient(to bottom, var(--bg) 99%, var(--bg-alt) 99%);
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+  scroll-snap-type: mandatory;
+  scroll-snap-type: y mandatory;  
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+a[href] {
+  color: var(--link);
+  &:visited {
+    color: var(--linkv);
+  }
+}
+main {
+  padding: 0 var(--gutter);
+  min-height:100vh;
+  & :first-child {
+      margin-top: 0;
+  }
+}
+h1,
+h2,
+h3 { 
+  position: relative;
+  font-family: var(--font-display);
+  font-weight:normal;
+  text-align: left;
+}
+
+h1 {
+  font-size: 3em;
+}
+h2 { 
+  font-size: 2em;
+}
+h3 { 
+  font-size: 1.5em;
+}
+
+table {
+  margin: 1em 0;
+  & td,
+  & th {
+    padding-right: 1em;
+  }
+}
+
+figure {
+    display: block;
+    margin: 0;
+}
+figcaption {
+    margin: 0.5em 0;
+    text-align: center;
+    font-style: italic;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+time {
+  font-size: 1.1em;
+  font-style: italic;
+  letter-spacing: 0.25em;
+}
+blockquote {
+  position:relative;
+  margin: 1em;
+  font-size: 1.5em;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  break-inside: avoid;
+  &::before {
+    content:'“';
+    position: absolute;
+    top: 0em;
+    left:-0.5em;
+    font-family: var(--font-display);
+    font-size: 2em;
+    line-height: 1;
+  }
+  & * {
+    line-height: 1.2em;
+  }
+}
+
+hr {
+  position:relative;
+  margin: 1.5em 0;
+  border:1px double var(--bg);
+  &:before {
+    position: absolute;
+    left: 50%;
+    font-family: "bodoni ornaments";
+    font-size: 3em;
+    content:'∑';
+    opacity: 0.5;
+    line-height: 0;
+    transform: translatex(-50%) translatey(-0.25em);
+  }
+}
