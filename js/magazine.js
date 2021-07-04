@@ -14,7 +14,8 @@ const magazine = function() {
     const mq = window.matchMedia( "(min-width: 40em) and (min-height: 20rem)" );
     // to enable magazine layout, the viewport needs to pass 
     // the above media query and have the ".mag" class on the body
-    if (mq.matches && document.querySelector('html').classList.contains('mag')) {
+    if (mq.matches) {
+      document.querySelector('html').classList.add('mag');
       console.log(`MAG SET-UP`);
       initPageCounter();
       flowText(1, observer);
@@ -22,12 +23,13 @@ const magazine = function() {
     // if we are not running magazine layout, you might need to strip 
     // magazine layout stuff out
     } else {
+      document.querySelector('html').classList.remove('mag');
       // remove intersection observers
       if (intersectionObserver) {
         document.querySelectorAll('.page').forEach(el => { intersectionObserver.unobserve(el) });
       }
       // amalagamate all pages into the first page
-      const pages = document.querySelectorAll('.mag__page');
+      const pages = document.querySelectorAll('.mag__textbox');
       if (pages.length > 1) {
         console.log('was prevously mag layout')
         const page1 = pages[0];
@@ -45,9 +47,10 @@ const magazine = function() {
     }
     // grab the paras in the target page
     const prePage = document.querySelector('#page' + pageId);
-    const prePageNodes = prePage.children;
-    const prePageNodesLength = prePageNodes.length;
-  //  console.log('*** page' + pageId, 'prePageNodes', prePageNodes.length)
+    const preTextBox = prePage.querySelector('.mag__textbox');
+    const preTextBoxNodes = preTextBox.children;
+    const preTextBoxNodesLength = preTextBoxNodes.length;
+    console.log('*** page' + pageId, 'preTextBoxNodes', preTextBoxNodes.length)
     // get the page height (determined by CSS)
     const prePageMetrics = prePage.getBoundingClientRect();
     const prePageRight = prePageMetrics.right;
@@ -57,11 +60,14 @@ const magazine = function() {
     const newPage = document.createElement('div');
     const newPageId = pageId + 1;
     newPage.id = 'page' + newPageId;
-    newPage.classList.add('mag__page');
+    newPage.classList.add('mag__trim');
+    const newTextBox = document.createElement('div');
+    newTextBox.classList.add('mag__textbox');
+    newPage.appendChild(newTextBox);
     // construct a list of paras to move into next page
     let   overflowFound = 0;
-    for(let i = 0; i < prePageNodesLength; i++) {
-      const el = prePageNodes[i];
+    for(let i = 0; i < preTextBoxNodesLength; i++) {
+      const el = preTextBoxNodes[i];
       if (!el || (el.tagName === 'A' && el.innerText === '#')) {
         continue;
       }
@@ -74,13 +80,13 @@ const magazine = function() {
       }
       if (overflowFound) {
         // add to the next page
-        newPage.appendChild(el.cloneNode(true));
+        newTextBox.appendChild(el.cloneNode(true));
       }
     };
     if (!overflowFound) {
       // add the counter total
-      document.querySelector('.mag-counter__total').innerText = pageId;
-      document.querySelector('.mag-counter').classList.add('mag-counter--active');
+      document.querySelector('.mag__counter__total').innerText = pageId;
+      document.querySelector('.mag__counter').classList.add('mag__counter--active');
       console.log('*** page' + pageId + ' COMPLETE');
       callBack();
       return;
@@ -90,7 +96,7 @@ const magazine = function() {
     // add to the page counter
     const counter = document.createElement('span');
     counter.innerText = pageId + 1;
-    document.querySelector('.mag-counter__current__inner').append(counter);
+    document.querySelector('.mag__counter__current__inner').append(counter);
   //  console.log('*** page' + pageId, '-----', overflowFound, prePageNodesLength)
     // remove from the previous page
     for(let i = prePageNodesLength-1; i >= overflowFound; i--) {
@@ -110,21 +116,25 @@ const magazine = function() {
       });  
     });
   }
+  
+  /*
+   * PAGE COUNTER
+   */
 
   const initPageCounter = () => {
     const counterContainer = document.createElement('div');
-    counterContainer.classList.add('mag-counter');
+    counterContainer.classList.add('mag__counter');
     const counterCurrent = document.createElement('span');
-    counterCurrent.classList.add('mag-counter__current');
+    counterCurrent.classList.add('mag__counter__current');
     const counterCurrentTrack = document.createElement('span');
-    counterCurrentTrack.classList.add('mag-counter__current__inner');
+    counterCurrentTrack.classList.add('mag__counter__current__inner');
     const counterCurrentPage1 = document.createElement('span');
     counterCurrentPage1.innerText = 1
     const counterDelim = document.createElement('span');
-    counterDelim.classList.add('mag-counter__delim');
+    counterDelim.classList.add('mag__counter__delim');
     counterDelim.innerText = 'of';
     const counterTotal = document.createElement('span');
-    counterTotal.classList.add('mag-counter__total');
+    counterTotal.classList.add('mag__counter__total');
     counterTotal.innerText = 'x';
     counterCurrentTrack.append(counterCurrentPage1);
     counterCurrent.append(counterCurrentTrack);
@@ -142,14 +152,14 @@ const magazine = function() {
           // update the page counter
           const pageId = entry.target.id;
           const pageNumber = parseInt(pageId.substr(-1));
-          document.querySelector('.mag-counter__current__inner').style.transform = `translateY(-${(pageNumber - 1)}em)`;              
+          document.querySelector('.mag__counter__current__inner').style.transform = `translateY(-${(pageNumber - 1)}em)`;              
         }
       });
     }, {
       threshold: [0.51] 
     });
     // start observing
-    document.querySelectorAll('.mag__page').forEach(el => { intersectionObserver.observe(el) });
+    document.querySelectorAll('.mag__trim').forEach(el => { intersectionObserver.observe(el) });
   };
   
   return {

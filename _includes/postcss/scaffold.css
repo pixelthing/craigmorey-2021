@@ -27,11 +27,8 @@ a[href] {
   }
 }
 main {
-  padding: 0 var(--gutter);
-  min-height:100vh;
-  & :first-child {
-      margin-top: 0;
-  }
+  padding: 0;
+  min-height: var(--vp-height);
 }
 h1,
 h2,

@@ -1,11 +1,11 @@
-.fig-hero {
-    /* column-span: all; */
-    margin: 0 0 var(--gutter);
-    display: block;
-    max-width: 100%;
-    & img {
-        width: 100%;
-        max-height: 30vh;
-        object-fit: cover;
-    }
+.post__hero {
+  /* column-span: all; */
+  margin: 0 0 var(--gutter);
+  display: block;
+  max-width: 100%;
+  & img {
+    width: 100%;
+    max-height: 30vh;
+    object-fit: cover;
+  }
 }
