@@ -40,7 +40,7 @@
   } 
   
   &__textbox {
-    opacity: 0;
+    /*opacity: 0;*/
     transition: opacity 200ms;
     transition-delay: 200ms;
     line-height: 1.4;
@@ -75,7 +75,7 @@
     right: var(--gutter);
     display: flex;
     height: 1em;
-    /*opacity: 0;*/
+    opacity: 0;
     pointer-events: none;
     transition: opacity 500ms;
     
