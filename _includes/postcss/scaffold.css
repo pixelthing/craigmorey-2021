@@ -12,9 +12,6 @@ body {
   background-color: var(--bg); 
   background-image: linear-gradient(to bottom, var(--bg) 99%, var(--bg-alt) 99%);
   background-repeat: no-repeat;
-  overflow-y: scroll;
-  scroll-snap-type: mandatory;
-  scroll-snap-type: y mandatory;  
 }
 
 p:last-child {
@@ -37,6 +34,7 @@ h3 {
   font-family: var(--font-display);
   font-weight:normal;
   text-align: left;
+  line-height: 1.1;
 }
 
 h1 {

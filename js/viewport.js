@@ -16,8 +16,8 @@ const viewportMeasure = () => {
     document.body.append(rulerEl);
     const vhHeight = rulerEl.offsetHeight;
     const vpHeight = window.innerHeight;
-//    console.log('vhHeight', vhHeight)
-//    console.log('vpHeight', vpHeight)
+   // alert('vhHeight'+ vhHeight)
+   // alert('vpHeight'+ vpHeight)
     document.documentElement.style.setProperty('--vp-height', vpHeight + 'px');
     return vhHeight - vpHeight;
   }

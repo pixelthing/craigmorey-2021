@@ -1,10 +1,10 @@
 :root {
   
   /* colours */
-  --fg: #444;
-  --bg: #fafafa;
-  /*--fg: #93a1a1;
-  --bg: #fdf6e3;*/
+  /*--fg: #444;
+  --bg: #fafafa;*/
+  --fg: #93a1a1;
+  --bg: #fdf6e3;
   --bg-alt: #e0e0e0;
   
   --link: #082840;
@@ -26,10 +26,10 @@
   :root {
     
     /* sections */
-    --fg: #fff;
-    --bg: #111;
-    /*--fg: #586e75;
-    --bg: #002b36;*/
+    /*--fg: #fff;
+    --bg: #111;*/
+    --fg: #586e75;
+    --bg: #002b36;
     --bg-alt: #333; 
     
     --link: #ccf;

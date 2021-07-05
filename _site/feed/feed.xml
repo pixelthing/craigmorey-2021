@@ -78,12 +78,7 @@
 		<link href="https://example.com/posts/2020-08-getting-critical-data-noticed/"/>
 		<updated>2020-08-19T22:00:00+02:00</updated>
 		<id>https://example.com/posts/2020-08-getting-critical-data-noticed/</id>
-		<content type="html">&lt;figure class=&quot;fig-hero&quot;&gt;
-  &lt;picture&gt;
-    &lt;img src=&quot;https://example.com/img/2020-08-hero1.jpeg&quot; width=&quot;5999&quot; height=&quot;2048&quot;&gt;
-  &lt;/picture&gt;
-&lt;/figure&gt;
-&lt;h3 id=&quot;with-remote-working%2C-data-needs-to-exist-where-its-audience-lives.&quot;&gt;With remote-working, data needs to exist where its audience lives. &lt;a class=&quot;direct-link&quot; href=&quot;#with-remote-working%2C-data-needs-to-exist-where-its-audience-lives.&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+		<content type="html">&lt;h3 id=&quot;with-remote-working%2C-data-needs-to-exist-where-its-audience-lives.&quot;&gt;With remote-working, data needs to exist where its audience lives. &lt;a class=&quot;direct-link&quot; href=&quot;#with-remote-working%2C-data-needs-to-exist-where-its-audience-lives.&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;It feels like we’ve crossed a threshold. Businesses (and the general public) are increasingly calling for more data, and for it to be presented in a smart and pedagogic way.&lt;/p&gt;
 &lt;p&gt;But we are living in a seriously distracted time. Knowing we need to be looking at data is very different from having the trigger to actually do it. Too often, the idea that we need to check on the progress of a chart is so far down the list of shiny new things to look at that it remains a noble effort, like signing up for the gym but never finding the time to go.&lt;/p&gt;
 &lt;p&gt;How do we wedge business critical data into this distraction disaster zone, especially when the real insight from the data often can’t be explained in a 140 character chunk?&lt;/p&gt;

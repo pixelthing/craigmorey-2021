@@ -6,13 +6,8 @@ tags:
   - analytics
   - dashboards
 layout: layouts/magazine.njk
+hero: ../../img/2020-08-hero1.jpeg
 ---
-
-<figure class="fig-hero">
-  <picture>
-    <img src="../../img/2020-08-hero1.jpeg" width="5999" height="2048" />
-  </picture>
-</figure>
 
 ### With remote-working, data needs to exist where its audience lives.
 
