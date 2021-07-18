@@ -35,9 +35,9 @@ header {
   height: 3rem;
   margin: 0;
   padding: 1em 0.5em 0 0;
-  & a {
+  & a[href] {
     display: block;
-    color: #999 !important;
+    color: var(--fg-sub);
     text-decoration: none;
   }
 }
