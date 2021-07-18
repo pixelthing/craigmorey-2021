@@ -97,4 +97,4 @@ Raspberry Pi 3B+ powered by an Anker battery pack. Could it be your VSCode in a 
 ### Footnote
 There’s a classic front end bug in the settings in the current version of hosted VS Code (that’s bound to be fixed soon) where you can’t interact with the settings (select menus, checkboxes,etc). It’s probably a z-index thing, you know the bug. But happily, the VS code team have done a great job with accessibility, so you can click on the settings section you want, then use the tab key to cycle through the settings options, arrow keys to use select menus, and the space key to action things like checkboxes.
 
-> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here
+<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>

@@ -8,7 +8,7 @@ tags:
 layout: layouts/post.njk
 ---
 
-> Be sure to check out the 2020 version of front-end web dev on iPad.
+<aside>Be sure to check out the 2020 version of front-end web dev on iPad.</aside>
 
 What a difference a year makes.
 
@@ -156,4 +156,4 @@ Apple Magic Keyboard in a Fintie wrap & stand with an iPad Pro 10.5"
 ### Footnotes
 Quote is directly taken from a Patreon page which is not currently live on the web -- but is reproduced with kind permission from the author.
 
-> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here
+<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>

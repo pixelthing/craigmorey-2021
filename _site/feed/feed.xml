@@ -258,10 +258,7 @@ echo &amp;quot;export PASSWORD=YourPassword&amp;quot; &amp;gt;&amp;gt; /etc/prof
 &lt;/ul&gt;
 &lt;h3 id=&quot;footnote&quot;&gt;Footnote &lt;a class=&quot;direct-link&quot; href=&quot;#footnote&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;There’s a classic front end bug in the settings in the current version of hosted VS Code (that’s bound to be fixed soon) where you can’t interact with the settings (select menus, checkboxes,etc). It’s probably a z-index thing, you know the bug. But happily, the VS code team have done a great job with accessibility, so you can click on the settings section you want, then use the tab key to cycle through the settings options, arrow keys to use select menus, and the space key to action things like checkboxes.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
+&lt;aside&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/aside&gt;</content>
 	</entry>
 	
 	<entry>
@@ -269,12 +266,8 @@ echo &amp;quot;export PASSWORD=YourPassword&amp;quot; &amp;gt;&amp;gt; /etc/prof
 		<link href="https://example.com/posts/2020-01-ipad-webdev19-raspberry-pi/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
 		<id>https://example.com/posts/2020-01-ipad-webdev19-raspberry-pi/</id>
-		<content type="html">&lt;blockquote&gt;
-&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
+		<content type="html">&lt;aside&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/aside&gt;
+&lt;aside&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/aside&gt;
 &lt;h3 id=&quot;update-2021%E2%80%9301%E2%80%9304&quot;&gt;Update 2021–01–04 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2021%E2%80%9301%E2%80%9304&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://medium.com/sausheong/setting-up-a-raspberry-pi-4-as-an-development-machine-for-your-ipad-pro-3813f872fccc&quot;&gt;This Medium article&lt;/a&gt; (paywall, unfirtunately) is the best resource I’ve found for setting up all the possible iPad/Pi combinations.&lt;br&gt;
 This could qualify as one of the hacks of the year and has gained quite a lot of traction in the last six months.&lt;/p&gt;
@@ -316,10 +309,7 @@ Geek cred.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://youtu.be/ebYB9rVHaeg&quot;&gt;TechCraft set-up of a Raspberry Pi for a USB-C iPad&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://youtu.be/YbvSS8MJm2s&quot;&gt;TechCraft set-up of a Raspberry Pi for a Lightning iPad&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
+&lt;aside&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/aside&gt;</content>
 	</entry>
 	
 	<entry>
@@ -327,12 +317,8 @@ Geek cred.&lt;/li&gt;
 		<link href="https://example.com/posts/2020-01-ipad-webdev19-playjs/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
 		<id>https://example.com/posts/2020-01-ipad-webdev19-playjs/</id>
-		<content type="html">&lt;blockquote&gt;
-&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
+		<content type="html">&lt;aside&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/aside&gt;
+&lt;aside&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/aside&gt;
 &lt;h3 id=&quot;update-2020%E2%80%9305%E2%80%9328&quot;&gt;Update 2020–05–28 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020%E2%80%9305%E2%80%9328&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Play.js 2.0 has launched and it’s a full re-write with many of the small annoyances that I mention in this article having been fixed. Plus Vue.js is now supported out of the box. &lt;a href=&quot;https://apps.apple.com/us/app/play-js/id1423330822#?platform=ipad&quot;&gt;It’s well worth checking out&lt;/a&gt;, and there’s a short review in this &lt;a href=&quot;https://link.medium.com/8PoMYziJLcb&quot;&gt;2020 article&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://playdotjs.com/&quot;&gt;Using Play.js 1.14.1&lt;/a&gt;&lt;/p&gt;
@@ -381,10 +367,7 @@ Geek cred.&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;Link to Play.js&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
+&lt;aside&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/aside&gt;</content>
 	</entry>
 	
 	<entry>
@@ -392,12 +375,8 @@ Geek cred.&lt;/li&gt;
 		<link href="https://example.com/posts/2020-01-ipad-webdev19-panic-coda/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
 		<id>https://example.com/posts/2020-01-ipad-webdev19-panic-coda/</id>
-		<content type="html">&lt;blockquote&gt;
-&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
+		<content type="html">&lt;aside&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/aside&gt;
+&lt;aside&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/aside&gt;
 &lt;p&gt;&lt;a href=&quot;https://gocoedit.app/&quot;&gt;Using GoCoEdit 16.1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;What an extraordinary conundrum GoCoEdit is.&lt;br&gt;
 It’s about as far from a conventional iOS app as it’s possible to make, but it is one of the most complete native IDEs -- in terms of features -- there is on the platform.&lt;br&gt;
@@ -446,10 +425,7 @@ Siri shortcuts with x-callback&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;Link to GoCoEdit website&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
+&lt;aside&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/aside&gt;</content>
 	</entry>
 	
 	<entry>
@@ -457,12 +433,8 @@ Siri shortcuts with x-callback&lt;/li&gt;
 		<link href="https://example.com/posts/2020-01-ipad-webdev19-gocoedit/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
 		<id>https://example.com/posts/2020-01-ipad-webdev19-gocoedit/</id>
-		<content type="html">&lt;blockquote&gt;
-&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
+		<content type="html">&lt;aside&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/aside&gt;
+&lt;aside&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/aside&gt;
 &lt;p&gt;&lt;a href=&quot;https://gocoedit.app/&quot;&gt;Using GoCoEdit 16.1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;What an extraordinary conundrum GoCoEdit is.&lt;/p&gt;
 &lt;p&gt;It’s about as far from a conventional iOS app as it’s possible to make, but it is one of the most complete native IDEs -- in terms of features -- there is on the platform.&lt;/p&gt;
@@ -511,10 +483,7 @@ Siri shortcuts with x-callback&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://gocoedit.app/&quot;&gt;Link to GoCoEdit website&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
+&lt;aside&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/aside&gt;</content>
 	</entry>
 	
 	<entry>
@@ -579,10 +548,7 @@ Siri shortcuts with x-callback&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://twitter.com/PaulGowder/status/1200927136594513920&quot;&gt;Paul Gowder enthusing about this method on Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
+&lt;aside&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/aside&gt;</content>
 	</entry>
 	
 	<entry>
@@ -590,9 +556,7 @@ Siri shortcuts with x-callback&lt;/li&gt;
 		<link href="https://example.com/posts/2020-01-ipad-webdev19/"/>
 		<updated>2020-01-04T23:00:00+01:00</updated>
 		<id>https://example.com/posts/2020-01-ipad-webdev19/</id>
-		<content type="html">&lt;blockquote&gt;
-&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
-&lt;/blockquote&gt;
+		<content type="html">&lt;aside&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/aside&gt;
 &lt;p&gt;What a difference a year makes.&lt;/p&gt;
 &lt;p&gt;Last year I lead the 2018 round-up by saying that I could not recommend iOS for doing front-end web-dev unless your project fitted a very narrow list of criteria. A year later and that list of use-cases is not only wider, but the work you can get done is far deeper. We’re getting there.&lt;/p&gt;
 &lt;p&gt;What has changed has been a combination of things. iPadOS has – for sure – solved a lot of the fundamental problems that previously infuriated the simplest of workflows. But apps (almost exclusively one-person indie apps) have been incrementally developing to fill the gaps, and the innovative workflows discovered by iPad users have been pretty amazing.&lt;/p&gt;
@@ -729,10 +693,7 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;p&gt;Apple Magic Keyboard in a Fintie wrap &amp;amp; stand with an iPad Pro 10.5&amp;quot;&lt;/p&gt;
 &lt;h3 id=&quot;footnotes&quot;&gt;Footnotes &lt;a class=&quot;direct-link&quot; href=&quot;#footnotes&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Quote is directly taken from a Patreon page which is not currently live on the web -- but is reproduced with kind permission from the author.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
+&lt;aside&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/aside&gt;</content>
 	</entry>
 	
 	<entry>

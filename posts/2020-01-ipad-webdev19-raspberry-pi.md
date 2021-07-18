@@ -8,9 +8,9 @@ tags:
 layout: layouts/post.njk
 ---
 
-> Be sure to check out the 2020 version of front-end web dev on iPad.
+<aside>Be sure to check out the 2020 version of front-end web dev on iPad.</aside>
 
-> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here
+<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>
 
 ### Update 2021–01–04
 [This Medium article](https://medium.com/sausheong/setting-up-a-raspberry-pi-4-as-an-development-machine-for-your-ipad-pro-3813f872fccc) (paywall, unfirtunately) is the best resource I’ve found for setting up all the possible iPad/Pi combinations.
@@ -58,4 +58,4 @@ Geek cred.
 - [TechCraft set-up of a Raspberry Pi for a USB-C iPad](https://youtu.be/ebYB9rVHaeg)
 - [TechCraft set-up of a Raspberry Pi for a Lightning iPad](https://youtu.be/YbvSS8MJm2s)
 
-> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here
+<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>

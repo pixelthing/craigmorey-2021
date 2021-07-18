@@ -8,9 +8,9 @@ tags:
 layout: layouts/post.njk
 ---
 
-> Be sure to check out the 2020 version of front-end web dev on iPad.
+<aside>Be sure to check out the 2020 version of front-end web dev on iPad.</aside>
 
-> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here
+<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>
 
 [Using GoCoEdit 16.1](https://gocoedit.app/)
 
@@ -68,4 +68,4 @@ Siri shortcuts with x-callback
 ### Links
 - Link to GoCoEdit website
 
-> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here
+<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>

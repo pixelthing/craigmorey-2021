@@ -73,4 +73,4 @@ I ended up with the code editor taking the most screen space, Working Copy docke
 - [Netlify.com](https://www.netlify.com/)
 - [Paul Gowder enthusing about this method on Twitter](https://twitter.com/PaulGowder/status/1200927136594513920)
 
-> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here
+<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>

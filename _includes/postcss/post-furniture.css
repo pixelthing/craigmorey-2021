@@ -47,3 +47,8 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link:visited {
   color: var(--fg);
 }
+aside {
+  padding: 1rem;
+  margin: 0 -1rem 1px;
+  background-color: var(--bg-sub);
+}

@@ -8,9 +8,9 @@ tags:
 layout: layouts/post.njk
 ---
 
-> Be sure to check out the 2020 version of front-end web dev on iPad.
+<aside>Be sure to check out the 2020 version of front-end web dev on iPad.</aside>
 
-> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here
+<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>
 
 ### Update 2020–05–28
 Play.js 2.0 has launched and it’s a full re-write with many of the small annoyances that I mention in this article having been fixed. Plus Vue.js is now supported out of the box. [It’s well worth checking out](https://apps.apple.com/us/app/play-js/id1423330822#?platform=ipad), and there’s a short review in this [2020 article](https://link.medium.com/8PoMYziJLcb).
@@ -83,4 +83,4 @@ The last thing to mention is that all the example React projects in the app have
 ### Links
 - Link to Play.js
 
-> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here
+<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>
