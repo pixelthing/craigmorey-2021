@@ -7,7 +7,8 @@
   --fg-sup: #304040;
   --fg-sub: #93a1a1;
   --bg: #fdf6e3;
-  --bg-alt: #ece5d2;
+  --bg-sup: #fef8f5;
+  --bg-sub: #dbd4c1;
   
   --link: #082840;
   --linkv: #17050F;
@@ -34,7 +35,8 @@
     --fg-sup: #fff;
     --fg-sub: #586e75;
     --bg: #002b36;
-    --bg-alt: #001a25; 
+    --bg-sup: #224d58;
+    --bg-sub: #001a25; 
     
     --link: #ccf;
     --linkv: #99c;

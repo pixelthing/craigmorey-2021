@@ -54,7 +54,7 @@
     opacity: 1;
   }
   & .mag__textbox:not(:last-of-type) { 
-    border-bottom: 1px solid var(--bg-alt);
+    border-bottom: 1px solid var(--bg-sub);
   }
   & .mag__textbox :first-child {
     margin-top: 0;

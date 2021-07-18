@@ -14,14 +14,13 @@
   font-weight: bold;
   padding: 0.15em 0.5em 0.25em;
   margin-right: 0.8em;
-  background-color: var(--bg-alt);
-  color: var(--bg);
+  background-color: var(--bg-sub);
   border-radius: 0.25em;
   text-decoration: none;
 }
 a[href].post-tag,
 a[href].post-tag:visited {
-  color: #fff;
+  color: var(--bg-sup);
 }
 
 /* 

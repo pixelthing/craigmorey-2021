@@ -1,6 +1,6 @@
 
 header {
-  border-bottom: 1px dashed var(--bg-alt);
+  border-bottom: 1px dashed var(--bg-sub);
   height:3rem;
   overflow:hidden;
   position: fixed;
