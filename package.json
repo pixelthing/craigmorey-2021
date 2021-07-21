@@ -33,6 +33,7 @@
     "luxon": "^1.21.3",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.2.5",
+    "markdown-it-container": "^3.0.0",
     "postcss": "^8.3.5",
     "postcss-import": "^14.0.2",
     "postcss-mixins": "^8.1.0",

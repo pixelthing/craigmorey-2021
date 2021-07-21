@@ -182,18 +182,28 @@ Here’s a real loopy idea. Tabs. So you can work on the tag, trigger and vars a
 	</entry>
 	
 	<entry>
-		<title>2019 iPad Webdev - VSEditer</title>
+		<title>2019 iPad Webdev - remote VS Code</title>
 		<link href="https://example.com/posts/2020-01-ipad-webdev19-vscode-hosted/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
 		<id>https://example.com/posts/2020-01-ipad-webdev19-vscode-hosted/</id>
-		<content type="html">&lt;aside&gt;Be sure to check out the 2020 version of front-end web dev on iPad. &lt;/aside&gt;
-&lt;aside&gt; This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here &lt;/aside&gt;
-&lt;h3 id=&quot;update-2020%E2%80%9304%E2%80%9317&quot;&gt;Update 2020–04–17 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020%E2%80%9304%E2%80%9317&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+		<content type="html">&lt;div class=&quot;aside&quot;&gt;
+&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;aside&quot;&gt;
+&lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;aside&quot;&gt;
+&lt;h4 id=&quot;update-2020%E2%80%9304%E2%80%9317&quot;&gt;Update 2020–04–17 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020%E2%80%9304%E2%80%9317&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Checkout &lt;a href=&quot;https://servediter.app/&quot;&gt;serveediter.app&lt;/a&gt;, a neat native app that wraps up everything mentioned below along with a super cheap VPS subscription. It’s early days but it’s much more stable than the experience I had and it looks promising.&lt;/p&gt;
-&lt;h3 id=&quot;update-2020%E2%80%9301%E2%80%9310&quot;&gt;Update 2020–01–10 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020%E2%80%9301%E2%80%9310&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&quot;aside&quot;&gt;
+&lt;h4 id=&quot;update-2020%E2%80%9301%E2%80%9310&quot;&gt;Update 2020–01–10 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020%E2%80%9301%E2%80%9310&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Reddit users have pointed me in the direction of &lt;a href=&quot;https://visualstudio.microsoft.com/services/visual-studio-online/&quot;&gt;Visual Studio Online&lt;/a&gt;, which is Microsoft’s official online version of VS Code, and has been in public preview since November 2019. It works great in desktop browsers (including having keyboard shortcuts)-- but so far it is not letting me access it with iPadOS; it says &amp;quot;currently unsupported&amp;quot; and tries to download &amp;quot;undefined&amp;quot; on sign-in. But along with the release notes talking about testing on iPad, it seems to be a good sign that Visual Studio Online will soon be supported on iPadOS. Until then, the below method (or Owen Williams’ method) seems the only way of achieving VS Code on an iPad.&lt;/p&gt;
-&lt;h3 id=&quot;update-2021%E2%80%9301%E2%80%9304&quot;&gt;Update 2021–01–04 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2021%E2%80%9301%E2%80%9304&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class=&quot;aside&quot;&gt;
+&lt;h4 id=&quot;update-2021%E2%80%9301%E2%80%9304&quot;&gt;Update 2021–01–04 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2021%E2%80%9301%E2%80%9304&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Also check out &lt;a href=&quot;https://gitpod.io/&quot;&gt;gitpod.io&lt;/a&gt;, an online service that also gives you a super quick way of accessing and editing github repos.&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;Using VS Code 1.39.0 In the &lt;a href=&quot;https://github.com/cdr/code-server/releases/tag/2.1692-vsc1.39.2&quot;&gt;cdr server package release 2.1692&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;So this is a bombshell.&lt;/p&gt;
 &lt;p&gt;I can run &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Microsoft VS Code&lt;/a&gt; on my iPad. Real, actual VS Code, down to the built-in git client, terminal, extensions and multi-file search. I was first alerted to the possibility by &lt;a href=&quot;https://link.medium.com/4nycoirfU2&quot;&gt;Owen Williams&lt;/a&gt;’ article back in June.&lt;/p&gt;
