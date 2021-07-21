@@ -8,30 +8,28 @@ tags:
 layout: layouts/post.njk
 ---
 
-::: aside 
-Be sure to check out the 2020 version of front-end web dev on iPad.
+::: aside.aside--less
+  This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.
 :::
 
-::: aside 
-This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here
-:::
-
-::: aside
+::: aside.aside--update
 #### Update 2020–04–17
 Checkout [serveediter.app](https://servediter.app), a neat native app that wraps up everything mentioned below along with a super cheap VPS subscription. It’s early days but it’s much more stable than the experience I had and it looks promising.
 :::
 
-::: aside
+::: aside.aside--update
 #### Update 2020–01–10
 Reddit users have pointed me in the direction of [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/), which is Microsoft’s official online version of VS Code, and has been in public preview since November 2019. It works great in desktop browsers (including having keyboard shortcuts)-- but so far it is not letting me access it with iPadOS; it says "currently unsupported" and tries to download "undefined" on sign-in. But along with the release notes talking about testing on iPad, it seems to be a good sign that Visual Studio Online will soon be supported on iPadOS. Until then, the below method (or Owen Williams’ method) seems the only way of achieving VS Code on an iPad.
 :::
 
-::: aside
+::: aside.aside--update
 #### Update 2021–01–04
 Also check out [gitpod.io](https://gitpod.io/), an online service that also gives you a super quick way of accessing and editing github repos.
 :::
-  
-Using VS Code 1.39.0 In the [cdr server package release 2.1692](https://github.com/cdr/code-server/releases/tag/2.1692-vsc1.39.2)
+
+::: aside
+This review uses VS Code 1.39.0 In the [cdr server package release 2.1692](https://github.com/cdr/code-server/releases/tag/2.1692-vsc1.39.2)
+:::
 
 So this is a bombshell.
 
@@ -107,4 +105,6 @@ Raspberry Pi 3B+ powered by an Anker battery pack. Could it be your VSCode in a 
 ### Footnote
 There’s a classic front end bug in the settings in the current version of hosted VS Code (that’s bound to be fixed soon) where you can’t interact with the settings (select menus, checkboxes,etc). It’s probably a z-index thing, you know the bug. But happily, the VS code team have done a great job with accessibility, so you can click on the settings section you want, then use the tab key to cycle through the settings options, arrow keys to use select menus, and the space key to action things like checkboxes.
 
-<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>
+:::aside.aside--less.aside--bottom
+  This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.
+:::

@@ -82,7 +82,23 @@ module.exports = function(eleventyConfig) {
     permalink: true,
     permalinkClass: "direct-link",
     permalinkSymbol: "#"
-  }).use(mdContainer, 'aside');
+  // }).use(mdContainer, 'aside');
+  }).use(mdContainer, 'aside', {
+    validate: function(params) {
+      return params.trim().match(/^aside($|\..*$)/);
+    },
+    render: function (tokens, idx) {
+      let classList = tokens[idx].info.trim().match(/^aside\.(.*)$/);
+      classList = (classList ? classList[1].replace('.', ' ') : '' );
+      if (tokens[idx].nesting === 1) {
+        // opening tag
+        return `<aside${(classList.length ? ` class="${classList}"` : '')}>\n`;
+      } else {
+        // closing tag
+        return '</aside>\n';
+      }
+    }
+  });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   // Browsersync Overrides

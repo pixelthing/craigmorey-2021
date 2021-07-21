@@ -71,11 +71,6 @@ img {
     height: auto;
 }
 
-time {
-  font-size: 1.1em;
-  font-style: italic;
-  letter-spacing: 0.25em;
-}
 blockquote {
   position:relative;
   margin: 1em;
@@ -109,8 +104,58 @@ hr {
     font-family: "bodoni ornaments";
     font-size: 3em;
     content:'∑';
-    color: var(--fg-sub);
+    color: var(--bg-sub);
     line-height: 0;
     transform: translatex(-50%) translatey(-0.25em);
+  }
+}
+
+aside {
+  position: relative;
+  padding: 1em 2.5em;
+  font-size: 0.9em;
+  font-style: italic;
+  &::before {
+    content: 'w';
+    font-family: "bodoni ornaments";
+    position: absolute;
+    left: 0;
+    top: 0em;
+    font-size: 2em;
+    font-style: normal;
+  }
+  &::after {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    font-family: "bodoni ornaments";
+    font-size: 3em;
+    content:'∑';
+    color: var(--bg-sub);
+    line-height: 0;
+    transform: translatex(-50%) translatey(-0.25em);
+  }
+  &.aside--less {
+    color: var(--fg-sub);
+    & p,h1,h2,h3,h4,h5,em,b {
+      color: var(--fg-sub);
+    }
+  }
+  &.aside--bottom {
+    &::after {
+      top: 0;
+      bottom: auto;
+    }
+  }
+  &.aside--update {
+    color: var(--fg);
+    &::before {
+      left: -0.1em;
+      content: 'q';
+      color: var(--fg-sup);
+    }
+  }
+  & :first-child {
+    margin-top: 0;
   }
 }

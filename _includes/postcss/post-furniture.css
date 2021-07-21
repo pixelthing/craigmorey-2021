@@ -2,8 +2,21 @@
  * Tags
  */
 
+.post__meta {
+  & time {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.5em 0.2em 0;
+    font-style: italic;
+    letter-spacing: 0.1em;
+  }
+}
 .posttags:empty {
   display: none;
+}
+.post__tags {
+  display: inline-block;
+  vertical-align: middle;
 }
 .post-tag {
   display: inline-block;
@@ -46,9 +59,4 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
   color: var(--fg);
-}
-aside {
-  padding: 1rem;
-  margin: 0 -1rem 1px;
-  background-color: var(--bg-sub);
 }

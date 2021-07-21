@@ -8,9 +8,9 @@ tags:
 layout: layouts/post.njk
 ---
 
-<aside>Be sure to check out the 2020 version of front-end web dev on iPad. </aside>
-
-<aside> This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here </aside>
+:::aside.aside--less
+  This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.
+:::
 
 For web developers using an iPad, it’s best to think of this method as deploying your site to a VPS (virtual private server, a remote Linux account that you rent), without all that command line system administration nonsense. [Netlify.com](https://www.netlify.com/) can do the things your iPad is bad at (Node.js tool chains, web serving), without you having to ever SSH to a server.
 
@@ -73,4 +73,6 @@ I ended up with the code editor taking the most screen space, Working Copy docke
 - [Netlify.com](https://www.netlify.com/)
 - [Paul Gowder enthusing about this method on Twitter](https://twitter.com/PaulGowder/status/1200927136594513920)
 
-<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>
+:::aside.aside--less.aside--bottom
+  This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.
+:::

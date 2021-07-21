@@ -8,12 +8,15 @@ tags:
 layout: layouts/post.njk
 ---
 
-<aside>Be sure to check out the 2020 version of front-end web dev on iPad.</aside>
+:::aside.aside--less
+  This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.
+:::
 
-<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>
-
+:::aside.aside--update
 ### Update 2021–01–04
 [This Medium article](https://medium.com/sausheong/setting-up-a-raspberry-pi-4-as-an-development-machine-for-your-ipad-pro-3813f872fccc) (paywall, unfirtunately) is the best resource I’ve found for setting up all the possible iPad/Pi combinations.
+:::
+
 This could qualify as one of the hacks of the year and has gained quite a lot of traction in the last six months.
 
 The idea is pretty simple. Once you’ve got used to playing with a VPS (Virtual Private Server — a remote Linux account you rent) as the web development accessory to your iPad, you start to wonder if that Linux server could be closer to you. Much closer. And smaller — almost as if you could carry it in your pocket.
@@ -58,4 +61,6 @@ Geek cred.
 - [TechCraft set-up of a Raspberry Pi for a USB-C iPad](https://youtu.be/ebYB9rVHaeg)
 - [TechCraft set-up of a Raspberry Pi for a Lightning iPad](https://youtu.be/YbvSS8MJm2s)
 
-<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>
+:::aside.aside--less.aside--bottom
+  This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.
+:::

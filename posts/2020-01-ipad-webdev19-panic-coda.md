@@ -1,5 +1,5 @@
 ---
-title: 2019 iPad Webdev - GoCoEdit
+title: 2019 iPad Webdev - Panic Coda/Code editor
 description: 
 date: 2020-01-06
 tags:
@@ -8,9 +8,9 @@ tags:
 layout: layouts/post.njk
 ---
 
-<aside>Be sure to check out the 2020 version of front-end web dev on iPad.</aside>
-
-<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>
+:::aside.aside--less
+  This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.
+:::
 
 [Using GoCoEdit 16.1](https://gocoedit.app/)
 
@@ -68,4 +68,6 @@ Siri shortcuts with x-callback
 ### Links
 - Link to GoCoEdit website
 
-<aside>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here</aside>
+:::aside.aside--less.aside--bottom
+  This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.
+:::
