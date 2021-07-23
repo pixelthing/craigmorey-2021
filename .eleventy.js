@@ -98,6 +98,26 @@ module.exports = function(eleventyConfig) {
         return '</aside>\n';
       }
     }
+  }).use(mdContainer, 'picture', {
+    validate: function(params) {
+      return params.trim().match(/^picture/);
+    },
+    render: function (tokens, idx) {
+      let classList = tokens[idx].info.trim().match(/^picture\.(.*)\s$/);
+      classList = '';//''(classList ? classList[1].replace('.', ' ') : '' );
+      if (tokens[idx].nesting === 1) {
+        // opening tag
+        return `
+        <figure${(classList.length ? ` class="${classList}"` : '')}>
+          <picture>
+            <img src="https://miro.medium.com/max/7994/1*EOyYt3uQbHMe-3TeCF3DsQ.jpeg" loading="${(classList.contains('hero') ? 'eager' : 'lazy')}}"/>
+          </picture>`;
+      } else {
+        // closing tag
+        return `
+        </figure>`;
+      }
+    }
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 

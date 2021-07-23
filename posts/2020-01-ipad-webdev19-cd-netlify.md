@@ -6,6 +6,7 @@ tags:
   - ipadpro
   - webdev
 layout: layouts/post.njk
+hero: 2020-01-ipadwebdev-netlify
 ---
 
 :::aside.aside--less

@@ -6,7 +6,7 @@ tags:
   - analytics
   - dashboards
 layout: layouts/magazine.njk
-hero: ../../img/2020-08-hero1.jpeg
+hero: 2020-08-gettingdatanoticed
 ---
 
 ### With remote-working, data needs to exist where its audience lives.

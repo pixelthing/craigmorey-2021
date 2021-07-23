@@ -1,11 +1,12 @@
 ---
-title: 2019 iPad Webdev - Panic Coda/AWS
+title: 2019 iPad Webdev - GoCoEdit
 description: 
 date: 2020-01-06
 tags:
   - ipadpro
   - webdev
 layout: layouts/post.njk
+hero: 2020-01-ipadwebdev-gocoedit
 ---
 
 :::aside.aside--less
