@@ -7,11 +7,13 @@ const mdContainer = require('markdown-it-container');
 const md = require("markdown-it");
 const mdAnchor = require("markdown-it-anchor");
 //const Image = require("@11ty/eleventy-img");
+const embedEverything = require("eleventy-plugin-embed-everything");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);	
+  eleventyConfig.addPlugin(embedEverything);
 
   eleventyConfig.setDataDeepMerge(true);
 

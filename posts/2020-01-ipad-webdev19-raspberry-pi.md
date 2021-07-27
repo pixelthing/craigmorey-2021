@@ -26,16 +26,22 @@ Well, that describes a Raspberry Pi. Of course any UNIX/Linux computer would do,
 
 I’d been playing with Raspberry Pi’s as part of dashboard appliances, and was just considering using them as an off-board Linux server to a iPad when I realised smarter people were way ahead of me. The first time I saw a Raspberry Pi used specifically for development with an iPad, it was from the supremely talented Brent Jackson in July:
 
+https://twitter.com/jxnblk/status/1147555688933154816?s=21
+
 It blew my mind because I’m not sure how he’d arrived at it, but it was a fully formed workflow using USB-C to not only power the Pi, but as ethernet over USB as well (he even documented the types of cable he had success with and those that didn’t work out). Here’s [the whole Twitter thread on Threader](https://threader.app/thread/1147555688933154816).
 
 It took off from there. I had an iPad Pro 10.5” with Lighning connectors, so USB-C power and network weren’t going to work for me, but I could connect to them over WiFi easily enough. And I found I didn’t need to stretch to the Pi 4B, the Pi 3B+ model that I already owned was fast enough for most work, and as a bonus had much lower power demands, so using a 10Ah 12Watt Anker battery pack (not a PD one with crazy output) was enough to run it. If you plugged it into a monitor, it would complain about power during boot-up, but in general headless usage, it never hit any limits.
 
 For a plane trip in September, I decided to try and get it working without any internet — just the iPad, the Pi and the battery pack, totally off-line. I eventually got the Pi to act as a WiFi NAT and DHCP server, essentially acting as a router with no connection to route, leaving just the iPad and the Pi as the only IPs on our mini network. It worked great and I could literally carry it in my pocket whilst working on it. If you’d like to try this “offline” set-up, there’s a link at the bottom of this article.
 
+https://twitter.com/pixelthing/status/1172589731886063616?s=21
+
 Once [Secure Shellfish](https://secureshellfish.app/) came out, sending files to and from a Raspberry Pi was as easy as if it was an external drive, Shellfish just made it another file provider in the “Files” app.
 
 Shellfish set-up to connect to my Rasbperry Pi 3B+
 And since Brent’s first tweet, I’ve seen the Pi pop up again and again as an iPad accessory. Rob at the [TechCraft YouTube channel](https://www.youtube.com/channel/UCT-GpMtIFhX9EMA0Eauevhw) has made several videos about setting up the Pi for use with an iPad, both with USB-C and Wifi connections. In fact, I’m not going to try to explain the set-up, because he does a much better job.
+
+https://youtu.be/IR6sDcKo3V8
 
 ### Pros
 - You get a full Linux server that you can customise in any way you want.

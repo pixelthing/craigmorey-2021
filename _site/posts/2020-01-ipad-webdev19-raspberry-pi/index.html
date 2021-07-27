@@ -29,7 +29,6 @@
     <main class="tmpl-post">
       <div class="post">
   <div class="post__meta">
-    <time datetime="2020-01-06">2020-01 </time>
     <span class="post__tags"><a href="/tags/ipadpro/" class="post-tag">ipadpro</a><a href="/tags/webdev/" class="post-tag">webdev</a></span>
     </div>
 <h1>2019 iPad Webdev - Raspberry Pi</h1>
@@ -54,12 +53,15 @@
 <p>The idea is pretty simple. Once you’ve got used to playing with a VPS (Virtual Private Server — a remote Linux account you rent) as the web development accessory to your iPad, you start to wonder if that Linux server could be closer to you. Much closer. And smaller — almost as if you could carry it in your pocket.</p>
 <p>Well, that describes a Raspberry Pi. Of course any UNIX/Linux computer would do, but it just so happens that Pi’s are cheap ($€£35–100 depending on the level of spec and comfort) and very well supported with community documentation.</p>
 <p>I’d been playing with Raspberry Pi’s as part of dashboard appliances, and was just considering using them as an off-board Linux server to a iPad when I realised smarter people were way ahead of me. The first time I saw a Raspberry Pi used specifically for development with an iPad, it was from the supremely talented Brent Jackson in July:</p>
+<div class="eleventy-plugin-embed-twitter"><blockquote id="tweet-1147555688933154816" class="twitter-tweet"><a href="https://twitter.com/jxnblk/status/1147555688933154816"></a></blockquote></div><script src="https://platform.twitter.com/widgets.js" charset="utf-8" async></script>
 <p>It blew my mind because I’m not sure how he’d arrived at it, but it was a fully formed workflow using USB-C to not only power the Pi, but as ethernet over USB as well (he even documented the types of cable he had success with and those that didn’t work out). Here’s <a href="https://threader.app/thread/1147555688933154816">the whole Twitter thread on Threader</a>.</p>
 <p>It took off from there. I had an iPad Pro 10.5” with Lighning connectors, so USB-C power and network weren’t going to work for me, but I could connect to them over WiFi easily enough. And I found I didn’t need to stretch to the Pi 4B, the Pi 3B+ model that I already owned was fast enough for most work, and as a bonus had much lower power demands, so using a 10Ah 12Watt Anker battery pack (not a PD one with crazy output) was enough to run it. If you plugged it into a monitor, it would complain about power during boot-up, but in general headless usage, it never hit any limits.</p>
 <p>For a plane trip in September, I decided to try and get it working without any internet — just the iPad, the Pi and the battery pack, totally off-line. I eventually got the Pi to act as a WiFi NAT and DHCP server, essentially acting as a router with no connection to route, leaving just the iPad and the Pi as the only IPs on our mini network. It worked great and I could literally carry it in my pocket whilst working on it. If you’d like to try this “offline” set-up, there’s a link at the bottom of this article.</p>
+<div class="eleventy-plugin-embed-twitter"><blockquote id="tweet-1172589731886063616" class="twitter-tweet"><a href="https://twitter.com/pixelthing/status/1172589731886063616"></a></blockquote></div>
 <p>Once <a href="https://secureshellfish.app/">Secure Shellfish</a> came out, sending files to and from a Raspberry Pi was as easy as if it was an external drive, Shellfish just made it another file provider in the “Files” app.</p>
 <p>Shellfish set-up to connect to my Rasbperry Pi 3B+<br>
 And since Brent’s first tweet, I’ve seen the Pi pop up again and again as an iPad accessory. Rob at the <a href="https://www.youtube.com/channel/UCT-GpMtIFhX9EMA0Eauevhw">TechCraft YouTube channel</a> has made several videos about setting up the Pi for use with an iPad, both with USB-C and Wifi connections. In fact, I’m not going to try to explain the set-up, because he does a much better job.</p>
+<div id="IR6sDcKo3V8" class="eleventy-plugin-youtube-embed"style="position:relative;width:100%;padding-top: 56.25%;"><iframe style="position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;" width="100%" height="100%" frameborder="0" title="Embedded YouTube video" src="https://www.youtube-nocookie.com/embed/IR6sDcKo3V8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 <h3 id="pros">Pros <a class="direct-link" href="#pros">#</a></h3>
 <ul>
 <li>You get a full Linux server that you can customise in any way you want.</li>

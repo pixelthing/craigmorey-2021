@@ -34,6 +34,7 @@
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.2.5",
     "markdown-it-container": "^3.0.0",
+    "eleventy-plugin-embed-everything": "^1.13.2",
     "postcss": "^8.3.5",
     "postcss-import": "^14.0.2",
     "postcss-mixins": "^8.1.0",
