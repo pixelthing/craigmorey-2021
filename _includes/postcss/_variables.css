@@ -21,6 +21,7 @@
   
   /* typography */
   --font-default: georgia;
+  --font-size: 18px;
   --font-default-line: 1.45;
   --font-display: "Hoefler Text",georgia;
 }
