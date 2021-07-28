@@ -41,22 +41,21 @@ a[href].post-tag:visited {
  */
 
 .direct-link {
-  position: absolute;
-  top: 0;
-  left: -0.66em;
+  position: relative;
+  color: var(--fg);
   font-family: sans-serif;
-  text-decoration: none;
+  text-decoration: underline;
   font-style: normal;
-  line-height: 1;
-  opacity: 0.3;
+  transition: opacity 800ms;
 }
 a[href].direct-link,
 a[href].direct-link:visited {
-  color: transparent;
+  opacity: 0.3;
 }
 a[href].direct-link:focus,
 a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
-  color: var(--fg);
+  opacity: 1;
+  transition: opacity 100ms;
 }
