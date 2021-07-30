@@ -13,6 +13,21 @@
   <body>
   
     <script src="/js/viewport.js" async></script>
+  
+    <header class="header">
+    
+      <h3 class="header__home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h3>
+      <h3 class="post-title-scrolled">
+        <span class="post-title-scrolled__inner">here here here</span>
+      </h3>
+
+      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+      <ul class="nav">
+      {%- for entry in collections.all | eleventyNavigation %}
+        <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+      {%- endfor %}
+      </ul>
+    </header>
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
       {{ content | safe }}
@@ -25,6 +40,10 @@
       </address>
       non-commercial reasons.</div>
     </footer>
+    
+    <script src="/js/post-title-scroll.js" async></script>
+
+    <!-- Current page: {{ page.url | url }} -->
     
   </body>
 </html>
