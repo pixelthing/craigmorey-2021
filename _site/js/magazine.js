@@ -97,14 +97,14 @@ const magazine = function() {
     const counter = document.createElement('span');
     counter.innerText = pageId + 1;
     document.querySelector('.mag__counter__current__inner').append(counter);
-  //  console.log('*** page' + pageId, '-----', overflowFound, prePageNodesLength)
+  //  console.log('*** page' + pageId, '-----', overflowFound, preTextBoxNodesLength)
     // remove from the previous page
-    for(let i = prePageNodesLength-1; i >= overflowFound; i--) {
-      const el = prePageNodes[i];
+    for(let i = preTextBoxNodesLength-1; i >= overflowFound; i--) {
+      const el = preTextBoxNodes[i];
       try {
         prePage.removeChild(el);
       } catch (err) {
-  //      console.error('*** page' + pageId + ' ERROR', i, prePageNodesLength, err, el.tagName, el.innerText.substr(0,5))
+  //      console.error('*** page' + pageId + ' ERROR', i, preTextBoxNodesLength, err, el.tagName, el.innerText.substr(0,5))
       }
     }
     // run on this latest para to see if extra pages need to be created.

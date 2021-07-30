@@ -32,26 +32,39 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 4rem var(--gutter) var(--gutter);
     scroll-snap-align: start;
+    padding-top: 4rem;
+    &#page1 {
+    padding-top: 0;
+    }
   }
   & .mag__trim {
     height: var(--vp-height);
+  }
+  &__hero {
+    flex: 1 0 auto;
   } 
+  &__byline,
+  &__title {
+    width: 100%;
+    max-width: 999em;
+    padding: 0 var(--gutter);
+  }
   
   &__textbox {
+    flex: 0 1 100%;
+    padding: 0 var(--gutter) var(--gutter);
     /*opacity: 0;*/
     transition: opacity 200ms;
     transition-delay: 200ms;
     line-height: 1.4;
   }
   & .mag__textbox {
-    columns: 17.5em;
+    columns: 15.8em;
     column-fill: auto;
-    column-gap: 2em;
+    column-gap: var(--gutter);
     font-size:0.8em;
     overflow: hidden;
-    opacity: 1;
   }
   & .mag__textbox:not(:last-of-type) { 
     border-bottom: 1px solid var(--bg-sub);

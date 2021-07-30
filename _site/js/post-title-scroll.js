@@ -3,7 +3,7 @@ const postTitleSticky = () => {
   let   titleTimeout;
   
   const init = () => {
-    if (!document.querySelector('.tmpl-post')) {
+    if (!document.querySelector('.post')) {
       return;
     }
     observer();
@@ -47,7 +47,7 @@ const postHeroHome = () => {
   let   titleTimeout;
   
   const init = () => {
-    if (!document.querySelector('.tmpl-post')) {
+    if (!document.querySelector('.post')) {
       return;
     }
     observer();
