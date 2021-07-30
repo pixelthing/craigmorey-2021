@@ -1,5 +1,5 @@
 
-header {
+.header {
   border-bottom: 1px dashed var(--bg-sub);
   height:3rem;
   overflow:hidden;
@@ -25,22 +25,37 @@ header {
     background-color: var(--bg);
     opacity: 0.3;
   }
-}
-.home {
-  font-size: 1rem;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  height: 3rem;
-  margin: 0;
-  padding: 1em 0.5em 0 0;
-  & a[href] {
+  &__home {
     display: block;
-    color: var(--fg-sub);
-    text-decoration: none;
+    font-size: 1rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    height: 3rem;
+    margin: 0;
+    padding: 1em 0.5em 0 0;
+    & a[href] {
+      display: block;
+      color: var(--fg-sub);
+      text-decoration: none;
+    }
+  }
+  &__doppel {
+    position: fixed;
+    top: 0;
+    left: 0;  
+    height: 0;
+    padding: 0 var(--gutter);
+    & a[href]  {
+      color: #fff;
+    }
+    &--hidden {
+      display: none;
+    }
   }
 }
+
 .post-title-scrolled {
   height: 3rem;
   font-family: "Hoefler Text",georgia;

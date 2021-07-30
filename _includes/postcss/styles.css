@@ -43,6 +43,7 @@ pre {
   hyphens: none;
   padding: 1em;
   margin: .5em 0;
+  color: initial;
   background-color: #f6f6f6;
 }
 .highlight-line {

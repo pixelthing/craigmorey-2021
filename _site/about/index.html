@@ -14,8 +14,9 @@
   
     <script src="/js/viewport.js" async></script>
   
-    <header>
-      <h3 class="home"><a href="/">pixelthing</a></h3>
+    <header class="header">
+    
+      <h3 class="header__home"><a href="/">pixelthing</a></h3>
       <h3 class="post-title-scrolled">
         <span class="post-title-scrolled__inner">here here here</span>
       </h3>
@@ -27,20 +28,24 @@
     </header>
 
     <main class="tmpl-post">
-      <div class="post">
+      
+<figure class="post__hero">
+  <div class="header__doppel" aria-hidden="true">
+    <h3 class="header__home"><a href="/">pixelthing</      a></h3>
+  </div>
+  <picture>
+    <source media="(max-width:599px)" srcset="../../img/-sm.jpeg" />
+    <source media="(max-width:1799px)" srcset="../../img/-lg.jpeg" />
+    <source media="(min-width:1800px)" srcset="../../img/-xl.jpeg" />
+    <img src="../../img/-xl.jpeg" loading="eager" />
+  </picture>
+</figure> 
+
+<div class="post">
   <div class="post__meta">
     <span class="post__tags"></span>
     </div>
-<h1>About Me</h1>
-
-  <figure class="post__hero mag__hero">
-    <picture>
-      <source media="(max-width:599px)" srcset="../../img/-sm.jpeg" />
-      <source media="(max-width:1799px)" srcset="../../img/-lg.jpeg" />
-      <source media="(min-width:1800px)" srcset="../../img/-xl.jpeg" />
-      <img src="../../img/-xl.jpeg" loading="eager" />
-    </picture>
-  </figure> 
+  <h1>About Me</h1>
 
 <p>I am a person that writes stuff.</p>
 

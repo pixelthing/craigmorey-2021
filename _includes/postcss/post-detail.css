@@ -3,7 +3,7 @@
   display: block;
   max-width:40em;
   margin: 0 auto;
-  padding: 4rem var(--gutter) var(--gutter);
+  padding: 0 var(--gutter) var(--gutter);
   line-height: var(--font-default-line);
   font-size: clamp(1rem, calc(0.6rem + 1vw), 2rem);
   & time + h1 {

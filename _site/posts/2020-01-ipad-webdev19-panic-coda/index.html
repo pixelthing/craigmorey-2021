@@ -14,8 +14,9 @@
   
     <script src="/js/viewport.js" async></script>
   
-    <header>
-      <h3 class="home"><a href="/">pixelthing</a></h3>
+    <header class="header">
+    
+      <h3 class="header__home"><a href="/">pixelthing</a></h3>
       <h3 class="post-title-scrolled">
         <span class="post-title-scrolled__inner">here here here</span>
       </h3>
@@ -27,20 +28,24 @@
     </header>
 
     <main class="tmpl-post">
-      <div class="post">
+      
+<figure class="post__hero">
+  <div class="header__doppel" aria-hidden="true">
+    <h3 class="header__home"><a href="/">pixelthing</      a></h3>
+  </div>
+  <picture>
+    <source media="(max-width:599px)" srcset="../../img/2020-01-ipadwebdev-coda-sm.jpeg" />
+    <source media="(max-width:1799px)" srcset="../../img/2020-01-ipadwebdev-coda-lg.jpeg" />
+    <source media="(min-width:1800px)" srcset="../../img/2020-01-ipadwebdev-coda-xl.jpeg" />
+    <img src="../../img/2020-01-ipadwebdev-coda-xl.jpeg" loading="eager" />
+  </picture>
+</figure> 
+
+<div class="post">
   <div class="post__meta">
     <span class="post__tags"><a href="/tags/ipadpro/" class="post-tag">ipadpro</a><a href="/tags/webdev/" class="post-tag">webdev</a></span>
     </div>
-<h1>2019 iPad Webdev - Panic Coda/Code editor</h1>
-
-  <figure class="post__hero mag__hero">
-    <picture>
-      <source media="(max-width:599px)" srcset="../../img/2020-01-ipadwebdev-coda-sm.jpeg" />
-      <source media="(max-width:1799px)" srcset="../../img/2020-01-ipadwebdev-coda-lg.jpeg" />
-      <source media="(min-width:1800px)" srcset="../../img/2020-01-ipadwebdev-coda-xl.jpeg" />
-      <img src="../../img/2020-01-ipadwebdev-coda-xl.jpeg" loading="eager" />
-    </picture>
-  </figure> 
+  <h1>2019 iPad Webdev - Panic Coda/Code editor</h1>
 
 <aside class="aside--less">
 <p>This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.</p>

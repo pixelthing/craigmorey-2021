@@ -10,7 +10,7 @@ const postTitleSticky = () => {
   }
 
   const observer = () => {
-//    console.log('post title scroll observer started');
+    // console.log('post title scroll observer started');
     var intersectionObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const target = document.querySelector('.post-title-scrolled__inner');
@@ -31,7 +31,7 @@ const postTitleSticky = () => {
       threshold: [0.1] 
     });
     // start observing
-    intersectionObserver.observe(document.querySelector('#page1 h1'));
+    intersectionObserver.observe(document.querySelector('h1'));
   };
   
   return {
@@ -39,3 +39,42 @@ const postTitleSticky = () => {
   }
 }
 postTitleSticky();
+
+
+
+const postHeroHome = () => {
+  
+  let   titleTimeout;
+  
+  const init = () => {
+    if (!document.querySelector('.tmpl-post')) {
+      return;
+    }
+    observer();
+  }
+
+  const observer = () => {
+    // console.log('post hero home link scroll observer started');
+    var intersectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const target = document.querySelector('.post__hero .header__doppel');
+        // orig title visible
+        if (entry.intersectionRatio < 0.05) {
+          target.classList.add('header__doppel--hidden');
+        // orig title disappeared
+        } else {
+          target.classList.remove('header__doppel--hidden');
+        }
+      });
+    }, {
+      threshold: [0.05] 
+    });
+    // start observing
+    intersectionObserver.observe(document.querySelector('.post__hero'));
+  };
+  
+  return {
+    init: init()
+  }
+}
+postHeroHome();
