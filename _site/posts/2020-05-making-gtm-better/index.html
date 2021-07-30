@@ -31,7 +31,7 @@
       
 <figure class="post__hero">
   <div class="header__doppel" aria-hidden="true">
-    <h3 class="header__home"><a href="/">pixelthing</      a></h3>
+    <h3 class="header__home"><a href="/">pixelthing</a></h3>
   </div>
   <picture>
     <source media="(max-width:599px)" srcset="../../img/2020-05-makinggtmbetter-sm.jpeg" />
@@ -41,13 +41,14 @@
   </picture>
 </figure> 
 
+<div class="post__content">
+
 <div class="post__meta">
   <span class="post__tags"><a href="/tags/datananalysis/" class="post-tag">datananalysis</a><a href="/tags/googletagmanager/" class="post-tag">googletagmanager</a></span>
 </div>
 
 <h1 class="post__title">Making GTM better</h1>
 
-<div class="post__content">
 <p>Google Tag Manager is a strange beast. Its purpose is essentially abstraction -- to provide a layer between a website and multiple types of site measurement. It’s been used brilliantly, loosely, badly and plain-old abusively in many cases, but it is trying to make it possible for non-developers to (for instance) be able to quickly set-up Google Analytics tracking on a button, as well as experts to set up more in-depth measurement. But like all interfaces that try and simplify things without losing complex functionality, it can quickly dissolve into very domain specific language that seems unintelligible from the outside.<br>
 And that’s where I am at the moment, using GTM to try and build logical tags of reliable data from horribly un-semantic, React-built spaghetti-code web sites that needs lots of custom JS in GTM to interpret them.<br>
 Because I was a front-end developer in a previous life with some UX background, I understand that no UI/UX is perfect and there is always more that you learn the more you fix it. I’d like to think I could make a few suggestions to the GTM team at Google that would make my day (and hopefully yours) much easier:<br>

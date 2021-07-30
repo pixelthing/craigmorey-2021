@@ -1,17 +1,15 @@
 .post {
-  &__title,
-  &__meta,
+  font-size: clamp(1rem, calc(0.6rem + 1vw), 2rem);
   &__content {
-    max-width:40rem;
+    max-width:40em;
     margin: 0 auto;
     padding: 0 var(--gutter);
   }
   &__title {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
   }
   &__content {
-    font-size: clamp(1rem, calc(0.6rem + 1vw), 2rem);
     line-height: var(--font-default-line);
     & h3:first-child,
     & figure + h3 {

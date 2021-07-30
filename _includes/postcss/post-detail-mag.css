@@ -60,10 +60,10 @@
     line-height: 1.4;
   }
   & .mag__textbox {
-    columns: 15.8em;
+    columns: 15.5em;
     column-fill: auto;
     column-gap: var(--gutter);
-    font-size:0.8em;
+    font-size: 0.75rem;
     overflow: hidden;
   }
   & .mag__textbox:not(:last-of-type) { 
