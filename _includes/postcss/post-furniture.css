@@ -60,3 +60,14 @@ a[href].direct-link:focus:visited,
   opacity: 1;
   transition: opacity 100ms;
 }
+
+
+.post__back {
+  display: inline-block;
+  margin: 0 0.5em 0 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  & span {
+    font-size: 0.8em;
+  }
+}
