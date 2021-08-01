@@ -1,6 +1,6 @@
 ---
 title: 2019 iPad Webdev - Raspberry Pi
-description: 
+description: Strap a Linux server on your iPad.
 date: 2020-01-06
 tags:
   - ipadpro

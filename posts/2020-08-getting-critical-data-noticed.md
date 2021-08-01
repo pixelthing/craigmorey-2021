@@ -1,6 +1,6 @@
 ---
 title: Getting critical data noticed
-description: This is a post on My Blog about win-win survival strategies.
+description: With remote-working, data needs to exist where its audience lives.
 date: 2020-08-20
 tags:
   - analytics
@@ -8,8 +8,6 @@ tags:
 layout: layouts/magazine.njk
 hero: 2020-08-gettingdatanoticed
 ---
-
-### With remote-working, data needs to exist where its audience lives.
 
 It feels like we’ve crossed a threshold. Businesses (and the general public) are increasingly calling for more data, and for it to be presented in a smart and pedagogic way.
 

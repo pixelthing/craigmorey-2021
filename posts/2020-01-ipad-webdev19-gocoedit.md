@@ -1,6 +1,6 @@
 ---
 title: 2019 iPad Webdev - GoCoEdit
-description: 
+description: the iPad IDE with all the toys - just not the looks.
 date: 2020-01-06
 tags:
   - ipadpro

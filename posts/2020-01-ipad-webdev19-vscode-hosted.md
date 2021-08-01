@@ -1,6 +1,6 @@
 ---
 title: 2019 iPad Webdev - remote VS Code
-description: 
+description: Hack remote VSCode to run with an iPad.
 date: 2020-01-06
 tags:
   - ipadpro

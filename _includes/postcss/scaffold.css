@@ -49,6 +49,10 @@ h3 {
   font-size: 1.5em;
 }
 
+b,i,emphasis,strong {
+  color: var(--fg-sup);
+}
+
 table {
   margin: 1em 0;
   & td,

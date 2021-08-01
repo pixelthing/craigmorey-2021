@@ -1,6 +1,6 @@
 ---
 title: 2019 iPad Webdev - Panic Coda/Code editor
-description: 
+description: The daddy of iPad IDEs, sadly adrift.
 date: 2020-01-06
 tags:
   - ipadpro

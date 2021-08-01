@@ -1,6 +1,6 @@
 ---
 title: iPadOS14 wish list for web devs
-description: This is a post on My Blog about win-win survival strategies.
+description: testing
 date: 2020-05-24
 tags:
   - ipadpro
@@ -8,7 +8,6 @@ tags:
 layout: layouts/post.njk
 hero: 2020-04-ios14wishlist
 ---
-
 
 Historically, I’ve had a rotten track record for predicting future features. And everyone has their take for iPadOS14 — many focusing on the UI or fabled iPad Pro apps like Xcode or Logic Pro. As a web/data developer with iPads in the hands of various family members, I guess I have a slightly different list of wishes:
 

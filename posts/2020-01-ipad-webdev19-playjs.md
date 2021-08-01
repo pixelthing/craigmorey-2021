@@ -1,6 +1,6 @@
 ---
 title: 2019 iPad Webdev - Play.js
-description: 
+description: Run Node.js natively on iPad - for real!
 date: 2020-01-06
 tags:
   - ipadpro

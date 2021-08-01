@@ -23,7 +23,10 @@ templateClass: post
 
 <h1 class="post__title">{{ title }}</h1>
 
+{%- if description -%}<h3 class="post__sub">{{ description }}</h3>{%- endif -%}
+
 {{ content | safe }}
+
 </div>
 
  <!--<hr>

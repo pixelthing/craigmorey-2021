@@ -1,6 +1,6 @@
 ---
 title: FE webdev on iPad (2019)
-description: 
+description: Not there yet. But there's hope.
 date: 2020-01-05
 tags:
   - ipadpro

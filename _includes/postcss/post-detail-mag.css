@@ -45,7 +45,8 @@
     flex: 1 0 auto;
   } 
   &__byline,
-  &__title {
+  &__title,
+  &__sub {
     width: 100%;
     max-width: 999em;
     padding: 0 var(--gutter);

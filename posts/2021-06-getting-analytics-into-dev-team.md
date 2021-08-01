@@ -6,14 +6,14 @@ tags:
   - datananalysis
   - googletagmanager
 layout: layouts/post.njk
-hero: 2021-06-gettinganalyticsdev
+hero: 2021-06-gettinganalyticsdev2
 ---
 
-Web analytics want to have data layer pushes in the app. Despite how you may feel, the development team working on the code _do_ like analytics - for proof, just wait for the day after feature roll-out and the "how is it going so far" question. But the dev team is under huge pressure, their final sprints are full of urgent fixes and loud stakeholders moving priorities. 
+Web analytics want to have data layer pushes in the app. The web development team - whose job it is to make these changes - is under huge pressure, their final sprints are full of urgent fixes and loud stakeholders moving priorities. 
 
-Crucial measurement points often fall out of the implementation list and don't get to launch day.
+So it's inevitable that crucial measurement points sometimes fall out of the implementation list and don't get to launch day.
 
-This is so often the case in the web analytics business, that I'm not going to even address the "were analytics a priority from the start" question. Even if a measurement plan, KPIs and  docs were agreed early in the process, it often comes down to the last two weeks to implement analytics in the site for the simple reason that many of the crucial processes to measure are still being finalised at that stage.
+This is so often the case in the web analytics business, that I'm not going to even address the "were analytics a priority from the start" question. Even if a KPIs, a measurement plan and  docs were agreed early in the process, it often comes down to the last two weeks to implement and QA analytics in the site for the simple reason that many of the crucial processes to measure are still being finalised at that stage.
 
 So how can we try to avoid this?
 
@@ -23,19 +23,19 @@ The most obvious thing you can do is to have one of the of those _loud stakehold
 
 > They can take the fight for you
 
-What you ideally need are big guns with responsibilities for success of the project. Your team need to talk to them about the business goals of a successful launch - the Customer Experience heads, the Business Analyst leads, the people who will be called upon to prove and justify a professional and successful product. They can take the fight for you with just a couple of emails or Slack messages into the right team leads.
+What you ideally need are big guns with responsibilities for the success of the project. Your team needs to find the people with the business goals of a successful launch - the Customer Experience heads, the Business Analyst leads, the people who will be called upon to prove and report on a professional and successful product. They can take the fight for you with just a couple of emails or Slack messages into the right team leads.
 
-This is easily sold in not as just being able celebrate a successful launch, but to spot the (just as common) less successful ones early on and be able to tweak the way to a better product. It's not a good look to realise something was a dud only when the quarterlies come in. Good web analytics are the best way to optimise a short-term negative result into a long-term positive and keep everyone in the group looking smart in front of their boss. The more people that know this, the more they'll fight for you.
+This is pitched as not only being able prove & celebrate a successful launch, but also to spot the (just as common) less successful ones early on and be able to tweak the way to a better product. It's not a good look to realise something was a dud only when the quarterlies come in. Good web analytics are the best way to optimise a short-term negative result into a long-term positive one and keep everyone in the group looking good in front of their boss. The more people know this, the more they'll fight for you.
 
 ## 2. Relationships
 
 Having said that you may need to go around the dev team, you also can't treat them like a service. If you have a poor relationship with the devs - you are not going to get the data you want.
 
-You need to be able to have the dev team on your side and let them know that you're working towards the same goals, whether it be business (ie, revenue, customer satisfaction) or personal (ie, doing the job right).
+You need to be able to have the dev team on your side and let them know that you're working towards the same goals, whether it be business (ie, revenue, customer satisfaction) or personal (ie, doing the job right, getting that promotion).
 
 Having experience yourself in website dev is not essential to talk to a dev team - although I admit I've found it very helpful (and I've leant on the "don't hold back, I'm also a front-end dev" line more than once). But by being able to show some knowledge of what single-page-application (SPA) frameworks are, what affects web performance or the "critical page load path" - or even just showing willing to meet in the middle by asking the dev team about such things - you'll get better response and results.
 
-The other thing that dev teams love is documentation. If you can create a doc about what dataLayer pushes you need, why and when they should occur (important - should an event happen when a button is clicked, or when the resulting dialog appears?), you'll have a shared point of reference and they'll have not just an instruction set, but a way of estimating work to add to a job ticket. 
+The other thing that dev teams love is documentation. If you can create a doc about what dataLayer pushes you need, why and when they should occur (important - should an event happen when a button is clicked, or when the resulting dialog appears?), you'll have a shared point of reference and they'll have an instruction set and also a way of estimating work to add to a job ticket. 
 
 > Plus "It's in the docs" is the ultimate meeting shortener.
 
@@ -60,6 +60,8 @@ To do that, you need to set expectations - state early on that you'll get some d
 Negotiation has to take place in good faith, so if the dev team doesn't seem to understand why some measurements are requiring their time to work on, or web analytics don't believe that the dev team's work will give reliable readings, maybe you need a third party such as a product manager or team lead in the conversation anyway.
 
 Starting with creating a "perfect world" instrumentation doc - where the ideal analytics events are listed without thought about the implemetation effort - is not just a theoretical starting point. Sometimes its easy to overthink what may be hard for the dev team to build, and miss out on potential signals that could be useful. As long as the dev team know it's starting at the top end of requirements and you're flexible, it's rarely a problem to start this way.
+
+---
 
 If you need a few points to give away as bargaining chips, try these:
 - Prioritise your requests. Don't compromise on contributions to KPIs, but be prepared to lose or greatly refactor minor measure-points.

@@ -30,14 +30,12 @@
   :root {
     
     /* sections */
-    /*--fg: #fff;
-    --bg: #111;*/
     --fg: #9cafb9;
     --fg-sup: #fff;
     --fg-sub: #586e75;
-    --bg: #002b36;
-    --bg-sup: #224d58;
-    --bg-sub: #001a25; 
+    --bg: #001a25;
+    --bg-sup: #000910;
+    --bg-sub: #224d58; 
     
     --link: #ccf;
     --linkv: #99c;

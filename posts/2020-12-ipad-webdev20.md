@@ -1,6 +1,6 @@
 ---
 title: Web dev with an iPad in 2020
-description: This is a post on My Blog about touchpoints and circling wagons.
+description: A brief update on what you can get done with iPadOS.
 date: 2020-12-30
 tags:
   - webdev

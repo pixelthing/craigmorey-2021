@@ -23,6 +23,7 @@ templateClass: post
   </div>
   
   <h1 class="post__title mag__title">{{ title }}</h1>
+  {%- if description -%}<h3 class="post__sub mag__sub">{{ description }}</h3>{%- endif -%}  
  
   
   <div class="mag__textbox">

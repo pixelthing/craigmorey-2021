@@ -1,6 +1,6 @@
 ---
 title: 2019 iPad Webdev - CD with Netlify
-description: 
+description: Toolchain in the cloud as a service
 date: 2020-01-06
 tags:
   - ipadpro

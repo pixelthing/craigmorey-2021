@@ -44,8 +44,9 @@ a[href].post-tag:visited {
   position: relative;
   color: var(--fg);
   font-family: sans-serif;
-  text-decoration: underline;
   font-style: normal;
+  font-size: 0.9rem;
+  text-decoration: underline;
   transition: opacity 800ms;
 }
 a[href].direct-link,

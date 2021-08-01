@@ -4,9 +4,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
+
+    <!-- META SEM/SHARING  -->
+    <meta name="description" content="{{ description or metadata.description }}" />
+    <meta property="og:url" content="{{ page.url }}?utm_source=og%3Ashare&amp;utm_medium=social" />
+    <meta property="og:description" content="{{ description or metadata.description }}" />
+    <meta property="og:title" content="{{ title or metadata.title }}" />
+    <meta property="og:site_name" content="{{ metadata.title }}" />
+    <meta property="og:image" content="/imgs/{{ hero }}-tb.jpeg" />
+    <meta property="og:image:width" content="665" />
+    <meta property="og:image:height" content="500" />
+    <meta itemprop="name" content="{{ title or metadata.title }}" />
+    <meta itemprop="description" content="{{ description or metadata.description }}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="robots" content="index,follow" />
+    <meta name="DC.Language" content="en" />
+
+    <!-- META APP  -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#fdf6e3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#001a25" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="{{ metadata.title }}" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="{{ metadata.title }}" />
+    <meta name="apple-mobile-web-app-title" content="{{ metadata.title }}" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#000000" />
+    <meta name="msapplication-config" content="none" />
+    <meta name="msapplication-navbutton-color" content="#ffffff" />
+    <meta name="msapplication-starturl" content="/" />
+    <meta name="msapplication-TileColor" content="#001a25" />
+    
     <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
+
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
   </head>
