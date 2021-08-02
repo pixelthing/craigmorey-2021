@@ -50,7 +50,7 @@ function() {
   // the try catch is only to stop any browser-based bugs from causing disruptions to the site. It's also helpful for debugging
   try {
     // quick exit - if this variable is not called for a click event, stop here
-    if (!{{Event}}.includes('click')) {
+    if (!\{\{Event\}\}.includes('click')) {
       return;
     }
     // quick exit - if this variable is not called for a click event on the correct element, stop here (same as above, but the first quick exit needs a tiny amount less time/CPU as it doesn't need to do do the querySelector - #webperf)
@@ -83,7 +83,7 @@ Note this code uses a helper function that needs it's own GTM var - this is expl
 
 Also note that there are a couple of "quick exits" at the start of the function. These variables are evaluated every single time a event occurs in GTM, so I find it best to ruthlessly limit what events get beyond the first couple of lines, to reduce the amount of uneccessary CPU cycles spent.
 
-## 4. Putting it together into the tag
+## 4. Putting it together in a tag
 
 Now we have a triggers, and values to use in the form of GTM variables, we can can build the tag to send data to GA. As mentioned, this is a Universal Analytics tag, but it could easily be a GA4 hit event too.
 
