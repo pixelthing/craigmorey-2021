@@ -1,6 +1,6 @@
 ---
 title: iPadOS14 wish list for web devs
-description: testing
+description:
 date: 2020-05-24
 tags:
   - ipadpro

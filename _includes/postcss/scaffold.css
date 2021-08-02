@@ -101,7 +101,7 @@ blockquote {
 
 hr {
   position:relative;
-  margin: 1.5em 0;
+  margin: 1.5em 0 1.7em;
   border:1px double var(--bg);
   &:before {
     position: absolute;

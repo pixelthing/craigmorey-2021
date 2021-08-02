@@ -3,6 +3,6 @@ footer {
   padding: var(--gutter);
   color: var(--fg);
   background: var(--bg-sub);
-  background: linear-gradient(var(--bg-sup), var(--bg));
+  background: linear-gradient(var(--footer-start), var(--bg));
   font-size: 0.8em;
 }

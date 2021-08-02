@@ -137,13 +137,18 @@
   </url>
   
   <url>
+    <loc>https://example.com/tags/second-tag/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/tags/number-2/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/second-tag/</loc>
-    <lastmod>2021-05-22</lastmod>
+    <loc>https://example.com/posts/2021-06-getting-analytics-into-dev-team-2/</loc>
+    <lastmod>2021-06-01</lastmod>
   </url>
   
   <url>

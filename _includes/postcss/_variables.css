@@ -12,6 +12,7 @@
   
   --link: #082840;
   --linkv: #17050F;
+  --footer-start: var(--bg-sub);
   
   /* dimensions */
   --gutter: 2rem;
@@ -39,5 +40,7 @@
     
     --link: #ccf;
     --linkv: #99c;
+    
+    --footer-start: var(--bg-sup);  
   }
 }
