@@ -1,6 +1,6 @@
 ---
 title: Generic click tracking in GTM
-description: multi-use tags to make your life easier
+description: Multi-use tags to make your life easier
 date: 2021-04-24
 tags:
   - datananalysis
@@ -9,7 +9,7 @@ layout: layouts/post.njk
 hero: 2021-06-gettinganalyticsdev2
 ---
 
-The larger a GTM container becomes, the more you realise that many tags, triggers and variables are doing roughly the same job. So it's worthwhile refectoring some of them away into a few generic tags that make your life easier. 
+The larger a Google Tag Manager (GTM) container becomes, the more you realise that many tags, triggers and variables are doing roughly the same job. So it's worthwhile refactoring some of them away into a few generic tags that make your life easier. 
 
 This article details one such technique to reduce most of your click tracking to a simple reusable pattern, so all it takes is a small piece of markup to start collecting data. At Polestar, we use it on reusable React components, so that devs and editors have the ability to roll them out without needing to do any work in GTM at all.
 
@@ -42,10 +42,10 @@ That's it. Easy enough for any developer to drop into an HTML component. All you
 The trigger is an element click with a couple of simple CSS selectors, comma separated. 
 
 ```css
-[data-track^="click:"],[data-track^="click:"] *
+[data-track^="click"],[data-track^="click"] *
 ```
 
-The first parts is a CSS attribute selector is that of the click element we labelled in the markup, the second is to catch any clicks on any child elements inside the first, such as icons, text wrappers and so on.
+The first part is a CSS attribute selector for the click element we labelled in the markup, the second is to catch any clicks on any child elements inside the first element, such as icons, text wrappers and so on.
 
 ## 3. The event variables
 
@@ -60,12 +60,12 @@ You remember that we said their were three parts to the attribute value in the m
       return;
     }
     // quick exit - if this variable is not called for a click event on the correct element, stop here (same as above, but the first quick exit needs a tiny amount less time/CPU as it doesn't need to do do the querySelector - #webperf)
-    if (!{{Click Element}}.matches('[data-track^="click:"],[data-track^="click:"] *')) {
+    if (!{{Click Element}}.matches('[data-track^="click"],[data-track^="click"] *')) {
       return;
     }
     var clickRoot,labelComplete,labelNode,labelTranslated;
     // clickRoot assumes you might have clicked on a child element of the button that we want to focus on. So it uses a helper function to step back up the DOM tree to find it.
-    // This helper function could be replaced by the .closest() method, butvthat is on supported in ES6, so won't compile in GTM (which only supports ES5), so think of this helper function as a polyfill.
+    // This helper function could be replaced by the .closest() method, but that is only supported in ES6, so won't compile in GTM (which only supports ES5), so think of this helper function as a polyfill.
     // Read the Simo Ahava article on this helper function (link in description)
     clickRoot = {{ENV - helper function - find closest}}({{Click Element}},'[data-track^="click:"]');
     if (!clickRoot) {
