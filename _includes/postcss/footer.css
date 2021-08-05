@@ -1,8 +1,112 @@
-footer {
+.footer {
   margin-top: var(--gutter);
   padding: var(--gutter);
   color: var(--fg);
   background: var(--bg-sub);
   background: linear-gradient(var(--footer-start), var(--bg));
   font-size: 0.8em;
+  &__cookies {
+    &__settings {
+      border-color: var(--bg-sup);
+      &__legend {
+        font-weight: bold;
+        color: var(--fg-sup);
+      }
+    }
+    &__item {
+      display: flex;
+      padding: 0.5em 0;
+      justify-content: space-between;
+      gap: 1em;
+      &__text {
+        margin: 0;
+      }
+      &__toggle {
+        flex: 0 0 3.2em;
+        position: relative;
+        display: inline-block;
+        width: 3.2em;
+        height: 1.8em;
+        line-height: 1;                       
+        &__text {
+          font-size: 0;
+        }    
+        &__input {
+          -webkit-appearance: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 3;
+          width: 100%;
+          height: 100%;
+          margin: 1px;          
+          border-radius: 999px;
+          opacity: 0;
+          &--yes {
+            background: green;
+          }
+          &--no {
+            background: red;
+          }
+          &--maybe {
+            z-index: -1;
+          }
+          &:not(:checked):not(:disabled) {
+            z-index: 4;
+          }
+        }
+        &__slug {
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-sub);
+            border: 1px solid var(--fg-sup);
+            border-radius: 999px;
+            transition: background-color 200ms;
+            .footer__cookies__item__toggle__input--yes:disabled ~ & {
+              border-color: var(--fg-sub);
+              opacity: 0.5;
+            }
+            .footer__cookies__item__toggle__input--yes:checked ~ & {
+              background-color: #935129;
+            }
+          }
+          &:after {
+            content: '?';
+            position: absolute;
+            top: calc(0.25em);            
+            left: calc(50% - 0.65em);
+            width: 1.4em;
+            height: 1.4em;
+            line-height: 1.4em;
+            color: #333;
+            background: #fff;
+            border-radius: 999px;   
+            font-weight: bold;
+            text-align: center;
+            z-index: 2;   
+            transition: transform 100ms ease-in;
+            .footer__cookies__item__toggle__input--yes:disabled ~ & {
+              opacity: 0.7;
+            }
+            .footer__cookies__item__toggle__input--yes:checked ~ & {
+              font-family: sans-serif;                            
+              content: 'Y';
+              transform: translateX(-0.75em);
+            }
+            .footer__cookies__item__toggle__input--no:checked ~ & {
+              font-family: sans-serif;                            
+              content: 'N';
+              transform: translateX(0.75em);
+            }
+          }
+        }
+      }
+    } 
+  }
 }
