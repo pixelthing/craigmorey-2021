@@ -47,6 +47,7 @@
   <body>
   
     <script src="/js/viewport.js" async></script>
+    <script src="/js/cookies.js"></script>
   
     <header class="header">
     
@@ -113,13 +114,57 @@
 
     </main>
 
-    <footer>
-      <address class="footer-author">
-        <em>pixelthing</em> is the personal blog of <span rel="author">Craig Morey</span> - data analyst snd visualiser from Gothenburg, Sweden. 
-        <div> Blog template is my own, feel free to view source and use it for 
+
+    <footer class="footer">
+      <address class="footer__author">
+        <h3>pixelthing</h3>
+        <p> I'm <span rel="author">Craig Morey</span>, a data analyst & developer from Gothenburg, Sweden (but originally from the UK). This is my place for collecting ramblings and curiosities, you're welcome/välkomna!</p>        
+        <p>Site made with <a href="https://eleventy.co">Eleventy</a> on iPad. Here's a post about the dev of it.</p> 
+        <ul class="social">
+          <li><a href="" class="social__item social__item--rss">RSS</a></li>
+          <li><a href="" class="social__item social__item--twitter">Twitter</a></li>
+          <li><a href="" class="social__item social__item--instagram">Instagram</a></li>
+          <li><a href="" class="social__item social__item--linkedin">Linked In</a></li>          
+        </ul>
       </address>
-      non-commercial reasons.</div>
+      <div class="footer__cookies">
+        <div id="cookie-dialog-1">
+        <h3>Cookies & Tracking</h3>
+        <p>This site uses a few cookies & yes, Google Analytics.<p>
+        <p>Because it's nice to know if anyone is reading this stuff.</p>
+        <p>If you accept cookies, your data is never sold & you are never targeted or tracked cross-site.</p>
+        </div>
+        <fieldset class="cookies__settings">
+          <legend class="cookies__settings__legend">Your cookie settings</legend>
+          <div class="cookies__item">
+           <p class="cookies__item__text">Accept functional cookies needed to run the site (required)</p>
+            <div class="toggle">
+              <input type="radio" class="toggle__input toggle__input--no" disabled />
+              <input type="radio" class="toggle__input toggle__input--yes" checked disabled />
+              <span class="toggle__slug"></span>
+            </div>
+          </div>
+          <div class="cookies__item">
+            <p class="cookies__item__text">Accept anonymous analytics cookies </p>
+            <div class="toggle">
+              <input id="settings-cookie-reject" type="radio" class="toggle__input toggle__input--no" name="cookies-analytics" />
+              <label for="settings-cookie-reject" class="toggle__text">Opt-out</label>
+              <input id="settings-cookie-accept" type="radio" class="toggle__input toggle__input--yes" name="cookies-analytics" />
+              <label for="settings-cookie-accept" class="toggle__text">Accept</label>
+              <input type="radio" class="toggle__input toggle__input--maybe" name="cookies-analytics" disabled checked />
+              <label class="toggle__text">Undecided</label>
+              <span class="toggle__slug"></span>
+            </div>
+          </div>
+        </fieldset>
+        
+        <div id="cookie-dialog-2" class="cookies__buttons">
+            <button type="submit" id="dialog-cookie-accept" class="cookies__button cookies__button--accept"> Accept </button>
+            <button type="submit" id="dialog-cookie-reject" class="cookies__button cookies__button--reject">No to cookies</button>
+        </div>
+      </div>
     </footer>
+
     
     <script src="/js/post-title-scroll.js" async></script>
 
