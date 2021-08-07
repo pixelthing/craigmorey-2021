@@ -127,22 +127,22 @@
   </url>
   
   <url>
-    <loc>https://example.com/tags/another-tag/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/number-2/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
     <loc>https://example.com/tags/analytics/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/dashboards/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/another-tag/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/number-2/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   

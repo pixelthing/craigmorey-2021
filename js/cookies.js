@@ -68,14 +68,22 @@
         const acceptCookie = () => {
           localStorage.setItem('functional.cookieConsent', 'accepted');
           document.querySelector('#settings-cookie-accept').checked = true;
-          window.dataLayer.push({
-            event: 'cookiesAccepted'
-          });
+          if (!window.cookiesAcceptedOnceThisPage) {
+            window.dataLayer.push({
+              event: 'cookiesAccepted',
+              'consent': 'accepted'
+            });
+          }
+          window.cookiesAcceptedOnceThisPage = true;          
           closeDialog();
         }
         const rejectCookie = () => {
         localStorage.setItem('functional.cookieConsent', 'rejected');
           document.querySelector('#settings-cookie-reject').checked = true;
+          window.dataLayer.push({
+            event: 'cookiesRejected',
+            'consent': 'rejected'
+          });
           closeDialog();
         }
         const init = () => {
