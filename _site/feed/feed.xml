@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>pixelthing</title>
-	<subtitle>I am writing about my experiences as a naval navel-gazer.</subtitle>
+	<subtitle>Hi, I&#39;m Craig Morey, a data analyst &amp; developer from Gothenburg, Sweden (but originally from the UK).</subtitle>
 	
 	<link href="https://example.com/feed/feed.xml" rel="self"/>
 	<link href="https://example.com/"/>

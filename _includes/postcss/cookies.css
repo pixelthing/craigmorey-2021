@@ -19,8 +19,10 @@
       margin: 0;
       padding: 0.2em 1em;
       font-size: 1em;
+      font-weight: bold;
       color: var(--contrast);
       background: #fff;
+      border: none;
       border-radius: 0.5em;
       &--reject {
         -webkit-appearance: none;

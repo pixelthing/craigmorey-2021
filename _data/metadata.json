@@ -1,9 +1,9 @@
 {
   "title": "pixelthing",
   "url": "https://example.com/",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "description": "Hi, I'm Craig Morey, a data analyst & developer from Gothenburg, Sweden (but originally from the UK). This is my place for collecting ramblings and curiosities, you're welcome/välkomna!",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "Hi, I'm Craig Morey, a data analyst & developer from Gothenburg, Sweden (but originally from the UK).",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://example.com/"
