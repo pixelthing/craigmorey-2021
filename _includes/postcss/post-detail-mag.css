@@ -48,11 +48,15 @@
   &__title,
   &__sub {
     width: 100%;
-    max-width: 999em;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 var(--gutter);
   }
   
   &__textbox {
+    max-width: 1600px;
+    margin: 0 auto;
     flex: 0 1 100%;
     padding: 0 var(--gutter) var(--gutter);
     /*opacity: 0;*/
