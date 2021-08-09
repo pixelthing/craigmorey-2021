@@ -468,7 +468,7 @@ Search (and even at a push -- replace) across all content in text fields &amp;am
           &lt;/picture&gt;&lt;p&gt;Multi file search and replace. One of many things missing in native iOS code editor apps.&lt;/p&gt;
 
         &lt;/figure&gt;&lt;p&gt;In practice, once you’re set-up and in a flow, you’re pulling, editing, saving, running Node.js tool chains all within VS Code as a standalone web-app (without need to think that it’s all happening remotely), then alt-tabbing to Safari/&lt;a href=&quot;https://apps.pdyn.net/inspect/&quot;&gt;Inspect Browser&lt;/a&gt; to check the results, then alt-tabbing back to VS Code exactly where you left it, to commit and push right there in the IDE. You’ll get used to briefly seeing the &amp;quot;reconnecting&amp;quot; dialogs, but on a good connection, it’s a minor annoyance. It’s surprisingly seamless.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://youtu.be/watch/tCHDQmDn90M&quot;&gt;https://youtu.be/watch/tCHDQmDn90M&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/tCHDQmDn90M&quot;&gt;https://youtu.be/tCHDQmDn90M&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Starting up and using VS Code on a VPS from an iPad.&lt;/p&gt;
 &lt;h3 id=&quot;but-hang-on%E2%80%A6&quot;&gt;But hang on… &lt;a class=&quot;direct-link&quot; href=&quot;#but-hang-on%E2%80%A6&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;This is technically impressive, but in truth it has nothing to do with the iPad -- everything is happening on the server, so your precious iPad could be replaced by any web browser on any platform -- from a Chrome OS laptop to a Raspberry Pi mini-PC. It’s the browser equivalent of firing up Emacs, ssh-ing to a server and only leaving it to check the results.&lt;/p&gt;

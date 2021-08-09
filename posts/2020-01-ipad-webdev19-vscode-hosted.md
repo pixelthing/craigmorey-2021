@@ -72,7 +72,7 @@ Multi file search and replace. One of many things missing in native iOS code edi
 
 In practice, once you’re set-up and in a flow, you’re pulling, editing, saving, running Node.js tool chains all within VS Code as a standalone web-app (without need to think that it’s all happening remotely), then alt-tabbing to Safari/[Inspect Browser](https://apps.pdyn.net/inspect/) to check the results, then alt-tabbing back to VS Code exactly where you left it, to commit and push right there in the IDE. You’ll get used to briefly seeing the "reconnecting" dialogs, but on a good connection, it’s a minor annoyance. It’s surprisingly seamless.
 
-https://youtu.be/watch/tCHDQmDn90M
+https://youtu.be/tCHDQmDn90M
 
 Starting up and using VS Code on a VPS from an iPad.
 
