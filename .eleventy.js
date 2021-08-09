@@ -126,10 +126,16 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary("md", markdownLibrary);
   
   eleventyConfig.addNunjucksFilter("imageWidth", function(img) {
+    if (img === undefined) {
+      return '';
+    }
     const dimensions = sizeOf('img/' + img + '-xl.jpeg');
     return dimensions.width;
   });
   eleventyConfig.addNunjucksFilter("imageHeight", function(img) {
+    if (img === undefined) {
+      return '';
+    }
     const dimensions = sizeOf('img/' + img + '-xl.jpeg');
     return dimensions.height;
   });
