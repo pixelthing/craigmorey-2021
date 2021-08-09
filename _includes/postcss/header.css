@@ -1,7 +1,5 @@
 
 .header {
-  border-bottom: 1px dashed var(--bg-sub);
-  height:3rem;
   overflow:hidden;
   position: fixed;
   display: flex;
@@ -10,7 +8,10 @@
   left: 0;
   right: 0;
   z-index: 1;
+  max-width: 100%;
+  height:3rem;
   padding: 0 var(--gutter);
+  border-bottom: 1px dashed var(--bg-sub);
   line-height: 1rem;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
@@ -40,6 +41,9 @@
       color: var(--fg-sub);
       text-decoration: none;
     }
+    &__icon {
+      margin-right: 0.33em;
+    }
   }
   &__doppel {
     position: fixed;
@@ -48,7 +52,7 @@
     height: 0;
     & a[href]  {
       color: #fff;
-      text-shadow: 0 0.1em 0.5em rgba(0,0,0,0.4);
+      text-shadow: 0 0.1em 0.5em rgba(0,0,0,0.3);
       margin: 0 var(--gutter);
       -webkit-backdrop-filter: blur(1px);
       backdrop-filter: blur(1px);
@@ -68,9 +72,13 @@
   overflow: hidden;
   &__inner {
     display: block;
+    max-width: 100%;
     padding: 0 0.1em;
     transform: translateY(2em);
     transition: transform 300ms;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     &--active {
         transform: translateY(0);
     }

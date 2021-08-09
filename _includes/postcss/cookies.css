@@ -2,8 +2,7 @@
 .cookies {
     &__settings {
       margin: 1.5em 0 1em;
-      border-color: currentColor;
-      border-style: solid;
+      border: 1px dashed currentColor;
       &__legend {
         font-weight: bold;
         color: inherit;

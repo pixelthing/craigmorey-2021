@@ -5,7 +5,7 @@ templateClass: post
 
 <figure class="post__hero">
   <div class="header__doppel" aria-hidden="true">
-    <h3 class="header__home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h3>
+    <h3 class="header__home"><a href="{{ '/' | url }}" class="header__home__link"><span class="header__home__icon">&#10012;</span>{{ metadata.title }}</a></h3></h3>
   </div>
   <picture>
     <source media="(max-width:599px)" srcset="../../img/{{ hero }}-sm.jpeg" />
