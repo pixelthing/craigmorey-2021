@@ -103,18 +103,42 @@ module.exports = function(eleventyConfig) {
     }
   }).use(mdContainer, 'picture', {
     validate: function(params) {
-      return params.trim().match(/^picture/);
+      return params.trim().match(/^picture($|.*$)/);
     },
     render: function (tokens, idx) {
-      let classList = tokens[idx].info.trim().match(/^picture\.(.*)\s$/);
-      classList = '';//''(classList ? classList[1].replace('.', ' ') : '' );
-      const dimensions = sizeOf('https://miro.medium.com/max/7994/1*EOyYt3uQbHMe-3TeCF3DsQ.jpeg')
       if (tokens[idx].nesting === 1) {
+      
+        const tokenArray = /^picture(.*)\s((.*)$|$)/.exec(tokens[idx].info.trim());
+        if (!tokenArray || tokenArray.length < 2) {
+          console.log('****ERROR no array', tokens[idx]);
+          return '';
+        }
+        let filename = tokenArray[2].trim() || '';
+        if (!filename) {
+          console.log('****ERROR no filename', tokens[idx]);
+          return '';
+        }
+        try {
+          if (fs.existsSync('img/' + filename + '-lg.jpeg')) {
+            //file exists
+          } else {
+            console.log('****ERROR img/' + filename + '-lg.jpeg doesn\'t exist');
+            return '';
+          }
+        } catch(err) {
+          console.log('****ERROR img/' + filename + '-lg.jpeg doesn\'t exist',err);
+          return '';
+        }
+        let classList = tokenArray[1] || '';
+        classList = classList.replace('.',' ');
+        const dimensions = sizeOf('img/' + filename + '-lg.jpeg')
         // opening tag
         return `
-        <figure${(classList.length ? ` class="${classList}"` : '')}>
-          <picture>
-            <img src="https://miro.medium.com/max/7994/1*EOyYt3uQbHMe-3TeCF3DsQ.jpeg" loading="${(classList.contains('hero') ? 'eager' : 'lazy')}}" width="${dimensions.width}}" height="${dimensions.height}" />
+        <figure class="post__img${classList}">
+          <picture class="post__img__picture">
+            <source media="(max-width:599px)" srcset="../../img/${filename}-sm.jpeg" />
+            <source media="(min-width:600px)" srcset="../../img/${filename}-lg.jpeg" />
+            <img src="../../img/${filename}-xl.jpeg" loading="${(classList.includes('hero') ? 'eager' : 'lazy')}" width="${dimensions.width}" height="${dimensions.height}" class="post__img__img" />
           </picture>`;
       } else {
         // closing tag
@@ -190,4 +214,3 @@ module.exports = function(eleventyConfig) {
     }
   };
 };
-

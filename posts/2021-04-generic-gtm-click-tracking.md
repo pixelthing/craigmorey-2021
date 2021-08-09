@@ -124,4 +124,3 @@ return labelTranslated;
 
 I'm sure you can think of potential uses for similar substitutions.
 
-

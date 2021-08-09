@@ -9,11 +9,11 @@ templateClass: post
     <div class="header__doppel" aria-hidden="true">
       <h3 class="header__home"><a href="{{ '/' | url }}" class="header__home__link"><span class="header__home__icon">&#10012;</span>{{ metadata.title }}</a></h3></h3>
     </div>
-    <picture>
+    <picture class="post__hero__picture mag__hero__picture">
       <source media="(max-width:599px)" srcset="../../img/{{ hero }}-sm.jpeg" />
       <source media="(max-width:1799px)" srcset="../../img/{{ hero }}-lg.jpeg" />
       <source media="(min-width:1800px)" srcset="../../img/{{ hero }}-xl.jpeg" />
-      <img src="../../img/{{ hero }}-xl.jpeg" loading="eager" width="{{ hero|imageWidth }}" height="{{ hero|imageHeight }}" />
+      <img src="../../img/{{ hero }}-xl.jpeg" loading="eager" width="{{ hero|imageWidth }}" height="{{ hero|imageHeight }}" alt="title image for article" class="post__hero__img mag__hero__img" />
     </picture>
   </figure> 
 

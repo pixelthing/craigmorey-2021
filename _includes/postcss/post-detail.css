@@ -9,6 +9,9 @@
     margin-top: 0.25em;
     margin-bottom: 0.25em;
   }
+  &__sub {
+    margin-top: 0;
+  }
   &__content {
     line-height: var(--font-default-line);
     & h3:first-child,
