@@ -39,6 +39,7 @@
     "postcss-import": "^14.0.2",
     "postcss-mixins": "^8.1.0",
     "postcss-nesting": "^8.0.1",
-    "precss": "^4.0.0"
+    "precss": "^4.0.0",
+    "image-size": "^1.0.0"
   }
 }

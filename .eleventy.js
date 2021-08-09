@@ -8,6 +8,7 @@ const md = require("markdown-it");
 const mdAnchor = require("markdown-it-anchor");
 //const Image = require("@11ty/eleventy-img");
 const embedEverything = require("eleventy-plugin-embed-everything");
+const sizeOf = require('image-size');
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
@@ -107,12 +108,13 @@ module.exports = function(eleventyConfig) {
     render: function (tokens, idx) {
       let classList = tokens[idx].info.trim().match(/^picture\.(.*)\s$/);
       classList = '';//''(classList ? classList[1].replace('.', ' ') : '' );
+      const dimensions = sizeOf('https://miro.medium.com/max/7994/1*EOyYt3uQbHMe-3TeCF3DsQ.jpeg')
       if (tokens[idx].nesting === 1) {
         // opening tag
         return `
         <figure${(classList.length ? ` class="${classList}"` : '')}>
           <picture>
-            <img src="https://miro.medium.com/max/7994/1*EOyYt3uQbHMe-3TeCF3DsQ.jpeg" loading="${(classList.contains('hero') ? 'eager' : 'lazy')}}"/>
+            <img src="https://miro.medium.com/max/7994/1*EOyYt3uQbHMe-3TeCF3DsQ.jpeg" loading="${(classList.contains('hero') ? 'eager' : 'lazy')}}" width="${dimensions.width}}" height="${dimensions.height}" />
           </picture>`;
       } else {
         // closing tag
@@ -122,6 +124,15 @@ module.exports = function(eleventyConfig) {
     }
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
+  
+  eleventyConfig.addNunjucksFilter("imageWidth", function(img) {
+    const dimensions = sizeOf('img/' + img + '-xl.jpeg');
+    return dimensions.width;
+  });
+  eleventyConfig.addNunjucksFilter("imageHeight", function(img) {
+    const dimensions = sizeOf('img/' + img + '-xl.jpeg');
+    return dimensions.height;
+  });
 
   // Browsersync Overrides
   eleventyConfig.setWatchThrottleWaitTime(500);

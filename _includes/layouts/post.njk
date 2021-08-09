@@ -11,7 +11,7 @@ templateClass: post
     <source media="(max-width:599px)" srcset="../../img/{{ hero }}-sm.jpeg" />
     <source media="(max-width:1799px)" srcset="../../img/{{ hero }}-lg.jpeg" />
     <source media="(min-width:1800px)" srcset="../../img/{{ hero }}-xl.jpeg" />
-    <img src="../../img/{{ hero }}-xl.jpeg" loading="eager" />
+    <img src="../../img/{{ hero }}-xl.jpeg" loading="eager" width="{{ hero|imageWidth }}" height="{{ hero|imageHeight }}" />
   </picture>
 </figure> 
 
