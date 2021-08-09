@@ -38,8 +38,16 @@ If you can find an original 2018 Pro for a good price - and there’s still a lo
 ### Code
 This is the app surprise of the year for me. It started as a simple enough little playground project - lets take the interface of VSCode and see if it can be reproduced in SwiftUI. But with continual updates, it has progressed in nine months to the point that it’s pretty damned close in core functionality to it’s role model. It has intellisense style hints & suggestions, a command palette, and code running options including node.js and python. There are still some problems that need attention, but this could be the star of next year’s IDE crowd at this rate - it’s certainly got my attention.
 
+:::picture 2020-12-ipad-webdev20-1
+Code app by The BaseLab
+:::
+
 ### PlayJS 2.0
 Play.js 1.0 was innovative and quirky, but more importantly was the only way you could build a node.js or React project on iOS. This year, a complete rewrite resulted in v2.0, ironing out a lot of the quirks and adding a whole lot of functionality. Between enabling vue.js and next.js projects, to having the best devtools outside of inspect browser, Play.js has grown beyond expectations in 2020. Every aspect has improved, but the biggest thing you notice is that it fits together better, and looks and feels like a top tier iOS app. I even like that it has in-app optional tip payment - if you buy and use these apps over years, there’s no better way to say thanks for the updates.
+
+:::picture 2020-12-ipad-webdev20-2
+play.js
+:::
 
 ### The Apple store small business program
 Almost all the apps mentioned in this article are from one-person or small-team developers. A large amount of these teams only build apps as a side-job, because the volumes just don’t make full-time app development financially viable. With the advent of the small business program (which reduces Apple’s cut from 30% to 15%), the developers effectively get a 20% pay rise. That might not make them rich, but it might mean it’s worthwhile to carry on maintaining these apps, or even devote more time to them - and surprise us all with the results. 
@@ -60,6 +68,10 @@ Last year I got deep into installing VSCode onto a remote server to use it as an
 
 ### Inspect browser
 Still the best option for web devtools on iOS, and still coming out with additional functionality and interface updates. Building an entire browser just so that you can add devtools to it is an insane amount of work that you undertake only if you didn’t realise how much work was involved when you started - support them as much as you can so that they continue on this crazy quest that is so essential to any web dev on iPadOS.
+
+:::picture 2020-12-ipad-webdev20
+Inspect Browser
+:::
 
 ## What we still need
 

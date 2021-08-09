@@ -31,8 +31,9 @@ Let’s call these two ends of the chain “**the bite**”, and “**the body**
 
 “**The body**” is a variant on the dashboard we build already, it should be giving multiple indicators and insights to form an opinion or decision. But it differs in two ways to what we would usually build. Firstly it _can_ be found at the end of a URL/link, because “the bite” does the work of attracting interest to it. Secondly, because it doesn’t need to do double-duty of attracting attention _and_ serving up depth, it can be re-configured assuming the viewer already has a view on the data when they start looking into it. In an ideal world, you could have variants of dashboard for different analysis, depending on the link in message of “the bite”.
 
-Image for post
+:::picture 2020-08-getting-critical-data-noticed-1
 chartyios.app in an iOS14 widget
+:::
 
 “**The bite**” is more interesting, because there are so many options available to us. Let’s talk about the medium before we get into the message.
 
@@ -54,14 +55,9 @@ In tests, widgets also turned out to be the best goal tracker we had, viewers ca
 
 Very soon you will see lots of screenshots of these widgets in social media as a shorthand to a humblebrag.
 
-<figure class="fig-column">
-  <picture>
-    <img src="../../img/2020-08-scriptable1.jpeg" />
-  </picture>
-  <figcaption>
-    JS script running in a scriptable.app iOS14 widget
-  </figcaption>
-</figure>
+:::picture 2020-08-getting-critical-data-noticed-2
+JS script running in a scriptable.app iOS14 widget
+:::
 
 ---
 

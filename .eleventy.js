@@ -113,32 +113,45 @@ module.exports = function(eleventyConfig) {
           console.log('****ERROR no array', tokens[idx]);
           return '';
         }
+        // file name (eg, "2020-05-test" or "2020-05-test.png")
         let filename = tokenArray[2].trim() || '';
         if (!filename) {
           console.log('****ERROR no filename', tokens[idx]);
           return '';
         }
+        // file extension (eg, "png")
+        let fileType = 'jpeg';
+        if (filename.includes('.')) {
+          const filenameArray = filename.split('.');
+          if (filenameArray.length > 1) {
+            const fileTypeSuspect =  filenameArray[filenameArray.length - 1];
+            if (fileTypeSuspect.length >=2 && fileTypeSuspect.length <= 4) {
+              fileType = fileTypeSuspect;
+              filename = filenameArray.slice(0, -1).join('.');
+            }
+          }
+        }    
         try {
-          if (fs.existsSync('img/' + filename + '-lg.jpeg')) {
+          if (fs.existsSync('img/' + filename + '-lg.' + fileType)) {
             //file exists
           } else {
-            console.log('****ERROR img/' + filename + '-lg.jpeg doesn\'t exist');
+            console.log('****ERROR img/' + filename + '-lg.' + fileType + ' doesn\'t exist 1');
             return '';
           }
         } catch(err) {
-          console.log('****ERROR img/' + filename + '-lg.jpeg doesn\'t exist',err);
+          console.log('****ERROR img/' + filename + '-lg.' + fileType + ' doesn\'t exist 2',err);
           return '';
         }
         let classList = tokenArray[1] || '';
         classList = classList.replace('.',' ');
-        const dimensions = sizeOf('img/' + filename + '-lg.jpeg')
+        const dimensions = sizeOf('img/' + filename + '-lg.' + fileType)
         // opening tag
         return `
         <figure class="post__img${classList}">
           <picture class="post__img__picture">
-            <source media="(max-width:599px)" srcset="../../img/${filename}-sm.jpeg" />
-            <source media="(min-width:600px)" srcset="../../img/${filename}-lg.jpeg" />
-            <img src="../../img/${filename}-xl.jpeg" loading="${(classList.includes('hero') ? 'eager' : 'lazy')}" width="${dimensions.width}" height="${dimensions.height}" class="post__img__img" />
+            <source media="(max-width:599px)" srcset="../../img/${filename}-sm.${fileType}" />
+            <source media="(min-width:600px)" srcset="../../img/${filename}-lg.${fileType}" />
+            <img src="../../img/${filename}-xl.${fileType}" loading="${(classList.includes('hero') ? 'eager' : 'lazy')}" width="${dimensions.width}" height="${dimensions.height}" class="post__img__img" />
           </picture>`;
       } else {
         // closing tag

@@ -26,7 +26,9 @@ Play.js 2.0 has launched and it’s a full re-write with many of the small annoy
 
 It’s not just an editor, it’s a fully integrated environment that lets you run Node.js processes and install Node.js modules. Yes really -- this is the app [I have been imagining for several years](https://blog.usejournal.com/fe-webdev-on-ipad-pro-2018-c55283f01e4c).
 
+:::picture 2020-01-ipad-webdev19-playjs-1
 Two windows of play.js, running the index.js in the left window, which spawned the internal browser in the right window with the results. And bottom left is the Node.js console.
+:::
 
 But, it has some caveats. It curently has a specific focus on three audiences: Node.js app dev, React Native dev, and React webdev (which is currently marked as in "beta"). There is wiggle room to get some other projects working, but I haven’t had much success trying to get Gulp or Vue.js projects running.
 
@@ -34,11 +36,15 @@ The way Play.js works is a little unconventional if you’re used to working wit
 
 It’s almost magic.
 
+:::picture 2020-01-ipad-webdev19-playjs-2
 Here’s the magic in action. Press "play" and the app installs the modules and runs index.js
+:::
 
 This is running front-end tooling locally on your iPad without any use of a remote or Virtual Private Server (VPS), and without having to limit yourself to developing a flat file site. For this reason alone (plus if you want to develop server-side node apps), play.js has quite a faithful following.
 
+::: picture 2020-01-ipad-webdev19-playjs-3
 The default project menu, before you expand it. do you know which is the right React project to run?
+:::
 
 ### In practice
 
@@ -46,8 +52,11 @@ I have to admit that although I do almost every type of Front-End development, b
 
 But it essentially does what it says on the tin. The test React projects that I’ve checked out from GitHub with Working Copy are easily accessed in Play.js with "edit-in-place". If the index.js file is in the root and it has a package.json file, pressing play installs the modules and runs the Node.js tool chain.
 
+https://youtu.be/RIOOA6APlZs
 
+:::picture 2020-01-ipad-webdev19-playjs-4.png
 The file sidebar. The top directory with ".." goes up a level.
+:::
 
 The file sidebar is esoteric by design, and having "back to parent directory" buttons as ellipsis’, it would probably appeal more to Linux junkies than strict [iOS HIG](https://developer.apple.com/design/human-interface-guidelines/) followers -- but that’s ok.
 
@@ -57,7 +66,9 @@ The editor has come a very long way in a year. Building a code editor is always 
 
 The traffic-light close/minimise buttons (echoing window controls in OSX) make me smile, but I wonder about the utility of any buttons you have to click twice -- once to enlarge them, a second time to use them.
 
+:::picture 2020-01-ipad-webdev19-playjs-5.png
 The Git controls in the sidebar. Also note the traffic light buttons.
+:::
 
 Unusually for almost any iOS code editor (please tell me if I’m wrong), it has great Git support, allowing you commit and push from within the editor. The benefit of which becomes apparent next.
 
@@ -65,7 +76,9 @@ Leaving the app will sometimes have iOS killing it from memory -- mainly due to 
 
 The in-app browser (that cleverly opens itself in a new window docked to the side of the code) doesn’t have any special functions apart from having a button to load the same page in an external browser (Safari). I wish we could specify the browser to load the results in -- being able to use [Inspect Browser](https://apps.pdyn.net/inspect/) would instead would help a great deal with debugging.
 
+:::picture 2020-01-ipad-webdev19-playjs-6.png
 The project/app list (default view).
+:::
 
 If I’m honest, the most confusing part for me is the project menu. By default it’s a row of unlabelled icons. You can optionally expand them to be a grid of labelled icons. I thought I was colour and icon orientated, but I still can’t get used to remembering if it was the pink or the red React project I wanted to load.
 

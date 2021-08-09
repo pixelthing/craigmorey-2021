@@ -38,7 +38,9 @@ I can run [Microsoft VS Code](https://code.visualstudio.com/) on my iPad. Real, 
 
 Well, don’t get too excited, it’s 90% the real thing.
 
+:::picture 2020-01-ipad-webdev19-vscode-hosted-1
 Running VS Code (hosted) as a standalone web app.
+:::
 
 You see, the earliest versions of VS Code were based on a fork of [GitHub’s Atom](https://atom.io/), a JS based editor. And even though VS Code has come a long way, it’s interface is still just HTML, CSS and JS, even if the heavy lifting is dealt with behind the scenes (mostly in GO?). And that means it’s essentially a web app that can be served to a web browser and even linked from your home screen as a standalone web-app.
 
@@ -53,7 +55,9 @@ But the problem with it being not only a web-app but a relatively unsanctioned o
 - The main hamburger menu disappears once you’ve used it (oops).
 - Various repaint glitches, touch-targets not all sized for touch screen usage, other small weirdnesses of running a very complex beta web-app.
 
+:::picture 2020-01-ipad-webdev19-vscode-hosted-2
 Extensions in VS Code. In terms of functionality, the hosted version is missing almost nothing over the app.
+:::
 
 Many of these are purely beta-testing bugs, but [there’s evidence that Microsoft are actively testing this set-up with iPads](https://code.visualstudio.com/updates/v1_41#_browser-support), so expect to see improvements in the future. Could this eventually be a native app? I’d venture that getting it to work in a native app package with the file picker API etc is definitely within sight, but forking the capabilities of the app to be so very different when running natively on the iPad (eg could the iOS version do debugging, git, terminal, extensions in the same way?) are more likely to be holding Microsoft back from launching it. Who knows, but if anyone could get Apple to bend rules to suit webdev, it’s 2020 Microsoft.
 
@@ -62,9 +66,13 @@ Now we’ve covered the downsides, what are the benefits?
 - Built in terminal, so you can run your Node.js toolchain on the remote server from within your IDE.
 - err.. VS Code -- that means a top-tier code editor with almost endless extensions and theming.
 
+:::picture 2020-01-ipad-webdev19-vscode-hosted-3
 Multi file search and replace. One of many things missing in native iOS code editor apps.
+:::
 
 In practice, once you’re set-up and in a flow, you’re pulling, editing, saving, running Node.js tool chains all within VS Code as a standalone web-app (without need to think that it’s all happening remotely), then alt-tabbing to Safari/[Inspect Browser](https://apps.pdyn.net/inspect/) to check the results, then alt-tabbing back to VS Code exactly where you left it, to commit and push right there in the IDE. You’ll get used to briefly seeing the "reconnecting" dialogs, but on a good connection, it’s a minor annoyance. It’s surprisingly seamless.
+
+https://youtu.be/watch/tCHDQmDn90M
 
 Starting up and using VS Code on a VPS from an iPad.
 
@@ -73,7 +81,9 @@ This is technically impressive, but in truth it has nothing to do with the iPad 
 
 That doesn’t mean it doesn’t hit our main requirement (ie, doing "real work" on my mobile device of choice), it’s just that it feels a little like cheating.
 
+:::picture 2020-01-ipad-webdev19-vscode-hosted-4
 Running a simple python web server within the terminal inside VS Code.
+:::
 
 ### How to.
 1. First you need a Linux server to run it from. It could be a computer on your internal network, a remote server you have access to, or most probably a VPS (a Virtual Private Server -- a remote Linux account that your rent). This will probably take some sys-admin knowledge to set-up and prepare.
@@ -90,7 +100,9 @@ echo "export PASSWORD=YourPassword" >> /etc/profile
 …where YourPassword is… well you get the idea. Next time you start up the VSCode server and get to the log-in, you won’t need to copy/paste that random password, you’ll have your own.
 1. Ok, this is the last thing. Using this out in the open is still a security risk even with the password on it. I wouldn’t risk setting it up to run all the time if I can help it. Shut it down when you’ve finished your session.
 
+:::picture 2020-01-ipad-webdev19-vscode-hosted-5.png
 The password entry for hosted VSCode as seen in a browser. By default, the password is set randomly and shown in the terminal session that started the server.
+:::
 
 ### Optional Extras
 - Could I marry this workflow with a Raspberry Pi (or any local Linux computer) instead of a VPS? Heck yes, and you wouldn’t need the Mosh server or passwords every time you launch VS Code. A Raspberry Pi 4B with decent memory should be more than capable -- although I haven’t tried it… yet.
