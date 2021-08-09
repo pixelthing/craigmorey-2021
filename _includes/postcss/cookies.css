@@ -2,10 +2,11 @@
 .cookies {
     &__settings {
       margin: 1.5em 0 1em;
-      border-color: var(--bg-sup);
+      border-color: currentColor;
+      border-style: solid;
       &__legend {
         font-weight: bold;
-        color: var(--fg-sup);
+        color: inherit;
       }
     }
     &__buttons {
