@@ -23,6 +23,8 @@
       text-align: center;
     }
     &__img {
+      max-width: 100%;
+      margin: 0 auto;
       background: var(--bg-sub);
     }
   }

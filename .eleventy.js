@@ -142,9 +142,11 @@ module.exports = function(eleventyConfig) {
           console.log('****ERROR img/' + filename + '-lg.' + fileType + ' doesn\'t exist 2',err);
           return '';
         }
+        // classlist of the figure
         let classList = tokenArray[1] || '';
         classList = classList.replace('.',' ');
-        const dimensions = sizeOf('img/' + filename + '-lg.' + fileType)
+        // dimensions
+        const dimensions = sizeOf('img/' + filename + '.' + fileType)
         // opening tag
         return `
         <figure class="post__img${classList}">
