@@ -5,7 +5,7 @@ date: 2020-08-20
 tags:
   - analytics
   - dashboards
-layout: layouts/magazine.njk
+layout: layouts/post.njk
 hero: 2020-08-gettingdatanoticed
 ---
 

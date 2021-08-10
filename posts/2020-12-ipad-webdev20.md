@@ -5,7 +5,7 @@ date: 2020-12-30
 tags:
   - webdev
   - ipadpro
-layout: layouts/magazine.njk
+layout: layouts/post.njk
 hero: 2020-12-ipadwebdev
 ---
 
