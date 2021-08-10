@@ -11,10 +11,15 @@ const imageEnlarge = () => {
   };
   
   // get ready to close modal
-  const modalClose = () => {
+  const modalClose = (ev,immediate) => {
     const existingModal = document.querySelector('.modal');
-    if (existingModal) {
+    if (existingModal && immediate) {
       existingModal.remove();
+    } else if (existingModal) {
+      existingModal.classList.add('modal--initial');
+      setTimeout(() => {
+        existingModal.remove();
+      },310);
     }
   }
   
@@ -22,8 +27,8 @@ const imageEnlarge = () => {
     
     // create the modal, fill with the existing image
     const modalInner = `
-      <div class="modal__inner">
-        <img src="${picUrl}" width="${anchorWidthSource}" height="${anchorHeightSource}" alt="enlarged version" class="modal__img" />
+      <div class="modal__inner" style="--imgHeight: ${anchorHeightSource}px">
+        <img src="${picUrl}" width="${anchorWidthSource}" height="${anchorHeightSource}" alt="enlarged version" class="modal__img"/>
         <button class="modal__close">close</button>
         <span class="modal__spinner">loading</span>
       </div>
@@ -31,6 +36,7 @@ const imageEnlarge = () => {
     `;
     const modal = document.createElement('dialog');
     modal.classList.add('modal');
+    modal.classList.add('modal--initial');
     modal.innerHTML = modalInner;
     document.body.append(modal);
     // add event handlers
@@ -44,7 +50,11 @@ const imageEnlarge = () => {
     var imgSource = new Image();
     imgSource.addEventListener('load', imgLoadedHandler, false)
     imgSource.src = anchorUrl;
-  }
+    // animation
+    setTimeout(() => {
+      modal.classList.remove('modal--initial');
+    },0);
+  }  
   
   const linkHandler = ev => {
     ev.preventDefault();
@@ -56,14 +66,13 @@ const imageEnlarge = () => {
     const anchorUrl = anchorClicked.href;
     const picCloned = anchorClicked.childNodes[0].cloneNode(true);
     const picUrl = anchorClicked.querySelector('img').currentSrc;
-    console.log('xxxxx2', anchorWidthOnScreen, anchorWidthSource )
     // if the source image is no bigger than the one we see, say so & exit
     if (anchorWidthSource <= anchorWidthOnScreen) {
       alert('There is no larger version of this image to view.');
       return;
     }
     // kill all current modals
-    modalClose();
+    modalClose(false,true);
     // open new model
     modalOpen(picUrl, anchorUrl, anchorWidthSource, anchorHeightSource);
     

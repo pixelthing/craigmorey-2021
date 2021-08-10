@@ -1,5 +1,5 @@
 .footer {
-  margin-top: var(--gutter);
+  margin-top: 2em;
   padding: var(--gutter) 0;
   color: var(--fg-sub);
   background: var(--bg-sub);
