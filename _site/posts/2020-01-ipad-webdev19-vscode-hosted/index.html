@@ -122,11 +122,13 @@
 <p>Well, don’t get too excited, it’s 90% the real thing.</p>
 
         <figure class="post__img">
-          <picture class="post__img__picture">
-            <source media="(max-width:599px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-1-sm.jpeg" />
-            <source media="(min-width:600px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-1-lg.jpeg" />
-            <img src="../../img/2020-01-ipad-webdev19-vscode-hosted-1-xl.jpeg" loading="lazy" width="1400" height="933" class="post__img__img" />
-          </picture><p>Running VS Code (hosted) as a standalone web app.</p>
+          <a href="../../img/2020-01-ipad-webdev19-vscode-hosted-1.jpeg" target="_blank" rel="noopener" class="post__link">
+            <picture class="post__img__picture">
+              <source media="(max-width:599px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-1-sm.jpeg" />
+              <source media="(min-width:600px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-1-lg.jpeg" />
+              <img src="../../img/2020-01-ipad-webdev19-vscode-hosted-1-xl.jpeg" loading="lazy" width="1400" height="933" class="post__img__img" />
+            </picture>
+          </a><p>Running VS Code (hosted) as a standalone web app.</p>
 
         </figure><p>You see, the earliest versions of VS Code were based on a fork of <a href="https://atom.io/">GitHub’s Atom</a>, a JS based editor. And even though VS Code has come a long way, it’s interface is still just HTML, CSS and JS, even if the heavy lifting is dealt with behind the scenes (mostly in GO?). And that means it’s essentially a web app that can be served to a web browser and even linked from your home screen as a standalone web-app.</p>
 <p>But the problem with it being not only a web-app but a relatively unsanctioned one at that, is that the developer experience has a few downsides:</p>
@@ -143,11 +145,13 @@
 </ul>
 
         <figure class="post__img">
-          <picture class="post__img__picture">
-            <source media="(max-width:599px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-2-sm.jpeg" />
-            <source media="(min-width:600px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-2-lg.jpeg" />
-            <img src="../../img/2020-01-ipad-webdev19-vscode-hosted-2-xl.jpeg" loading="lazy" width="1400" height="815" class="post__img__img" />
-          </picture><p>Extensions in VS Code. In terms of functionality, the hosted version is missing almost nothing over the app.</p>
+          <a href="../../img/2020-01-ipad-webdev19-vscode-hosted-2.jpeg" target="_blank" rel="noopener" class="post__link">
+            <picture class="post__img__picture">
+              <source media="(max-width:599px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-2-sm.jpeg" />
+              <source media="(min-width:600px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-2-lg.jpeg" />
+              <img src="../../img/2020-01-ipad-webdev19-vscode-hosted-2-xl.jpeg" loading="lazy" width="1400" height="815" class="post__img__img" />
+            </picture>
+          </a><p>Extensions in VS Code. In terms of functionality, the hosted version is missing almost nothing over the app.</p>
 
         </figure><p>Many of these are purely beta-testing bugs, but <a href="https://code.visualstudio.com/updates/v1_41#_browser-support">there’s evidence that Microsoft are actively testing this set-up with iPads</a>, so expect to see improvements in the future. Could this eventually be a native app? I’d venture that getting it to work in a native app package with the file picker API etc is definitely within sight, but forking the capabilities of the app to be so very different when running natively on the iPad (eg could the iOS version do debugging, git, terminal, extensions in the same way?) are more likely to be holding Microsoft back from launching it. Who knows, but if anyone could get Apple to bend rules to suit webdev, it’s 2020 Microsoft.</p>
 <p>Now we’ve covered the downsides, what are the benefits?</p>
@@ -158,11 +162,13 @@
 </ul>
 
         <figure class="post__img">
-          <picture class="post__img__picture">
-            <source media="(max-width:599px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-3-sm.jpeg" />
-            <source media="(min-width:600px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-3-lg.jpeg" />
-            <img src="../../img/2020-01-ipad-webdev19-vscode-hosted-3-xl.jpeg" loading="lazy" width="1400" height="933" class="post__img__img" />
-          </picture><p>Multi file search and replace. One of many things missing in native iOS code editor apps.</p>
+          <a href="../../img/2020-01-ipad-webdev19-vscode-hosted-3.jpeg" target="_blank" rel="noopener" class="post__link">
+            <picture class="post__img__picture">
+              <source media="(max-width:599px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-3-sm.jpeg" />
+              <source media="(min-width:600px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-3-lg.jpeg" />
+              <img src="../../img/2020-01-ipad-webdev19-vscode-hosted-3-xl.jpeg" loading="lazy" width="1400" height="933" class="post__img__img" />
+            </picture>
+          </a><p>Multi file search and replace. One of many things missing in native iOS code editor apps.</p>
 
         </figure><p>In practice, once you’re set-up and in a flow, you’re pulling, editing, saving, running Node.js tool chains all within VS Code as a standalone web-app (without need to think that it’s all happening remotely), then alt-tabbing to Safari/<a href="https://apps.pdyn.net/inspect/">Inspect Browser</a> to check the results, then alt-tabbing back to VS Code exactly where you left it, to commit and push right there in the IDE. You’ll get used to briefly seeing the &quot;reconnecting&quot; dialogs, but on a good connection, it’s a minor annoyance. It’s surprisingly seamless.</p>
 <div id="tCHDQmDn90M" class="eleventy-plugin-youtube-embed"style="position:relative;width:100%;padding-top: 56.25%;"><iframe style="position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;" width="100%" height="100%" frameborder="0" title="Embedded YouTube video" src="https://www.youtube-nocookie.com/embed/tCHDQmDn90M" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -172,11 +178,13 @@
 <p>That doesn’t mean it doesn’t hit our main requirement (ie, doing &quot;real work&quot; on my mobile device of choice), it’s just that it feels a little like cheating.</p>
 
         <figure class="post__img">
-          <picture class="post__img__picture">
-            <source media="(max-width:599px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-4-sm.jpeg" />
-            <source media="(min-width:600px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-4-lg.jpeg" />
-            <img src="../../img/2020-01-ipad-webdev19-vscode-hosted-4-xl.jpeg" loading="lazy" width="1400" height="933" class="post__img__img" />
-          </picture><p>Running a simple python web server within the terminal inside VS Code.</p>
+          <a href="../../img/2020-01-ipad-webdev19-vscode-hosted-4.jpeg" target="_blank" rel="noopener" class="post__link">
+            <picture class="post__img__picture">
+              <source media="(max-width:599px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-4-sm.jpeg" />
+              <source media="(min-width:600px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-4-lg.jpeg" />
+              <img src="../../img/2020-01-ipad-webdev19-vscode-hosted-4-xl.jpeg" loading="lazy" width="1400" height="933" class="post__img__img" />
+            </picture>
+          </a><p>Running a simple python web server within the terminal inside VS Code.</p>
 
         </figure><h3 id="how-to.">How to. <a class="direct-link" href="#how-to.">#</a></h3>
 <ol>
@@ -196,11 +204,13 @@ echo &quot;export PASSWORD=YourPassword&quot; &gt;&gt; /etc/profile<br>
 </ol>
 
         <figure class="post__img">
-          <picture class="post__img__picture">
-            <source media="(max-width:599px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-5-sm.png" />
-            <source media="(min-width:600px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-5-lg.png" />
-            <img src="../../img/2020-01-ipad-webdev19-vscode-hosted-5-xl.png" loading="lazy" width="481" height="316" class="post__img__img" />
-          </picture><p>The password entry for hosted VSCode as seen in a browser. By default, the password is set randomly and shown in the terminal session that started the server.</p>
+          <a href="../../img/2020-01-ipad-webdev19-vscode-hosted-5.png" target="_blank" rel="noopener" class="post__link">
+            <picture class="post__img__picture">
+              <source media="(max-width:599px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-5-sm.png" />
+              <source media="(min-width:600px)" srcset="../../img/2020-01-ipad-webdev19-vscode-hosted-5-lg.png" />
+              <img src="../../img/2020-01-ipad-webdev19-vscode-hosted-5-xl.png" loading="lazy" width="481" height="316" class="post__img__img" />
+            </picture>
+          </a><p>The password entry for hosted VSCode as seen in a browser. By default, the password is set randomly and shown in the terminal session that started the server.</p>
 
         </figure><h3 id="optional-extras">Optional Extras <a class="direct-link" href="#optional-extras">#</a></h3>
 <ul>
@@ -233,7 +243,7 @@ echo &quot;export PASSWORD=YourPassword&quot; &gt;&gt; /etc/profile<br>
       <div class="footer__inner">
         <div class="footer__author">
           <h3>Pixelthing</h3>
-          <p> I'm <span rel="author">Craig Morey</span>, a data analyst & developer from Gothenburg, Sweden (but originally from the UK). This is my place for collecting ramblings and curiosities, you're welcome/välkomna!</p>        
+          <p> I'm <span rel="author">Craig Morey</span>, a data analyst & developer at <a href="https://www.polestar.com?utm_campaign=craigs.blog" target="_blank" rel="noopener">Polestar</a> in Gothenburg, Sweden (but originally from the UK). This is my place for collecting ramblings and curiosities, you're welcome/välkomna!</p>        
           <p>Site made with <a href="https://11ty.dev" target="_blank" rel="noopener">Eleventy</a> on iPad. Images are my own or from <a href="https://unsplash.com" target="_blank" rel="noopener">unsplash</a>.</p> 
         </div>
         <address class="footer__social social">
@@ -303,6 +313,7 @@ echo &quot;export PASSWORD=YourPassword&quot; &gt;&gt; /etc/profile<br>
     </footer>
     
     
+    <script src="/js/image-enlarge.js" async></script>
     <script src="/js/post-title-scroll.js" async></script>
     
     

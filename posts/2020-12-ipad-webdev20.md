@@ -69,7 +69,7 @@ Last year I got deep into installing VSCode onto a remote server to use it as an
 ### Inspect browser
 Still the best option for web devtools on iOS, and still coming out with additional functionality and interface updates. Building an entire browser just so that you can add devtools to it is an insane amount of work that you undertake only if you didn’t realise how much work was involved when you started - support them as much as you can so that they continue on this crazy quest that is so essential to any web dev on iPadOS.
 
-:::picture 2020-12-ipad-webdev20
+:::picture 2020-12-ipad-webdev20-3
 Inspect Browser
 :::
 

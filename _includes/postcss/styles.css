@@ -9,6 +9,7 @@
 @import './post-detail.css';
 @import './post-detail-mag.css';
 @import './post-detail-image.css';
+@import './modal.css';
 
 .nav {
   display: none;

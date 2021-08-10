@@ -39,6 +39,9 @@ That's it. Easy enough for any developer to drop into an HTML component. All you
 
 ## 2. The trigger
 
+:::picture 2021-04-generic-gtm-click-tracking-1
+:::
+
 The trigger is an element click with a couple of simple CSS selectors, comma separated. 
 
 ```css
@@ -94,6 +97,9 @@ Also note that there are a couple of "quick exits" at the start of the function.
 ## 4. Putting it together in a tag
 
 Now we have a triggers, and values to use in the form of GTM variables, we can can build the tag to send data to GA. As mentioned, this is a Universal Analytics tag, but it could easily be a GA4 hit event too.
+
+:::picture 2021-04-generic-gtm-click-tracking-2
+:::
 
 Now you have this tag set up, you might never have to make another tag again to track a button click...
 

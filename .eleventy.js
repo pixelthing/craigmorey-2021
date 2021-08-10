@@ -145,16 +145,26 @@ module.exports = function(eleventyConfig) {
         // classlist of the figure
         let classList = tokenArray[1] || '';
         classList = classList.replace('.',' ');
-        // dimensions
-        const dimensions = sizeOf('img/' + filename + '.' + fileType)
+        // dimensions of full size
+        const dimensions = sizeOf('img/' + filename + '.' + fileType);
+        // dimensions of xl size
+        const dimensionsXl = sizeOf('img/' + filename + '-xl.' + fileType);
+        // click link 
+        // (serve the xl version, unless the actual version is smaller
+        let link = '../../img/' + filename + '-xl.' + fileType;
+        if (dimensions.width <= dimensionsXl.width) {
+          link = '../../img/' + filename + '.' + fileType;
+        }
         // opening tag
         return `
         <figure class="post__img${classList}">
-          <picture class="post__img__picture">
-            <source media="(max-width:599px)" srcset="../../img/${filename}-sm.${fileType}" />
-            <source media="(min-width:600px)" srcset="../../img/${filename}-lg.${fileType}" />
-            <img src="../../img/${filename}-xl.${fileType}" loading="${(classList.includes('hero') ? 'eager' : 'lazy')}" width="${dimensions.width}" height="${dimensions.height}" class="post__img__img" />
-          </picture>`;
+          <a href="${link}" target="_blank" rel="noopener" class="post__link">
+            <picture class="post__img__picture">
+              <source media="(max-width:599px)" srcset="../../img/${filename}-sm.${fileType}" />
+              <source media="(min-width:600px)" srcset="../../img/${filename}-lg.${fileType}" />
+              <img src="../../img/${filename}-xl.${fileType}" loading="${(classList.includes('hero') ? 'eager' : 'lazy')}" width="${dimensions.width}" height="${dimensions.height}" class="post__img__img" />
+            </picture>
+          </a>`;
       } else {
         // closing tag
         return `
