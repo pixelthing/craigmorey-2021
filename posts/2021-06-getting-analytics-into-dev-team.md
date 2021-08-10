@@ -6,7 +6,7 @@ tags:
   - datananalysis
   - googletagmanager
 layout: layouts/post.njk
-hero: 2021-06-gettinganalyticsdev2
+hero: 2021-06-getting-analytics-into-dev-team-hero
 ---
 
 Web analytics want to have data layer pushes in the app. The web development team - whose job it is to make these changes - is under huge pressure, with their final sprints full of urgent fixes and loud stakeholders moving priorities around. 

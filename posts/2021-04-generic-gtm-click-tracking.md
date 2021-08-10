@@ -6,7 +6,7 @@ tags:
   - datananalysis
   - googletagmanager
 layout: layouts/post.njk
-hero: 2021-06-gettinganalyticsdev2
+hero: 2021-04-generic-gtm-click-tracking-hero
 ---
 
 The larger a Google Tag Manager (GTM) container becomes, the more you realise that many tags, triggers and variables are doing roughly the same job. So it's worthwhile refactoring some of them away into a few generic tags that make your life easier. 

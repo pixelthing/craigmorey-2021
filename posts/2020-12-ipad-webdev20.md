@@ -35,7 +35,7 @@ All agreed that the iPad Pro 2020 was a very mild tweak of the two year old 2018
 
 If you can find an original 2018 Pro for a good price - and there’s still a lot out there - it’s a much closer run thing. But it’s a good sign that the Pro experience is continuing to move down the range, and that the 2021 Pro has got to raise the bar again to justify its price.
 
-### Code
+### Code by the Baselab
 This is the app surprise of the year for me. It started as a simple enough little playground project - lets take the interface of VSCode and see if it can be reproduced in SwiftUI. But with continual updates, it has progressed in nine months to the point that it’s pretty damned close in core functionality to it’s role model. It has intellisense style hints & suggestions, a command palette, and code running options including node.js and python. There are still some problems that need attention, but this could be the star of next year’s IDE crowd at this rate - it’s certainly got my attention.
 
 :::picture 2020-12-ipad-webdev20-1
