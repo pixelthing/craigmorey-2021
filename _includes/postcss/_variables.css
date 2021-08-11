@@ -18,7 +18,9 @@
   
   /* dimensions */
   --gutter: 2rem;
-  --mag-min-width: 30rem;
+  --post-width: 40em; /* column width of posts/footer */
+  --post-max-width: 1600px; /* max width of header images, wide images */
+  --mag-min-width: 30rem; /* min width that mag view takes effect */
   --vp-height:100vh;
   --nav-height:0;
   

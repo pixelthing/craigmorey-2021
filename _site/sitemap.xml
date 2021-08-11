@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://example.com/posts/2015-04-few-dollars-less/</loc>
+    <lastmod>2015-04-28</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/2016-04-seiko-pomo/</loc>
+    <lastmod>2016-04-17</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/posts/2020-01-ipad-webdev19/</loc>
     <lastmod>2020-01-05</lastmod>
   </url>
@@ -88,6 +98,21 @@
   
   <url>
     <loc>https://example.com/tags/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/design/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/furniture/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/watches/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   

@@ -1,7 +1,7 @@
 .post {
   font-size: clamp(1rem, calc(0.6rem + 1vw), 2rem);
   &__content {
-    max-width:40em;
+    max-width: var(--post-width);
     margin: 0 auto;
     padding: 0 var(--gutter);
   }

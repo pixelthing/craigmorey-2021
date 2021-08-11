@@ -23,7 +23,7 @@ Don’t be fooled – if I was coming to this platform for the first time as a p
 
 This is a journey that – as yet – still has no clear destination. But it’s getting more pleasant by the month.
 
-:::picture 2020-01-ipad-webdev19-1
+:::picture.post__img--wide 2020-01-ipad-webdev19-1
 GoCoEdit and a Brydge 10.5" (the best keyboard for using on your lap)
 :::
 
@@ -32,7 +32,7 @@ In 2019, the regular iPads have essentially jumped a tier. All non-pro iPads are
 
 In the iPad Pro range, the top-end has remained unchanged. Or has it? Because the promised USB-C ecosystem is finally emerging and has collided with the new iPadOS. You can now plug your iPad into 5k monitors, hard drives, mice, microphones, USB-sticks, Raspberry Pis, plus a multitude of cheap, powerful, compact power supplies. And with either store-shelf or iPad-bespoke hubs, even with several peripherals at the same time. Your year-old iPad Pro had a free hardware upgrade in 2019.
 
-:::picture 2020-01-ipad-webdev19-2
+:::picture.post__img--wide 2020-01-ipad-webdev19-2
 Felt iPad carry case with dongles (HDMI, USB3.0, SD card) and Moko foldable stand.
 :::
 
@@ -43,7 +43,7 @@ But the biggest plus is the new Safari, not just purely for it’s "desktop clas
 
 Not everything is super rosey. The multi-tasking is powerful but cognitively taxing. The sandboxing means that apps still have to jump through crazy hoops to work together in a logical way. Background processes are still killed ridiculously early. iPad Pro RAM is unrealistically low compared to the cheapest of laptops. The command line is still _verboten_. App Store rules are still vague and punitive.
 
-:::picture 2020-01-ipad-webdev19-3
+:::picture.post__img--wide 2020-01-ipad-webdev19-3
 A reminder to myself.
 :::
 
@@ -59,7 +59,7 @@ And on one point, Alex is always right. Having one browser engine on iOS is a mi
 
 If we also had Chromium on iOS, we wouldn’t be celebrating finally using "real" GoogleDocs in 2019, because we’d have had it years ago. We might also have 4K YouTube and devtools. And so would Safari, probably (because; competition). All of that would mean selling more iPads to pros. And Safari would still rule for most iPad users because even for a default it’s capable, fast, has low battery consumption, and it’s the webview in every single social app that you own. Do it, you cowards (it’s a meme, I don’t really talk or think like that).
 
-:::picture 2020-01-ipad-webdev19-5
+:::picture.post__img--wide 2020-01-ipad-webdev19-5
 We live in an imperfect world. The 9 month old crack on my 10.5". At least it’s undetectable by touch over most of the screen. Here’s hoping the 2020 iPad Pro is coming soon.
 :::
 
@@ -72,7 +72,7 @@ Killing background processes is an artificial constraint of the OS – iPads are
 
 Next we also need apps to open files via the OS level "edit in place" API so that an IDE can work directly on files in a local repo (and just to be difficult, this API changed in iOS13, so any app that previously supported it needs an update). I consider this the basic requirement now of any pro app.
 
-:::picture 2020-01-ipad-webdev19-6
+:::picture.post__img--wide 2020-01-ipad-webdev19-6
 Microsoft VS Code running plug-ins on an iPad? Well, yes - kind of.
 :::
 
@@ -88,7 +88,7 @@ And because they deserve they’re own space to understand their pros and cons, 
 - Screencast from 2018: VPS, Working Copy, Textastic (using Textastic to manually-upload)
 - Screencast from 2018: VPS, Working Copy, Textastic (using Working Copy to auto-upload)
 
-:::picture 2020-01-ipad-webdev19-7
+:::picture.post__img--wide 2020-01-ipad-webdev19-7
 Raspberry Pi 3B+ with Anker 10Ah battery pack. Pilot biro grip on the Apple Pencil.
 :::
 
@@ -102,7 +102,7 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic
 - Screencast from 2018: Flat websites: Textastic (preview server)
 - Screencast from 2018: Flat websites: Panic Coda (preview server)
 
-:::picture 2020-01-ipad-webdev19-8
+:::picture.post__img--wide 2020-01-ipad-webdev19-8
 MacBook Pro 13" 2014, MacBook Air 2019, MacBook Air 11" 2011, iPad Pro 10.5". Which is fastest?
 :::
 
@@ -178,7 +178,7 @@ If that happens, all bets are off.
 - [Christopher Lawley’s tech/YouTube blog "The untitled site", which often covers coding on the iPad](https://theuntitledsite.com/)
 - [My own article on the tricky business of choosing an iPad keyboard](https://medium.com/@pixelthing/a-perfect-ipad-keyboard-doesnt-exist-a4cbcc127bfa)
 
-:::picture 2020-01-ipad-webdev19-12
+:::picture.post__img--wide 2020-01-ipad-webdev19-12
 Apple Magic Keyboard in a Fintie wrap & stand with an iPad Pro 10.5"
 :::
 

@@ -12,7 +12,7 @@
   }
   &__inner {
     display: grid;
-    max-width:40em;
+    max-width: var(--post-width);
     margin: 0 auto;
     padding: 0 var(--gutter);
     overflow: hidden;

@@ -5,7 +5,7 @@
     z-index: 10;  
     margin: 0 auto var(--gutter);
     display: block;
-    max-width: 1600px;
+    max-width:var(--post-max-width);
     overflow: hidden;
     &__img {
       width: 100%;
@@ -26,6 +26,16 @@
       max-width: 100%;
       margin: 0 auto;
       background: var(--bg-sub);
+    }
+    &--wide {
+      @media (min-width: 40rem) {
+        position: relative;
+        left: 50%;
+        right: 50%;
+        width: calc(100vw - 32px);
+        max-width: var(--post-max-width);
+        transform: translateX(-50%);
+      }      
     }
   }
 }

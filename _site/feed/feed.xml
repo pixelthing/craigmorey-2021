@@ -1070,7 +1070,7 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;Don’t be fooled – if I was coming to this platform for the first time as a professional web developer, I would still find iOS extremely limited and frustrating. But having seen where we’ve come from, I’m much more positive about the future.&lt;/p&gt;
 &lt;p&gt;This is a journey that – as yet – still has no clear destination. But it’s getting more pleasant by the month.&lt;/p&gt;
 
-        &lt;figure class=&quot;post__img&quot;&gt;
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
           &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
               &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-1-sm.jpeg&quot;&gt;
@@ -1083,7 +1083,7 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;In 2019, the regular iPads have essentially jumped a tier. All non-pro iPads are now different price-point compromises of the old 10.5&amp;quot; pro, with out-of-the-box keyboard and pen support. The 2019 iPad Air in particular is a Pro in all but name, but they are all &amp;quot;real-work&amp;quot; ready.&lt;/p&gt;
 &lt;p&gt;In the iPad Pro range, the top-end has remained unchanged. Or has it? Because the promised USB-C ecosystem is finally emerging and has collided with the new iPadOS. You can now plug your iPad into 5k monitors, hard drives, mice, microphones, USB-sticks, Raspberry Pis, plus a multitude of cheap, powerful, compact power supplies. And with either store-shelf or iPad-bespoke hubs, even with several peripherals at the same time. Your year-old iPad Pro had a free hardware upgrade in 2019.&lt;/p&gt;
 
-        &lt;figure class=&quot;post__img&quot;&gt;
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
           &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
               &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-2-sm.jpeg&quot;&gt;
@@ -1097,7 +1097,7 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;But the biggest plus is the new Safari, not just purely for it’s &amp;quot;desktop class browsing&amp;quot; but because of the multitude of online tools that this has enabled. From &lt;a href=&quot;https://www.atlassian.com/software/jira&quot;&gt;Jira&lt;/a&gt; and &lt;a href=&quot;https://analytics.google.com/&quot;&gt;Google Analytics&lt;/a&gt; to &lt;a href=&quot;https://glitch.com/&quot;&gt;glitch.com&lt;/a&gt; and the hosted version of Visual Code, it’s made the iPad exponentially more capable. It’s like suddenly getting 80% of a ChromeOS tablet on top of your iPad.&lt;/p&gt;
 &lt;p&gt;Not everything is super rosey. The multi-tasking is powerful but cognitively taxing. The sandboxing means that apps still have to jump through crazy hoops to work together in a logical way. Background processes are still killed ridiculously early. iPad Pro RAM is unrealistically low compared to the cheapest of laptops. The command line is still &lt;em&gt;verboten&lt;/em&gt;. App Store rules are still vague and punitive.&lt;/p&gt;
 
-        &lt;figure class=&quot;post__img&quot;&gt;
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
           &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
               &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-3-sm.jpeg&quot;&gt;
@@ -1121,7 +1121,7 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;And on one point, Alex is always right. Having one browser engine on iOS is a mistake. Quite apart from being an anti-trust suit in the waiting, the entire web capability of the platform is locked down to the decisions made in a single meeting room in Cupertino. Fairs fair, that weekly backlog meeting of project managers pretty much delivered the mobile web -- fully formed -- back in 2007 and has continued to push it forward. But now it’s time to let others have a competing voice.&lt;/p&gt;
 &lt;p&gt;If we also had Chromium on iOS, we wouldn’t be celebrating finally using &amp;quot;real&amp;quot; GoogleDocs in 2019, because we’d have had it years ago. We might also have 4K YouTube and devtools. And so would Safari, probably (because; competition). All of that would mean selling more iPads to pros. And Safari would still rule for most iPad users because even for a default it’s capable, fast, has low battery consumption, and it’s the webview in every single social app that you own. Do it, you cowards (it’s a meme, I don’t really talk or think like that).&lt;/p&gt;
 
-        &lt;figure class=&quot;post__img&quot;&gt;
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
           &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-5.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
               &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-5-sm.jpeg&quot;&gt;
@@ -1136,7 +1136,7 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;Killing background processes is an artificial constraint of the OS – iPads are no longer the resource constrained devices they used to be, so it would be good if Apple allowed more categories of apps to remain in the background in some way like audio apps can.&lt;/p&gt;
 &lt;p&gt;Next we also need apps to open files via the OS level &amp;quot;edit in place&amp;quot; API so that an IDE can work directly on files in a local repo (and just to be difficult, this API changed in iOS13, so any app that previously supported it needs an update). I consider this the basic requirement now of any pro app.&lt;/p&gt;
 
-        &lt;figure class=&quot;post__img&quot;&gt;
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
           &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-6.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
               &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-6-sm.jpeg&quot;&gt;
@@ -1158,7 +1158,7 @@ Geek cred.&lt;/li&gt;
 &lt;li&gt;Screencast from 2018: VPS, Working Copy, Textastic (using Working Copy to auto-upload)&lt;/li&gt;
 &lt;/ul&gt;
 
-        &lt;figure class=&quot;post__img&quot;&gt;
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
           &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-7.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
               &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-7-sm.jpeg&quot;&gt;
@@ -1181,7 +1181,7 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;li&gt;Screencast from 2018: Flat websites: Panic Coda (preview server)&lt;/li&gt;
 &lt;/ul&gt;
 
-        &lt;figure class=&quot;post__img&quot;&gt;
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
           &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-8.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
               &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-8-sm.jpeg&quot;&gt;
@@ -1267,7 +1267,7 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;li&gt;&lt;a href=&quot;https://medium.com/@pixelthing/a-perfect-ipad-keyboard-doesnt-exist-a4cbcc127bfa&quot;&gt;My own article on the tricky business of choosing an iPad keyboard&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-        &lt;figure class=&quot;post__img&quot;&gt;
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
           &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-12-xl.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
               &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-12-sm.jpeg&quot;&gt;
@@ -1280,6 +1280,226 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;p&gt;Quote is directly taken from a Patreon page which is not currently live on the web -- but is reproduced with kind permission from the author.&lt;/p&gt;
 &lt;aside class=&quot;aside--less aside--bottom&quot;&gt;
 &lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
+&lt;/aside&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>My Seiko SNK Po-mo</title>
+		<link href="https://example.com/posts/2016-04-seiko-pomo/"/>
+		<updated>2016-04-16T22:00:00+02:00</updated>
+		<id>https://example.com/posts/2016-04-seiko-pomo/</id>
+		<content type="html">&lt;p&gt;I don’t scuba, or pilot a plane, or skipper a ship.&lt;/p&gt;
+&lt;p&gt;That being so, &amp;quot;tool watches&amp;quot; (as watch enthusiasts call them) such as true divers’, aviators’ or sailors’ watches would be lost on me -- or at least merely a bit of fantasy on my part. That’s not to say their core features aren’t useful to me, but being waterproof doesn’t mean I need a watch to withstand diving to great depths, just as being easy-to-read in the dark doesn’t mean I need NATO standard radioactive promethium coated minute hands. Or the associated price.&lt;/p&gt;
+&lt;p&gt;But if I could be presumptuous for a moment, I’d add a new tool watch category -- the &amp;quot;parent watch&amp;quot;. The requirements are many but not too demanding; it has be splash proof, to be readable all through the night to separate &amp;quot;go back to bed&amp;quot; from &amp;quot;we’ll get up soon&amp;quot;. It should be comfortable enough to wear 24 hours-a-day and to be discrete enough that playing with your kids doesn’t risk accidentally leaving them with the imprint of a 45mm gnarled bezel on their heads. Oh, and it should be cheap enough to not cause panic attacks when it becomes splattered in porridge.&lt;/p&gt;
+&lt;p&gt;So I made one. But how did I get here?&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://example.com/img/2016-06-seiko-pomo-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://example.com/img/2016-06-seiko-pomo-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;738&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;The luminous dial and hands start with an astonishing brightness, but within minutes settle down to a readable glow for the whole night.&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h2 id=&quot;the-background&quot;&gt;The background &lt;a class=&quot;direct-link&quot; href=&quot;#the-background&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I’m one of those people that was drawn into the world of mechanical watches because I was interested in the Apple watch. Wait, what?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Let me explain.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Before this moment, I’d worn a Swatch chrono on my wrist for over a decade and never even bothered to ask what the buttons did. But the Apple watch was launched with much referential talk of &amp;quot;horology&amp;quot;, &amp;quot;complications&amp;quot; and &amp;quot;milanese bands&amp;quot; that was hard to ignore. It’s almost as though Apple wanted not just nerds like me, but Omega Speedmaster owners to take their little touch-screen seriously. Which of course, Apple did. In any case, all that romantic talk of precision and craft sparked my need to find out more about this arcane world.&lt;/p&gt;
+&lt;p&gt;To be honest, I am neither rich, nor insane, so Swiss classics are out of my budget. So if you’re looking for a mechanical automatic watch and happen to also be a cheapskate, you have two routes. You either buy a Chinese &amp;quot;homage&amp;quot; or you look at a Seiko.&lt;/p&gt;
+&lt;p&gt;To cut a long story short, I learned of the Seiko &amp;quot;modding&amp;quot; sub-culture where people swap out watch components to make new twists on existing designs. It appealed on a number of levels; the watches that served as the donor were well-regarded but pretty cheap, a custom watch has your own personal touch, and best of all it makes you feel more skilled than you actually are.&lt;/p&gt;
+&lt;hr&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://example.com/img/2016-06-seiko-pomo-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://example.com/img/2016-06-seiko-pomo-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;1116&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;The 37mm Seiko SNK against the 43mm Seiko SKX. Same face, different effect.&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h2 id=&quot;the-pre-cursor&quot;&gt;The pre-cursor &lt;a class=&quot;direct-link&quot; href=&quot;#the-pre-cursor&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;So here’s the confession. Along the way I did succumb to buying the classic Seiko divers watch -- the SKX007. It was a bargain and I hadn’t yet convinced myself I could even attempt to modify a watch of my own.&lt;/p&gt;
+&lt;p&gt;It’s known for it’s highly legible display with super bright indices and hands that glow far into the night.&lt;/p&gt;
+&lt;p&gt;And I love it -- but… it’s after owning the SKX I realised I didn’t want to always look like I had a big, flash watch on my wrist. I also often felt quite aware that I had a heavy chunk of steel which was somewhat awkward under a shirt sleeve, as well as quite the accidental weapon when tumbling around with the kids.&lt;/p&gt;
+&lt;p&gt;But more than that, something never quite sat right with me about the design. The indices are so geometric, so simple. They seem at odds with the elaborate chromed arrow hands, and the visual clutter of the chapter ring and bezel. Also, the centre area seemed fussy with the simple black disc of the second hand on top of a mess of different chrome shapes. Hmm…&lt;/p&gt;
+&lt;p&gt;The sweep of a mechanical watch is rather nice compared to the ticking seconds of a quartz.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;the-watch&quot;&gt;The watch &lt;a class=&quot;direct-link&quot; href=&quot;#the-watch&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The bill of parts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Seiko SNK809K2 from Amazon&lt;/li&gt;
+&lt;li&gt;Dial from a Seiko SKX009 from eBay&lt;/li&gt;
+&lt;li&gt;Hour and minute hands from Dagaz watches with C3 lume&lt;/li&gt;
+&lt;li&gt;Second hand from a Seiko SKX009 (came with the dial)&lt;/li&gt;
+&lt;li&gt;Cheap grey NATO-style nylon strap from eBay&lt;/li&gt;
+&lt;/ul&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://example.com/img/2016-06-seiko-pomo-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-3-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-3-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://example.com/img/2016-06-seiko-pomo-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;452&quot; height=&quot;250&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;An original Seiko SNK809K2&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;p&gt;The SNK809 is a smallish (37mm) &amp;quot;Fleiger&amp;quot; aviator style watch with a nasty-ish fabric strap and a self-winding automatic 7S26C movement. It’s ridiculously cheap and yet still quite well regarded among watch people. Personally, I don’t like the face, the hands or the strap. But the case is a different matter, it’s a clean, simple design with a nice matt finish and a windowed &amp;quot;display back&amp;quot; so you can see the mechanism moving.&lt;/p&gt;
+&lt;p&gt;The dial I chose is a direct swap from an SKX diver like mine. Well, actually it was from an SKX009, not a 007, hence the very slight blueish colour. This diver’s face looks bigger in the smaller SNK body, and the design is even more minimal without the minute markings on the chapter ring of the dive watch. Incidentally, I chose the SNK809 as the donor because it’s the only SNK that has a black day/date rotor. It’s actually harder to read than the more normal (and cheaper) white day/date model, but to hell with it, it looks great under the black dial.&lt;/p&gt;
+&lt;p&gt;Some people get annoyed by issues like this dial having &amp;quot;Divers 200m&amp;quot; printed on it, when it’s actually more like 5m in this watch. I can’t say I care too much about what it says here, any more than when it was on a real diver’s watch. I’ve never seen 5m deep, let alone 200m.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;having bright white hands and off-white indices would just remind me that this was a mish-mash&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The hour and minute hands are from Dagaz, who make a bewildering array of modding items for watches like this. I wanted hands that were geometrically clean and easy to tell-apart with an orange-red minute hand to match the text on the dial. I also wanted to them to have close to the same type of luminescent paint as used on the Seiko dial. This was just a detail tick of mine, not only would the glow of the dial and hands match, but in sunlight they’d have the same very slightly pale green appearance. It&#39;s not a big deal, but having bright white hands and off-white indices would just remind me that this was a mish-mash. No thanks.&lt;/p&gt;
+&lt;p&gt;It’s the second hand that brings it all together. The one that came with the custom hands from Dagaz was rejected for it’s fussy design. The original one from the SNK had a red tip that just added too much colour when partnered with the minute hand. But the SKX second hand was perfect. It has a simple tapered black and white design and a lumed &amp;quot;lollipop&amp;quot; that almost appears to hover in the middle of no-where. Also, the second hand’s centre disc seemed made for this combination, just hiding the conjunction, but highlighting the shape of the brighter coloured hands below it.&lt;/p&gt;
+&lt;p&gt;The crystal is unchanged Seiko mineral glass. I like the look of the slightly domed SNK mods, but it seemed like one job too many for this first attempt. Besides, it failed the cost vs worth test, as well as requiring me to buy more tools.&lt;/p&gt;
+&lt;p&gt;The current strap is a cheap NATO-style nylon strap. It’s comfortable, secure, waterproof (or at least quick-dry) and so cheap it’s practically disposable.&lt;/p&gt;
+&lt;hr&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://example.com/img/2016-06-seiko-pomo-4.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-4-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-4-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://example.com/img/2016-06-seiko-pomo-4-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;701&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;Cheap tools from Amazon and eBay made it all possible.&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h2 id=&quot;building-the-watch&quot;&gt;Building the watch &lt;a class=&quot;direct-link&quot; href=&quot;#building-the-watch&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It still rattles my mind that when I was a kid, discovering anything extra-curricular was largely down to the pure chance of stumbling onto a book in my small-town library. Actively researching something was hoping for an act of divine intervention.&lt;/p&gt;
+&lt;p&gt;Back to the present day, and within a couple of hours I’d watched enough YouTube videos to know the process, the tools and the potential pitfalls of taking a watch and swapping parts around, plus decided on a design from doing searches on Pinterest and the like. Amazon and eBay supplied the base model, hands, dial and tools, all for well under €150. Getting a dial and hands from an SKX is easy. It’s the most common model to modify, so unwanted stock parts are often on eBay.&lt;/p&gt;
+&lt;p&gt;The first attempt felt like victory, before reminding me that doing anything the night before you go on holiday is never a good idea. Basically, it looked nice but didn’t work. Finding another quiet couple of hours to fix it in a regular home with two lovely kids meant waiting another month. But eventually, time was found, and round-two proved more successful.&lt;/p&gt;
+&lt;p&gt;The process didn’t require a craftsman level of skill, but did take a bit of nerve as -- unsurprisingly -- watches are very small things, made of even smaller things. A steady hand, or alternatively many, many attempts and quiet swearing (plus cups of tea), were needed to accurately place the new hands without wrecking them or the dial.&lt;/p&gt;
+&lt;p&gt;My first attempt went wrong because I was proudly looking at my handiwork from the top, not the side. I’d missed that the hour and minute hand rubbed very slightly when they crossed, so the watch started by losing a bit of time, and after the spring wound down a bit and wasn’t so powerful, it stopped. It didn’t even last a night, let alone have the advertised &amp;quot;40 hour power reserve&amp;quot;. The second attempt required some fettling to remove, re-set and lightly bend all the hands so they cleared each other, but it resulted in a watch that at least reached the minimum requirement; to tell the time.&lt;/p&gt;
+&lt;p&gt;I’m so glad the mechanism is tough, because it’s been in and out of it’s case so many times. The only two other things that took getting used to were the fear of dust and the fear of moving the winding rotor and having to wait for the damn spring to wind-down again. I can see the real craft in this is getting a workflow to reduce these fears and not find yourself holding a delicate device with two hands and nowhere dust-free to place it.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://example.com/img/2016-06-seiko-pomo-5.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-5-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-5-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://example.com/img/2016-06-seiko-pomo-5-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;958&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;My Seiko SNK Po-mo&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h2 id=&quot;the-conclusion&quot;&gt;The conclusion &lt;a class=&quot;direct-link&quot; href=&quot;#the-conclusion&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If becoming interested in watches has taught me anything, it’s that no amount of ideas or photos will tell you what it really looks like until it’s in front of you, on your own wrist.&lt;/p&gt;
+&lt;p&gt;My little Seiko has turned out more post-modern-style -- hence po-mo -- than I imagined. The simple shapes and bright duo-tone colours give it an almost toy-like appearance. Happily, it also appeared much, much more finished than even I had hoped; to my eyes it doesn’t look like the frankenstein of parts that it is (a common pitfall of many modded watches). The dial design is echoed in the profile of the hands, and the colours and lume fit together like there were from the same pots of paint.&lt;/p&gt;
+&lt;p&gt;The watch continues to do sterling duty, keeping good time, staying bright at night, and generally making me smile. Come to think of it, maybe that’s the real reason I want to call it a &amp;quot;parent watch&amp;quot;; it’s a product of my very own – other watches are fine, but a prick of pride tells me that &amp;quot;yes, but they’re not like mine&amp;quot;.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>For a few dollars less.</title>
+		<link href="https://example.com/posts/2015-04-few-dollars-less/"/>
+		<updated>2015-04-27T22:00:00+02:00</updated>
+		<id>https://example.com/posts/2015-04-few-dollars-less/</id>
+		<content type="html">&lt;p&gt;But let’s focus on the ingenuity and pragmatism of some unknown manufacturing engineers and the signatures they left in the chairs they made.&lt;/p&gt;
+&lt;p&gt;This is a story about the Eames DSW side chair design. Ray and Charles Eames were renowned designers in the 1940s and 50s, producing many objects, buildings and films that often have the word &amp;quot;iconic&amp;quot; attached to them. Among their most popular designs are a series of plastic &lt;strong&gt;†&lt;/strong&gt; side chairs that you’ve doubtless seen, sat-in or even bought, with various bases made out of different combinations of wire and wood. The range was designed at the end of the 1940’s for a Museum of Modern Art low-cost furniture competition, and they embody the Eames’ goal of &amp;quot;Getting the most of the best to the greatest number of people for the least&amp;quot; .&lt;/p&gt;
+&lt;p&gt;The &amp;quot;DSW plastic side chair&amp;quot; you see here is often referred to as a wooden eiffel, and with it’s combination of pale maple wood, comfortable curves and intricate wires, it will grace a photoshoot somewhere in any damned interior design magazine you happen to pick up. I’m not even kidding.&lt;/p&gt;
+&lt;p&gt;The patents for most Eames furniture remain with Herman Miller in the states, and Vitra in Europe, and they still distribute most of the plastic side chair range. You can buy an &amp;quot;original&amp;quot; DSW plastic side chair -- evolved from the 65 year-old design -- today for around £280/$440.&lt;/p&gt;
+&lt;h2 id=&quot;enter-the-pirates&quot;&gt;Enter the pirates &lt;a class=&quot;direct-link&quot; href=&quot;#enter-the-pirates&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pricing like this gives rise to the sort of laws of supply and demand that are not often taught in business schools. A plastic side chair that costs you over a £1000 to complete even a small table, is being displayed to a hungry, decadent middle class, over and over in perfect kitchens and delightful dining rooms. The inherent design of the chair makes it easy to copy and mass produce at low cost (that was, after all, it’s purpose). Enter the pirates.&lt;/p&gt;
+&lt;p&gt;It’s not clear if it started with companies in China, but it soon became the most obvious place to produce copies. Various faceless factories started shipping copies of design classics like the DSW in huge quantities at a fraction of the original price.&lt;/p&gt;
+&lt;p&gt;The design industry is trying to clamp down on this business, with some effect. But it still hangs around for the moment.&lt;/p&gt;
+&lt;p&gt;Six years ago, I wanted a piece of this design-life to be my-life in London. I bought a &amp;quot;knock-off&amp;quot; Eames DSW as a desk chair for £60/$90. Now I’m living in Sweden, and I’ve just bought four more (shipped from the UK) for our dining table, for £30/$45 each. That’s quite a saving. Meanwhile, I can still admire the full-cost, real thing at the office of my day-job.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;And with these three chairs, I can see the story behind the object.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Looking at all three, I imagine a timeline of decisions and cost-savings. They are the results of continuous feedback and market demands. And I can’t help applauding the engineers involved, who took decisions about what compromises consumers will accept, whilst shaving serious money off production costs.&lt;/p&gt;
+&lt;p&gt;Lets walk through these three chairs and see what that extra money buys you (discounting the intellectual property cost -- and I know how that sounds -- to concentrate on the production design aspect). We’ll call them &lt;strong&gt;Mr Vitra&lt;/strong&gt; (£280/$440), &lt;strong&gt;Mr Cheap&lt;/strong&gt; (£60/$90) and &lt;strong&gt;Mr Pennies&lt;/strong&gt; (£30/$45).&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://example.com/img/2015-06-few-dollars-less-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://example.com/img/2015-06-few-dollars-less-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;533&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;These are not just &amp;quot;inspired by&amp;quot; repros, it’s clear these share the exact same dimensions and design. These are copies.&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;p&gt;The plastic shell is the first stop. The shell on Mr Pennies is not quite the nice original chalky colour, more a brilliant white -- but it’s clean and consistent across all four chairs.&lt;/p&gt;
+&lt;p&gt;Lets talk about colour fade. Mr Vitra is said to never change colour. But at least in the reproductions, it’s such a common problem that it should be considered an expectation &lt;strong&gt;✢&lt;/strong&gt;. I actually look at the cream tinted Mr cheap now and feel it has more character than the brand new Mr Pennies -- a little like leather furniture does after time. You may feel differently.&lt;/p&gt;
+&lt;p&gt;Mr Pennies has a smoother satin texture than the others, but all three have identical dimensions and shapes. To sit on, you’d never tell the difference, and the suspension effect of the base means that none of the chairs will ever be unbalanced once you sit down. And they all creak in pretty much the same way when you sit on them.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://example.com/img/2015-06-few-dollars-less-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://example.com/img/2015-06-few-dollars-less-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;533&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;Injection moulding nub, clearly visible on Mr Vitra and Mr Pennies&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;p&gt;Mr Vitra has clear manufacturer stamps on the bottom with a serial and date of production, as well a faint injection moulding nub, where the plastic entered the mould. Mr Pennies has a similar nub in the same place, although rougher and much more obvious. So what we have here is production tooling designed to give large scale production, consistent quality and a quick turn-around -- inject, cool, snap-off, repeat.&lt;/p&gt;
+&lt;p&gt;Strangely, the middle cost chair has no visible nub so I can only assume it’s somehow hidden and/or machined off. Was this a case of a production engineer feeling they could improve on the original? Whatever the reason, it would inherently add extra time and an extra process so it’s unsurprising that in the later, cheaper, Mr Pennies, the nub returned to somewhere uglier, quicker and less likely to cause rejects.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://example.com/img/2015-06-few-dollars-less-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-3-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-3-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://example.com/img/2015-06-few-dollars-less-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;762&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;Sink holes, where the leg joints cool at a different rate to the rest of the shell&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;p&gt;All three variations have visible sink holes on the top surface where the leg joints cool at a different rate to the thin skinned shell, although they’re less visible on Mr Cheap.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;it’s neat where it’s visible, and cheap and quick where it’s hidden.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The legs on Mr Vitra are nicely finished in maple with all the chamfers and slots smoothly cut. The finishing on the reproductions’ wooden legs are quite frankly close to that of the dearer cousin, but Mr Pennies is much more pink colour which is obviously not maple. In addition, both the cheaper chairs have rough cuts to fit the top brackets, which are also clearly of lower quality than Mr Vitra. Like the other parts of the reproductions, it’s neat where it’s visible, and cheap and quick where it’s hidden.&lt;/p&gt;
+&lt;p&gt;Legs bolts vary massively between the chairs. As with all photography, different light can alter the apparent colour, and Mr Pennies’ legs do not generally appear as pink as they appear here.&lt;/p&gt;
+&lt;p&gt;The outside leg fixings (above) show the clearest differences between the three. Mr Vitra has black powder-coated cross head bolts that match the rest of the fixings (Herman Miller versions often use chrome instead). The bolts on Mr Cheap are different -- but not unattractive -- allen bolts in more of a dark steel colour. On Mr Pennies however, the bolts are quite clearly cheap, chromed allen bolts that don’t fill the holes as nicely as the others.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://example.com/img/2015-06-few-dollars-less-4.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-4-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-4-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://example.com/img/2015-06-few-dollars-less-4-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;762&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;The inner leg nuts show the different production design descisions&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;Here’s where Mr Pennies has a stroke of evil genius.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;But it’s the nuts on the inside of the base (above) that tell the real story. The bolts on Mr Vitra are capped with black powder-coated locking nuts. Mr Cheap can’t stretch to the additional cost of colour, but instead has some smart stainless steel domed nuts. And as the legs are tapered, both chairs have a shorter bolt at the top where the leg is thinner, and longer bolts at the lower, thicker, anchor point.&lt;/p&gt;
+&lt;p&gt;Here’s where Mr Pennies has a stroke of evil genius. It replaces the expensive coloured or domed nut with a cheaper locking nut and a black plastic cap to make it look like a domed nut &lt;strong&gt;✧&lt;/strong&gt;. As well as costing peanuts, this has the second pay-off of allowing the bolt to be the same length top and bottom, as it hides the excess thread in the cap. Less variations of bolts used, bigger economies of scales, less buckets of different size bolts to keep track of on the shop floor and less mistakes on the production line. As an aesthetic choice, it sucks (if you look close enough). But as a production trade-off, it rocks hard.&lt;/p&gt;
+&lt;p&gt;Before you feel that these engineers are putting their profit above all morals, I’d point out that even the cheapest chair still makes some concessions to having a reasonably long life, and to sticking to the original design. The factories could make further savings by not using locking nuts, the wire trellis is still neatly welded and painted, and those nasty plastic nut covers still resemble expensive domed nuts at a distance. These are all places that further savings could be made, but are deemed to move the design too far from the purpose or reduce the usefulness -- and longevity -- one step too far.&lt;/p&gt;
+&lt;p&gt;So for £30, Mr Pennies essentially gives you crappy fixings. You could go to the shops and buy better ones -- and still be in profit -- if you cared enough. It’s worth noting that when it comes to cutting corners for profit, all three chairs have the exact same same bill-of-materials, the repros haven’t tried to fabricate the trellis in one casting, or reduce components by combining the leg bracket with the joint in the seat. It’s only the choice of components and process that differ.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;The production doesn’t end at the finished chair, because at the end of any production line is where the goods are packaged. The packaging for Mr Pennies has it’s own story, which spoke of continuous feedback from distributors about what survives the journey and what doesn’t. The bolt points underneath the plastic shells came with not only plastic transit caps, but a felt pad as well -- so you could plastic wrap the shells and then quickly, loosely stack them in a box, still not risking scratching them between factory and showroom. The bases of the chairs also had just enough packaging the allow for safe stacking, boxing and transporting in shipping containers that can reach freezing or scorching temperatures on the long, slow journey to Europe.&lt;/p&gt;
+&lt;p&gt;When a box of four chairs has such a small profit margin, you know you can’t give an unboxing experience like an Apple product, but it’s also clear you can’t afford too many returns eating up your margins. All of these small packing measures mean more shopfloor bins of film and foam that could stop a production line if they ran out, and more people and processes to eat away at your bottom line. This balance of packaging quality versus returns is a finely tuned equation echoed through the whole chair.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://example.com/img/2015-06-few-dollars-less-6.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-6-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-6-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://example.com/img/2015-06-few-dollars-less-6-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;533&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;Three contestants for your interior-design money&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;p&gt;Am I annoyed at the compromises and cheapness of my four £30 chairs? Not really. I knew how much I was paying, and and I consider the trade-offs worth making -- some people have clearly put much thought into how to make the chairs look genuine at first glance to all but the hardened aficionado, whilst shaving every cost they can. And nothing short of an original would please people that dislike repros. I totally believe in the right to buy £300 side-chairs with pedigree and quality, but I’m afraid I can’t aspire to be one of them. The good people at Vitra haven’t lost my money -- at ten times the cost, I’m sad to say I never would have been able justify buying an original.&lt;/p&gt;
+&lt;p&gt;If you tripled the price of Mr Pennies to guarantee a raise in wages, component quality, patent costs and environmental considerations, would I be less tempted by a £30 repro? Quite possibly, but as everything below a Vitra is currently tarred as a low-quality repro, I’m not sure how you could trust any claims of one chair to be &amp;quot;better&amp;quot; than the others &lt;strong&gt;‡&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I think Charles and Ray Eames might secretly be giggling somewhere&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If somone sold these to me as originals, or they were sold at a price in-between £100-£300, I’d be furious, although partly at myself for not researching enough. In the modern google world, it doesn’t take much time to spot a bargain from a con.&lt;/p&gt;
+&lt;p&gt;No -- I enjoy these chairs for what they are. They’re comfortable, attractive and reasonably priced. They allow me to kid myself I have some taste without the sticker shock. I’ve enjoyed seeing a glimpse of the story behind the production of the object and I like the &amp;quot;missing-link&amp;quot; feel of my £60 desk-chair. I still appreciate the quality and heritage of the Vitra &amp;quot;originals&amp;quot;, but I think Charles and Ray Eames might secretly be giggling somewhere that their design is finally a genuine mass-produced chair for the people.&lt;/p&gt;
+&lt;hr&gt;
+&lt;aside&gt;
+&lt;p&gt;† The original chair shells were actually fibreglass, but in 1993, they transitioned to thermoplastic to be more recyclable.&lt;/p&gt;
+&lt;p&gt;✢ If you buy an ABS white chair, it will change colour after prolonged UV exposure whether it is dyed-through or not -- and if you have directly sunlight on it, either think again about it’s colour or rotate it with others, to try not to leave annoying sun-tan marks.&lt;/p&gt;
+&lt;p&gt;✧ Pro-tip: don’t try and tighten the leg nuts by putting pliers around the plastic capped nuts. Take the caps off and grab or socket the actual nut, as the caps mark easily and the finally just fall off as the nut still turns inside it, removing any grip it had on the nut.&lt;/p&gt;
+&lt;p&gt;‡ Just to be clear, if you buy a £60 DSW repro today, I believe there’s a greater possibility you’re buying the £30 chair at a marked-up price than the £60 chair you see here. Many different factories produce these chairs and you will certainly find many variations of finish and materials, but this market has two certainties -- the cheap chair is cheap because it’s made in huge numbers, and the resellers’ mark-up varies from profitable to downright scandalous. There could be &amp;quot;good&amp;quot; repros out there, but make sure you know what you’re getting before you believe claims.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;aside class=&quot;aside--update&quot;&gt;
+&lt;h3 id=&quot;2021-06-01&quot;&gt;2021-06-01 &lt;a class=&quot;direct-link&quot; href=&quot;#2021-06-01&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;If you wondered how long the chairs would last - a pandemic where I was working full-time from home - every day - on these chairs gives us the answer. This year, 12 years after I bought &lt;strong&gt;Mr Cheap&lt;/strong&gt;, it started showing cracks across the base of the back-rest, which became a split. Swapping it for a &lt;strong&gt;Mr Pennies&lt;/strong&gt; seat, it did the same after a couple of months (this seat was 6 years old at this point).&lt;/p&gt;
+&lt;p&gt;It&#39;s worth saying that the &lt;strong&gt;Mr Pennies&lt;/strong&gt; seat that my partner sits on (she also spent quite a lot of the year working from home) shows no cracks, so I guess fidgeting/leaning-back + over-use is the torture test that reduces the plastic fatigue life, unsurprisingly.&lt;/p&gt;
 &lt;/aside&gt;
 </content>
 	</entry>
