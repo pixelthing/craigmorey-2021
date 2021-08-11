@@ -10,6 +10,16 @@ layout: layouts/post.njk
 hero: 
 ---
 
+A large amount of the most critical work in Google Tag Manager (GTM) is in the monitoring of changes in state, particularly objects like eCommerce baskets, filter settings or user editable configurations. In these cases we generally want to know what caused a change to an object (and I'm using _"object”_ in compsci terms here), and what changes were made.
+
+The trouble is that sometimes the business logic in an app is very complex and is rarely built with the requirements of analytics in mind. The app code sees a user input, steps through a series of manipulations, and returns a new, updated object.
+
+At Polestar we have a car configurator that holds the various options chosen by the customer (eg colour, wheel choice). This _”configuration object”_ is then added to the dataLayer so that analytics can understand what is happening. We could ask the configurator team to report only what's changed, but that information is not easily produced (selecting one payment option could change several other options simultaneously), so it was decided that adding this complexity into the app - just for analytics - created extra code, extra QA, extra maintenance, and so wasn't worth it.
+
+So instead, we use GTM tags to spot an update to the configuration, and then _diff_ it against the previous version to understand what changes have occurred.
+
+## The code
+
 ```js
 {% raw %}function() {
   return function(objectRoot, objectKeys, globalVar) {
@@ -165,8 +175,9 @@ hero:
 }{% endraw %}
 ```
 
+In addition to this, we extend the object prototype with a way of interrogating a JS object with a string notation, eg returning `OBJ['filter']['price']['low'] ` by asking for `filter.price.low`. This is particularly useful for us because we use namespaces in the dataLayer with dot notation that ends up creating deep JS objects. This method is added in our case by a GTM tag at the point the page loads:
 
-```js
+```html
 <script>
   // helper method to get a deep object value with a string key 
   // (eg "filter.price.low" finds the object value OBJ['filter']['price']['low'])
@@ -187,3 +198,5 @@ hero:
   }
 </script>
 ```
+
+

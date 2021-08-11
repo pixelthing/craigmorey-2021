@@ -107,6 +107,16 @@
   </url>
   
   <url>
+    <loc>https://example.com/tags/design/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/furniture/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/tags/watches/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
@@ -118,16 +128,6 @@
   
   <url>
     <loc>https://example.com/tags/webdev/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/design/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/furniture/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   
