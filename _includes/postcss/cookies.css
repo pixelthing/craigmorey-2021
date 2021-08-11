@@ -44,8 +44,10 @@
       }
     } 
     &__dialog {
+    display: block
      position: fixed;
      top: 1rem;
+     left: auto;
      right: 1rem;
      z-index: 10;
      width: 15rem;
@@ -53,6 +55,7 @@
      padding: 1em;
      color: #fff;
      background: var(--contrast);
+     border: none;
      border-radius: 0.5em;
      box-shadow: 0 2px 5px rgb(0 0 0 / 0.4);
      font-size: 0.9rem;

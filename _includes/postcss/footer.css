@@ -1,10 +1,11 @@
 .footer {
   margin-top: 2em;
   padding: var(--gutter) 0;
+  color: #999;
   color: var(--fg-sub);
-  background: var(--bg-sub);
+  background: #eee;
   background: linear-gradient(var(--footer-start), var(--bg));
-  font-size: clamp(1rem, calc(0.6rem + 1vw), 2rem);
+  font-size: var(--font-post-size);
   & h3,
   & b,
   & i {
@@ -12,6 +13,7 @@
   }
   &__inner {
     display: grid;
+    max-width: 40rem; /* fallback */
     max-width: var(--post-width);
     margin: 0 auto;
     padding: 0 var(--gutter);
