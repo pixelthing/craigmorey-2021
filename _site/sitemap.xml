@@ -72,6 +72,11 @@
   </url>
   
   <url>
+    <loc>https://example.com/posts/2021-05-diffing-datalaters/</loc>
+    <lastmod>2021-05-17</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/README-11ty/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
@@ -102,17 +107,17 @@
   </url>
   
   <url>
+    <loc>https://example.com/tags/watches/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/tags/design/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/furniture/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/watches/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   
@@ -127,22 +132,22 @@
   </url>
   
   <url>
-    <loc>https://example.com/tags/datananalysis/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/googletagmanager/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
     <loc>https://example.com/tags/analytics/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/dashboards/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/datananalysis/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/googletagmanager/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   

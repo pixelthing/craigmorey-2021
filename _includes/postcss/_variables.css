@@ -23,6 +23,7 @@
   --mag-min-width: 30rem; /* min width that mag view takes effect */
   --vp-height:100vh;
   --nav-height:0;
+  --flex-gap: var(--gutter);
   
   /* typography */
   --font-default: georgia;

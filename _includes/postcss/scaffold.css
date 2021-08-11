@@ -37,6 +37,15 @@ h3 {
   font-weight:normal;
   text-align: left;
   line-height: 1.1;
+  & small {
+    display: block;
+    line-height: 1;
+    color: var(--fg-sub);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 }
 
 h1 {

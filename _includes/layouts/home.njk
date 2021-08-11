@@ -1,12 +1,8 @@
 ---
 layout: layouts/base.njk
-templateClass: home
+templateClass: page
 hideHeader: true
 ---
-
-{% set maxPosts = collections.posts.length %}
-{% set postslist = collections.posts %}
-{% set postslistCounter = collections.posts | length %}
 
 <h1 class="home__title">{{ metadata.title }}.</h1>
 
@@ -14,23 +10,8 @@ hideHeader: true
   Hi, I'm Craig Morey, a data analyst & developer from Gothenburg, Sweden (but originally from the UK). This is my place for collecting ramblings and curiosities, you're welcome/välkomna!
 </section>
 
-<ol reversed class="home__list" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
-{% for post in postslist | reverse %}
-  <li class="home__list__item{% if post.url == url %} postlist-item-active{% endif %}">
-    <a href="{{ post.url | url }}" class="home__list__link">
-      <img src="../../img/{{ post.data.hero }}-tb.jpeg" loading="lazy" class="home__list__thumb" />
-      <div class="home__list__text">      
-        <h3 class="home__list__title">{{ post.data.title }}</h3>
-        <time class="home__list__date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-        {% for tag in post.data.tags %}
-          {%- if collections.tagList.indexOf(tag) != -1 -%}
-          {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-          <span href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</span>
-          {%- endif -%}
-        {% endfor %}
-      </div>
-    </a>
-  </li>
-{% endfor %}
-</ol>
+{% set postslist = collections.posts %}
+{% set postslistCounter = collections.posts | length %} 
+
+{% include "postslist.njk" %}
 
