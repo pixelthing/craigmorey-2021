@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>pixelthing</title>
-	<subtitle>Hi, I&#39;m Craig Morey, a data analyst &amp; developer from Gothenburg, Sweden (but originally from the UK).</subtitle>
+	<subtitle>Hi, I&#39;m Craig Morey, a data analyst &amp; developer at Polestar in Gothenburg, Sweden (but originally from the UK).</subtitle>
 	
-	<link href="https://example.com/feed/feed.xml" rel="self"/>
-	<link href="https://example.com/"/>
+	<link href="https://pixelthing.se/feed/feed.xml" rel="self"/>
+	<link href="https://pixelthing.se/"/>
 	<updated>2021-05-31T22:00:00+02:00</updated>
-	<id>https://example.com/</id>
+	<id>https://pixelthing.se/</id>
 	<author>
 		<name>Craig Morey</name>
 		<email>craigmorey@gmail.com</email>
@@ -14,9 +14,9 @@
 	
 	<entry>
 		<title>Getting analytics into a dev sprint</title>
-		<link href="https://example.com/posts/2021-06-getting-analytics-into-dev-team/"/>
+		<link href="https://pixelthing.se/posts/2021-06-getting-analytics-into-dev-team/"/>
 		<updated>2021-05-31T22:00:00+02:00</updated>
-		<id>https://example.com/posts/2021-06-getting-analytics-into-dev-team/</id>
+		<id>https://pixelthing.se/posts/2021-06-getting-analytics-into-dev-team/</id>
 		<content type="html">&lt;p&gt;Web analytics want to have data layer pushes in the app. The web development team - whose job it is to make these changes - is under huge pressure, with their final sprints full of urgent fixes and loud stakeholders moving priorities around.&lt;/p&gt;
 &lt;p&gt;So it&#39;s inevitable sometimes that crucial measurement points fall out of the sprint and don&#39;t get to launch day.&lt;/p&gt;
 &lt;p&gt;This is so often the case in the web analytics business, that I&#39;m not going to even address the &amp;quot;were analytics a priority from the start&amp;quot; question. Even if a KPIs, a measurement plan and  docs were agreed early in the process, it often comes down to the last two weeks to implement and QA analytics in the site for the simple reason that many of the crucial processes to measure are still being finalised at that stage.&lt;/p&gt;
@@ -58,7 +58,7 @@
 &lt;/ul&gt;
 &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// set this state once in the dataLayer early&lt;/span&gt;&lt;br&gt;dataLayer&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;push&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token string&quot;&gt;&#39;event&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;app.setup&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token string&quot;&gt;&#39;layout&#39;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;mobile&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token comment&quot;&gt;// ...instead of asking the app to find the layout state each time an event occurs:&lt;/span&gt;&lt;br&gt;dataLayer&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;push&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token string&quot;&gt;&#39;event&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;app.addToBasket&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token string&quot;&gt;&#39;value&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;99.99&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token string&quot;&gt;&#39;layout&#39;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;mobile&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-&lt;li&gt;Be flexible about swapping between asking for dataLayer pushes and markup changes. dataLayer pushes are essential for state changes and complex states with lots of information, but they often need devs to create new detailed methods where they never existed before. If you&#39;re looking for something simpler, like notification of a click with a small amount of data, asking devs to add a data attribute to their HTML component (and attaching a GTM trigger to that css selector) is often a much quicker task for devs to complete. You could even create generic markup-hooks that mean the dev team&#39;s workload is simpler, and eliminates yours [&lt;a href=&quot;https://example.com/posts/2021-04-generic-gtm-click-tracking/&quot;&gt;see article here&lt;/a&gt;]. For instance:&lt;/li&gt;
+&lt;li&gt;Be flexible about swapping between asking for dataLayer pushes and markup changes. dataLayer pushes are essential for state changes and complex states with lots of information, but they often need devs to create new detailed methods where they never existed before. If you&#39;re looking for something simpler, like notification of a click with a small amount of data, asking devs to add a data attribute to their HTML component (and attaching a GTM trigger to that css selector) is often a much quicker task for devs to complete. You could even create generic markup-hooks that mean the dev team&#39;s workload is simpler, and eliminates yours [&lt;a href=&quot;https://pixelthing.se/posts/2021-04-generic-gtm-click-tracking/&quot;&gt;see article here&lt;/a&gt;]. For instance:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// you can compromise on asking for a simple dataLayer push like:&lt;/span&gt;&lt;br&gt;dataLayer&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token string&quot;&gt;&#39;event&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;cta1.click&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- ...by instead asking for a markup change - normally quicker to implement by a dev team --&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;a&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/promo&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;data-track-click&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;cta1&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Click me!&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;a&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- now attach a trigger to the CSS selector [data-track-click=&quot;cta1&quot;] --&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -77,9 +77,9 @@
 	
 	<entry>
 		<title>Diffing datalayer objects in GTM</title>
-		<link href="https://example.com/posts/2021-05-diffing-datalaters/"/>
+		<link href="https://pixelthing.se/posts/2021-05-diffing-datalaters/"/>
 		<updated>2021-05-16T22:00:00+02:00</updated>
-		<id>https://example.com/posts/2021-05-diffing-datalaters/</id>
+		<id>https://pixelthing.se/posts/2021-05-diffing-datalaters/</id>
 		<content type="html">&lt;p&gt;A large amount of the most critical work in Google Tag Manager (GTM) is in the monitoring of changes in state, particularly objects like eCommerce baskets, filter settings or user editable configurations. In these cases we generally want to know what caused a change to an object (and I&#39;m using &lt;em&gt;&amp;quot;object”&lt;/em&gt; in compsci terms here), and what changes were made.&lt;/p&gt;
 &lt;p&gt;The trouble is that sometimes the business logic in an app is very complex and is rarely built with the requirements of analytics in mind. The app code sees a user input, steps through a series of manipulations, and returns a new, updated object.&lt;/p&gt;
 &lt;p&gt;At Polestar we have a car configurator that holds the various options chosen by the customer (eg colour, wheel choice). This &lt;em&gt;”configuration object”&lt;/em&gt; is then added to the dataLayer so that analytics can understand what is happening. We could ask the configurator team to report only what&#39;s changed, but that information is not easily produced (selecting one payment option could change several other options simultaneously), so it was decided that adding this complexity into the app - just for analytics - created extra code, extra QA, extra maintenance, and so wasn&#39;t worth it.&lt;/p&gt;
@@ -93,11 +93,11 @@
 	
 	<entry>
 		<title>Generic click tracking in GTM</title>
-		<link href="https://example.com/posts/2021-04-generic-gtm-click-tracking/"/>
+		<link href="https://pixelthing.se/posts/2021-04-generic-gtm-click-tracking/"/>
 		<updated>2021-04-23T22:00:00+02:00</updated>
-		<id>https://example.com/posts/2021-04-generic-gtm-click-tracking/</id>
+		<id>https://pixelthing.se/posts/2021-04-generic-gtm-click-tracking/</id>
 		<content type="html">&lt;p&gt;The larger a Google Tag Manager (GTM) container becomes, the more you realise that many tags, triggers and variables are doing roughly the same job. So it&#39;s worthwhile refactoring some of them away into a few generic tags that make your life easier.&lt;/p&gt;
-&lt;p&gt;This article details one such technique to reduce most of your click tracking to a simple reusable pattern, so all it takes is a small piece of markup to start collecting data. At Polestar, we use it on reusable React components, so that devs and editors have the ability to roll them out without needing to do any work in GTM at all.&lt;/p&gt;
+&lt;p&gt;This article details one such technique to reduce most of your click tracking to a simple reusable pattern, so all it takes is a small piece of markup to start collecting data. At &lt;a href=&quot;https://www.polestar.com/?utm_campaign=craigs.blog&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Polestar&lt;/a&gt;, we use it on reusable React components, so that devs and editors have the ability to roll them out without needing to do any work in GTM at all.&lt;/p&gt;
 &lt;h2 id=&quot;1.-the-markup&quot;&gt;1. The markup &lt;a class=&quot;direct-link&quot; href=&quot;#1.-the-markup&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;data-track&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;click:MyCategory:MyLabel&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;arrow-icon&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;btn-text&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Click me!&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The markup is just a data attribute of the element thats clickable/tappable. Here its a button, but it could just as easily be an anchor, input or div (please don&#39;t). The markup inside is incidental, it&#39;s just here to remind you that markup is not always clean, and that javascript sees the actual target element you click, which might be a child of the element you &lt;em&gt;think&lt;/em&gt; you&#39;re clicking (we&#39;ll cover that later).&lt;/p&gt;
@@ -114,11 +114,11 @@
 &lt;h2 id=&quot;2.-the-trigger&quot;&gt;2. The trigger &lt;a class=&quot;direct-link&quot; href=&quot;#2.-the-trigger&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2021-04-generic-gtm-click-tracking-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2021-04-generic-gtm-click-tracking-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2021-04-generic-gtm-click-tracking-1-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2021-04-generic-gtm-click-tracking-1-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2021-04-generic-gtm-click-tracking-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1947&quot; height=&quot;1162&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2021-04-generic-gtm-click-tracking-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2021-04-generic-gtm-click-tracking-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2021-04-generic-gtm-click-tracking-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1947&quot; height=&quot;1162&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;
         &lt;/figure&gt;&lt;p&gt;The trigger is an element click with a couple of simple CSS selectors, comma separated.&lt;/p&gt;
@@ -134,11 +134,11 @@
 &lt;p&gt;Now we have a triggers, and values to use in the form of GTM variables, we can can build the tag to send data to GA. As mentioned, this is a Universal Analytics tag, but it could easily be a GA4 hit event too.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2021-04-generic-gtm-click-tracking-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2021-04-generic-gtm-click-tracking-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2021-04-generic-gtm-click-tracking-2-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2021-04-generic-gtm-click-tracking-2-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2021-04-generic-gtm-click-tracking-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1966&quot; height=&quot;1380&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2021-04-generic-gtm-click-tracking-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2021-04-generic-gtm-click-tracking-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2021-04-generic-gtm-click-tracking-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1966&quot; height=&quot;1380&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;
         &lt;/figure&gt;&lt;p&gt;Now you have this tag set up, you might never have to make another tag again to track a button click...&lt;/p&gt;
@@ -156,9 +156,9 @@
 	
 	<entry>
 		<title>Web dev with an iPad in 2020</title>
-		<link href="https://example.com/posts/2020-12-ipad-webdev20/"/>
+		<link href="https://pixelthing.se/posts/2020-12-ipad-webdev20/"/>
 		<updated>2020-12-29T23:00:00+01:00</updated>
-		<id>https://example.com/posts/2020-12-ipad-webdev20/</id>
+		<id>https://pixelthing.se/posts/2020-12-ipad-webdev20/</id>
 		<content type="html">&lt;p&gt;At this time of the year I normally go deep on what’s changed if you’re a front-end web developer with an iPad. This year, I’m not going to do that, largely because I don’t have a set-up that’s representative of a 2020 iPad Pro (I have a 10.5”), but also because this year of all years, I think I’m justified in taking time off over the christmas holiday and not spending it explaining every possible workflow.&lt;/p&gt;
 &lt;p&gt;But 2020 - despite feeling like a flat curve of time - has been surprisingly busy in the iPad world. Here are some highlights that effect you as a developer with an iPad in the hand.&lt;/p&gt;
 &lt;h3 id=&quot;ios13.4-%26-magic-keyboard&quot;&gt;iOS13.4 &amp;amp; Magic keyboard &lt;a class=&quot;direct-link&quot; href=&quot;#ios13.4-%26-magic-keyboard&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -179,11 +179,11 @@
 &lt;p&gt;This is the app surprise of the year for me. It started as a simple enough little playground project - lets take the interface of VSCode and see if it can be reproduced in SwiftUI. But with continual updates, it has progressed in nine months to the point that it’s pretty damned close in core functionality to it’s role model. It has intellisense style hints &amp;amp; suggestions, a command palette, and code running options including node.js and python. There are still some problems that need attention, but this could be the star of next year’s IDE crowd at this rate - it’s certainly got my attention.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-12-ipad-webdev20-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-12-ipad-webdev20-1-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-12-ipad-webdev20-1-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-12-ipad-webdev20-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;940&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;940&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Code app by The BaseLab&lt;/p&gt;
 
@@ -191,11 +191,11 @@
 &lt;p&gt;Play.js 1.0 was innovative and quirky, but more importantly was the only way you could build a node.js or React project on iOS. This year, a complete rewrite resulted in v2.0, ironing out a lot of the quirks and adding a whole lot of functionality. Between enabling vue.js and next.js projects, to having the best devtools outside of inspect browser, Play.js has grown beyond expectations in 2020. Every aspect has improved, but the biggest thing you notice is that it fits together better, and looks and feels like a top tier iOS app. I even like that it has in-app optional tip payment - if you buy and use these apps over years, there’s no better way to say thanks for the updates.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-12-ipad-webdev20-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-12-ipad-webdev20-2-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-12-ipad-webdev20-2-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-12-ipad-webdev20-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;1050&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;1050&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;play.js&lt;/p&gt;
 
@@ -214,11 +214,11 @@
 &lt;p&gt;Still the best option for web devtools on iOS, and still coming out with additional functionality and interface updates. Building an entire browser just so that you can add devtools to it is an insane amount of work that you undertake only if you didn’t realise how much work was involved when you started - support them as much as you can so that they continue on this crazy quest that is so essential to any web dev on iPadOS.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-12-ipad-webdev20-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-12-ipad-webdev20-3-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-12-ipad-webdev20-3-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-12-ipad-webdev20-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;1040&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-3-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-3-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-12-ipad-webdev20-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;1040&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Inspect Browser&lt;/p&gt;
 
@@ -247,9 +247,9 @@
 	
 	<entry>
 		<title>Getting critical data noticed</title>
-		<link href="https://example.com/posts/2020-08-getting-critical-data-noticed/"/>
+		<link href="https://pixelthing.se/posts/2020-08-getting-critical-data-noticed/"/>
 		<updated>2020-08-19T22:00:00+02:00</updated>
-		<id>https://example.com/posts/2020-08-getting-critical-data-noticed/</id>
+		<id>https://pixelthing.se/posts/2020-08-getting-critical-data-noticed/</id>
 		<content type="html">&lt;p&gt;It feels like we’ve crossed a threshold. Businesses (and the general public) are increasingly calling for more data, and for it to be presented in a smart and pedagogic way.&lt;/p&gt;
 &lt;p&gt;But we are living in a seriously distracted time. Knowing we need to be looking at data is very different from having the trigger to actually do it. Too often, the idea that we need to check on the progress of a chart is so far down the list of shiny new things to look at that it remains a noble effort, like signing up for the gym but never finding the time to go.&lt;/p&gt;
 &lt;p&gt;How do we wedge business critical data into this distraction disaster zone, especially when the real insight from the data often can’t be explained in a 140 character chunk?&lt;/p&gt;
@@ -263,11 +263,11 @@
 &lt;p&gt;“&lt;strong&gt;The body&lt;/strong&gt;” is a variant on the dashboard we build already, it should be giving multiple indicators and insights to form an opinion or decision. But it differs in two ways to what we would usually build. Firstly it &lt;em&gt;can&lt;/em&gt; be found at the end of a URL/link, because “the bite” does the work of attracting interest to it. Secondly, because it doesn’t need to do double-duty of attracting attention &lt;em&gt;and&lt;/em&gt; serving up depth, it can be re-configured assuming the viewer already has a view on the data when they start looking into it. In an ideal world, you could have variants of dashboard for different analysis, depending on the link in message of “the bite”.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-08-getting-critical-data-noticed-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-08-getting-critical-data-noticed-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-08-getting-critical-data-noticed-1-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-08-getting-critical-data-noticed-1-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-08-getting-critical-data-noticed-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;848&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-08-getting-critical-data-noticed-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-08-getting-critical-data-noticed-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-08-getting-critical-data-noticed-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;848&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;chartyios.app in an iOS14 widget&lt;/p&gt;
 
@@ -285,11 +285,11 @@
 &lt;p&gt;Very soon you will see lots of screenshots of these widgets in social media as a shorthand to a humblebrag.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-08-getting-critical-data-noticed-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-08-getting-critical-data-noticed-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-08-getting-critical-data-noticed-2-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-08-getting-critical-data-noticed-2-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-08-getting-critical-data-noticed-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;1229&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-08-getting-critical-data-noticed-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-08-getting-critical-data-noticed-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-08-getting-critical-data-noticed-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;1229&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;JS script running in a scriptable.app iOS14 widget&lt;/p&gt;
 
@@ -302,9 +302,9 @@
 	
 	<entry>
 		<title>iPadOS14 wish list for web devs</title>
-		<link href="https://example.com/posts/2020-05-ipados14-wish-list-for-web-devs/"/>
+		<link href="https://pixelthing.se/posts/2020-05-ipados14-wish-list-for-web-devs/"/>
 		<updated>2020-05-23T22:00:00+02:00</updated>
-		<id>https://example.com/posts/2020-05-ipados14-wish-list-for-web-devs/</id>
+		<id>https://pixelthing.se/posts/2020-05-ipados14-wish-list-for-web-devs/</id>
 		<content type="html">&lt;p&gt;Historically, I’ve had a rotten track record for predicting future features. And everyone has their take for iPadOS14 — many focusing on the UI or fabled iPad Pro apps like Xcode or Logic Pro. As a web/data developer with iPads in the hands of various family members, I guess I have a slightly different list of wishes:&lt;/p&gt;
 &lt;h2 id=&quot;what-would-make-ipados-a-good-web-dev-platform&quot;&gt;What would make iPadOS a good web dev platform &lt;a class=&quot;direct-link&quot; href=&quot;#what-would-make-ipados-a-good-web-dev-platform&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
@@ -330,10 +330,14 @@
 	
 	<entry>
 		<title>Making GTM better</title>
-		<link href="https://example.com/posts/2020-05-making-gtm-better/"/>
+		<link href="https://pixelthing.se/posts/2020-05-making-gtm-better/"/>
 		<updated>2020-05-19T22:00:00+02:00</updated>
-		<id>https://example.com/posts/2020-05-making-gtm-better/</id>
-		<content type="html">&lt;p&gt;Google Tag Manager is a strange beast. Its purpose is essentially abstraction -- to provide a layer between a website and multiple types of site measurement. It’s been used brilliantly, loosely, badly and plain-old abusively in many cases, but it is trying to make it possible for non-developers to (for instance) be able to quickly set-up Google Analytics tracking on a button, as well as experts to set up more in-depth measurement. But like all interfaces that try and simplify things without losing complex functionality, it can quickly dissolve into very domain specific language that seems unintelligible from the outside.&lt;/p&gt;
+		<id>https://pixelthing.se/posts/2020-05-making-gtm-better/</id>
+		<content type="html">&lt;aside class=&quot;aside--update&quot;&gt;
+&lt;h3 id=&quot;update-2020-10-24&quot;&gt;Update 2020-10-24 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020-10-24&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;GTM now has a brand new Tag Assistant workflow that touches almost every part of the GTM UI. It definitely addresses some of the fundamental problems I saw, but other smaller fustrations remain. Progress!&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;Google Tag Manager is a strange beast. Its purpose is essentially abstraction -- to provide a layer between a website and multiple types of site measurement. It’s been used brilliantly, loosely, badly and plain-old abusively in many cases, but it is trying to make it possible for non-developers to (for instance) be able to quickly set-up Google Analytics tracking on a button, as well as experts to set up more in-depth measurement. But like all interfaces that try and simplify things without losing complex functionality, it can quickly dissolve into very domain specific language that seems unintelligible from the outside.&lt;/p&gt;
 &lt;p&gt;And that’s where I am at the moment, using GTM to try and build logical tags of reliable data from horribly un-semantic, React-built spaghetti-code web sites that needs lots of custom JS in GTM to interpret them.&lt;/p&gt;
 &lt;p&gt;Because I was a front-end developer in a previous life with some UX background, I understand that no UI/UX is perfect and there is always more that you learn the more you fix it. I’d like to think I could make a few suggestions to the GTM team at Google that would make my day (and hopefully yours) much easier:&lt;/p&gt;
 &lt;ul&gt;
@@ -346,21 +350,21 @@
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-05-making-gtm-better-1.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-1.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-1-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-1-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-05-making-gtm-better-1-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1075&quot; height=&quot;263&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-1-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-1-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-1-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1075&quot; height=&quot;263&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The preview button and preview refresh link if no changes since the last refresh.&lt;/p&gt;
 
         &lt;/figure&gt;
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-05-making-gtm-better-2.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-2.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-2-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-2-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-05-making-gtm-better-2-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1072&quot; height=&quot;262&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-2-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-2-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-2-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1072&quot; height=&quot;262&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Suggested preview button and refresh link style if updates have been made and not yet previewed.&lt;/p&gt;
 
@@ -369,11 +373,11 @@
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-05-making-gtm-better-3.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-3.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-3-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-3-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-05-making-gtm-better-3-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1286&quot; height=&quot;297&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-3-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-3-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-3-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1286&quot; height=&quot;297&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Suggestion for the a &amp;quot;reload&amp;quot; button in the debug panel to be aware of preview refreshes, prompting you to re-load the page to see the update.&lt;/p&gt;
 
@@ -387,11 +391,11 @@
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-05-making-gtm-better-4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-4-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-4-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-05-making-gtm-better-4-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1023&quot; height=&quot;250&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-4-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-4-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-4-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1023&quot; height=&quot;250&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Highlighting items that have recently been updated to make them easier to return to in a long list.&lt;/p&gt;
 
@@ -400,11 +404,11 @@
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-05-making-gtm-better-5.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-5.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-5-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-5-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-05-making-gtm-better-5-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1015&quot; height=&quot;319&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-5-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-5-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-5-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1015&quot; height=&quot;319&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;I wish every time I came back to this list, it was still sorted as &amp;quot;last edited first&amp;quot;.&lt;/p&gt;
 
@@ -413,11 +417,11 @@
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-05-making-gtm-better-6.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-6.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-6-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-6-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-05-making-gtm-better-6-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1018&quot; height=&quot;909&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-6-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-6-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-6-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1018&quot; height=&quot;909&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The Variables panel -- split into &amp;quot;Built-in&amp;quot; and &amp;quot;User-defined&amp;quot;. My nemesis.&lt;/p&gt;
 
@@ -426,11 +430,11 @@
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-05-making-gtm-better-7.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-7.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-7-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-7-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-05-making-gtm-better-7-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1023&quot; height=&quot;255&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-7-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-7-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-7-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1023&quot; height=&quot;255&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The &amp;quot;usage number&amp;quot; in the trigger list. Could we have this in the Variable list too?&lt;/p&gt;
 
@@ -449,11 +453,11 @@ Search (and even at a push -- replace) across all content in text fields &amp;am
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-05-making-gtm-better-8.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-8.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-8-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-05-making-gtm-better-8-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-05-making-gtm-better-8-xl.png&quot; loading=&quot;lazy&quot; width=&quot;399&quot; height=&quot;160&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-8-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-8-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-05-making-gtm-better-8-xl.png&quot; loading=&quot;lazy&quot; width=&quot;399&quot; height=&quot;160&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;I wish I could inspect  without spending the next two minutes clicking buttons.&lt;/p&gt;
 
@@ -465,9 +469,9 @@ Search (and even at a push -- replace) across all content in text fields &amp;am
 	
 	<entry>
 		<title>2019 iPad Webdev - remote VS Code</title>
-		<link href="https://example.com/posts/2020-01-ipad-webdev19-vscode-hosted/"/>
+		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-vscode-hosted/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
-		<id>https://example.com/posts/2020-01-ipad-webdev19-vscode-hosted/</id>
+		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-vscode-hosted/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
 &lt;/aside&gt;
@@ -491,11 +495,11 @@ Search (and even at a push -- replace) across all content in text fields &amp;am
 &lt;p&gt;Well, don’t get too excited, it’s 90% the real thing.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-1-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-1-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Running VS Code (hosted) as a standalone web app.&lt;/p&gt;
 
@@ -514,11 +518,11 @@ Search (and even at a push -- replace) across all content in text fields &amp;am
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-2-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-2-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;815&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;815&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Extensions in VS Code. In terms of functionality, the hosted version is missing almost nothing over the app.&lt;/p&gt;
 
@@ -531,11 +535,11 @@ Search (and even at a push -- replace) across all content in text fields &amp;am
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-3-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-3-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-3-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-3-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Multi file search and replace. One of many things missing in native iOS code editor apps.&lt;/p&gt;
 
@@ -547,11 +551,11 @@ Search (and even at a push -- replace) across all content in text fields &amp;am
 &lt;p&gt;That doesn’t mean it doesn’t hit our main requirement (ie, doing &amp;quot;real work&amp;quot; on my mobile device of choice), it’s just that it feels a little like cheating.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-4.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-4.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-4-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-4-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-4-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-4-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-4-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-4-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Running a simple python web server within the terminal inside VS Code.&lt;/p&gt;
 
@@ -573,11 +577,11 @@ echo &amp;quot;export PASSWORD=YourPassword&amp;quot; &amp;gt;&amp;gt; /etc/prof
 &lt;/ol&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-5.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-5.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-5-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-5-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-vscode-hosted-5-xl.png&quot; loading=&quot;lazy&quot; width=&quot;481&quot; height=&quot;316&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-5-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-5-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-vscode-hosted-5-xl.png&quot; loading=&quot;lazy&quot; width=&quot;481&quot; height=&quot;316&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The password entry for hosted VSCode as seen in a browser. By default, the password is set randomly and shown in the terminal session that started the server.&lt;/p&gt;
 
@@ -603,9 +607,9 @@ echo &amp;quot;export PASSWORD=YourPassword&amp;quot; &amp;gt;&amp;gt; /etc/prof
 	
 	<entry>
 		<title>2019 iPad Webdev - Raspberry Pi</title>
-		<link href="https://example.com/posts/2020-01-ipad-webdev19-raspberry-pi/"/>
+		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-raspberry-pi/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
-		<id>https://example.com/posts/2020-01-ipad-webdev19-raspberry-pi/</id>
+		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-raspberry-pi/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
 &lt;/aside&gt;
@@ -622,11 +626,11 @@ echo &amp;quot;export PASSWORD=YourPassword&amp;quot; &amp;gt;&amp;gt; /etc/prof
 &lt;p&gt;It took off from there. I had an iPad Pro 10.5” with Lighning connectors, so USB-C power and network weren’t going to work for me, but I could connect to them over WiFi easily enough. And I found I didn’t need to stretch to the Pi 4B, the Pi 3B+ model that I already owned was fast enough for most work, and as a bonus had much lower power demands, so using a 10Ah 12Watt Anker battery pack (not a PD one with crazy output) was enough to run it. If you plugged it into a monitor, it would complain about power during boot-up, but in general headless usage, it never hit any limits.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-raspberry-pi-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-raspberry-pi-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-raspberry-pi-2-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-raspberry-pi-2-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-raspberry-pi-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;765&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-raspberry-pi-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-raspberry-pi-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-raspberry-pi-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;765&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;
         &lt;/figure&gt;&lt;p&gt;For a plane trip in September, I decided to try and get it working without any internet — just the iPad, the Pi and the battery pack, totally off-line. I eventually got the Pi to act as a WiFi NAT and DHCP server, essentially acting as a router with no connection to route, leaving just the iPad and the Pi as the only IPs on our mini network. It worked great and I could literally carry it in my pocket whilst working on it. If you’d like to try this “offline” set-up, there’s a link at the bottom of this article.&lt;/p&gt;
@@ -634,11 +638,11 @@ echo &amp;quot;export PASSWORD=YourPassword&amp;quot; &amp;gt;&amp;gt; /etc/prof
 &lt;p&gt;Once &lt;a href=&quot;https://secureshellfish.app/&quot;&gt;Secure Shellfish&lt;/a&gt; came out, sending files to and from a Raspberry Pi was as easy as if it was an external drive, Shellfish just made it another file provider in the “Files” app.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-raspberry-pi-1-xl.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-raspberry-pi-1-xl.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-raspberry-pi-1-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-raspberry-pi-1-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-raspberry-pi-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;4000&quot; height=&quot;2379&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-raspberry-pi-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-raspberry-pi-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-raspberry-pi-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;4000&quot; height=&quot;2379&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Shellfish set-up to connect to my Rasbperry Pi 3B+&lt;/p&gt;
 
@@ -682,9 +686,9 @@ Geek cred.&lt;/li&gt;
 	
 	<entry>
 		<title>2019 iPad Webdev - Play.js</title>
-		<link href="https://example.com/posts/2020-01-ipad-webdev19-playjs/"/>
+		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-playjs/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
-		<id>https://example.com/posts/2020-01-ipad-webdev19-playjs/</id>
+		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-playjs/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
 &lt;/aside&gt;
@@ -699,11 +703,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;It’s not just an editor, it’s a fully integrated environment that lets you run Node.js processes and install Node.js modules. Yes really -- this is the app &lt;a href=&quot;https://blog.usejournal.com/fe-webdev-on-ipad-pro-2018-c55283f01e4c&quot;&gt;I have been imagining for several years&lt;/a&gt;.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-1-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-1-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Two windows of play.js, running the index.js in the left window, which spawned the internal browser in the right window with the results. And bottom left is the Node.js console.&lt;/p&gt;
 
@@ -712,22 +716,22 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;It’s almost magic.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-2-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-2-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;722&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;722&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Here’s the magic in action. Press &amp;quot;play&amp;quot; and the app installs the modules and runs index.js&lt;/p&gt;
 
         &lt;/figure&gt;&lt;p&gt;This is running front-end tooling locally on your iPad without any use of a remote or Virtual Private Server (VPS), and without having to limit yourself to developing a flat file site. For this reason alone (plus if you want to develop server-side node apps), play.js has quite a faithful following.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-3-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-3-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;805&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-3-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-3-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;805&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The default project menu, before you expand it. do you know which is the right React project to run?&lt;/p&gt;
 
@@ -737,11 +741,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;&lt;a href=&quot;https://youtu.be/RIOOA6APlZs&quot;&gt;https://youtu.be/RIOOA6APlZs&lt;/a&gt;&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-4-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-4-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-4-xl.png&quot; loading=&quot;lazy&quot; width=&quot;372&quot; height=&quot;350&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-4-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-4-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-4-xl.png&quot; loading=&quot;lazy&quot; width=&quot;372&quot; height=&quot;350&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The file sidebar. The top directory with &amp;quot;..&amp;quot; goes up a level.&lt;/p&gt;
 
@@ -751,11 +755,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;The traffic-light close/minimise buttons (echoing window controls in OSX) make me smile, but I wonder about the utility of any buttons you have to click twice -- once to enlarge them, a second time to use them.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-5.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-5.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-5-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-5-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-5-xl.png&quot; loading=&quot;lazy&quot; width=&quot;400&quot; height=&quot;403&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-5-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-5-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-5-xl.png&quot; loading=&quot;lazy&quot; width=&quot;400&quot; height=&quot;403&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The Git controls in the sidebar. Also note the traffic light buttons.&lt;/p&gt;
 
@@ -764,11 +768,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;The in-app browser (that cleverly opens itself in a new window docked to the side of the code) doesn’t have any special functions apart from having a button to load the same page in an external browser (Safari). I wish we could specify the browser to load the results in -- being able to use &lt;a href=&quot;https://apps.pdyn.net/inspect/&quot;&gt;Inspect Browser&lt;/a&gt; would instead would help a great deal with debugging.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-6.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-6.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-6-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-6-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-playjs-6-xl.png&quot; loading=&quot;lazy&quot; width=&quot;386&quot; height=&quot;500&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-6-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-6-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-playjs-6-xl.png&quot; loading=&quot;lazy&quot; width=&quot;386&quot; height=&quot;500&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The project/app list (default view).&lt;/p&gt;
 
@@ -803,9 +807,9 @@ Geek cred.&lt;/li&gt;
 	
 	<entry>
 		<title>2019 iPad Webdev - Panic Coda/Code editor</title>
-		<link href="https://example.com/posts/2020-01-ipad-webdev19-panic-coda/"/>
+		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-panic-coda/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
-		<id>https://example.com/posts/2020-01-ipad-webdev19-panic-coda/</id>
+		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-panic-coda/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
 &lt;/aside&gt;
@@ -818,11 +822,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;It’s still sold by Panic &lt;em&gt;(update - no it&#39;s not!)&lt;/em&gt;, still supported with bug fixes and security updates. It’s still got some features that don’t exist in any other app. But it’s essentially in maintenance mode. It was built for the pre-iOS11 world and I’m sad to say it barely fits into the iOS13 one.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-panic-coda-1.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-panic-coda-1.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-panic-coda-1-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-panic-coda-1-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-panic-coda-1-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;1050&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-panic-coda-1-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-panic-coda-1-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-panic-coda-1-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;1050&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The Coda editing view&lt;/p&gt;
 
@@ -835,11 +839,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;But Coda has one thing that nothing else does. Remote Amazon Web Service (AWS) S3 file bucket access. Only Panic’s own Transmit (no longer on the app store) has usable S3 access, and if you have a project that uses S3, it could be the one killer feature you need.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-panic-coda-2.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-panic-coda-2.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-panic-coda-2-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-panic-coda-2-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-panic-coda-2-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;1050&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-panic-coda-2-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-panic-coda-2-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-panic-coda-2-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;1050&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;
         &lt;/figure&gt;&lt;p&gt;The above screenshot shows the file interface in Coda. On the left is the list of files that sit in this project locally on the iPad. On the right is the list of remote files in the AWS S3 bucket. In this view, you can pick files that are either local or remote and edit them, or you can drag and drop them between the two sides.&lt;/p&gt;
@@ -851,9 +855,9 @@ Geek cred.&lt;/li&gt;
 	
 	<entry>
 		<title>2019 iPad Webdev - GoCoEdit</title>
-		<link href="https://example.com/posts/2020-01-ipad-webdev19-gocoedit/"/>
+		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-gocoedit/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
-		<id>https://example.com/posts/2020-01-ipad-webdev19-gocoedit/</id>
+		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-gocoedit/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
 &lt;/aside&gt;
@@ -865,11 +869,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;In truth it’s a clever combination of hundreds of hours of work and several different OSS libraries -- primarily &lt;a href=&quot;https://codemirror.net/&quot;&gt;Codemirror&lt;/a&gt;, a mature JS based code editor (and don’t snigger, it’s used in Chrome &amp;amp; Firefox devtools, plus &lt;a href=&quot;http://brackets.io/&quot;&gt;Brackets&lt;/a&gt;, &lt;a href=&quot;https://codeanywhere.com/&quot;&gt;Codeanywhere&lt;/a&gt; and &lt;a href=&quot;https://jupyter.org/&quot;&gt;Jupyter&lt;/a&gt;).&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-1-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-1-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;GoCoEdit’s interesting take on UI. Are those buttons wrapped CSS flexbox?&lt;/p&gt;
 
@@ -877,22 +881,22 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;But I’m glad I did give it some time, because it has masses of thought put into it’s workflow, and lots of hidden depths.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-2.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-2.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-2-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-2-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-2-xl.png&quot; loading=&quot;lazy&quot; width=&quot;350&quot; height=&quot;326&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-2-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-2-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-2-xl.png&quot; loading=&quot;lazy&quot; width=&quot;350&quot; height=&quot;326&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;
         &lt;/figure&gt;&lt;p&gt;Despite not looking like the usual sidebar, it does support OS level file drag and drop, allowing you to copy folders directly into (and out of) it. Dragging folders from the &amp;quot;files&amp;quot; app into the file list works fine and you can drag them into the &amp;quot;external&amp;quot; heading, but they don’t seem to be &amp;quot;edit in place&amp;quot; because if I make any changes, Working Copy doesn’t recognise them, so the files must have been copied -- not linked? It could just be a mistake that you can drag them into &amp;quot;external&amp;quot; at all.&lt;/p&gt;
 &lt;p&gt;&amp;quot;Edit in place&amp;quot; is definitely available in the &amp;quot;open from&amp;quot; option at the top of the file sidebar, and it correctly allows me to edit files in a checked-out Working Copy repo and commit/push any changes back (In WC, not in GoCoEdit itself), painlessly.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-3-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-3-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-3-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-3-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;GoCoEdit’s auto-suggest is spot on, here offering the correct symbols to a Vue.js object.&lt;/p&gt;
 
@@ -900,22 +904,22 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;The editor interface itself is one of the most full-featured anywhere on iOS. It has auto-complete that is not only accurate (closing the correct tag for instance) but auto-suggests from symbols in the page/script/style sheet you’re editing. Line breaks auto-tab the next line in a useful and predictable manner. The extra symbol keyboard is one of the most comprehensive and easiest to use, and has a mysterious &amp;quot;dot&amp;quot; in the middle that acts like the iOS13 draggable caret -- hold down and drag your finger and the text selection caret moves with your finger, double tap it and it selects the line.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-4-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-4-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-4-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1000&quot; height=&quot;372&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-4-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-4-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-4-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1000&quot; height=&quot;372&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;
         &lt;/figure&gt;&lt;p&gt;That does bring us to text selection, which is closer to the custom style in Panic Coda than to the new standard style in iOS13. Holding your finger down on any piece of text brings up a rectangular magnified loupe of the text. The blue bars at the start and end of a text selection don’t have the customary dots on them (an iOS13 problem?), and the context pop-over when you select text doesn’t have a &amp;quot;select all&amp;quot; option, a weird omission. But’s easier to think that this is a keyboard driven app -- selecting a whole doc of code is easier with command-A.&lt;/p&gt;
 &lt;p&gt;Unusually for any iOS app, GoCo doesn’t continuously auto-save but requires you to tap &amp;quot;save&amp;quot; to commit a change to it (either by command-s or by tapping the tick-mark in the top right -- yellow is unsaved, green is saved).&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-5.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-5.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-5-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-5-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-5-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;800&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-5-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-5-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-5-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;800&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;GoCoEdit editing a project directly from Working Copy, with live preview in Safari on the right.&lt;/p&gt;
 
@@ -923,11 +927,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;But GoCoEdit also lets you choose Safari or Chrome to preview in as well, and this is where it gets really interesting. Many iOS code editors can start up an internal web server that other browsers can use, but GoCoEdit uses the standard port 80 -- not random ports as with most other apps. This makes it easier to test oAuth based apps -- which often require a predetermined host and port, and is the single feature that has made it my go-to editor for the moment.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-6.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-6.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-6-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-6-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-6-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;1050&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-6-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-6-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-6-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;1050&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;GoCoEdit previewing a page in Safari on the right. Note that the app’s action menu shows &amp;quot;Safari&amp;quot; with a lightning symbol, indicating that it’s in live-preview mode, so will refresh on every save.&lt;/p&gt;
 
@@ -936,11 +940,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;Of course, Safari has no devtools, so I’d love to see an option in GoCoEdit to have the same behaviour with Inspect Browser.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-7.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-7.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-7-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-7-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-gocoedit-7-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;717&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-7-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-7-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-gocoedit-7-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;717&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The custom button row in GoCoEdit. The centre dot moves the text selection carat, similar to a how a ThinkPad &amp;quot;pointing stick&amp;quot; works.&lt;/p&gt;
 
@@ -978,9 +982,9 @@ Geek cred.&lt;/li&gt;
 	
 	<entry>
 		<title>2019 iPad Webdev - CD with Netlify</title>
-		<link href="https://example.com/posts/2020-01-ipad-webdev19-cd-netlify/"/>
+		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-cd-netlify/"/>
 		<updated>2020-01-05T23:00:00+01:00</updated>
-		<id>https://example.com/posts/2020-01-ipad-webdev19-cd-netlify/</id>
+		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-cd-netlify/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
 &lt;/aside&gt;
@@ -993,11 +997,11 @@ Geek cred.&lt;/li&gt;
 &lt;/ol&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-1-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-1-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;818&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;818&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Netlify deploy status (in Safari -- on left) and Inspect Browser showing the deployed site (right)&lt;/p&gt;
 
@@ -1016,11 +1020,11 @@ Geek cred.&lt;/li&gt;
 &lt;/ol&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-2.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-2.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-2-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-2-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-2-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;805&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-2-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-2-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-2-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;805&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Build settings for a project in Netlify&lt;/p&gt;
 
@@ -1031,11 +1035,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;But the biggest problem I found was juggling all these elements constantly. I ended up with using Working Copy to push a change (and so trigger a deploy) and Textastic or GoCoEdit as the code editor, editing the files in Working Copy. On top of that I had two tabs or windows of Safari, one for viewing the resulting website, and one open with the Netlify deploy status, so I could be sure the deploy had succeeded and I was looking at the right version of the site.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-3.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-3.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-3-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-3-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-cd-netlify-3-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;1050&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-3-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-3-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-cd-netlify-3-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;1050&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Working Copy (left), Textastic (center), two Safari windows (in slide-over -- right) with the deployed site and deploy status.&lt;/p&gt;
 
@@ -1074,9 +1078,9 @@ Geek cred.&lt;/li&gt;
 	
 	<entry>
 		<title>FE webdev on iPad (2019)</title>
-		<link href="https://example.com/posts/2020-01-ipad-webdev19/"/>
+		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19/"/>
 		<updated>2020-01-04T23:00:00+01:00</updated>
-		<id>https://example.com/posts/2020-01-ipad-webdev19/</id>
+		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
 &lt;/aside&gt;
@@ -1087,11 +1091,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;This is a journey that – as yet – still has no clear destination. But it’s getting more pleasant by the month.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-1-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-1-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;617&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;617&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;GoCoEdit and a Brydge 10.5&amp;quot; (the best keyboard for using on your lap)&lt;/p&gt;
 
@@ -1100,11 +1104,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;In the iPad Pro range, the top-end has remained unchanged. Or has it? Because the promised USB-C ecosystem is finally emerging and has collided with the new iPadOS. You can now plug your iPad into 5k monitors, hard drives, mice, microphones, USB-sticks, Raspberry Pis, plus a multitude of cheap, powerful, compact power supplies. And with either store-shelf or iPad-bespoke hubs, even with several peripherals at the same time. Your year-old iPad Pro had a free hardware upgrade in 2019.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-2-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-2-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;696&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;696&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Felt iPad carry case with dongles (HDMI, USB3.0, SD card) and Moko foldable stand.&lt;/p&gt;
 
@@ -1114,11 +1118,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;Not everything is super rosey. The multi-tasking is powerful but cognitively taxing. The sandboxing means that apps still have to jump through crazy hoops to work together in a logical way. Background processes are still killed ridiculously early. iPad Pro RAM is unrealistically low compared to the cheapest of laptops. The command line is still &lt;em&gt;verboten&lt;/em&gt;. App Store rules are still vague and punitive.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-3-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-3-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;631&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-3-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-3-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;631&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;A reminder to myself.&lt;/p&gt;
 
@@ -1126,11 +1130,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;One thing that didn’t change this year was the range of browsers on the platform. WebKit is still the only rendering engine available on iOS, Safari still has no devtools and you still can’t have Safari Technical Preview on iOS.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-4-sm.png&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-4-lg.png&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-4-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1169&quot; height=&quot;512&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-4-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-4-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-4-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1169&quot; height=&quot;512&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;
         &lt;/figure&gt;&lt;p&gt;The &lt;a href=&quot;https://twitter.com/slightlylate&quot;&gt;Google engineer Alex Russell&lt;/a&gt; has strong views on Safari and iOS – and a lot of fan boys (like me) can get twitter-rage as a response. But although I might not always agree, I like Alex. Not only is he smart but he backs up points with data, and that should always deserve your consideration, whether you agree with his conclusions or not.&lt;/p&gt;
@@ -1138,11 +1142,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;If we also had Chromium on iOS, we wouldn’t be celebrating finally using &amp;quot;real&amp;quot; GoogleDocs in 2019, because we’d have had it years ago. We might also have 4K YouTube and devtools. And so would Safari, probably (because; competition). All of that would mean selling more iPads to pros. And Safari would still rule for most iPad users because even for a default it’s capable, fast, has low battery consumption, and it’s the webview in every single social app that you own. Do it, you cowards (it’s a meme, I don’t really talk or think like that).&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-5.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-5.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-5-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-5-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-5-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;429&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-5-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-5-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-5-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;429&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;We live in an imperfect world. The 9 month old crack on my 10.5&amp;quot;. At least it’s undetectable by touch over most of the screen. Here’s hoping the 2020 iPad Pro is coming soon.&lt;/p&gt;
 
@@ -1153,11 +1157,11 @@ Geek cred.&lt;/li&gt;
 &lt;p&gt;Next we also need apps to open files via the OS level &amp;quot;edit in place&amp;quot; API so that an IDE can work directly on files in a local repo (and just to be difficult, this API changed in iOS13, so any app that previously supported it needs an update). I consider this the basic requirement now of any pro app.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-6.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-6.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-6-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-6-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-6-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;644&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-6-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-6-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-6-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;644&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Microsoft VS Code running plug-ins on an iPad? Well, yes - kind of.&lt;/p&gt;
 
@@ -1175,11 +1179,11 @@ Geek cred.&lt;/li&gt;
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-7.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-7.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-7-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-7-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-7-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;765&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-7-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-7-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-7-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;765&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Raspberry Pi 3B+ with Anker 10Ah battery pack. Pilot biro grip on the Apple Pencil.&lt;/p&gt;
 
@@ -1198,11 +1202,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-8.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-8.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-8-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-8-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-8-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;625&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-8-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-8-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-8-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;625&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;MacBook Pro 13&amp;quot; 2014, MacBook Air 2019, MacBook Air 11&amp;quot; 2011, iPad Pro 10.5&amp;quot;. Which is fastest?&lt;/p&gt;
 
@@ -1217,11 +1221,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-9.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-9.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-9-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-9-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-9-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-9-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-9-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-9-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Play.js running a web React project, with it’s browser showing the result on the right. This really is Node.js running locally on iPadOS -- a major step forward.&lt;/p&gt;
 
@@ -1232,11 +1236,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;p&gt;But at least we’re getting there in the IDE space. When it comes to Browser developer tools, we’re still a way off. The great &lt;a href=&quot;https://apps.pdyn.net/inspect/&quot;&gt;Inspect Browser&lt;/a&gt; is still gaining new functionality steadily, but we’re still a long way from having the same insight into what a web page is doing like we have on desktop. In particular, we’re missing perf tools, heap measurements, JS debugger, indexedDB storage viewing, PWA tools, code line references in console logs, and more.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-10.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-10.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-10-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-10-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-10-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;1295&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-10-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-10-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-10-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;1295&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Don’t feel locked into landscape mode -- the iPad is more flexible than that. (Textastic on screen)&lt;/p&gt;
 
@@ -1250,11 +1254,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;p&gt;Alternatively you could ask what the kind of direction is that to give. Leaving enigmatic platitudes that provide no guidance as an epitaph to months of work is not exactly going to inspire a generation of after-work app developers to enable a thriving industry and – in conclusion – sell more iPads. &amp;quot;Help us to help you&amp;quot;, I would plead to Apple.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-11.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-11.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-11-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-11-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-11-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;857&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-11-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-11-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-11-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;857&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;On the charger in our hall. its just a bread bin with some holes and a three-way socket inside.&lt;/p&gt;
 
@@ -1284,11 +1288,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2020-01-ipad-webdev19-12-xl.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-12-xl.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-12-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2020-01-ipad-webdev19-12-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2020-01-ipad-webdev19-12-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;4000&quot; height=&quot;2685&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-12-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-12-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-12-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;4000&quot; height=&quot;2685&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Apple Magic Keyboard in a Fintie wrap &amp;amp; stand with an iPad Pro 10.5&amp;quot;&lt;/p&gt;
 
@@ -1302,20 +1306,20 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 	
 	<entry>
 		<title>My Seiko SNK Po-mo</title>
-		<link href="https://example.com/posts/2016-04-seiko-pomo/"/>
+		<link href="https://pixelthing.se/posts/2016-04-seiko-pomo/"/>
 		<updated>2016-04-16T22:00:00+02:00</updated>
-		<id>https://example.com/posts/2016-04-seiko-pomo/</id>
+		<id>https://pixelthing.se/posts/2016-04-seiko-pomo/</id>
 		<content type="html">&lt;p&gt;I don’t scuba, or pilot a plane, or skipper a ship.&lt;/p&gt;
 &lt;p&gt;That being so, &amp;quot;tool watches&amp;quot; (as watch enthusiasts call them) such as true divers’, aviators’ or sailors’ watches would be lost on me -- or at least merely a bit of fantasy on my part. That’s not to say their core features aren’t useful to me, but being waterproof doesn’t mean I need a watch to withstand diving to great depths, just as being easy-to-read in the dark doesn’t mean I need NATO standard radioactive promethium coated minute hands. Or the associated price.&lt;/p&gt;
 &lt;p&gt;But if I could be presumptuous for a moment, I’d add a new tool watch category -- the &amp;quot;parent watch&amp;quot;. The requirements are many but not too demanding; it has be splash proof, to be readable all through the night to separate &amp;quot;go back to bed&amp;quot; from &amp;quot;we’ll get up soon&amp;quot;. It should be comfortable enough to wear 24 hours-a-day and to be discrete enough that playing with your kids doesn’t risk accidentally leaving them with the imprint of a 45mm gnarled bezel on their heads. Oh, and it should be cheap enough to not cause panic attacks when it becomes splattered in porridge.&lt;/p&gt;
 &lt;p&gt;So I made one. But how did I get here?&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2016-06-seiko-pomo-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-1-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-1-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2016-06-seiko-pomo-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;738&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;738&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The luminous dial and hands start with an astonishing brightness, but within minutes settle down to a readable glow for the whole night.&lt;/p&gt;
 
@@ -1328,11 +1332,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;hr&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2016-06-seiko-pomo-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-2-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-2-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2016-06-seiko-pomo-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;1116&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;1116&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The 37mm Seiko SNK against the 43mm Seiko SKX. Same face, different effect.&lt;/p&gt;
 
@@ -1354,11 +1358,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;/ul&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2016-06-seiko-pomo-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-3-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-3-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2016-06-seiko-pomo-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;452&quot; height=&quot;250&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-3-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-3-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;452&quot; height=&quot;250&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;An original Seiko SNK809K2&lt;/p&gt;
 
@@ -1375,11 +1379,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;hr&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2016-06-seiko-pomo-4.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-4.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-4-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-4-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2016-06-seiko-pomo-4-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;701&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-4-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-4-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-4-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;701&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Cheap tools from Amazon and eBay made it all possible.&lt;/p&gt;
 
@@ -1392,11 +1396,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;p&gt;I’m so glad the mechanism is tough, because it’s been in and out of it’s case so many times. The only two other things that took getting used to were the fear of dust and the fear of moving the winding rotor and having to wait for the damn spring to wind-down again. I can see the real craft in this is getting a workflow to reduce these fears and not find yourself holding a delicate device with two hands and nowhere dust-free to place it.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2016-06-seiko-pomo-5.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-5.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-5-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2016-06-seiko-pomo-5-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2016-06-seiko-pomo-5-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;958&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-5-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-5-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2016-06-seiko-pomo-5-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1920&quot; height=&quot;958&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;My Seiko SNK Po-mo&lt;/p&gt;
 
@@ -1409,9 +1413,9 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 	
 	<entry>
 		<title>For a few dollars less.</title>
-		<link href="https://example.com/posts/2015-04-few-dollars-less/"/>
+		<link href="https://pixelthing.se/posts/2015-04-few-dollars-less/"/>
 		<updated>2015-04-27T22:00:00+02:00</updated>
-		<id>https://example.com/posts/2015-04-few-dollars-less/</id>
+		<id>https://pixelthing.se/posts/2015-04-few-dollars-less/</id>
 		<content type="html">&lt;p&gt;But let’s focus on the ingenuity and pragmatism of some unknown manufacturing engineers and the signatures they left in the chairs they made.&lt;/p&gt;
 &lt;p&gt;This is a story about the Eames DSW side chair design. Ray and Charles Eames were renowned designers in the 1940s and 50s, producing many objects, buildings and films that often have the word &amp;quot;iconic&amp;quot; attached to them. Among their most popular designs are a series of plastic &lt;strong&gt;†&lt;/strong&gt; side chairs that you’ve doubtless seen, sat-in or even bought, with various bases made out of different combinations of wire and wood. The range was designed at the end of the 1940’s for a Museum of Modern Art low-cost furniture competition, and they embody the Eames’ goal of &amp;quot;Getting the most of the best to the greatest number of people for the least&amp;quot; .&lt;/p&gt;
 &lt;p&gt;The &amp;quot;DSW plastic side chair&amp;quot; you see here is often referred to as a wooden eiffel, and with it’s combination of pale maple wood, comfortable curves and intricate wires, it will grace a photoshoot somewhere in any damned interior design magazine you happen to pick up. I’m not even kidding.&lt;/p&gt;
@@ -1428,11 +1432,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;p&gt;Lets walk through these three chairs and see what that extra money buys you (discounting the intellectual property cost -- and I know how that sounds -- to concentrate on the production design aspect). We’ll call them &lt;strong&gt;Mr Vitra&lt;/strong&gt; (£280/$440), &lt;strong&gt;Mr Cheap&lt;/strong&gt; (£60/$90) and &lt;strong&gt;Mr Pennies&lt;/strong&gt; (£30/$45).&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2015-06-few-dollars-less-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-1-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-1-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2015-06-few-dollars-less-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;533&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;533&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;These are not just &amp;quot;inspired by&amp;quot; repros, it’s clear these share the exact same dimensions and design. These are copies.&lt;/p&gt;
 
@@ -1441,11 +1445,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;p&gt;Mr Pennies has a smoother satin texture than the others, but all three have identical dimensions and shapes. To sit on, you’d never tell the difference, and the suspension effect of the base means that none of the chairs will ever be unbalanced once you sit down. And they all creak in pretty much the same way when you sit on them.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2015-06-few-dollars-less-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-2-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-2-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2015-06-few-dollars-less-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;533&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;533&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Injection moulding nub, clearly visible on Mr Vitra and Mr Pennies&lt;/p&gt;
 
@@ -1453,11 +1457,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;p&gt;Strangely, the middle cost chair has no visible nub so I can only assume it’s somehow hidden and/or machined off. Was this a case of a production engineer feeling they could improve on the original? Whatever the reason, it would inherently add extra time and an extra process so it’s unsurprising that in the later, cheaper, Mr Pennies, the nub returned to somewhere uglier, quicker and less likely to cause rejects.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2015-06-few-dollars-less-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-3-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-3-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2015-06-few-dollars-less-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;762&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-3-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-3-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;762&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Sink holes, where the leg joints cool at a different rate to the rest of the shell&lt;/p&gt;
 
@@ -1470,11 +1474,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;p&gt;The outside leg fixings (above) show the clearest differences between the three. Mr Vitra has black powder-coated cross head bolts that match the rest of the fixings (Herman Miller versions often use chrome instead). The bolts on Mr Cheap are different -- but not unattractive -- allen bolts in more of a dark steel colour. On Mr Pennies however, the bolts are quite clearly cheap, chromed allen bolts that don’t fill the holes as nicely as the others.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2015-06-few-dollars-less-4.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-4.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-4-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-4-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2015-06-few-dollars-less-4-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;762&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-4-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-4-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-4-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;2000&quot; height=&quot;762&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;The inner leg nuts show the different production design descisions&lt;/p&gt;
 
@@ -1490,11 +1494,11 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 &lt;p&gt;When a box of four chairs has such a small profit margin, you know you can’t give an unboxing experience like an Apple product, but it’s also clear you can’t afford too many returns eating up your margins. All of these small packing measures mean more shopfloor bins of film and foam that could stop a production line if they ran out, and more people and processes to eat away at your bottom line. This balance of packaging quality versus returns is a finely tuned equation echoed through the whole chair.&lt;/p&gt;
 
         &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
-          &lt;a href=&quot;https://example.com/img/2015-06-few-dollars-less-6.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-6.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
             &lt;picture class=&quot;post__img__picture&quot;&gt;
-              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-6-sm.jpeg&quot;&gt;
-              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://example.com/img/2015-06-few-dollars-less-6-lg.jpeg&quot;&gt;
-              &lt;img src=&quot;https://example.com/img/2015-06-few-dollars-less-6-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;533&quot; class=&quot;post__img__img&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-6-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-6-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2015-06-few-dollars-less-6-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;533&quot; class=&quot;post__img__img&quot;&gt;
             &lt;/picture&gt;
           &lt;/a&gt;&lt;p&gt;Three contestants for your interior-design money&lt;/p&gt;
 

@@ -12,9 +12,9 @@
     <meta property="og:title" content="{{ title or metadata.title }}" />
     <meta property="og:description" content="{{ description or metadata.description }}" />
     <meta property="og:type" content="{% if title %}article{% else %}website{% endif %}" />
-    <meta property="og:image" content="https://www.pixelthing.se/img/{% if hero %}{{ hero }}-tb{% else %}craig-photo{% endif %}.jpeg" />
-    <meta property="og:image:width" content="{% if hero %}665{% else %}800{% endif %}" />
-    <meta property="og:image:height" content="{% if hero %}500{% else %}768{% endif %}" />
+    {% if hero %}<meta property="og:image" content="https://www.pixelthing.se/img/{{ hero }}-tb.jpeg" />
+    <meta property="og:image:width" content="665" />
+    <meta property="og:image:height" content="500" />{% endif %}
     <meta itemprop="name" content="{{ title or metadata.title }}" />
     <meta itemprop="description" content="{{ description or metadata.description }}" />
     <meta name="twitter:card" content="summary" />
