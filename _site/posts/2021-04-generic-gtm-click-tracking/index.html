@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generic click tracking in GTM</title>
+
+    <!-- META SEM/SHARING  --> 
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://www.pixelthing.se/posts/2021-04-generic-gtm-click-tracking/?utm_campaign=link-shared" />
+    <meta property="og:site_name" content="pixelthing" />
+    <meta property="og:title" content="Generic click tracking in GTM" />
+    <meta property="og:description" content="Multi-use tags to make your life easier" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://www.pixelthing.se/img/2021-04-generic-gtm-click-tracking-hero-tb.jpeg" />
+    <meta property="og:image:width" content="665" />
+    <meta property="og:image:height" content="500" />
+    <meta itemprop="name" content="Generic click tracking in GTM" />
+    <meta itemprop="description" content="Multi-use tags to make your life easier" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="robots" content="index,follow" />
+    <meta name="DC.Language" content="en" />
+
+    <!-- META APP  -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#fdf6e3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#001a25" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.pixelthing.se/img/icon-512.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.pixelthing.se/img/icon-512.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="pixelthing" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="pixelthing" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" sizes="512-512" href="/img/icon-512.png" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#000000" />
+    <meta name="msapplication-config" content="none" />
+    <meta name="msapplication-navbutton-color" content="#ffffff" />
+    <meta name="msapplication-starturl" content="/" />
+    <meta name="msapplication-TileColor" content="#001a25" />
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-THTS63B');</script>
+    <!-- End Google Tag Manager -->
+    
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="pixelthing">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="pixelthing">
+  </head>
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THTS63B"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+  
+    <script src="/js/viewport.js" async></script>
+    <script src="/js/cookies.js"></script>
+
+    
+    <header class="header">
+    
+      <h3 class="header__home"><a href="/" class="header__home__link"><span class="header__home__icon">&#10012;</span>pixelthing</a></h3>
+      <h3 class="post-title-scrolled">
+        <span class="post-title-scrolled__inner">here here here</span>
+      </h3>
+      <ul class="nav">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/posts/">Archive</a></li>
+        <li class="nav-item"><a href="/about/">About Me</a></li>
+      </ul>
+    </header>
+    
+
+    <main class="post">
+      
+<figure class="post__hero">
+  <div class="header__doppel" aria-hidden="true">
+    <h3 class="header__home"><a href="/" class="header__home__link"><span class="header__home__icon">&#10012;</span>pixelthing</a></h3></h3>
+  </div>
+  
+  <picture class="post__hero__picture">   
+    <source media="(max-width:599px)" srcset="../../img/2021-04-generic-gtm-click-tracking-hero-sm.jpeg" />
+    <source media="(max-width:1799px)" srcset="../../img/2021-04-generic-gtm-click-tracking-hero-lg.jpeg" />
+    <source media="(min-width:1800px)" srcset="../../img/2021-04-generic-gtm-click-tracking-hero-xl.jpeg" />
+    <img src="../../img/2021-04-generic-gtm-click-tracking-hero-xl.jpeg" loading="eager" width="2560" height="1345" alt="title picture for article" class="post__hero__img" />
+  </picture>
+  
+</figure> 
+
+<div class="post__content">
+
+<div class="post__meta">
+  <a href="/" class="post__back">&#9666; <span>back</span></a>
+  <time class="post__date" datetime="2021-04-24">24 Apr 2021</time>
+  <span class="post__tags"><a href="/tags/datananalysis/" class="post-tag">datananalysis</a><a href="/tags/googletagmanager/" class="post-tag">googletagmanager</a></span>
+</div>
+
+<h1 class="post__title">Generic click tracking in GTM</h1><h3 class="post__sub">Multi-use tags to make your life easier</h3><p>The larger a Google Tag Manager (GTM) container becomes, the more you realise that many tags, triggers and variables are doing roughly the same job. So it's worthwhile refactoring some of them away into a few generic tags that make your life easier.</p>
+<p>This article details one such technique to reduce most of your click tracking to a simple reusable pattern, so all it takes is a small piece of markup to start collecting data. At Polestar, we use it on reusable React components, so that devs and editors have the ability to roll them out without needing to do any work in GTM at all.</p>
+<h2 id="1.-the-markup">1. The markup <a class="direct-link" href="#1.-the-markup">#</a></h2>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-track</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>click:MyCategory:MyLabel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>arrow-icon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn-text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Click me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>The markup is just a data attribute of the element thats clickable/tappable. Here its a button, but it could just as easily be an anchor, input or div (please don't). The markup inside is incidental, it's just here to remind you that markup is not always clean, and that javascript sees the actual target element you click, which might be a child of the element you <em>think</em> you're clicking (we'll cover that later).</p>
+<p>I don't like using ids, aria or classes to target GTM triggers - or even existing data attributes like <code>data-tmpl</code>. They're too easily refactored away by some future front-end dev for perfectly valid reasons - and then you're left wondering where the data went. Instead, I like data attributes that clearly separate themselves in purpose from other markup, that way anyone looking to tweak or re-write the code has a good chance of retaining the analytics.</p>
+<p>The attribute value is a colon separated list of:</p>
+<ul>
+<li>event action</li>
+<li>event category</li>
+<li>event label</li>
+</ul>
+<p>This is tailored towards Google Universal Analytics, but could just as easily be consumed by GA4 hit event tags.</p>
+<p>the action always starts with &quot;click&quot; (but could, for instance, be <code>click_tab</code>), but the other two can be set to whatever you like. And there's no reason you shouldn't add event value, or in-tag text substitutions (see &quot;extending the idea&quot; later).</p>
+<p>That's it. Easy enough for any developer to drop into an HTML component. All you need now are the GTM tags/triggers/vars to consume it.</p>
+<h2 id="2.-the-trigger">2. The trigger <a class="direct-link" href="#2.-the-trigger">#</a></h2>
+
+        <figure class="post__img">
+          <a href="../../img/2021-04-generic-gtm-click-tracking-1.jpeg" target="_blank" rel="noopener" class="post__link">
+            <picture class="post__img__picture">
+              <source media="(max-width:599px)" srcset="../../img/2021-04-generic-gtm-click-tracking-1-sm.jpeg" />
+              <source media="(min-width:600px)" srcset="../../img/2021-04-generic-gtm-click-tracking-1-lg.jpeg" />
+              <img src="../../img/2021-04-generic-gtm-click-tracking-1-xl.jpeg" loading="lazy" width="1947" height="1162" class="post__img__img" />
+            </picture>
+          </a>
+        </figure><p>The trigger is an element click with a couple of simple CSS selectors, comma separated.</p>
+<pre class="language-css"><code class="language-css">[data-track^=<span class="token string">"click"</span>]<span class="token punctuation">,</span>[data-track^=<span class="token string">"click"</span>] *</code></pre>
+<p>The first part is a CSS attribute selector for the click element we labelled in the markup, the second is to catch any clicks on any child elements inside the first element, such as icons, text wrappers and so on.</p>
+<h2 id="3.-the-event-variables">3. The event variables <a class="direct-link" href="#3.-the-event-variables">#</a></h2>
+<p>You remember that we said their were three parts to the attribute value in the markup? To capture each one of those, we need three GTM custom JS variables. Below is the one to collect the event category:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token comment">// the try/catch is only to stop any browser-based bugs from causing disruptions to the site. It's also helpful for debugging</span><br>  <span class="token keyword">try</span> <span class="token punctuation">{</span><br>    <span class="token comment">// quick exit - if this variable is not called for a click event, stop here</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">{</span><span class="token punctuation">{</span>Event<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">return</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token comment">// quick exit - if this variable is not called for a click event on the correct element, stop here (same as above, but the first quick exit needs a tiny amount less time/CPU as it doesn't need to do do the querySelector - #webperf)</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">{</span><span class="token punctuation">{</span>Click Element<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">matches</span><span class="token punctuation">(</span><span class="token string">'[data-track^="click"],[data-track^="click"] *'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">return</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token keyword">var</span> clickRoot<span class="token punctuation">,</span>labelComplete<span class="token punctuation">,</span>labelNode<span class="token punctuation">,</span>labelTranslated<span class="token punctuation">;</span><br>    <span class="token comment">// clickRoot assumes you might have clicked on a child element of the button that we want to focus on. So it uses a helper function to step back up the DOM tree to find it.</span><br>    <span class="token comment">// This helper function could be replaced by the .closest() method, but that is only supported in ES6, so won't compile in GTM (which only supports ES5), so think of this helper function as a polyfill.</span><br>    <span class="token comment">// Read the Simo Ahava article on this helper function (link in description)</span><br>    clickRoot <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token constant">ENV</span> <span class="token operator">-</span> helper <span class="token keyword">function</span> <span class="token operator">-</span> find closest<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">{</span>Click Element<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token string">'[data-track^="click:"]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>clickRoot<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">return</span> <span class="token string">'unknown'</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token comment">// now get the value of the attribute</span><br>    labelComplete <span class="token operator">=</span> clickRoot<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'data-track'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token comment">// and finally split it into an array and get the second (index1) node</span><br>    labelNode <span class="token operator">=</span> <span class="token punctuation">(</span>labelComplete <span class="token operator">?</span> labelComplete<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">return</span> labelNode<span class="token punctuation">;</span><br><br>  <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'ENV - generic click tracking - category - var'</span><span class="token punctuation">,</span> err<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">{</span>Event<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br></code></pre>
+<p>Similar GTM variables wil be needed for action and label - the only difference will be the number in the <code>labelNode</code> line, <code>[0]</code> for the action, <code>[2]</code> for the label.</p>
+<p>Note this code uses a helper function that needs it's own GTM var - this is explained in detail in this <a href="https://www.google.se/amp/s/www.simoahava.com/amp/analytics/capturing-the-correct-element-in-google-tag-manager/">Simo Ahava article</a>.</p>
+<p>Also note that there are a couple of &quot;quick exits&quot; at the start of the function. GTM variables are evaluated <em>every single time a event occurs in GTM</em>, so I find it best to ruthlessly limit what events get beyond the first couple of lines, to reduce the amount of uneccessary CPU cycles spent.</p>
+<h2 id="4.-putting-it-together-in-a-tag">4. Putting it together in a tag <a class="direct-link" href="#4.-putting-it-together-in-a-tag">#</a></h2>
+<p>Now we have a triggers, and values to use in the form of GTM variables, we can can build the tag to send data to GA. As mentioned, this is a Universal Analytics tag, but it could easily be a GA4 hit event too.</p>
+
+        <figure class="post__img">
+          <a href="../../img/2021-04-generic-gtm-click-tracking-2.jpeg" target="_blank" rel="noopener" class="post__link">
+            <picture class="post__img__picture">
+              <source media="(max-width:599px)" srcset="../../img/2021-04-generic-gtm-click-tracking-2-sm.jpeg" />
+              <source media="(min-width:600px)" srcset="../../img/2021-04-generic-gtm-click-tracking-2-lg.jpeg" />
+              <img src="../../img/2021-04-generic-gtm-click-tracking-2-xl.jpeg" loading="lazy" width="1966" height="1380" class="post__img__img" />
+            </picture>
+          </a>
+        </figure><p>Now you have this tag set up, you might never have to make another tag again to track a button click...</p>
+<h2 id="extending-the-idea">Extending the idea <a class="direct-link" href="#extending-the-idea">#</a></h2>
+<p>At Polestar we've used variations on this technique to create a suite of generic trackers, from CTA clicks to email and download clicks.</p>
+<p>It means that the need to build many simple tracking tasks can be decoupled from the business of building a large, multi-team site. A dev team can build a new landing page, drop in and label a standard CTA component, and the first we in Web Analytics know about it is when the data starts coming in.</p>
+<p>We've extended it in several ways, for instance by adding text substitution to the values that can inject dataLayer values. This way, we can have a dumb piece of markup such as:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-track</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>click:[MODEL]_config:blue_btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>... that substitutes <code>[MODEL]</code> with the car model that is held in the dataLayer model. In the above example we receive a GA event category of <code>ps2_config</code>.</p>
+<p>This sort of substitution can be done by just replacing the <code>return</code> line in the custom variable code with a few more lines of code:</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// this block of code replaces the "return" line in any of the GTM variables where you want substitution.</span><br>labelTranslated <span class="token operator">=</span> labelNode<span class="token punctuation">;</span><br><span class="token keyword">if</span> <span class="token punctuation">(</span>labelNode<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'[MODEL]'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token comment">// below we swap [MODEL] with a dataLayer value held in a GTM variable.</span><br>  labelTranslated <span class="token operator">=</span> labelNode<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'[MODEL]'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token constant">ENV</span> <span class="token operator">-</span> car <span class="token function">model</span> <span class="token punctuation">(</span>short<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><br><span class="token punctuation">}</span><br><span class="token keyword">return</span> labelTranslated<span class="token punctuation">;</span><br></code></pre>
+<p>I'm sure you can think of potential uses for similar substitutions.</p>
+
+
+</div>
+
+ <!--<hr>
+<ul class="otherposts"><li>Next: <a href="/posts/2021-05-diffing-datalaters/">Diffing datalayer objects in GTM</a></li><li>Previous: <a href="/posts/2020-12-ipad-webdev20/">Web dev with an iPad in 2020</a></li>
+</ul> -->
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__author">
+          <h3>Pixelthing</h3>
+          <p> I'm <span rel="author">Craig Morey</span>, a data analyst & developer at <a href="https://www.polestar.com?utm_campaign=craigs.blog" target="_blank" rel="noopener">Polestar</a> in Gothenburg, Sweden (but originally from the UK). This is my place for collecting ramblings and curiosities, you're welcome/välkomna!</p>        
+          <p>Site made with <a href="https://11ty.dev" target="_blank" rel="noopener">Eleventy</a> on iPad. Images are my own or from <a href="https://unsplash.com" target="_blank" rel="noopener">unsplash</a>.</p> 
+        </div>
+        <address class="footer__social social">
+          <h3>Links</h3>
+          <ul class="social__list">
+            <li class="social__item social__item--rss">
+              <a href="/feed/feed.xml" download="rss-feed.xml" class="social__link">
+                <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -256 1792 1792"><path d="M596.61 1154.17q0 80-56 136t-136 56q-80 0-136-56t-56-136q0-80 56-136t136-56q80 0 136 56t56 136zm512 123q2 28-17 48-18 21-47 21h-135q-25 0-43-16.5t-20-41.5q-22-229-184.5-391.5t-391.5-184.5q-25-2-41.5-20t-16.5-43v-135q0-29 21-47 17-17 43-17h5q160 13 306 80.5t259 181.5q114 113 181.5 259t80.5 306zm512 2q2 27-18 47-18 20-46 20h-143q-26 0-44.5-17.5t-19.5-42.5q-12-215-101-408.5t-231.5-336q-142.5-142.5-336-231.5t-408.5-102q-25-1-42.5-19.5t-17.5-43.5v-143q0-28 20-46 18-18 44-18h3q262 13 501.5 120t425.5 294q187 186 294 425.5t120 501.5z" fill="currentColor"/></svg>Site RSS feed</a>
+            </li>
+            <li class="social__item social__item--twitter">
+              <a href="https://www.twitter.com/pixelthing" target="_blank" rel="noopener" class="social__link">
+                <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171.505 139.378"><path d="M171.505 16.499a70.337 70.337 0 01-20.208 5.54c7.264-4.354 12.844-11.25 15.47-19.466a70.437 70.437 0 01-22.344 8.538A35.136 35.136 0 00118.74 0C99.308 0 83.553 15.754 83.553 35.185c0 2.758.311 5.444.912 8.019C55.22 41.737 29.295 27.728 11.94 6.44a35.019 35.019 0 00-4.764 17.69c0 12.207 6.211 22.977 15.653 29.286a35.047 35.047 0 01-15.937-4.4c-.004.146-.004.294-.004.442 0 17.048 12.129 31.268 28.225 34.503a35.224 35.224 0 01-15.89.602c4.478 13.979 17.472 24.152 32.87 24.435-12.042 9.438-27.214 15.063-43.7 15.063-2.84 0-5.64-.167-8.393-.492 15.572 9.984 34.067 15.81 53.938 15.81 64.72 0 100.113-53.616 100.113-100.114 0-1.526-.035-3.043-.102-4.553a71.483 71.483 0 0017.556-18.213z" fill="currentColor"/></svg>@pixelthing</a>
+              <a href="https://www.twitter.com/itsadatathing" target="_blank" rel="noopener" class="social__link">@itsadatathing</a>
+            </li>
+            <li class="social__item social__item--instagram">
+              <a href="https://www.instagram.com/pixelthing" target="_blank" rel="noopener" class="social__link">
+                <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" viewBox="18 18 96 96"><path fill="currentColor" d="M66 18c-13 0-14.7 0-19.8.3a35 35 0 00-11.6 2.2 23.5 23.5 0 00-8.5 5.6 23.6 23.6 0 00-5.6 8.5c-1.2 3-2 6.5-2.2 11.6C18 51.3 18 53 18 66s0 14.7.3 19.8a35 35 0 002.2 11.6 23.5 23.5 0 005.6 8.5 23.5 23.5 0 008.5 5.6c3 1.2 6.5 2 11.6 2.2 5.1.2 6.8.3 19.8.3s14.7 0 19.8-.3a35 35 0 0011.6-2.2 23.5 23.5 0 008.5-5.6 23.6 23.6 0 005.6-8.5c1.2-3 2-6.5 2.2-11.6.2-5.1.3-6.8.3-19.8s0-14.7-.3-19.8c-.2-5.1-1-8.6-2.2-11.6a23.6 23.6 0 00-5.6-8.5 23.5 23.5 0 00-8.5-5.6c-3-1.2-6.5-2-11.6-2.2C80.7 18 79 18 66 18zm-4.3 8.7H66c12.8 0 14.3 0 19.4.2 4.7.2 7.2 1 9 1.7 2.1.8 3.7 1.9 5.4 3.6a14.9 14.9 0 013.6 5.5c.7 1.7 1.5 4.2 1.7 8.9.2 5 .3 6.6.3 19.4s-.1 14.3-.3 19.4c-.2 4.7-1 7.2-1.7 8.9a14.8 14.8 0 01-3.6 5.5 14.8 14.8 0 01-5.5 3.6 27 27 0 01-8.9 1.6c-5 .3-6.6.3-19.4.3-12.8 0-14.3 0-19.4-.2-4.7-.3-7.2-1-8.9-1.7a14.9 14.9 0 01-5.5-3.6 14.9 14.9 0 01-3.6-5.5c-.7-1.7-1.5-4.2-1.7-9-.2-5-.2-6.5-.2-19.3s0-14.4.2-19.4c.2-4.7 1-7.2 1.7-9a14.9 14.9 0 013.6-5.5 14.9 14.9 0 015.5-3.5c1.7-.7 4.2-1.5 8.9-1.7 4.4-.2 6.2-.3 15.1-.3zm30 8a5.8 5.8 0 105.7 5.7 5.8 5.8 0 00-5.8-5.8zM66 41.2a24.6 24.6 0 100 49.4 24.6 24.6 0 000-49.3zm0 8.7a16 16 0 110 32 16 16 0 010-32z"/></svg>@pixelthing</a>
+              <a href="https://www.instagram.com/itsadatathing" target="_blank" rel="noopener" class="social__link">@itsadatathing</a>
+            </li>
+            <li class="social__item social__item--linkedin">
+              <a href="https://www.linkedin.com/in/craigmorey/" target="_blank" rel="noopener" class="social__link">
+                <svg  class="social__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 455 455"><g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M246.4 204.35v-.665c-.136.223-.324.446-.442.665h.442z"/><path d="M0 0v455h455V0H0zm141.522 378.002H74.016V174.906h67.506v203.096zm-33.753-230.816h-.446C84.678 147.186 70 131.585 70 112.085c0-19.928 15.107-35.087 38.211-35.087 23.109 0 37.31 15.159 37.752 35.087 0 19.5-14.643 35.101-38.194 35.101zM385 378.002h-67.524V269.345c0-27.291-9.756-45.92-34.195-45.92-18.664 0-29.755 12.543-34.641 24.693-1.776 4.34-2.24 10.373-2.24 16.459v113.426h-67.537s.905-184.043 0-203.096H246.4v28.779c8.973-13.807 24.986-33.547 60.856-33.547 44.437 0 77.744 29.02 77.744 91.398v116.465z"/></g></svg>Linked In</a>
+            </li>
+          </ul>
+        </address>
+        <div class="footer__cookies">
+          <div id="cookie-dialog-1">
+            <h3>Cookies & Tracking</h3>
+            <p>This site uses a few cookies & yes, Google Analytics.<p>
+            <p>Because it's nice to know if anyone is reading this stuff.</p>
+            <p>If you accept cookies, your data is never sold & you are never targeted or tracked cross-site.</p>
+          </div>
+          
+          <div id="cookie-dialog-2" class="cookies__buttons">
+            <button type="submit" id="dialog-cookie-accept" class="cookies__button cookies__button--accept"> Accept </button>
+            <button type="submit" id="dialog-cookie-reject" class="cookies__button cookies__button--reject">No to cookies</button>
+          </div>
+        </div>
+        <div class="footer__settings">
+          <h3>Settings</h3>
+          
+          <fieldset class="cookies__settings">
+            <legend class="cookies__settings__legend">Your cookie settings</legend>
+            <div class="cookies__item">
+              <p class="cookies__item__text">Accept functional cookies needed to run the site (required)</p>
+              <div class="toggle">
+                <input type="radio" class="toggle__input toggle__input--no" disabled />
+                <input type="radio" class="toggle__input toggle__input--yes" checked disabled />
+                <span class="toggle__slug"></span>
+              </div>
+            </div>
+            <div class="cookies__item">
+              <p class="cookies__item__text">Accept Google Analytics cookies </p>
+              <div class="toggle">
+                <input id="settings-cookie-reject" type="radio" class="toggle__input toggle__input--no" name="cookies-analytics" />
+                <label for="settings-cookie-reject" class="toggle__text">Opt-out</label>
+                <input id="settings-cookie-accept" type="radio" class="toggle__input toggle__input--yes" name="cookies-analytics" />
+                <label for="settings-cookie-accept" class="toggle__text">Accept</label>
+                <input type="radio" class="toggle__input toggle__input--maybe" name="cookies-analytics" disabled checked />
+                <label class="toggle__text">Undecided</label>
+                <span class="toggle__slug"></span>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </footer>
+    
+    
+    <script src="/js/image-enlarge.js" async></script>
+    <script src="/js/post-title-scroll.js" async></script>
+    
+    
+  </body>
+</html>

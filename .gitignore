@@ -10,4 +10,5 @@ node_modules/
 .eslintcache
 
 # site
-_site/
+index.js
+
