@@ -3,7 +3,7 @@
   {% if post.data.status != 'draft' %}
   <li class="list__item{% if post.url == url %} postlist-item-active{% endif %}">
     <a href="{{ post.url | url }}" class="list__link">
-      <img src="../../img/{{ post.data.hero }}-tb.jpeg" loading="lazy" class="list__thumb" />
+      <img src="../../img/{{ post.data.hero }}-tb.jpeg" loading="lazy" width="655" height="500" class="list__thumb" alt="" />
       <div class="list__text">      
         <h3 class="list__title">{{ post.data.title }}</h3>
         <time class="list__date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>

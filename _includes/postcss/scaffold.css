@@ -11,7 +11,7 @@ body {
   font-family: var(--font-default);
   color: var(--fg);
   background-color: var(--bg); 
-} 
+}
 
 p:last-child {
   margin-bottom: 0; 
@@ -23,6 +23,7 @@ a[href] {
   }
 }
 main {
+  display: block;
   padding: 0;
   min-height: var(--vp-height);
 }
@@ -129,7 +130,7 @@ aside {
   font-style: italic;
   &::before {
     content: 'w';
-    font-family: "bodoni ornaments";
+    font-family: "bodoni ornaments",wingdings;
     position: absolute;
     left: 0;
     top: 0em;
@@ -137,15 +138,17 @@ aside {
     font-style: normal;
   }
   &::after {
-    position: absolute;
-    left: 50%;
-    bottom: 0.4em;
-    font-family: "bodoni ornaments";
-    font-size: 3em;
-    content:'∑';
-    color: var(--bg-sub);
-    line-height: 0;
-    transform: translatex(-50%) translatey(-0.25em);
+    @supports (font-family: "bodoni ornaments") {
+      position: absolute;
+      left: 50%;
+      bottom: 0.4em;
+      font-family: "bodoni ornaments";
+      font-size: 3em;
+      content:'∑';
+      color: var(--bg-sub);
+      line-height: 0;
+      transform: translatex(-50%) translatey(-0.25em);
+    }
   }
   &.aside--less {
     color: var(--fg-sub);
@@ -165,8 +168,11 @@ aside {
     color: var(--fg);
     &::before {
       left: -0.1em;
-      content: 'q';
+      content: '§';
       color: var(--fg-sup);
+      @supports (font-family: "bodoni ornaments") {
+        content: 'q';
+      }
     }
   }
   & :first-child {
@@ -176,7 +182,7 @@ aside {
 code {
   display: inline-block;
   padding: 0em 0.5em;
-  font-size: 0.8rem;
+  font-size: 0.8em;
   color: #eee;
   background: #073642;
 }
