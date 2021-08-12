@@ -3,7 +3,7 @@ title: Getting analytics into a dev sprint
 description: It's a bit like inception, you need to get in their heads.
 date: 2021-06-01
 tags:
-  - datananalysis
+  - analytics
   - googletagmanager
 layout: layouts/post.njk
 hero: 2021-06-getting-analytics-into-dev-team-hero

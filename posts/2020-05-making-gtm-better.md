@@ -3,11 +3,17 @@ title: Making GTM better
 description: A few tweaks from Google would really improve my day.
 date: 2020-05-20
 tags:
-  - datananalysis
+  - analytics
   - googletagmanager
 layout: layouts/post.njk
 hero: 2020-05-makinggtmbetter
 ---
+
+:::aside.aside--update
+### Update 2020-10-24
+GTM now has a brand new Tag Assistant workflow that touches almost every part of the GTM UI. It definitely addresses some of the fundamental problems I saw, but other smaller fustrations remain. Progress!
+:::
+
 
 Google Tag Manager is a strange beast. Its purpose is essentially abstraction -- to provide a layer between a website and multiple types of site measurement. It’s been used brilliantly, loosely, badly and plain-old abusively in many cases, but it is trying to make it possible for non-developers to (for instance) be able to quickly set-up Google Analytics tracking on a button, as well as experts to set up more in-depth measurement. But like all interfaces that try and simplify things without losing complex functionality, it can quickly dissolve into very domain specific language that seems unintelligible from the outside.
 
