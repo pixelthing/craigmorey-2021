@@ -10,7 +10,7 @@ hero: 2020-05-makinggtmbetter
 ---
 
 :::aside.aside--update
-### 2020-10-24
+### Update 2020-10-24
 GTM now has a brand new Tag Assistant workflow that touches almost every part of the GTM UI. It definitely addresses some of the fundamental problems I saw, but other smaller fustrations remain. Progress!
 :::
 
