@@ -3,7 +3,7 @@ title: Generic click tracking in GTM
 description: Multi-use tags to make your life easier
 date: 2021-04-24
 tags:
-  - datananalysis
+  - analytics
   - googletagmanager
 layout: layouts/post.njk
 hero: 2021-04-generic-gtm-click-tracking-hero
