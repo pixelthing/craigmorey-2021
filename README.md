@@ -38,7 +38,7 @@ hero: 2021-01-01-this-pic <!-- The hero/thumbnail image (see creating inmage lat
 
 #### Post markdown extensions
 
-The following extensions have been added to markdown for convenience:
+The following extensions have been added to markdown (via [markdown-it-container](https://www.npmjs.com/package/markdown-it-container)) for convenience:
 
 ```md
 :::aside
@@ -61,16 +61,42 @@ An inline picture element that will do resolution swapping between 2021-01-01-th
 As above, but will try to make the image wider than the text column when allowed
 :::
 ```
+
+[markdown-it-anchor](https://www.npmjs.com/package/markdown-it-anchor) is used to create automatic permalinks in any headers in markdown.
+
+All code and pre blocks are formatted in solarized-dark (using [eleventy-plugin-syntaxhighlight](@11ty/eleventy-plugin-syntaxhighlight)).
+
+
+
+
+#### Youtube/Twitter embeds
+
+The site uses [Embed everything](https://www.npmjs.com/package/eleventy-plugin-embed-everything) to allow simple embedding of YouTube, Twitter, Instagram, Soundcloud, TikTik, Spotify, Vimeo.
+
+```md
+https://twitter.com/jxnblk/status/1147555688933154816?s=21
+<!-- the above will create a twitter embed -->
+
+https://youtu.be/IR6sDcKo3V8
+<!-- the above will create a youtube embed -->
+```
+
 #### Post images
 
 I tried to do some server-side image compression/cropping, but none of the iPad environments would run imagemagick, sharper etc. Instead I settled on a [custom iOS shortcut](https://www.icloud.com/shortcuts/2a0bf3a226384d6a8a31127c0fded7e5) that can be used on an image in a webpage or in your photos album, that saves the image to the correct directory in Working Copy (for my iPad), then carries out three resizes (-xl, -lg, -sm), plus a resize and crop for a thumbnail (-tb) that is used in the list pages and social sharing.
+
+Image size is determined in Eleventy using the node package [image-size](https://www.npmjs.com/package/image-size), allowing the use of _width_ and _height_ on all images to help with stable page building before the images load.
+
+Images have native `loading="lazy/eager"` attributes. This is [not yet supported in Safari](https://caniuse.com/loading-lazy-attr), but no doubt will soon.
 
 #### CSS
 
 CSS is in `/_includes/postcss`, and compiled into `css/styles.css` by postCSS.
 - The site uses CSS custom variables a lot (postCSS also makes some fallbacks for non-supporting browsers)
+- There are light and dark colour schemes triggered by system level dark mode switches (`prefers-color-scheme: dark`)
 - The site makes usage of flexbox and grid (with gap support).
 - The CSS is written in the SASS nested CSS style using [`postcss-nesting`](https://www.npmjs.com/package/postcss-nesting) (but to the same spec as the [upcoming CSS nesting spec](https://benfrain.com/official-css-nesting-the-last-piece-of-the-puzzle/), not just vanilla sass).
+- CSS is compressed with [CSSNano](https://cssnano.co).
 
 ## Deploy
 
