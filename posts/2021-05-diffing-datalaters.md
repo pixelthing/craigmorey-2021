@@ -4,7 +4,7 @@ description: Spotting updates worth tracking
 date: 2021-05-17
 status: draft
 tags:
-  - datananalysis
+  - analytics
   - googletagmanager
 layout: layouts/post.njk
 hero: 
