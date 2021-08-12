@@ -10,9 +10,7 @@ body {
 body {
   font-family: var(--font-default);
   color: var(--fg);
-  background-color: var(--bg); 
-  background-image: linear-gradient(to bottom, var(--bg) 99%, var(--bg-sub) 99%);
-  background-repeat: no-repeat;
+  background-color: var(--bg);
 }
 
 p:last-child {
@@ -131,7 +129,7 @@ aside {
   font-style: italic;
   &::before {
     content: 'w';
-    font-family: "bodoni ornaments";
+    font-family: "bodoni ornaments",wingdings;
     position: absolute;
     left: 0;
     top: 0em;
@@ -139,15 +137,17 @@ aside {
     font-style: normal;
   }
   &::after {
-    position: absolute;
-    left: 50%;
-    bottom: 0.4em;
-    font-family: "bodoni ornaments";
-    font-size: 3em;
-    content:'∑';
-    color: var(--bg-sub);
-    line-height: 0;
-    transform: translatex(-50%) translatey(-0.25em);
+    @supports (font-family: "bodoni ornaments") {
+      position: absolute;
+      left: 50%;
+      bottom: 0.4em;
+      font-family: "bodoni ornaments";
+      font-size: 3em;
+      content:'∑';
+      color: var(--bg-sub);
+      line-height: 0;
+      transform: translatex(-50%) translatey(-0.25em);
+    }
   }
   &.aside--less {
     color: var(--fg-sub);
@@ -167,8 +167,11 @@ aside {
     color: var(--fg);
     &::before {
       left: -0.1em;
-      content: 'q';
+      content: '§';
       color: var(--fg-sup);
+      @supports (font-family: "bodoni ornaments") {
+        content: 'q';
+      }
     }
   }
   & :first-child {
