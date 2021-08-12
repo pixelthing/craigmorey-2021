@@ -11,12 +11,10 @@ body {
   font-family: var(--font-default);
   color: var(--fg);
   background-color: var(--bg); 
-  background-image: linear-gradient(to bottom, var(--bg) 99%, var(--bg-sub) 99%);
-  background-repeat: no-repeat;
-}
+} 
 
 p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0; 
 }
 a[href] {
   color: var(--link);
