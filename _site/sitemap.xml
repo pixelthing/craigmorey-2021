@@ -102,22 +102,27 @@
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/ipadpro/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pixelthing.se/tags/webdev/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pixelthing.se/tags/design/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   
   <url>
     <loc>https://pixelthing.se/tags/furniture/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/tags/watches/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/tags/ipadpro/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/tags/webdev/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   
@@ -133,11 +138,6 @@
   
   <url>
     <loc>https://pixelthing.se/tags/dashboards/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pixelthing.se/tags/watches/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   
