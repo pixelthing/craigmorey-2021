@@ -23,6 +23,7 @@ a[href] {
   }
 }
 main {
+  display: block;
   padding: 0;
   min-height: var(--vp-height);
 }

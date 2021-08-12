@@ -1,11 +1,14 @@
 .list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--flex-gap);
   max-width: var(--post-max-width);
   margin: var(--gutter) 0;
   padding: 0;
   list-style: none;
+  @supports (gap:1px) {
+    margin: 0;
+    gap: var(--flex-gap);
+  }
   &__item {
     overflow: hidden;
     flex: 0 0 calc(50% - var(--flex-gap)/2);
