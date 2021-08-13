@@ -9,7 +9,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
     color: #93a1a1; /* base05 */
-    background: none;
+    background: transparent;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 0.9em;
     text-align: left;
@@ -33,14 +33,14 @@ pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selectio
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
     color: inherit;
     text-shadow: none;
-    background: #586e75; /* base02 */
+    background: #669fae; /* base02 */
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
     color: inherit;
     text-shadow: none;
-    background: #586e75; /* base02 */
+    background: #669fae; /* base02 */
 }
 
 @media print {
