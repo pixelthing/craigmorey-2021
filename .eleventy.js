@@ -85,7 +85,6 @@ module.exports = function(eleventyConfig) {
     permalink: true,
     permalinkClass: "direct-link",
     permalinkSymbol: "#"
-  // }).use(mdContainer, 'aside');
   }).use(mdContainer, 'aside', {
     validate: function(params) {
       return params.trim().match(/^aside($|\..*$)/);
@@ -142,16 +141,21 @@ module.exports = function(eleventyConfig) {
           console.log('****ERROR img/' + filename + '-lg.' + fileType + ' doesn\'t exist 2',err);
           return '';
         }
+        // the maginified version to use
+        let magnifiedImgType = '-xl.';
+        if (!fs.existsSync('img/' + filename + '-xl.' + fileType)) {
+          magnifiedImgType = '-lg.';
+        }
         // classlist of the figure
         let classList = tokenArray[1] || '';
         classList = classList.replace('.',' ');
         // dimensions of full size
         const dimensions = sizeOf('img/' + filename + '.' + fileType);
         // dimensions of xl size
-        const dimensionsXl = sizeOf('img/' + filename + '-xl.' + fileType);
+        const dimensionsXl = sizeOf('img/' + filename + magnifiedImgType + fileType);
         // click link 
         // (serve the xl version, unless the actual version is smaller
-        let link = '../../img/' + filename + '-xl.' + fileType;
+        let link = '../../img/' + filename + magnifiedImgType + fileType;
         if (dimensions.width <= dimensionsXl.width) {
           link = '../../img/' + filename + '.' + fileType;
         }
@@ -169,6 +173,95 @@ module.exports = function(eleventyConfig) {
         // closing tag
         return `
         </figure>`;
+      }
+    }
+  }).use(mdContainer, 'gallery', {
+    validate: function(params) {
+      return params.trim().match(/^(gallery|endgallery)($|\..*$)/);
+    },
+    render: function (tokens, idx) {
+      let start = tokens[idx].info.trim().match(/^gallery/);
+      let end = tokens[idx].info.trim().match(/^endgallery/);
+      let classList = tokens[idx].info.trim().match(/^gallery\.(.*)$/);
+      classList = (classList ? classList[1].replace('.', ' ') : '' );
+      if (tokens[idx].nesting === 1 && start) {
+        // opening tag
+        return `
+      <section class="list gallery ${classList}">
+        `;
+      } else if (tokens[idx].nesting === -1 && tokens[idx].level === 0 && end) {
+        // closing tag
+        return `
+      </section>`;
+      } else {
+        return '';
+      }
+    }
+  }).use(mdContainer, 'gallerypicture', {
+    validate: function(params) {
+      return params.trim().match(/^gallerypicture($|.*$)/);
+    },
+    render: function (tokens, idx) {
+      if (tokens[idx].nesting === 1) {
+      
+        const tokenArray = /^gallerypicture(.*)\s((.*)$|$)/.exec(tokens[idx].info.trim());
+        if (!tokenArray || tokenArray.length < 2) {
+          console.log('****ERROR no array', tokens[idx]);
+          return '';
+        }
+        // file name (eg, "2020-05-test" or "2020-05-test.png")
+        let filename = tokenArray[2].trim() || '';
+        if (!filename) {
+          console.log('****ERROR no filename', tokens[idx]);
+          return '';
+        }
+        // file extension (eg, "png")
+        let fileType = 'jpeg';
+        if (filename.includes('.')) {          
+          const filenameArray = filename.split('.');
+          if (filenameArray.length > 1) {
+            const fileTypeSuspect =  filenameArray[filenameArray.length - 1];
+            if (fileTypeSuspect.length >=2 && fileTypeSuspect.length <= 4) {
+              fileType = fileTypeSuspect;
+              filename = filenameArray.slice(0, -1).join('.');
+            }
+          }
+        }    
+        try {
+          if (fs.existsSync('img/' + filename + '-lg.' + fileType)) {
+            //file exists
+          } else {
+            console.log('****ERROR img/' + filename + '-lg.' + fileType + ' doesn\'t exist 1');
+            return '';
+          }
+        } catch(err) {
+          console.log('****ERROR img/' + filename + '-lg.' + fileType + ' doesn\'t exist 2',err);
+          return '';
+        }
+        // the maginified version to use
+        let magnifiedImgType = '-xl.';
+        if (!fs.existsSync('img/' + filename + '-xl.' + fileType)) {
+          magnifiedImgType = '-lg.';
+        }
+        // classlist of the figure
+        let classList = tokenArray[1] || '';
+        classList = classList.replace('.',' ');
+        // dimensions of full size
+        const dimensions = sizeOf('img/' + filename + '-tb.' + fileType);
+        // dimensions of xl size
+        const dimensionsXl = sizeOf('img/' + filename + magnifiedImgType + fileType);
+        // click link
+        let link = '../../img/' + filename + magnifiedImgType + fileType;
+        // opening tag
+        return `
+        <article class="list__item gallery__img${classList}">
+          <a href="${link}" target="_blank" rel="noopener" class="post__link  post__gallery__link">
+            <img src="../../img/${filename}-tb.${fileType}" loading="lazy" width="${dimensions.width}" height="${dimensions.height}" class="post__gallery__img__img" />
+          </a>`;
+      } else {
+        // closing tag
+        return `
+        </article>`;
       }
     }
   });

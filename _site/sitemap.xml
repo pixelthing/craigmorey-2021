@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://pixelthing.se/posts/2019-08-rc-cars-frog/</loc>
+    <lastmod>2019-08-01</lastmod>
+  </url>
+  
+  <url>
     <loc>https://pixelthing.se/posts/2020-01-ipad-webdev19/</loc>
     <lastmod>2020-01-05</lastmod>
   </url>
@@ -102,16 +107,6 @@
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/ipadpro/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pixelthing.se/tags/webdev/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pixelthing.se/tags/design/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
@@ -123,6 +118,21 @@
   
   <url>
     <loc>https://pixelthing.se/tags/watches/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/tags/rccars/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/tags/ipadpro/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/tags/webdev/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   
