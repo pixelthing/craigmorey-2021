@@ -12,11 +12,47 @@ hero:
 
 A large amount of the most critical work in Google Tag Manager (GTM) is in the monitoring of changes in state, particularly objects like eCommerce baskets, filter settings or user editable configurations. In these cases we generally want to know what caused a change to an object (and I'm using _"object”_ in compsci terms here), and what changes were made.
 
-The trouble is that sometimes the business logic in an app is very complex and is rarely built with the requirements of analytics in mind. The app code sees a user input, steps through a series of manipulations, and returns a new, updated object.
+Let's take a real example. One list page that we deal with has a list of cars and a filter UI. In this app, the internal logic is not exposed to GTM, the only thing we see is a JS object that describes the current state of the filter - and when it's updated we see a new version appear: 
 
-At Polestar we have a car configurator that holds the various options chosen by the customer (eg colour, wheel choice). This _”configuration object”_ is then added to the dataLayer so that analytics can understand what is happening. We could ask the configurator team to report only what's changed, but that information is not easily produced (selecting one payment option could change several other options simultaneously), so it was decided that adding this complexity into the app - just for analytics - created extra code, extra QA, extra maintenance, and so wasn't worth it.
+```js
+```
 
-So instead, we use GTM tags to spot an update to the configuration, and then _diff_ it against the previous version to understand what changes have occurred.
+How do we report what has changed if we're not told? In our case we use a helper function to diff between the previous and the newest filter object - we "diff" the two objects. We do this by firing a tag when we spot the filter was updated: 
+
+```js
+  {% raw %}objectRoot = 'preconf.filter';
+  objectKeys = [
+    'sort',
+    'model',
+    'delivery',
+    'customer',
+    'payment',
+    'config.exterior',
+    'config.interior',
+    'config.packages',
+    'config.rims'
+  ];
+  var changes = {{ENV - helper function - diff object - var}}(objectRoot, objectKeys);
+  if (changes && changes.length) {
+    // DL push for each change
+    changes.forEach(function(change) {
+      dataLayer.push({
+        event : 'preconf.filter.choose.' + change.key,
+        'preconf.change': change.value,
+        'preconf.changeold': change.valueOld,
+        'preconf.changenew': change.valueNew
+      });
+    });
+  }{% endraw %}
+```
+
+Above, we pass into the helper function:
+- `objectRoot`: the part of the dataLayer that we're focusing on (in this case we looking at values in `dataLayer['preconf']`)
+- `objectKeys`: a list of object keys that we're interested in if they change.
+
+The helper function outputs any changes as an array into the variable `changes`, which we can then loop through and create our own dataLayer pushes that inform any tags of the actual changes.
+
+So what is in this diffing helpwe function? It's... er, big. 
 
 ## The code
 
@@ -198,5 +234,39 @@ In addition to this, we extend the object prototype with a way of interrogating 
   }
 </script>
 ```
+
+So what is all this stuff doing?
+1. retrieve the previous version of the object
+1. retrieve the latest version of the object - direct from the dataLayer push array, not from the "final" dataLayer model held internally in GTM, because... well we'll get to that.
+1. loop through the list of keys that we're interested in and figure out if they have had a value added, removed or modified.
+
+Of course the magic lies in that last step. We have to deal with comparing objects, arrays, strings, numbers and booleans. We have to address deep objects with string notation (that's the `.byString()` prototype that helps use look up a deep object with a string like `'preconf.filter.sortBy'`).
+
+### removing array items in GTM
+
+But the other problem this script deals with is a weird one. A regular dataLayer value - a "type 2" - will add items to an array, but not remove them. So you can have a dataLayer such as:
+
+```js 
+dataLayer.myKey = [1,2,3]
+```
+...and then update it with one of the array values missing:
+```js 
+dataLayer.push({
+  myKey: [1,2]
+});
+```
+...when you check the dataLayer, you'll see that the key has not been removed:
+
+```js 
+dataLayer.myKey = [1,2,3]
+```
+
+[Smarter people than me can explain why this happens](), but what I'm more interested in is how to get around it.
+
+Firstly, we can't rely on the GTMs final representation of the dataLayer - so when we talk about the "latest" object, we need to pull it from the dataLayer push object in the JS global scope, hence the line about `window.dataLayer[window.dataLayer.length - 1]`.
+
+Secondly, we need to have a way of setting the dataLayer with the new value in a reliable way. We do this by addressing the final dataLayer directly and using a GTM method `dataLayer.set()` to change the value.
+
+
 
 
