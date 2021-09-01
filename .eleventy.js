@@ -271,14 +271,14 @@ module.exports = function(eleventyConfig) {
     if (img === undefined) {
       return '';
     }
-    const dimensions = sizeOf('img/' + img + '-xl.jpeg');
+    const dimensions = sizeOf('img/' + img + '.jpeg');
     return dimensions.width;
   });
   eleventyConfig.addNunjucksFilter("imageHeight", function(img) {
     if (img === undefined) {
       return '';
     }
-    const dimensions = sizeOf('img/' + img + '-xl.jpeg');
+    const dimensions = sizeOf('img/' + img + '.jpeg');
     return dimensions.height;
   });
 
