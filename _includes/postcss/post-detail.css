@@ -9,6 +9,17 @@
   &__title {
     margin-top: 0.25em;
     margin-bottom: 0.25em;
+    &::before {
+      @media (min-width: 30em) {
+        @supports (font-family: "bodoni ornaments") {
+          display: inline-block;
+          font-family: "bodoni ornaments";
+          font-size: 1em;
+          content:'•';
+          transform: rotate(180deg) translateX(0.15em)  translateY(0.05em);
+        }
+      }
+    }
   }
   &__sub {
     margin-top: 0;

@@ -117,11 +117,6 @@
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/watches/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pixelthing.se/tags/rccars/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
@@ -148,6 +143,11 @@
   
   <url>
     <loc>https://pixelthing.se/tags/dashboards/</loc>
+    <lastmod>2021-05-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/tags/watches/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   
