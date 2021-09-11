@@ -33,7 +33,7 @@ The most successful signal is if anyone visits a staging or a development server
 
 This is checking for a long-term cookie first (only the internal users will be cookied, limiting the consent required), and if no cookie is found, it checks if the host was any non-production url (stage, localhost, etc), before returning what type of visitor this is - although there's currently only two types - "public" and "internal".
 
-A GTM tag/trigger combination then fires if the variable is "internal" but no cookie is found - a sure sign that we've just caught a new internal user. This tag of course sets a long term cookie to complete the cycle. I'm normally an advocate of local/sessionStorage, but in this case a cookie is the best tool, as localStorage is scoped to a sub domain (eg www.bob.com), whereas an appropriately set first-party JS cookie can span be set on one subdomain (eg stage.bob.com) and then read on a different child of the same domain (eg www.bob.com).
+A GTM tag/trigger combination then fires if the variable is "internal" but no cookie is found - a sure sign that we've just caught a new internal user. This tag of course sets a long term cookie to complete the cycle. I'm normally an advocate of local/sessionStorage, but in this case a cookie is the best tool, as localStorage is scoped to a sub domain (eg www.google.com), whereas an appropriately set first-party JS cookie can span be set on one subdomain (eg stage.google.com) and then read on a different child of the same domain (eg www.google.com).
 
 ```html
 {% raw %}<!-- trigger for this tag set for when the {{visitor type - cookie}} is undefined & {{visitor type - var}} is NOT "public" -->
