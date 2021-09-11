@@ -7,7 +7,7 @@ tags:
   - analytics
   - googletagmanager
 layout: layouts/post.njk
-hero: 2021-09-gtm-onscreentime
+hero: 2021-09-gtm-tracking-internal
 ---
 
 It was all so easy in the old world. You could just add an IP filter to your Google Analytics view and suddenly all of your average-skewing internal traffic to your site would be gone.
