@@ -22,8 +22,8 @@ The most successful signal is if anyone visits a staging or a development server
 ```js
 {% raw %}function() {
   // if the user type is cookied
-  if ({{ENV - visitor type - cookie}}) {
-    return {{ENV - visitor type - cookie}};
+  if ({{visitor type - cookie}}) {
+    return {{visitor type - cookie}};
   // spot the users coming in to staging/dev or are debugging
   } else if ({{Page Hostname}}.includes('stage') || {{Page Hostname}}.includes('local')) {
     return 'internal';
@@ -37,12 +37,13 @@ This is checking for a long-term cookie first (only the internal users will be c
 A GTM tag/trigger combination then fires if the variable is "internal" but no cookie is found - a sure sign that we've just caught a new internal user. This tag of course sets a long term cookie to complete the cycle. I'm normally an advocate of local/sessionStorage, but in this case a cookie is the best tool, as localStorage is scoped to a sub domain (eg www.bob.com), whereas an appropriately set first-party JS cookie can span be set on one subdomain (eg stage.bob.com) and then read on a different child of the same domain (eg www.bob.com).
 
 ```html
+<!-- trigger for this tag set for when the {{visitor type - cookie}} is undefined & {{visitor type - var}} is NOT "public" -->
 {% raw %}<script>
   (function() {
-    var visitorType = '{{ENV - visitor type - var}}';
+    var visitorType = '{{visitor type - var}}';
     if (visitorType && visitorType !== 'public') {
       // Set cookie for all subdomains for one year.
-      document.cookie = 'gtm.visitorType={{ENV - visitor type - var}}; path=/; max-age=' + (60*60*24*365) + '; domain=.polestar.com'; 
+      document.cookie = 'gtm.visitorType={{visitor type - var}}; path=/; max-age=' + (60*60*24*365) + '; domain=.polestar.com'; 
     }
   })();
 </script>{% endraw %}  
