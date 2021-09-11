@@ -2,7 +2,6 @@
 title: Flagging internal remote users in GTM
 description: When your workforce is mostly remote, how do you exclude them from results?
 date: 2021-09-07
-status: draft
 tags:
   - analytics
   - googletagmanager
