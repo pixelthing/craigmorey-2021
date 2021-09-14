@@ -15,10 +15,10 @@ But now most teams have a large proportion of remote work, so how do we filter o
 
 At [Polestar](https://www.polestar.com), we use a set of signals that in any one session would definitely mark out a user standing apart from a "regular" web user, and then persist that information long term.
 
-The most successful signal is if anyone visits a staging or a development server. All types of non-production servers at Polestar are protected behind various mechanisms, so if you successfully load a web page on one of these domains, you're definitely beyond a level of suspicion of being an "internal" user. We start with a GTM variable:
-
+The most successful signal for us is if anyone visits a staging or a development server. All types of non-production servers at Polestar are protected behind various mechanisms, so if you successfully load a web page on one of these domains, you're definitely beyond a level of suspicion of being an "internal" user. We start with a GTM variable (we'll call it "visitor type - cookie" for now) that returns the value of a cookie called "gtm.visitorType", and then use that in another GTM variable that evaluates it and adds some logic:
 
 ```js
+// GTM var "visitor type - var"
 {% raw %}function() {
   // if the user type is cookied
   if ({{visitor type - cookie}}) {
@@ -33,7 +33,7 @@ The most successful signal is if anyone visits a staging or a development server
 
 This is checking for a long-term cookie first (only the internal users will be cookied, limiting the consent required), and if no cookie is found, it checks if the host was any non-production url (stage, localhost, etc), before returning what type of visitor this is - although there's currently only two types - "public" and "internal".
 
-A GTM tag/trigger combination then fires if the variable is "internal" but no cookie is found - a sure sign that we've just caught a new internal user. This tag of course sets a long term cookie to complete the cycle. I'm normally an advocate of local/sessionStorage, but in this case a cookie is the best tool, as localStorage is scoped to a single sub domain (eg www.google.com), whereas an appropriately set first-party JS cookie can cover the whole domain (eg google.com), so that it can be set on one subdomain (eg stage.google.com) and then read it back on a different subdomain (eg www.google.com).
+A GTM tag/trigger combination then fires if the variable is "internal" but no cookie is found - a sure sign that we've just caught a new internal user at the start of their session. This tag sets a long term cookie to complete the cycle, and it means we don't need to re-evaluate them from now on. I'm normally an advocate of using local/sessionStorage, but in this case a cookie is the best tool, as localStorage is scoped to a single sub domain (eg www.google.com), whereas an appropriately set first-party JS cookie can cover the whole domain (eg google.com), so that it can be set on one subdomain (eg stage.google.com) and then read it back on a different subdomain (eg www.google.com).
 
 ```html
 {% raw %}<!-- trigger for this tag set for when the {{visitor type - cookie}} is undefined & {{visitor type - var}} is NOT "public" -->
@@ -48,7 +48,7 @@ A GTM tag/trigger combination then fires if the variable is "internal" but no co
 </script>{% endraw %}  
 ```
 
-The last thing we do is to include this piece of information in any GA hit data, for instance in Universal Analytics we add it to the GA settings variable in GTM as a custom dimension scoped to the user. In GA4, we send it as a user parameter. Setting it as a user scoped dimension means you'll be able to filter (or segment) out these users as long as they have that device until it's cookies are cleared or the browser obfuscates the GA cookie.
+The last thing we do is to include this piece of information (The GTM variable "visitor type - var") in any GA hit data, for instance in Universal Analytics we add it to the GA settings variable in GTM as a custom dimension scoped to the user. In GA4, we send it as a user parameter. Setting it as a user scoped dimension means you'll be able to filter (or segment) out these users as long as they have that device until it's cookies are cleared or the browser obfuscates the GA cookie.
 
 ### Caveats
 
@@ -60,7 +60,7 @@ And that's where we need more signals...
 
 ### More signals that can flag internal users
 
-- Intranets are great for flagging internal users if they are on the same top level domain as the rest of the public site. If the intranet is on a different domain (hello sharepoint!), you could try spotting users on your main site that have an intranet URL in the _referral_ string, all it takes is one click from an intranet news item to a press release and whammo, you're flagged as an "internal".
+- Intranets are great for flagging internal users if they are on the same top level domain as the rest of the public site. If the intranet is on a different domain (hello Sharepoint!), you could try spotting users on your main site that have an intranet URL in the _referral_ string, all it takes is one click from an intranet news item to a press release and whammo, you're flagged as an "internal".
 - Internal IP addresses are not a daft idea. Javascript (thankfully) can not natively detect your IP address, but it's a simple job for a backend dev to insert a piece of markup into a page when your browser is coming from a set IP range. GTM can then spot that marker to flag the user as "internal". This is still the best solution for collecting "internal" users that rarely get their hands dirty with non-production content, and they only need to visit the office once to become flagged for the life of the cookie.
 - Last but not least, it's easy to set up a tag in GTM that you can use to _manually_ flag anyone you send a URL to. For instance, if you ask colleagues to go to a url with a `?flag-as-internal` query string, a tag/trigger combination could drop the cookie that will do the job:
 ```html
