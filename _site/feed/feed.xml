@@ -5,7 +5,7 @@
 	
 	<link href="https://pixelthing.se/feed/feed.xml" rel="self"/>
 	<link href="https://pixelthing.se/"/>
-	<updated>2021-08-31T22:00:00+02:00</updated>
+	<updated>2021-09-07T00:00:00+00:00</updated>
 	<id>https://pixelthing.se/</id>
 	<author>
 		<name>Craig Morey</name>
@@ -13,9 +13,39 @@
 	</author>
 	
 	<entry>
+		<title>Flagging internal remote users in GTM</title>
+		<link href="https://pixelthing.se/posts/2021-09-gtm-tracking-internal/"/>
+		<updated>2021-09-07T00:00:00+00:00</updated>
+		<id>https://pixelthing.se/posts/2021-09-gtm-tracking-internal/</id>
+		<content type="html">&lt;p&gt;It was all so easy in the old world. You could just add an IP filter to your Google Analytics view and suddenly all of your average-skewing internal traffic to your site would be gone.&lt;/p&gt;
+&lt;p&gt;But now most teams have a large proportion of remote work, so how do we filter out developers and project managers from our data when we know they are refreshing pages endlessly and making a mess of our &amp;quot;time on site&amp;quot; averages?&lt;/p&gt;
+&lt;p&gt;At &lt;a href=&quot;https://www.polestar.com/&quot;&gt;Polestar&lt;/a&gt;, we use a set of signals that in any one session would definitely mark out a user standing apart from a &amp;quot;regular&amp;quot; web user, and then persist that information long term.&lt;/p&gt;
+&lt;p&gt;The most successful signal for us is if anyone visits a staging or a development server. All types of non-production servers at Polestar are protected behind various mechanisms, so if you successfully load a web page on one of these domains, you&#39;re definitely beyond a level of suspicion of being an &amp;quot;internal&amp;quot; user. We start with a GTM variable (we&#39;ll call it &amp;quot;visitor type - cookie&amp;quot; for now) that returns the value of a cookie called &amp;quot;gtm.visitorType&amp;quot;, and then use that in another GTM variable that evaluates it and adds some logic:&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// GTM var &quot;visitor type - var&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token comment&quot;&gt;// if the user type is cookied&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;visitor type &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; cookie&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;visitor type &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; cookie&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token comment&quot;&gt;// spot the users coming in to staging/dev or are debugging&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;Page Hostname&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;stage&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;Page Hostname&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;local&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;internal&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;public&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is checking for a long-term cookie first (only the internal users will be cookied, limiting the consent required), and if no cookie is found, it checks if the host was any non-production url (stage, localhost, etc), before returning what type of visitor this is - although there&#39;s currently only two types - &amp;quot;public&amp;quot; and &amp;quot;internal&amp;quot;.&lt;/p&gt;
+&lt;p&gt;A GTM tag/trigger combination then fires if the variable is &amp;quot;internal&amp;quot; but no cookie is found - a sure sign that we&#39;ve just caught a new internal user at the start of their session. This tag sets a long term cookie to complete the cycle, and it means we don&#39;t need to re-evaluate them from now on. I&#39;m normally an advocate of using local/sessionStorage, but in this case a cookie is the best tool, as localStorage is scoped to a single sub domain (eg &lt;a href=&quot;http://www.google.com/&quot;&gt;www.google.com&lt;/a&gt;), whereas an appropriately set first-party JS cookie can cover the whole domain (eg &lt;a href=&quot;http://google.com/&quot;&gt;google.com&lt;/a&gt;), so that it can be set on one subdomain (eg &lt;a href=&quot;http://stage.google.com/&quot;&gt;stage.google.com&lt;/a&gt;) and then read it back on a different subdomain (eg &lt;a href=&quot;http://www.google.com/&quot;&gt;www.google.com&lt;/a&gt;).&lt;/p&gt;
+&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- trigger for this tag set for when the {{visitor type - cookie}} is undefined &amp;amp; {{visitor type - var}} is NOT &quot;public&quot; --&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;&lt;br&gt;  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; visitorType &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;{{visitor type - var}}&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;visitorType &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; visitorType &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;public&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;      &lt;span class=&quot;token comment&quot;&gt;// Set cookie for all subdomains for one year.&lt;/span&gt;&lt;br&gt;      document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;cookie &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;gtm.visitorType={{visitor type - var}}; path=/; max-age=&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;365&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;; domain=.polestar.com&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;br&gt;    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The last thing we do is to include this piece of information (The GTM variable &amp;quot;visitor type - var&amp;quot;) in any GA hit data, for instance in Universal Analytics we add it to the GA settings variable in GTM as a custom dimension scoped to the user. In GA4, we send it as a user parameter. Setting it as a user scoped dimension means you&#39;ll be able to filter (or segment) out these users as long as they have that device until it&#39;s cookies are cleared or the browser obfuscates the GA cookie.&lt;/p&gt;
+&lt;h3 id=&quot;caveats&quot;&gt;Caveats &lt;a class=&quot;direct-link&quot; href=&quot;#caveats&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;It&#39;s not a perfect solution - visiting production URLs in incognito mode will make you look like a normal non-alien user again.&lt;/p&gt;
+&lt;p&gt;Then there is the question of multiple devices. Because we&#39;re only using cookies, we&#39;re only flagging internal users per device, which might at least capture those devs doing responsive design testing on their phones, but probably not the copywriter checking their update to the news page on the bus to pick up the kids.&lt;/p&gt;
+&lt;p&gt;And that&#39;s where we need more signals...&lt;/p&gt;
+&lt;h3 id=&quot;more-signals-that-can-flag-internal-users&quot;&gt;More signals that can flag internal users &lt;a class=&quot;direct-link&quot; href=&quot;#more-signals-that-can-flag-internal-users&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Intranets are great for flagging internal users if they are on the same top level domain as the rest of the public site. If the intranet is on a different domain (hello Sharepoint!), you could try spotting users on your main site that have an intranet URL in the &lt;em&gt;referral&lt;/em&gt; string, all it takes is one click from an intranet news item to a press release and whammo, you&#39;re flagged as an &amp;quot;internal&amp;quot;.&lt;/li&gt;
+&lt;li&gt;Internal IP addresses are not a daft idea. Javascript (thankfully) can not natively detect your IP address, but it&#39;s a simple job for a backend dev to insert a piece of markup into a page when your browser is coming from a set IP range. GTM can then spot that marker to flag the user as &amp;quot;internal&amp;quot;. This is still the best solution for collecting &amp;quot;internal&amp;quot; users that rarely get their hands dirty with non-production content, and they only need to visit the office once to become flagged for the life of the cookie.&lt;/li&gt;
+&lt;li&gt;Last but not least, it&#39;s easy to set up a tag in GTM that you can use to &lt;em&gt;manually&lt;/em&gt; flag anyone you send a URL to. For instance, if you ask colleagues to go to a url with a &lt;code&gt;?flag-as-internal&lt;/code&gt; query string, a tag/trigger combination could drop the cookie that will do the job:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- trigger for this tag set for when the {{Page URL}} contains &#39;flag-as-internal&#39; --&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;&lt;br&gt;  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;      &lt;span class=&quot;token comment&quot;&gt;// Set cookie for all subdomains for one year.&lt;/span&gt;&lt;br&gt;      document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;cookie &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;gtm.visitorType=internal; path=/; max-age=&#39;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;365&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;; domain=.polestar.com&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;br&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;  &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;building-an-audience&quot;&gt;Building an audience &lt;a class=&quot;direct-link&quot; href=&quot;#building-an-audience&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Remember it&#39;s a game of odds, you need to reduce the amount of internal users to bring your average metrics back to reality, so spotting 80% of internal users is probably good enough. I like to flag internal users instead of remove them from results, as it gives another level of context to the data, a story of it&#39;s own.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
 		<title>Honest on-screen timing in GTM</title>
 		<link href="https://pixelthing.se/posts/2021-09-gtm-onscreentime/"/>
-		<updated>2021-08-31T22:00:00+02:00</updated>
+		<updated>2021-09-01T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2021-09-gtm-onscreentime/</id>
 		<content type="html">&lt;p&gt;One question that UX &amp;amp; PMs often ask about in analytics is &amp;quot;how long is a user on page before they do X action&amp;quot;. This has always been something thats easy to set up but results in thoroughly underwhelming results, the average time often seems absurdly long.&lt;/p&gt;
 &lt;p&gt;The average appears crazy because there is a very long tail of extremely high recorded on-screen times. The reason being that plenty of users will hide a tab, walk away from their computer and let it sleep, or switch to other applications before returning to the page. The time between page load and click event will therefore be very, very long - when our expectations are that it will only be when the page has the users attention.&lt;/p&gt;
@@ -52,7 +82,7 @@
 	<entry>
 		<title>Getting analytics into a dev sprint</title>
 		<link href="https://pixelthing.se/posts/2021-06-getting-analytics-into-dev-team/"/>
-		<updated>2021-05-31T22:00:00+02:00</updated>
+		<updated>2021-06-01T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2021-06-getting-analytics-into-dev-team/</id>
 		<content type="html">&lt;p&gt;Web analytics want to have data layer pushes in the app. The web development team - whose job it is to make these changes - is under huge pressure, with their final sprints full of urgent fixes and loud stakeholders moving priorities around.&lt;/p&gt;
 &lt;p&gt;So it&#39;s inevitable sometimes that crucial measurement points fall out of the sprint and don&#39;t get to launch day.&lt;/p&gt;
@@ -115,7 +145,7 @@
 	<entry>
 		<title>Diffing datalayer objects in GTM</title>
 		<link href="https://pixelthing.se/posts/2021-05-diffing-datalaters/"/>
-		<updated>2021-05-16T22:00:00+02:00</updated>
+		<updated>2021-05-17T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2021-05-diffing-datalaters/</id>
 		<content type="html">&lt;p&gt;A large amount of the most critical work in Google Tag Manager (GTM) is in the monitoring of changes in state, particularly objects like eCommerce baskets, filter settings or user editable configurations. In these cases we generally want to know what caused a change to an object (and I&#39;m using &lt;em&gt;&amp;quot;object”&lt;/em&gt; in compsci terms here), and what changes were made.&lt;/p&gt;
 &lt;p&gt;Let&#39;s take a real example. One list page that we deal with has a list of cars and a filter UI. In this app, the internal logic is not exposed to GTM, the only thing we see is a JS object that describes the current state of the filter - and when it&#39;s updated we see a new version appear:&lt;/p&gt;
@@ -156,7 +186,7 @@
 	<entry>
 		<title>Generic click tracking in GTM</title>
 		<link href="https://pixelthing.se/posts/2021-04-generic-gtm-click-tracking/"/>
-		<updated>2021-04-23T22:00:00+02:00</updated>
+		<updated>2021-04-24T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2021-04-generic-gtm-click-tracking/</id>
 		<content type="html">&lt;p&gt;The larger a Google Tag Manager (GTM) container becomes, the more you realise that many tags, triggers and variables are doing roughly the same job. So it&#39;s worthwhile refactoring some of them away into a few generic tags that make your life easier.&lt;/p&gt;
 &lt;p&gt;This article details one such technique to reduce most of your click tracking to a simple reusable pattern, so all it takes is a small piece of markup to start collecting data. At &lt;a href=&quot;https://www.polestar.com/?utm_campaign=craigs.blog&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Polestar&lt;/a&gt;, we use it on reusable React components, so that devs and editors have the ability to roll them out without needing to do any work in GTM at all.&lt;/p&gt;
@@ -219,7 +249,7 @@
 	<entry>
 		<title>Web dev with an iPad in 2020</title>
 		<link href="https://pixelthing.se/posts/2020-12-ipad-webdev20/"/>
-		<updated>2020-12-29T23:00:00+01:00</updated>
+		<updated>2020-12-30T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-12-ipad-webdev20/</id>
 		<content type="html">&lt;p&gt;At this time of the year I normally go deep on what’s changed if you’re a front-end web developer with an iPad. This year, I’m not going to do that, largely because I don’t have a set-up that’s representative of a 2020 iPad Pro (I have a 10.5”), but also because this year of all years, I think I’m justified in taking time off over the christmas holiday and not spending it explaining every possible workflow.&lt;/p&gt;
 &lt;p&gt;But 2020 - despite feeling like a flat curve of time - has been surprisingly busy in the iPad world. Here are some highlights that effect you as a developer with an iPad in the hand.&lt;/p&gt;
@@ -310,7 +340,7 @@
 	<entry>
 		<title>Getting critical data noticed</title>
 		<link href="https://pixelthing.se/posts/2020-08-getting-critical-data-noticed/"/>
-		<updated>2020-08-19T22:00:00+02:00</updated>
+		<updated>2020-08-20T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-08-getting-critical-data-noticed/</id>
 		<content type="html">&lt;p&gt;It feels like we’ve crossed a threshold. Businesses (and the general public) are increasingly calling for more data, and for it to be presented in a smart and pedagogic way.&lt;/p&gt;
 &lt;p&gt;But we are living in a seriously distracted time. Knowing we need to be looking at data is very different from having the trigger to actually do it. Too often, the idea that we need to check on the progress of a chart is so far down the list of shiny new things to look at that it remains a noble effort, like signing up for the gym but never finding the time to go.&lt;/p&gt;
@@ -365,7 +395,7 @@
 	<entry>
 		<title>iPadOS14 wish list for web devs</title>
 		<link href="https://pixelthing.se/posts/2020-05-ipados14-wish-list-for-web-devs/"/>
-		<updated>2020-05-23T22:00:00+02:00</updated>
+		<updated>2020-05-24T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-05-ipados14-wish-list-for-web-devs/</id>
 		<content type="html">&lt;p&gt;Historically, I’ve had a rotten track record for predicting future features. And everyone has their take for iPadOS14 — many focusing on the UI or fabled iPad Pro apps like Xcode or Logic Pro. As a web/data developer with iPads in the hands of various family members, I guess I have a slightly different list of wishes:&lt;/p&gt;
 &lt;h2 id=&quot;what-would-make-ipados-a-good-web-dev-platform&quot;&gt;What would make iPadOS a good web dev platform &lt;a class=&quot;direct-link&quot; href=&quot;#what-would-make-ipados-a-good-web-dev-platform&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -393,7 +423,7 @@
 	<entry>
 		<title>Making GTM better</title>
 		<link href="https://pixelthing.se/posts/2020-05-making-gtm-better/"/>
-		<updated>2020-05-19T22:00:00+02:00</updated>
+		<updated>2020-05-20T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-05-making-gtm-better/</id>
 		<content type="html">&lt;aside class=&quot;aside--update&quot;&gt;
 &lt;h3 id=&quot;update-2020-10-24&quot;&gt;Update 2020-10-24 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020-10-24&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -532,7 +562,7 @@ Search (and even at a push -- replace) across all content in text fields &amp;am
 	<entry>
 		<title>2019 iPad Webdev - remote VS Code</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-vscode-hosted/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-vscode-hosted/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -670,7 +700,7 @@ echo &amp;quot;export PASSWORD=YourPassword&amp;quot; &amp;gt;&amp;gt; /etc/prof
 	<entry>
 		<title>2019 iPad Webdev - Raspberry Pi</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-raspberry-pi/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-raspberry-pi/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -749,7 +779,7 @@ Geek cred.&lt;/li&gt;
 	<entry>
 		<title>2019 iPad Webdev - Play.js</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-playjs/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-playjs/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -870,7 +900,7 @@ Geek cred.&lt;/li&gt;
 	<entry>
 		<title>2019 iPad Webdev - Panic Coda/Code editor</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-panic-coda/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-panic-coda/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -918,7 +948,7 @@ Geek cred.&lt;/li&gt;
 	<entry>
 		<title>2019 iPad Webdev - GoCoEdit</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-gocoedit/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-gocoedit/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -1045,7 +1075,7 @@ Geek cred.&lt;/li&gt;
 	<entry>
 		<title>2019 iPad Webdev - CD with Netlify</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-cd-netlify/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-cd-netlify/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -1141,8 +1171,236 @@ Geek cred.&lt;/li&gt;
 	<entry>
 		<title>FE webdev on iPad (2019)</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19/"/>
-		<updated>2020-01-04T23:00:00+01:00</updated>
+		<updated>2020-01-05T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19/</id>
+		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
+&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;What a difference a year makes.&lt;/p&gt;
+&lt;p&gt;Last year I lead the 2018 round-up by saying that I could not recommend iOS for doing front-end web-dev unless your project fitted a very narrow list of criteria. A year later and that list of use-cases is not only wider, but the work you can get done is far deeper. We’re getting there.&lt;/p&gt;
+&lt;p&gt;What has changed has been a combination of things. iPadOS has – for sure – solved a lot of the fundamental problems that previously infuriated the simplest of workflows. But apps (almost exclusively one-person indie apps) have been incrementally developing to fill the gaps, and the innovative workflows discovered by iPad users have been pretty amazing.&lt;/p&gt;
+&lt;p&gt;Don’t be fooled – if I was coming to this platform for the first time as a professional web developer, I would still find iOS extremely limited and frustrating. But having seen where we’ve come from, I’m much more positive about the future.&lt;/p&gt;
+&lt;p&gt;This is a journey that – as yet – still has no clear destination. But it’s getting more pleasant by the month.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-1.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-1-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-1-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-1-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;617&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;GoCoEdit and a Brydge 10.5&amp;quot; (the best keyboard for using on your lap)&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h3 id=&quot;hardware&quot;&gt;Hardware &lt;a class=&quot;direct-link&quot; href=&quot;#hardware&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In 2019, the regular iPads have essentially jumped a tier. All non-pro iPads are now different price-point compromises of the old 10.5&amp;quot; pro, with out-of-the-box keyboard and pen support. The 2019 iPad Air in particular is a Pro in all but name, but they are all &amp;quot;real-work&amp;quot; ready.&lt;/p&gt;
+&lt;p&gt;In the iPad Pro range, the top-end has remained unchanged. Or has it? Because the promised USB-C ecosystem is finally emerging and has collided with the new iPadOS. You can now plug your iPad into 5k monitors, hard drives, mice, microphones, USB-sticks, Raspberry Pis, plus a multitude of cheap, powerful, compact power supplies. And with either store-shelf or iPad-bespoke hubs, even with several peripherals at the same time. Your year-old iPad Pro had a free hardware upgrade in 2019.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-2.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-2-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-2-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-2-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;696&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;Felt iPad carry case with dongles (HDMI, USB3.0, SD card) and Moko foldable stand.&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h3 id=&quot;ios-is-forked-for-the-ipad&quot;&gt;iOS is forked for the iPad &lt;a class=&quot;direct-link&quot; href=&quot;#ios-is-forked-for-the-ipad&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;iPadOS13 made the biggest difference to our ability to get things done this year. We’ve already talked about how the USB-C IO upgrades were nice for those with the latest iPad Pros. And the files app finally understands that you need to get files on and off your iPad in multiple ways. So many smaller details have made life easier for a developer, from the icons not re-arranging on rotating the screen, to Siri shortcuts being supercharged, to no-lag text selection, to keyboard commands everywhere.&lt;/p&gt;
+&lt;p&gt;But the biggest plus is the new Safari, not just purely for it’s &amp;quot;desktop class browsing&amp;quot; but because of the multitude of online tools that this has enabled. From &lt;a href=&quot;https://www.atlassian.com/software/jira&quot;&gt;Jira&lt;/a&gt; and &lt;a href=&quot;https://analytics.google.com/&quot;&gt;Google Analytics&lt;/a&gt; to &lt;a href=&quot;https://glitch.com/&quot;&gt;glitch.com&lt;/a&gt; and the hosted version of Visual Code, it’s made the iPad exponentially more capable. It’s like suddenly getting 80% of a ChromeOS tablet on top of your iPad.&lt;/p&gt;
+&lt;p&gt;Not everything is super rosey. The multi-tasking is powerful but cognitively taxing. The sandboxing means that apps still have to jump through crazy hoops to work together in a logical way. Background processes are still killed ridiculously early. iPad Pro RAM is unrealistically low compared to the cheapest of laptops. The command line is still &lt;em&gt;verboten&lt;/em&gt;. App Store rules are still vague and punitive.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-3.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-3-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-3-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-3-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;631&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;A reminder to myself.&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h3 id=&quot;one-browser%2C-and-still-only-one&quot;&gt;One browser, and still only one &lt;a class=&quot;direct-link&quot; href=&quot;#one-browser%2C-and-still-only-one&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;One thing that didn’t change this year was the range of browsers on the platform. WebKit is still the only rendering engine available on iOS, Safari still has no devtools and you still can’t have Safari Technical Preview on iOS.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-4.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-4-sm.png&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-4-lg.png&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-4-xl.png&quot; loading=&quot;lazy&quot; width=&quot;1169&quot; height=&quot;512&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;
+        &lt;/figure&gt;&lt;p&gt;The &lt;a href=&quot;https://twitter.com/slightlylate&quot;&gt;Google engineer Alex Russell&lt;/a&gt; has strong views on Safari and iOS – and a lot of fan boys (like me) can get twitter-rage as a response. But although I might not always agree, I like Alex. Not only is he smart but he backs up points with data, and that should always deserve your consideration, whether you agree with his conclusions or not.&lt;/p&gt;
+&lt;p&gt;And on one point, Alex is always right. Having one browser engine on iOS is a mistake. Quite apart from being an anti-trust suit in the waiting, the entire web capability of the platform is locked down to the decisions made in a single meeting room in Cupertino. Fairs fair, that weekly backlog meeting of project managers pretty much delivered the mobile web -- fully formed -- back in 2007 and has continued to push it forward. But now it’s time to let others have a competing voice.&lt;/p&gt;
+&lt;p&gt;If we also had Chromium on iOS, we wouldn’t be celebrating finally using &amp;quot;real&amp;quot; GoogleDocs in 2019, because we’d have had it years ago. We might also have 4K YouTube and devtools. And so would Safari, probably (because; competition). All of that would mean selling more iPads to pros. And Safari would still rule for most iPad users because even for a default it’s capable, fast, has low battery consumption, and it’s the webview in every single social app that you own. Do it, you cowards (it’s a meme, I don’t really talk or think like that).&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-5.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-5-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-5-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-5-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;429&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;We live in an imperfect world. The 9 month old crack on my 10.5&amp;quot;. At least it’s undetectable by touch over most of the screen. Here’s hoping the 2020 iPad Pro is coming soon.&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h3 id=&quot;methods-to-develop-sites-on-ipad&quot;&gt;Methods to develop sites on iPad &lt;a class=&quot;direct-link&quot; href=&quot;#methods-to-develop-sites-on-ipad&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Enough of the fundamentals. Let’s take some apps, some projects in source control, and mash them up into a workflow.&lt;/p&gt;
+&lt;p&gt;There are plenty of apps that carry out individual parts of a developer’s workflow just fine. This – after all – is how you often string together a workflow on a desktop OS; an editor, a browser, a git client, a server, etc. But iOS constraints mean single-function apps are often not productive. This is because if you need more than two apps in your flow, one will need to be in the background – at least part of the time – and background apps are killed ruthlessly after 3 minutes. This has lead to apps often having second or third talents that are best not to kill unexpectedly; for example editor apps having a terminal, or web server, or most often – both. It means one or two apps can stay in the foreground whilst they carry out the functions of many.&lt;/p&gt;
+&lt;p&gt;Killing background processes is an artificial constraint of the OS – iPads are no longer the resource constrained devices they used to be, so it would be good if Apple allowed more categories of apps to remain in the background in some way like audio apps can.&lt;/p&gt;
+&lt;p&gt;Next we also need apps to open files via the OS level &amp;quot;edit in place&amp;quot; API so that an IDE can work directly on files in a local repo (and just to be difficult, this API changed in iOS13, so any app that previously supported it needs an update). I consider this the basic requirement now of any pro app.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-6.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-6-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-6-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-6-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;644&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;Microsoft VS Code running plug-ins on an iPad? Well, yes - kind of.&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;p&gt;The following list of workflows is absolutely not a prescription for the best ways of working, or even to scratch the breadth of ways to do front-end web development on an iPad. Like last year, consider them recipes – a little light inspiration to consider remixing to your own taste.&lt;/p&gt;
+&lt;p&gt;And because they deserve they’re own space to understand their pros and cons, each is linked to their own article or screencast.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Working with a remote server or Virtual Private Server (VPS)&lt;/li&gt;
+&lt;li&gt;One way to get around iOS not running a a command line and a front-end tool chain like Node.js, is to work with a server hosted elsewhere. This results in workflows that are based around a remote server or a VPS.&lt;/li&gt;
+&lt;li&gt;Full review: VPS, Microsoft VS Code (Hosted version), remote Git&lt;/li&gt;
+&lt;li&gt;VPS, Emacs, remote Git (I don’t have much to say apart from use Blink and Mosh, they’re awesome)&lt;/li&gt;
+&lt;li&gt;Full review: Continuous Deployment with Netlify, Github hooks, Working Copy, Textastic&lt;/li&gt;
+&lt;li&gt;Full review: AWS S3, Panic Coda&lt;/li&gt;
+&lt;li&gt;Screencast from 2018: VPS, Working Copy, Textastic (using Textastic to manually-upload)&lt;/li&gt;
+&lt;li&gt;Screencast from 2018: VPS, Working Copy, Textastic (using Working Copy to auto-upload)&lt;/li&gt;
+&lt;/ul&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-7.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-7-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-7-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-7-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;765&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;Raspberry Pi 3B+ with Anker 10Ah battery pack. Pilot biro grip on the Apple Pencil.&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h3 id=&quot;working-on-a-semi-remote-server&quot;&gt;Working on a semi-remote server &lt;a class=&quot;direct-link&quot; href=&quot;#working-on-a-semi-remote-server&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Full review: Raspberry Pi as a replacement for a VPS.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;working-fully-local-on-the-ipad&quot;&gt;Working fully local on the iPad &lt;a class=&quot;direct-link&quot; href=&quot;#working-fully-local-on-the-ipad&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Full review: Node.js/React: Working Copy, Play.js&lt;/li&gt;
+&lt;li&gt;Full review: Flat websites: Working Copy, GoCoEdit&lt;br&gt;
+Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt;/li&gt;
+&lt;li&gt;Screencast from 2018: Flat websites: Working Copy (webDAV server), Textastic&lt;/li&gt;
+&lt;li&gt;Screencast from 2018: Flat websites: Textastic (preview server)&lt;/li&gt;
+&lt;li&gt;Screencast from 2018: Flat websites: Panic Coda (preview server)&lt;/li&gt;
+&lt;/ul&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-8.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-8-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-8-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-8-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;625&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;MacBook Pro 13&amp;quot; 2014, MacBook Air 2019, MacBook Air 11&amp;quot; 2011, iPad Pro 10.5&amp;quot;. Which is fastest?&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h3 id=&quot;honourable-mentions&quot;&gt;Honourable mentions &lt;a class=&quot;direct-link&quot; href=&quot;#honourable-mentions&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;There are a few other apps that have caught my eye this year, and are worth mentioning. I’m sure you could probably add many more for particular areas you work in – for instance there is a huge range of dedicated GitHub apps that let you monitor pull-requests and the like, documentation apps like &lt;a href=&quot;https://kapeli.com/dash_ios&quot;&gt;Dash&lt;/a&gt;, and full IDEs for languages such as Python (&lt;a href=&quot;http://omz-software.com/pythonista/&quot;&gt;Pythonista&lt;/a&gt;) and PHP (&lt;a href=&quot;https://solesignal.com/draftcode/&quot;&gt;Draftcode&lt;/a&gt;).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://workingcopyapp.com/&quot;&gt;Working Copy&lt;/a&gt;: still the best Git client on iOS, thankfully the most accomplished at integrating all the latest iOS APIs, because it’s the hub of most web-dev work on the iPad.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://secureshellfish.app/&quot;&gt;Secure Shellfish&lt;/a&gt;: from the developer of Working Copy, it makes SFTP servers appear as if they were just another drive in your Files app (or your app file picker).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://apps.pdyn.net/inspect/&quot;&gt;Inspect browser&lt;/a&gt;: The closest thing to Chrome dev-tools you’ll get on iOS, and getting closer all the time.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://termius.com/&quot;&gt;Termius&lt;/a&gt;, &lt;a href=&quot;https://www.blink.sh/&quot;&gt;Blink&lt;/a&gt;: Termius is the SSH tool for cross platform pros that prefer a GUI. Blink is for the genuine command line geeks who never want to see as much as a button, and is freakishly good at keeping a Mosh connection open -- it defies explanation.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://kodex.app/&quot;&gt;Kodex&lt;/a&gt;: A great standalone code editor. It doesn’t really fit any of my work (yet), but it’s has promise.&lt;/li&gt;
+&lt;/ul&gt;
+
+        &lt;figure class=&quot;post__img&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-9.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-9-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-9-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-9-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;933&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;Play.js running a web React project, with it’s browser showing the result on the right. This really is Node.js running locally on iPadOS -- a major step forward.&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h3 id=&quot;what-we%E2%80%99re-missing&quot;&gt;What we’re missing &lt;a class=&quot;direct-link&quot; href=&quot;#what-we%E2%80%99re-missing&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Play.js might have finally brought Node.js and React (web) development to iOS, but it’s not (yet) a replacement for other tool chains. There’s still no way of locally running Gulp, Grunt, Rollup, Vue, Docker, K8s, etc, on an iPad, and that’s a lot of holes. If you need any of these, you’ll currently need to think about something like a VPS.&lt;/p&gt;
+&lt;p&gt;In the IDE apps, we’re still missing the basic capability of multi-file text search/replace. After all, the hardest task in programming is naming things. The tag-complete/auto-suggest is of variable quality across IDEs and app extension systems will not get traction on the platform if it remains this small (Coda had one, unfortunately it didn’t have many plug-ins).&lt;/p&gt;
+&lt;p&gt;All of the above things do exist in the hosted version of VS Code, as detailed above, largely because it all happens remotely on a Linux server. However it also comes with its own drawbacks – not least not currently having any keyboard shortcuts.&lt;/p&gt;
+&lt;p&gt;But at least we’re getting there in the IDE space. When it comes to Browser developer tools, we’re still a way off. The great &lt;a href=&quot;https://apps.pdyn.net/inspect/&quot;&gt;Inspect Browser&lt;/a&gt; is still gaining new functionality steadily, but we’re still a long way from having the same insight into what a web page is doing like we have on desktop. In particular, we’re missing perf tools, heap measurements, JS debugger, indexedDB storage viewing, PWA tools, code line references in console logs, and more.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-10.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-10-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-10-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-10-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;1295&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;Don’t feel locked into landscape mode -- the iPad is more flexible than that. (Textastic on screen)&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h3 id=&quot;%22the-ios-way%22&quot;&gt;&amp;quot;the iOS way&amp;quot; &lt;a class=&quot;direct-link&quot; href=&quot;#%22the-ios-way%22&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Apple still doesn’t appear to see the web development industry as part of the &amp;quot;Pro&amp;quot; in iPad Pro. They continue to lay obstructions that discourage web developers to do much more than dabble in iOS. This is never better demonstrated than by Carlos Vidal, the author of the Play.js app where he describes the struggle to build a web development IDE, with NPM:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;On top of this, in an attempt to support most of the npm features, Apple threw away the work of two months by rejecting the binary and asking me to go back to the drawing board and offer that experience &amp;quot;the iOS way&amp;quot;. (footnote 1)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Play.js is the closest thing to a local Node.js/NPM environment on iOS, and does it in a way that’s very far from carrying out &lt;code&gt;brew install&lt;/code&gt; and &lt;code&gt;npm i&lt;/code&gt; at a bash prompt. Write a package.json file, hit &amp;quot;play&amp;quot; and it’ll do the rest – it’s as close to the iOS way as you could be with a Node.js project.&lt;/p&gt;
+&lt;p&gt;The positive person in me says that this hard-arse stance has actually led to new ways of looking at workflows that we never even considered reevaluating before. Play.js is the embodiment of this.&lt;/p&gt;
+&lt;p&gt;Alternatively you could ask what the kind of direction is that to give. Leaving enigmatic platitudes that provide no guidance as an epitaph to months of work is not exactly going to inspire a generation of after-work app developers to enable a thriving industry and – in conclusion – sell more iPads. &amp;quot;Help us to help you&amp;quot;, I would plead to Apple.&lt;/p&gt;
+
+        &lt;figure class=&quot;post__img&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-11.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-11-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-11-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-11-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;1400&quot; height=&quot;857&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;On the charger in our hall. its just a bread bin with some holes and a three-way socket inside.&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h3 id=&quot;conclusion%2C-and-the-question-remains.&quot;&gt;Conclusion, and the question remains. &lt;a class=&quot;direct-link&quot; href=&quot;#conclusion%2C-and-the-question-remains.&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;So with all this hassle, let’s be honest, making iOS a webdev platform is still pushing at boundaries that don’t necessarily have a need to be pushed.&lt;/p&gt;
+&lt;p&gt;The latest generation of powerful ultra-light notebooks with familiar desktop OS’s (Windows, Mac, Linux) would allow you to drop your existing workflow straight into a more portable world.&lt;/p&gt;
+&lt;p&gt;Microsoft Surface (or similiar) devices would give you a transformable tablet that had a heavyweight OS. &lt;a href=&quot;https://www.howtogeek.com/424886/windows-10s-linux-kernel-is-now-available/&quot;&gt;Microsoft has embraced Linux&lt;/a&gt; in an extraordinary way in 2019, allowing you to marry .NET development with node/NPM based front-end pipelines on a single device.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/3CWUAisN-vo&quot;&gt;Google Chrome OS has actively courted web developers&lt;/a&gt; with an impressive Linux based flow (Docker/Kubernates? no problem). The &lt;a href=&quot;https://www.google.com/chromebook/device/google-pixelbook/&quot;&gt;Google Pixel&lt;/a&gt; is still attractive, even if most ChromeOS hardware is cheap &amp;amp; education orientated and their experiment in building a convertible slate has had &lt;a href=&quot;https://youtu.be/HOh6d_r63Bw&quot;&gt;crushingly bad reviews&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So with all these alternative options already available, the question remains. Why bother trying to stretch the envelope of iOS to do web development when even Apple seem to be actively discouraging it?&lt;/p&gt;
+&lt;p&gt;It’s not an easy one to logically explain away. But I find it a pleasure to use an iPad. It’s genuinely light, connected and increasingly capable of most tasks, plus Windows and ChromeOS (and their app ecosystems) suck at being tablets. So if the iPad is my preferred device to grab and go – whether to the Coffee shop or Columbia – why would I want to also take another computer on the off-chance I need to fix a bug and re-deploy, or even build that project from scratch that I’ve been itching to try? My iPad is definitely powerful enough, so why not?&lt;/p&gt;
+&lt;p&gt;The truth is that most good ideas in tech were just fanboys playing around with what were considered &amp;quot;bad&amp;quot; ideas, until they reached a tipping point and suddenly everyone was doing it. So who’s to say we don’t discover a &amp;quot;new norm&amp;quot; here? God knows we could do with rethinking web-dev tooling and abstracting some of it away. That’s exactly what play.js has done.&lt;/p&gt;
+&lt;p&gt;This could still be an evolutionary dead-end – but we don’t know that until we push and see how far we get. And with the progress I’ve seen in the last few years, I believe we could soon see a point when Apple understands what the iPad’s place is in this industry (just as they did with writing, photography and film).&lt;/p&gt;
+&lt;p&gt;If that happens, all bets are off.&lt;/p&gt;
+&lt;h3 id=&quot;links&quot;&gt;Links &lt;a class=&quot;direct-link&quot; href=&quot;#links&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://christine.website/blog/coding-on-an-ipad-2018-04-14-2018&quot;&gt;Christine Dodrill’s 2018 article on Emacs and Textastic on the iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://link.medium.com/J1C6zSKgU2&quot;&gt;Shane Dowling’s 2018 article on using GoCoEdit, Vim &amp;amp; Emacs on the iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jann.is/ipad-pro-for-programming/&quot;&gt;Jannis Hermanns 2017 article on developing remotely with an iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://typicalprogrammer.com/working-on-an-ipad-pro-as-my-main-computer&quot;&gt;Greg Jorgensen’s 2018 article about coding on the iPad…&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://news.ycombinator.com/item?id=16741522&quot;&gt;… and the Hacker News thread it resulted in.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://reddit.com/r/iPadPro&quot;&gt;iPad Pro Reddit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stories.appbot.co/hey-apple-i-tried-the-ipad-pro-as-a-dev-machine-its-almost-awesome-830e424bbed3&quot;&gt;Stuart Hall’s 2016 article that started it all off (for me)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCT-GpMtIFhX9EMA0Eauevhw&quot;&gt;Tech Craft YouTube channel, covering Pro iPad usage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ipadpros.net/&quot;&gt;iPadPros Podcast&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://theuntitledsite.com/&quot;&gt;Christopher Lawley’s tech/YouTube blog &amp;quot;The untitled site&amp;quot;, which often covers coding on the iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@pixelthing/a-perfect-ipad-keyboard-doesnt-exist-a4cbcc127bfa&quot;&gt;My own article on the tricky business of choosing an iPad keyboard&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+        &lt;figure class=&quot;post__img post__img--wide&quot;&gt;
+          &lt;a href=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-12-xl.jpeg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;post__link&quot;&gt;
+            &lt;picture class=&quot;post__img__picture&quot;&gt;
+              &lt;source media=&quot;(max-width:599px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-12-sm.jpeg&quot;&gt;
+              &lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-12-lg.jpeg&quot;&gt;
+              &lt;img src=&quot;https://pixelthing.se/img/2020-01-ipad-webdev19-12-xl.jpeg&quot; loading=&quot;lazy&quot; width=&quot;4000&quot; height=&quot;2685&quot; class=&quot;post__img__img&quot;&gt;
+            &lt;/picture&gt;
+          &lt;/a&gt;&lt;p&gt;Apple Magic Keyboard in a Fintie wrap &amp;amp; stand with an iPad Pro 10.5&amp;quot;&lt;/p&gt;
+
+        &lt;/figure&gt;&lt;h3 id=&quot;footnotes&quot;&gt;Footnotes &lt;a class=&quot;direct-link&quot; href=&quot;#footnotes&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Quote is directly taken from a Patreon page which is not currently live on the web -- but is reproduced with kind permission from the author.&lt;/p&gt;
+&lt;aside class=&quot;aside--less aside--bottom&quot;&gt;
+&lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
+&lt;/aside&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>FE webdev on iPad (2019)</title>
+		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-mag/"/>
+		<updated>2020-01-05T00:00:00+00:00</updated>
+		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-mag/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
 &lt;/aside&gt;
@@ -1369,7 +1627,7 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 	<entry>
 		<title>My long journey with the Tamiya Frog</title>
 		<link href="https://pixelthing.se/posts/2019-08-rc-cars-frog/"/>
-		<updated>2019-07-31T22:00:00+02:00</updated>
+		<updated>2019-08-01T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2019-08-rc-cars-frog/</id>
 		<content type="html">&lt;p&gt;In 1987 I bought a second-hand Tamiya Frog from a friend of a friend.&lt;/p&gt;
 &lt;h2 id=&quot;1.-marlboro-man&quot;&gt;1. Marlboro man &lt;a class=&quot;direct-link&quot; href=&quot;#1.-marlboro-man&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -1439,7 +1697,7 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 	<entry>
 		<title>My Seiko SNK Po-mo</title>
 		<link href="https://pixelthing.se/posts/2016-04-seiko-pomo/"/>
-		<updated>2016-04-16T22:00:00+02:00</updated>
+		<updated>2016-04-17T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2016-04-seiko-pomo/</id>
 		<content type="html">&lt;p&gt;I don’t scuba, or pilot a plane, or skipper a ship.&lt;/p&gt;
 &lt;p&gt;That being so, &amp;quot;tool watches&amp;quot; (as watch enthusiasts call them) such as true divers’, aviators’ or sailors’ watches would be lost on me -- or at least merely a bit of fantasy on my part. That’s not to say their core features aren’t useful to me, but being waterproof doesn’t mean I need a watch to withstand diving to great depths, just as being easy-to-read in the dark doesn’t mean I need NATO standard radioactive promethium coated minute hands. Or the associated price.&lt;/p&gt;
@@ -1546,7 +1804,7 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 	<entry>
 		<title>For a few dollars less.</title>
 		<link href="https://pixelthing.se/posts/2015-04-few-dollars-less/"/>
-		<updated>2015-04-27T22:00:00+02:00</updated>
+		<updated>2015-04-28T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2015-04-few-dollars-less/</id>
 		<content type="html">&lt;p&gt;But let’s focus on the ingenuity and pragmatism of some unknown manufacturing engineers and the signatures they left in the chairs they made.&lt;/p&gt;
 &lt;p&gt;This is a story about the Eames DSW side chair design. Ray and Charles Eames were renowned designers in the 1940s and 50s, producing many objects, buildings and films that often have the word &amp;quot;iconic&amp;quot; attached to them. Among their most popular designs are a series of plastic &lt;strong&gt;†&lt;/strong&gt; side chairs that you’ve doubtless seen, sat-in or even bought, with various bases made out of different combinations of wire and wood. The range was designed at the end of the 1940’s for a Museum of Modern Art low-cost furniture competition, and they embody the Eames’ goal of &amp;quot;Getting the most of the best to the greatest number of people for the least&amp;quot; .&lt;/p&gt;
