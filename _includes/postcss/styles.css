@@ -29,4 +29,11 @@
 
 pre[class*="language-"] {
   padding: 0.75em 0.5em;
+  font-size:1em;
+}
+code[class*="language-"] {
+  font-size:0.8em;
+}
+pre > code {
+  -webkit-text-size-adjust: none;
 }
