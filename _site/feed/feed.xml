@@ -5,7 +5,7 @@
 	
 	<link href="https://pixelthing.se/feed/feed.xml" rel="self"/>
 	<link href="https://pixelthing.se/"/>
-	<updated>2021-09-06T22:00:00+02:00</updated>
+	<updated>2021-09-07T00:00:00+00:00</updated>
 	<id>https://pixelthing.se/</id>
 	<author>
 		<name>Craig Morey</name>
@@ -15,7 +15,7 @@
 	<entry>
 		<title>Flagging internal remote users in GTM</title>
 		<link href="https://pixelthing.se/posts/2021-09-gtm-tracking-internal/"/>
-		<updated>2021-09-06T22:00:00+02:00</updated>
+		<updated>2021-09-07T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2021-09-gtm-tracking-internal/</id>
 		<content type="html">&lt;p&gt;It was all so easy in the old world. You could just add an IP filter to your Google Analytics view and suddenly all of your average-skewing internal traffic to your site would be gone.&lt;/p&gt;
 &lt;p&gt;But now most teams have a large proportion of remote work, so how do we filter out developers and project managers from our data when we know they are refreshing pages endlessly and making a mess of our &amp;quot;time on site&amp;quot; averages?&lt;/p&gt;
@@ -45,7 +45,7 @@
 	<entry>
 		<title>Honest on-screen timing in GTM</title>
 		<link href="https://pixelthing.se/posts/2021-09-gtm-onscreentime/"/>
-		<updated>2021-08-31T22:00:00+02:00</updated>
+		<updated>2021-09-01T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2021-09-gtm-onscreentime/</id>
 		<content type="html">&lt;p&gt;One question that UX &amp;amp; PMs often ask about in analytics is &amp;quot;how long is a user on page before they do X action&amp;quot;. This has always been something thats easy to set up but results in thoroughly underwhelming results, the average time often seems absurdly long.&lt;/p&gt;
 &lt;p&gt;The average appears crazy because there is a very long tail of extremely high recorded on-screen times. The reason being that plenty of users will hide a tab, walk away from their computer and let it sleep, or switch to other applications before returning to the page. The time between page load and click event will therefore be very, very long - when our expectations are that it will only be when the page has the users attention.&lt;/p&gt;
@@ -82,7 +82,7 @@
 	<entry>
 		<title>Getting analytics into a dev sprint</title>
 		<link href="https://pixelthing.se/posts/2021-06-getting-analytics-into-dev-team/"/>
-		<updated>2021-05-31T22:00:00+02:00</updated>
+		<updated>2021-06-01T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2021-06-getting-analytics-into-dev-team/</id>
 		<content type="html">&lt;p&gt;Web analytics want to have data layer pushes in the app. The web development team - whose job it is to make these changes - is under huge pressure, with their final sprints full of urgent fixes and loud stakeholders moving priorities around.&lt;/p&gt;
 &lt;p&gt;So it&#39;s inevitable sometimes that crucial measurement points fall out of the sprint and don&#39;t get to launch day.&lt;/p&gt;
@@ -145,7 +145,7 @@
 	<entry>
 		<title>Diffing datalayer objects in GTM</title>
 		<link href="https://pixelthing.se/posts/2021-05-diffing-datalaters/"/>
-		<updated>2021-05-16T22:00:00+02:00</updated>
+		<updated>2021-05-17T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2021-05-diffing-datalaters/</id>
 		<content type="html">&lt;p&gt;A large amount of the most critical work in Google Tag Manager (GTM) is in the monitoring of changes in state, particularly objects like eCommerce baskets, filter settings or user editable configurations. In these cases we generally want to know what caused a change to an object (and I&#39;m using &lt;em&gt;&amp;quot;object”&lt;/em&gt; in compsci terms here), and what changes were made.&lt;/p&gt;
 &lt;p&gt;Let&#39;s take a real example. One list page that we deal with has a list of cars and a filter UI. In this app, the internal logic is not exposed to GTM, the only thing we see is a JS object that describes the current state of the filter - and when it&#39;s updated we see a new version appear:&lt;/p&gt;
@@ -186,7 +186,7 @@
 	<entry>
 		<title>Generic click tracking in GTM</title>
 		<link href="https://pixelthing.se/posts/2021-04-generic-gtm-click-tracking/"/>
-		<updated>2021-04-23T22:00:00+02:00</updated>
+		<updated>2021-04-24T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2021-04-generic-gtm-click-tracking/</id>
 		<content type="html">&lt;p&gt;The larger a Google Tag Manager (GTM) container becomes, the more you realise that many tags, triggers and variables are doing roughly the same job. So it&#39;s worthwhile refactoring some of them away into a few generic tags that make your life easier.&lt;/p&gt;
 &lt;p&gt;This article details one such technique to reduce most of your click tracking to a simple reusable pattern, so all it takes is a small piece of markup to start collecting data. At &lt;a href=&quot;https://www.polestar.com/?utm_campaign=craigs.blog&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Polestar&lt;/a&gt;, we use it on reusable React components, so that devs and editors have the ability to roll them out without needing to do any work in GTM at all.&lt;/p&gt;
@@ -249,7 +249,7 @@
 	<entry>
 		<title>Web dev with an iPad in 2020</title>
 		<link href="https://pixelthing.se/posts/2020-12-ipad-webdev20/"/>
-		<updated>2020-12-29T23:00:00+01:00</updated>
+		<updated>2020-12-30T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-12-ipad-webdev20/</id>
 		<content type="html">&lt;p&gt;At this time of the year I normally go deep on what’s changed if you’re a front-end web developer with an iPad. This year, I’m not going to do that, largely because I don’t have a set-up that’s representative of a 2020 iPad Pro (I have a 10.5”), but also because this year of all years, I think I’m justified in taking time off over the christmas holiday and not spending it explaining every possible workflow.&lt;/p&gt;
 &lt;p&gt;But 2020 - despite feeling like a flat curve of time - has been surprisingly busy in the iPad world. Here are some highlights that effect you as a developer with an iPad in the hand.&lt;/p&gt;
@@ -340,7 +340,7 @@
 	<entry>
 		<title>Getting critical data noticed</title>
 		<link href="https://pixelthing.se/posts/2020-08-getting-critical-data-noticed/"/>
-		<updated>2020-08-19T22:00:00+02:00</updated>
+		<updated>2020-08-20T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-08-getting-critical-data-noticed/</id>
 		<content type="html">&lt;p&gt;It feels like we’ve crossed a threshold. Businesses (and the general public) are increasingly calling for more data, and for it to be presented in a smart and pedagogic way.&lt;/p&gt;
 &lt;p&gt;But we are living in a seriously distracted time. Knowing we need to be looking at data is very different from having the trigger to actually do it. Too often, the idea that we need to check on the progress of a chart is so far down the list of shiny new things to look at that it remains a noble effort, like signing up for the gym but never finding the time to go.&lt;/p&gt;
@@ -395,7 +395,7 @@
 	<entry>
 		<title>iPadOS14 wish list for web devs</title>
 		<link href="https://pixelthing.se/posts/2020-05-ipados14-wish-list-for-web-devs/"/>
-		<updated>2020-05-23T22:00:00+02:00</updated>
+		<updated>2020-05-24T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-05-ipados14-wish-list-for-web-devs/</id>
 		<content type="html">&lt;p&gt;Historically, I’ve had a rotten track record for predicting future features. And everyone has their take for iPadOS14 — many focusing on the UI or fabled iPad Pro apps like Xcode or Logic Pro. As a web/data developer with iPads in the hands of various family members, I guess I have a slightly different list of wishes:&lt;/p&gt;
 &lt;h2 id=&quot;what-would-make-ipados-a-good-web-dev-platform&quot;&gt;What would make iPadOS a good web dev platform &lt;a class=&quot;direct-link&quot; href=&quot;#what-would-make-ipados-a-good-web-dev-platform&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -423,7 +423,7 @@
 	<entry>
 		<title>Making GTM better</title>
 		<link href="https://pixelthing.se/posts/2020-05-making-gtm-better/"/>
-		<updated>2020-05-19T22:00:00+02:00</updated>
+		<updated>2020-05-20T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-05-making-gtm-better/</id>
 		<content type="html">&lt;aside class=&quot;aside--update&quot;&gt;
 &lt;h3 id=&quot;update-2020-10-24&quot;&gt;Update 2020-10-24 &lt;a class=&quot;direct-link&quot; href=&quot;#update-2020-10-24&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -562,7 +562,7 @@ Search (and even at a push -- replace) across all content in text fields &amp;am
 	<entry>
 		<title>2019 iPad Webdev - remote VS Code</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-vscode-hosted/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-vscode-hosted/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -700,7 +700,7 @@ echo &amp;quot;export PASSWORD=YourPassword&amp;quot; &amp;gt;&amp;gt; /etc/prof
 	<entry>
 		<title>2019 iPad Webdev - Raspberry Pi</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-raspberry-pi/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-raspberry-pi/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -779,7 +779,7 @@ Geek cred.&lt;/li&gt;
 	<entry>
 		<title>2019 iPad Webdev - Play.js</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-playjs/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-playjs/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -900,7 +900,7 @@ Geek cred.&lt;/li&gt;
 	<entry>
 		<title>2019 iPad Webdev - Panic Coda/Code editor</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-panic-coda/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-panic-coda/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -948,7 +948,7 @@ Geek cred.&lt;/li&gt;
 	<entry>
 		<title>2019 iPad Webdev - GoCoEdit</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-gocoedit/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-gocoedit/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -1075,7 +1075,7 @@ Geek cred.&lt;/li&gt;
 	<entry>
 		<title>2019 iPad Webdev - CD with Netlify</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-cd-netlify/"/>
-		<updated>2020-01-05T23:00:00+01:00</updated>
+		<updated>2020-01-06T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-cd-netlify/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;This is part of a review of the front-end webdev scene on iPad in 2019, detailing different methods to code in iPadOS. For the full list and more, click here. And be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -1171,7 +1171,7 @@ Geek cred.&lt;/li&gt;
 	<entry>
 		<title>FE webdev on iPad (2019)</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19/"/>
-		<updated>2020-01-04T23:00:00+01:00</updated>
+		<updated>2020-01-05T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -1399,7 +1399,7 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 	<entry>
 		<title>FE webdev on iPad (2019)</title>
 		<link href="https://pixelthing.se/posts/2020-01-ipad-webdev19-mag/"/>
-		<updated>2020-01-04T23:00:00+01:00</updated>
+		<updated>2020-01-05T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2020-01-ipad-webdev19-mag/</id>
 		<content type="html">&lt;aside class=&quot;aside--less&quot;&gt;
 &lt;p&gt;Be sure to check out the 2020 version of front-end web dev on iPad.&lt;/p&gt;
@@ -1627,7 +1627,7 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 	<entry>
 		<title>My long journey with the Tamiya Frog</title>
 		<link href="https://pixelthing.se/posts/2019-08-rc-cars-frog/"/>
-		<updated>2019-07-31T22:00:00+02:00</updated>
+		<updated>2019-08-01T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2019-08-rc-cars-frog/</id>
 		<content type="html">&lt;p&gt;In 1987 I bought a second-hand Tamiya Frog from a friend of a friend.&lt;/p&gt;
 &lt;h2 id=&quot;1.-marlboro-man&quot;&gt;1. Marlboro man &lt;a class=&quot;direct-link&quot; href=&quot;#1.-marlboro-man&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -1697,7 +1697,7 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 	<entry>
 		<title>My Seiko SNK Po-mo</title>
 		<link href="https://pixelthing.se/posts/2016-04-seiko-pomo/"/>
-		<updated>2016-04-16T22:00:00+02:00</updated>
+		<updated>2016-04-17T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2016-04-seiko-pomo/</id>
 		<content type="html">&lt;p&gt;I don’t scuba, or pilot a plane, or skipper a ship.&lt;/p&gt;
 &lt;p&gt;That being so, &amp;quot;tool watches&amp;quot; (as watch enthusiasts call them) such as true divers’, aviators’ or sailors’ watches would be lost on me -- or at least merely a bit of fantasy on my part. That’s not to say their core features aren’t useful to me, but being waterproof doesn’t mean I need a watch to withstand diving to great depths, just as being easy-to-read in the dark doesn’t mean I need NATO standard radioactive promethium coated minute hands. Or the associated price.&lt;/p&gt;
@@ -1804,7 +1804,7 @@ Screencast from 2018: Flat websites: Working Copy (preview server), Textastic&lt
 	<entry>
 		<title>For a few dollars less.</title>
 		<link href="https://pixelthing.se/posts/2015-04-few-dollars-less/"/>
-		<updated>2015-04-27T22:00:00+02:00</updated>
+		<updated>2015-04-28T00:00:00+00:00</updated>
 		<id>https://pixelthing.se/posts/2015-04-few-dollars-less/</id>
 		<content type="html">&lt;p&gt;But let’s focus on the ingenuity and pragmatism of some unknown manufacturing engineers and the signatures they left in the chairs they made.&lt;/p&gt;
 &lt;p&gt;This is a story about the Eames DSW side chair design. Ray and Charles Eames were renowned designers in the 1940s and 50s, producing many objects, buildings and films that often have the word &amp;quot;iconic&amp;quot; attached to them. Among their most popular designs are a series of plastic &lt;strong&gt;†&lt;/strong&gt; side chairs that you’ve doubtless seen, sat-in or even bought, with various bases made out of different combinations of wire and wood. The range was designed at the end of the 1940’s for a Museum of Modern Art low-cost furniture competition, and they embody the Eames’ goal of &amp;quot;Getting the most of the best to the greatest number of people for the least&amp;quot; .&lt;/p&gt;

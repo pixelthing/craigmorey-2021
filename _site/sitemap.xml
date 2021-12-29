@@ -92,26 +92,6 @@
   </url>
   
   <url>
-    <loc>https://pixelthing.se/about/</loc>
-    <lastmod>2021-06-29</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pixelthing.se/posts/</loc>
-    <lastmod>2021-06-29</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pixelthing.se/page-list/</loc>
-    <lastmod>2021-06-29</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pixelthing.se/css/styles.css</loc>
-    <lastmod>2021-06-30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pixelthing.se/posts/2021-09-gtm-onscreentime/</loc>
     <lastmod>2021-09-01</lastmod>
   </url>
@@ -122,7 +102,27 @@
   </url>
   
   <url>
+    <loc>https://pixelthing.se/about/</loc>
+    <lastmod>2021-12-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/posts/</loc>
+    <lastmod>2021-12-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/css/styles.css</loc>
+    <lastmod>2021-12-29</lastmod>
+  </url>
+  
+  <url>
     <loc>https://pixelthing.se/</loc>
+    <lastmod>2021-12-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/page-list/</loc>
     <lastmod>2021-12-29</lastmod>
   </url>
   
@@ -167,12 +167,12 @@
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/dashboards/</loc>
+    <loc>https://pixelthing.se/tags/googletagmanager/</loc>
     <lastmod>2021-12-29</lastmod>
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/googletagmanager/</loc>
+    <loc>https://pixelthing.se/tags/dashboards/</loc>
     <lastmod>2021-12-29</lastmod>
   </url>
 </urlset>
