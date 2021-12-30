@@ -142,6 +142,16 @@
   </url>
   
   <url>
+    <loc>https://pixelthing.se/tags/rccars/</loc>
+    <lastmod>2021-12-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/tags/watches/</loc>
+    <lastmod>2021-12-29</lastmod>
+  </url>
+  
+  <url>
     <loc>https://pixelthing.se/tags/ipadpro/</loc>
     <lastmod>2021-12-29</lastmod>
   </url>
@@ -152,27 +162,17 @@
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/watches/</loc>
-    <lastmod>2021-12-29</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pixelthing.se/tags/rccars/</loc>
-    <lastmod>2021-12-29</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pixelthing.se/tags/analytics/</loc>
     <lastmod>2021-12-29</lastmod>
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/googletagmanager/</loc>
+    <loc>https://pixelthing.se/tags/dashboards/</loc>
     <lastmod>2021-12-29</lastmod>
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/dashboards/</loc>
+    <loc>https://pixelthing.se/tags/googletagmanager/</loc>
     <lastmod>2021-12-29</lastmod>
   </url>
 </urlset>
