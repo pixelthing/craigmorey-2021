@@ -9,7 +9,7 @@ layout: layouts/post.njk
 hero: 2019-08-rc-cars-frog-ultimate-1
 ---
 
-In 1987 I bought a second-hand Tamiya Frog from a friend of a friend. 
+In 1987 I bought a second-hand Tamiya Frog from a friend of a friend. It kicked off a teenage hobby that brought together speed, engineering, art, ingenuity and even early computer design together.
 
 ## 1. Marlboro man
 
