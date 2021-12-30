@@ -21,41 +21,40 @@ In a perfect world the webapp would give us a dataLayer detailing what changed, 
 How do we report what has changed if we're not told? In our case we _"diff"_ between the previous and the newest filter state - spotting any changes that have occured. We do this by triggering a tag when the above dataLayer push occurs. Before I describe how it works, here's the tag itself: 
 
 ```html
-  {% raw %}objectRoot = 'preconf.filter';
-  <!-- tag fired by a trigger that spots a `filterUpdated` dataLayer event  -->
-  <script>
-    (function(){
-      // a name of a variable that we'll use in the global scope (ie window.gtmFilterPrev) to hold the "old" state object, so that we can diff the "new" state object against it
-      var globalVar = 'gtmFilterPrev';
-      // setup what we want to monitor in the state object
-      var objectRoot = 'preconf.filter'; // the root in the dataLayer to the keys we're interested in - eg, the monitoring the key "sort" would actually be monitoring the dataLayer value "preconf.filter.sort"
-      var objectKeys = [
-        'sort',
-        'model',
-        'delivery',
-        'customer',
-        'payment',
-        'config.exterior',
-        'config.interior',
-        'config.packages',
-        'config.rims'
-      ];
-      // diff the filter state object in a shared helper function (a GTM JS variable)
-      var changes = {{ENV - helper function - diff object - var}}(objectRoot, objectKeys);
-      // if any useful filter state changes have been found
-      if (changes && changes.length) {
-        // create a dataLayer push for each change
-        changes.forEach(function(change) {
-          dataLayer.push({
-            event : 'preconf.filter.choose.' + change.key,
-            'preconf.change': change.value,
-            'preconf.changeold': change.valueOld,
-            'preconf.changenew': change.valueNew
-          });
+{% raw %}<!-- tag fired by a trigger that spots a `filterUpdated` dataLayer event  -->
+<script>
+  (function(){
+    // a name of a variable that we'll use in the global scope (ie window.gtmFilterPrev) to hold the "old" state object, so that we can diff the "new" state object against it
+    var globalVar = 'gtmFilterPrev';
+    // the root in the dataLayer to the keys we're interested in - eg, the monitoring the key "sort" would actually be monitoring the dataLayer value "preconf.filter.sort"
+    var objectRoot = 'preconf.filter'; 
+    // setup what we want to monitor in the state object (all other keys that change will be ignored)
+    var objectKeys = [
+      'sort',
+      'model',
+      'delivery',
+      'customer',
+      'payment',
+      'config.exterior',
+      'config.interior',
+      'config.packages',
+      'config.rims'
+    ];
+    // diff the filter state object in a shared helper function (a GTM JS variable)
+    var changes = {{ENV - helper function - diff object - var}}(objectRoot, objectKeys);
+    // if any useful filter state changes have been found
+    if (changes && changes.length) {
+      // create a dataLayer push for each change
+      changes.forEach(function(change) {
+        dataLayer.push({
+          event : 'preconf.filter.choose.' + change.key,
+          'preconf.change': change.value,
+          'preconf.changeold': change.valueOld,
+          'preconf.changenew': change.valueNew
         });
-      })();
-  </script>
-  }{% endraw %}
+      });
+    })();
+</script>{% endraw %}
 ```
 The lifecycle then becomes:
 - When a state update is fired (like the one detailed earlier), this tag will be triggered.
