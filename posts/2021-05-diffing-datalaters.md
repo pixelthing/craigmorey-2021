@@ -41,7 +41,7 @@ How do we report what has changed if we're not told? In our case we _"diff"_ bet
       'config.rims'
     ];
     // diff the filter state object in a shared helper function (a GTM JS variable)
-    var changes = {{ENV - helper function - diff object - var}}(objectRoot, objectKeys);
+    var changes = {{ENV - helper method - diff object - var}}(objectRoot, objectKeys);
     // if any useful filter state changes have been found
     if (changes && changes.length) {
       // create a dataLayer push for each change
@@ -58,16 +58,18 @@ How do we report what has changed if we're not told? In our case we _"diff"_ bet
 ```
 The lifecycle then becomes:
 - When a state update is fired (like the one detailed earlier), this tag will be triggered.
-- Using a shared helper function, it will trawl through a list of predefined object keys to spot what has changed in the dataLayer. This is reported back as an array of all the monitored keys that have been updated in the array variable `changes`.
+- Using a shared helper method, it will trawl through a list of predefined object keys to spot what has changed in the dataLayer. This is reported back as an array of all the monitored keys that have been updated in the array variable `changes`.
 - If the `changes` var has any values in the array, we'll loop through it to fire subsequent dataLayer pushes - one for each change - each listing what changed, plus the old & new value.
 
-So what is in this magical diffing helper method? It's... er, big. 
+So what is in this magical diffing helper method? It's... er, big.
 
-## The code
+## The helper method code
+
+This is a GTM custom JS var that returns a function - and as such it can be addressed by any GTM custom JS tag (or other GTM custom JS var). Here it is in full:
 
 ```js
 {% raw %}function() {
-  // helper method to get a deep object value with a string key 
+  // JS prototype to get a deep object value with a string key 
   // (eg "filter.price.low" finds the object value OBJ['filter']['price']['low'])
   // o = the object to resolve, s = string of the key to find
   Object.byString = function(o, s) {
@@ -105,16 +107,7 @@ So what is in this magical diffing helper method? It's... er, big.
       // the values (before & current) for the section of this event
       var prevValues;
       if (key.includes('.')) {
-        // NOTE!!! This uses a method Object.byString() 
-        // that needs you to load a helper method var
-        // "ENV - helper function - resolve object from string - tag"
-        // to be loaded before this is carried out. It's 
-        // suggested you do it at app/container load if you
-        // intend to use this!
-        if (!Object.byString || typeof Object.byString !== 'function') {
-          //console.log('method Object.byString() not available, make sure it\'s helper var "ENV - helper function - resolve object from string - tag" is loaded before this diff is run',object,Object.byString,typeof Object.byString);
-          return;
-        }
+        // NOTE!!! This uses a method Object.byString() above
         prevValues = Object.byString(prevObject, key);
       } else {
         prevValues = prevObject[key];
@@ -257,11 +250,12 @@ The diff helper method also has to deal with one particularly weird problem. A r
 ...and then a dataLayer event could show one of the checkboxes has been unchecked:
 ```js 
 dataLayer.push({
-  event: filterUpdated,
-  filtersChecked: [1,2]
+  event: 'preconf.list.updated',
+  filtersChecked: [1,2],
+  carsShown: 7
 });
 ```
-...when you check the dataLayer, you'll see that the key has not been removed:
+...when you check the dataLayer, you'll see that the third checkbox has not been removed:
 
 ```js 
 {
@@ -278,7 +272,7 @@ The version 2 dataLayer problem gives us two problems to solve:
 
 ### That's all well and good, but what do you do it it?
 
-Anything you want. You now have new dataLayer events that tell you when state changes and what has changed:
+Anything you want. You now have new dataLayer events that tell you when state changes that you're interested in occur and specifically what has changed:
 ```js
 {
   event : 'preconf.filter.choose.model,
@@ -289,7 +283,7 @@ Anything you want. You now have new dataLayer events that tell you when state ch
 ```
 You can use these events to trigger analytics, optimisation or marketing tags only when something you've predefined (in the `objectKeys` settings in the tag) as important, changes. That's a lot more useful than triggering a tag everytime a state change occurs - even if nothing interesting has changed - and _still_ not be able to tell analytics _what_ changed.
 
-Being a helper method means that we can reuse the same pattern in lots of different situations - list page filters, driving range calculators, car configuration states - all referring to the same JS code, to diff any updates to a state object.
+Being a helper method means that we can reuse the same pattern in lots of different situations - list page filters, driving range calculators, car configuration states - all referring to the same JS code in a GTM var, to diff any updates to state objects across the site.
 
 ### Conclusion
 
