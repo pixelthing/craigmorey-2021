@@ -82,13 +82,28 @@
   </url>
   
   <url>
-    <loc>https://pixelthing.se/posts/2021-05-diffing-datalaters/</loc>
-    <lastmod>2021-05-17</lastmod>
+    <loc>https://pixelthing.se/posts/2021-06-getting-analytics-into-dev-team/</loc>
+    <lastmod>2021-06-01</lastmod>
   </url>
   
   <url>
-    <loc>https://pixelthing.se/posts/2021-06-getting-analytics-into-dev-team/</loc>
-    <lastmod>2021-06-01</lastmod>
+    <loc>https://pixelthing.se/about/</loc>
+    <lastmod>2021-06-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/posts/</loc>
+    <lastmod>2021-06-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/page-list/</loc>
+    <lastmod>2021-06-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/css/styles.css</loc>
+    <lastmod>2021-06-30</lastmod>
   </url>
   
   <url>
@@ -102,18 +117,8 @@
   </url>
   
   <url>
-    <loc>https://pixelthing.se/about/</loc>
-    <lastmod>2021-12-29</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pixelthing.se/posts/</loc>
-    <lastmod>2021-12-29</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pixelthing.se/css/styles.css</loc>
-    <lastmod>2021-12-29</lastmod>
+    <loc>https://pixelthing.se/posts/2021-12-diffing-datalaters/</loc>
+    <lastmod>2021-12-28</lastmod>
   </url>
   
   <url>
@@ -122,17 +127,7 @@
   </url>
   
   <url>
-    <loc>https://pixelthing.se/page-list/</loc>
-    <lastmod>2021-12-29</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pixelthing.se/tags/</loc>
-    <lastmod>2021-12-29</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pixelthing.se/tags/rccars/</loc>
     <lastmod>2021-12-29</lastmod>
   </url>
   
@@ -158,6 +153,11 @@
   
   <url>
     <loc>https://pixelthing.se/tags/webdev/</loc>
+    <lastmod>2021-12-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/tags/rccars/</loc>
     <lastmod>2021-12-29</lastmod>
   </url>
   
