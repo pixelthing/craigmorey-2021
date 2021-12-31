@@ -346,7 +346,7 @@ You now have new dataLayer events that tell you when things change and specifica
   'preconf.changenew': '' 
 }
 ```
-Note that in this example, the tag we wrote sends a single event `preconf.move.filter` to tell other tags that a filter change occured (and remember we determine which `objectKeys` count as a change, the rest are ignored), and then a dataLayer event detailing each change that was part of that event. In this case a single user event had several effects - swapping to leasing also meant that the user lost their choice of wheels (just an example, not an actual behaviour) - something that is hard to code into the webapp dataLayer push.
+Note that in this example, the tag we wrote sends a single event `preconf.move.filter` to tell other tags that a filter change occured (and remember we determine which `objectKeys` count as a change, the rest are ignored), and then a dataLayer event detailing each change that was part of that event. In this case a single user event had several effects - swapping to leasing also meant that the user lost their choice of wheels (just an example, this doesn't happen in the real website) - something that is hard to code into the webapp dataLayer push.
 
 You can use these events to trigger analytics, optimisation or marketing tags only when something important changes. That's a lot more useful than triggering a tag every time a state change occurs and _still_ not be able to tell analytics _what_ changed.
 
