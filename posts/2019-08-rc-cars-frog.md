@@ -13,6 +13,8 @@ In 1987 I bought a second-hand Tamiya Frog from a friend of a friend. It kicked 
 
 ## 1. Marlboro man
 
+
+
 :::gallery
 
 :::gallerypicture 2019-08-rc-cars-frog-photo-1
