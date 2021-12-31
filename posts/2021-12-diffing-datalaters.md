@@ -2,7 +2,6 @@
 title: Diffing objects in GTM
 description: Spotting state updates worth tracking
 date: 2021-12-28
-status: draft
 tags:
   - analytics
   - googletagmanager
