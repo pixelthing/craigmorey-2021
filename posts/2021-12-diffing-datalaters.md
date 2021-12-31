@@ -7,7 +7,7 @@ tags:
   - analytics
   - googletagmanager
 layout: layouts/post.njk
-hero: 
+hero: 2021-12-diffing-datalayers-hero
 ---
 
 A large amount of the most critical work in Google Tag Manager (GTM) is in the monitoring of changes in state, particularly objects like eCommerce baskets, filter settings or user editable configurations. In these cases we generally want to know what caused a change to an object (and I'm using _"object”_ in compsci terms here - ie, _a JS object_), and what changes are made to it.
