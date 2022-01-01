@@ -33,13 +33,13 @@ dataLayer.push({
 ```
 Ok - so the dataLayer is telling us that the car list was updated - probably because the filter was changed. So what did change? The answer is we have no idea - we only know what the new state of the filter is.
 
-In a perfect world the webapp would us us in the dataLayer what changed, not just the current state in full. But it's not a perfect world and providing that extra info is often quite a chunk of extra work for webdevs.
+In a perfect world the web app would tell us in the dataLayer what changed, not just the current state in full. But it's not a perfect world and providing that extra info is often quite a chunk of extra work for webdevs.
 
 How do we report what has changed if we're not told? In our case we _"diff"_ between the previous and the newest filter state - spotting any changes that have occured - and then create our own dataLayer events in a GTM HTML tag. 
 
 ### Setup tag
 
-First we need to capture the default filter state at the point that the web app has loaded and is ready. This is important as we need to know the default settings to be able to spot any changes from them
+First we need to capture the default filter state at the point that the web app has loaded and is ready. This is important as we need to know the default settings to be able to spot any changes from them.
 
 ```html
 {% raw %}<!-- GTM custom HTML tag, fired by a trigger when the app loads, ie the `Preconf.Load` dataLayer event (you might choose DOM ready or window loaded for this page instead) -->
@@ -49,7 +49,7 @@ First we need to capture the default filter state at the point that the web app 
   })();
 </script>{% endraw %}
 ```
-Note that in the above we're pulling the part of the dataLayer that we're interested in monitoring (`{% raw %}{{CONF - config - var}}{% endraw %}` - a GTM Datalayer variable that is just `preconf.filter`), and sticking it in a global scoped JS var  `gtmFilterPrev`. We'll use that var in a moment.
+Note that in the above we're pulling the part of the dataLayer that we're interested in monitoring (`{% raw %}{{CONF - config - var}}{% endraw %}` - a GTM Datalayer variable that is just `preconf.filter`), and stick it in a global scoped JS var  `gtmFilterPrev`. We'll use that var in a moment.
 
 ### The state change tag
 
@@ -96,7 +96,7 @@ Now we need another tag to fire each time a state update occurs (again, this is 
 </script>{% endraw %}
 ```
 The lifecycle then becomes:
-- When a state update is fired (like the one detailed earlier), this tag will be triggered.
+- When a state update is fired (like the one detailed at the start of this article), this tag will be triggered.
 - Using a shared helper method, it will trawl through a list of predefined object keys to spot what has changed in the dataLayer. This is reported back as an array of all the monitored keys that have been updated in the array variable `changes`.
 - If the `changes` var has any values in the array, we'll tell the dataLayer that a filter change has definitely occured and additionally loop through it to fire dataLayer pushes - one for every change - each listing what changed, plus the old & new value.
 
@@ -104,7 +104,7 @@ So what is in this magical diffing helper method? It's... er, big.
 
 ## The helper method code
 
-This is a GTM custom JS var that returns a function - it's referred to in tha above tag by it's name in our GTM container `{% raw %}{{ENV - helper method - diff object - var}}{% endraw %}`. It can be reused by any GTM custom JS tag (or other GTM custom JS var). Here it is in full:
+This is a GTM custom JS var that returns a function - it's referred to in tha above tag by it's name in our GTM container `{% raw %}{{ENV - helper method - diff object - var}}{% endraw %}`. It can be reused by any GTM custom JS tag (or other GTM custom JS vars). Here it is in full:
 
 ```js
 {% raw %}/* GTM custom JS var */
@@ -286,7 +286,7 @@ function() {
 ```
 
 So what is all the above stuff doing?
-1. retrieve the previous version of the state object that we stored in a global JS variable that we already named (in the above case `window.gtmFilterPrev`).
+1. retrieve the previous version of the state object that we stored in a global JS variable (in the above case `window.gtmFilterPrev`).
 1. then retrieve the latest version of the state object - and this is important - _directly from the dataLayer push array_, **not** from the "final" dataLayer model held internally in GTM, because... well we'll get to that...
 1. loop through the list of keys that we're interested in and figure out if they have had a value added, removed or modified.
 
@@ -294,14 +294,14 @@ The magic lies in that last step. We have to deal with comparing objects, arrays
 
 ### Side-issue: dealing with array values in the dataLayer
 
-The diff helper method also has to deal with one particularly weird problem. A regular dataLayer value - a _"version 2"_ dataLayer - will add items to an array, but not remove them. So for instance a list of filter checkboxes could be represented in a dataLayer as such:
+The diff helper method also has to deal with one particularly weird problem. A regular dataLayer value - a _"version 2"_ dataLayer - will add or edit items to an array, but not remove them. For example, a list of filter checkboxes could be represented in a dataLayer as such:
 
 ```js 
 {
   filtersChecked: [1,2,3]
 }
 ```
-...and then a dataLayer event could show one of the checkboxes has been unchecked:
+...and then a dataLayer event could tell the dataLayer that one of the checkboxes has been unchecked:
 ```js 
 dataLayer.push({
   event: 'Preconf.List.Updated',
@@ -309,7 +309,7 @@ dataLayer.push({
   carsShown: 7
 });
 ```
-...when you check the dataLayer, you'll see that the third checkbox has not been removed:
+...but when you check the dataLayer, you'll see that the third checkbox has not been removed:
 
 ```js 
 {
@@ -321,12 +321,14 @@ dataLayer.push({
 
 The version 2 dataLayer problem gives us two problems to solve:
 
-- Firstly, we can't rely on the GTMs final representation of the dataLayer - a dataLayer push event might _say_ that a value is being removed from an array, but the final dataLayer won't reflect that. So when we talk about the "latest" state object, we need to pull it from _the dataLayer push array in the JS global scope_ (ie, the array you see if you just type in `dataLayer` into the browser console). Hence the routine in the helper method that steps back through the dataLayer pushes to find the event that triggered the tag in the first place (because you can't assume it was the "last" dataLayer push - there's an amount of ansynchronicity in GTM that means it's not always true).
+- Firstly, we can't rely on the GTMs final representation of the dataLayer - a dataLayer push event might _say_ that a value is being removed from an array, but the final dataLayer won't reflect that. So when we talk about the "latest" state object, we need to pull it from _the original dataLayer push array itself_ (ie, the array you see if you just type in `dataLayer` into the browser console). Hence the routine in the helper method that steps back through the dataLayer pushes to find the event that triggered the tag in the first place (because you can't assume it was the "last" dataLayer push - there's an amount of ansynchronicity in GTM that means it's not always true).
 - Secondly, we need to have a way of setting the _real_ array value on the dataLayer in a reliable way. We do this by addressing the final dataLayer directly and using a GTM method `dataLayer.set()`, to change the value in JS. We use it first to _unset_ an array value (by setting it as `undefined`), then reset to the correct value - this way we're guaranteed the final dataLayer reflects the original push, even if we're removing values from an array.
+
+The diffing helper method script solves both of the above problems.
 
 ### Ok, all this is in-place, what now?
 
-You now have new dataLayer events that tell you when state changes that you're interested in occur and specifically what has changed:
+You now have new dataLayer events that tell you when things change and specifically what has changed:
 ```js
 {
   event: 'preconf.move.filter'
@@ -344,11 +346,11 @@ You now have new dataLayer events that tell you when state changes that you're i
   'preconf.changenew': '' 
 }
 ```
-Note that in this example, the tag we wrote sends a single event `preconf.move.filter` to tell tags that a filter change occured (and remember we determine which `objectKeys` we count as a change), and then a dataLayer event detailing each change that was part of that event. In this case a single user event had several effects - swapping to leasing also meant that the user lost their choice of wheels (just an example, not an actual behaviour).
+Note that in this example, the tag we wrote sends a single event `preconf.move.filter` to tell other tags that a filter change occured (and remember we determine which `objectKeys` count as a change, the rest are ignored), and then a dataLayer event detailing each change that was part of that event. In this case a single user event had several effects - swapping to leasing also meant that the user lost their choice of wheels (just an example, this doesn't happen in the real website) - something that is hard to code into the webapp dataLayer push.
 
-You can use these events to trigger analytics, optimisation or marketing tags only when something important changes. That's a lot more useful than triggering a tag everytime a state change occurs and _still_ not be able to tell analytics _what_ changed.
+You can use these events to trigger analytics, optimisation or marketing tags only when something important changes. That's a lot more useful than triggering a tag every time a state change occurs and _still_ not be able to tell analytics _what_ changed.
 
-Importantly, this helps us remove any events that show no changes at all. If you've ever worked with anaytics in complex single-page-applications such as React or Vue, you'll know that they are sometimes built to refresh state on completely unrelated events - so the app will fire multiple dataLayer events even though the state actually hasn't changed. With this diffing method, your tags can now be triggered only on a meaningful change, instead recording dataLayer events unrelated to user actions.
+Importantly, this also helps us _not_ record any events that show no changes at all. If you've ever worked with anaytics in complex single-page-applications such as React or Vue, you'll know that they are sometimes built to refresh state on completely unrelated events - so the app will fire multiple dataLayer events even though the state actually hasn't changed. With this diffing method, your tags can now be triggered only on a meaningful change, instead recording dataLayer events unrelated to user actions.
 
 Being a helper method means that we can reuse the same pattern in lots of different situations - list page filters, driving range calculators, car configuration states - all referring to the same JS code in a GTM var, to diff any updates to state objects across the site.
 
