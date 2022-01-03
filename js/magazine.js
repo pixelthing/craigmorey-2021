@@ -4,10 +4,12 @@ const magazine = function() {
   
   const init = () => {
     let winWidth = window.innerWidth;
+    let winHeight = window.innerHeight;
     initMag();
     window.onresize = () => {
       let newWidth = window.innerWidth;
-      if (newWidth != winWidth) {
+      let newHeight = window.innerHeight;
+      if (newWidth != winWidth || Maths.abs(newHeight - winHeight) > 30) {
         console.log('****RESIZE')
         winWidth = newWidth;
         killMag();
@@ -23,8 +25,9 @@ const magazine = function() {
     }
     const postContainer = document.querySelector('.post');
     existingPages.forEach(d => {
-      const pageContent = d.innerHTML;
-      postContainer.append(pageContent);
+      while (d.firstChild) {
+        postContainer.insertBefore(d.firstChild,d)
+      }
       d.remove();
     });
   }

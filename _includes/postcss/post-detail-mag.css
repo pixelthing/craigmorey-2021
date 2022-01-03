@@ -10,6 +10,9 @@
 .mag {
   
   & body {
+    position: absolute;
+    left: 0;
+    right: 0;
     height: 100vh;
     /*height: var(--vp-height);*/
     /*width: 100%;*/

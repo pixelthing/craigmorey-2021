@@ -132,12 +132,22 @@
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/watches/</loc>
+    <loc>https://pixelthing.se/tags/design/</loc>
+    <lastmod>2022-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/tags/furniture/</loc>
     <lastmod>2022-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://pixelthing.se/tags/rccars/</loc>
+    <lastmod>2022-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pixelthing.se/tags/watches/</loc>
     <lastmod>2022-01-03</lastmod>
   </url>
   
@@ -152,27 +162,17 @@
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/design/</loc>
-    <lastmod>2022-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pixelthing.se/tags/furniture/</loc>
-    <lastmod>2022-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pixelthing.se/tags/analytics/</loc>
     <lastmod>2022-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/dashboards/</loc>
+    <loc>https://pixelthing.se/tags/googletagmanager/</loc>
     <lastmod>2022-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://pixelthing.se/tags/googletagmanager/</loc>
+    <loc>https://pixelthing.se/tags/dashboards/</loc>
     <lastmod>2022-01-03</lastmod>
   </url>
 </urlset>
