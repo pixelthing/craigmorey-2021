@@ -10,16 +10,15 @@
 .mag {
   
   & body {
-    position: absolute;
-    left:0;
-    top:0;
-    right: 0;
-    bottom: 0;
+    height: 100vh;
     /*height: var(--vp-height);*/
     /*width: 100%;*/
     overflow: scroll;
     scroll-snap-type: mandatory;
     scroll-snap-type: y mandatory;  
+    @supports (-webkit-touch-callout: none) {
+      height: -webkit-fill-available;
+    }
   }
   
   & footer {
@@ -35,7 +34,10 @@
     scroll-snap-align: start;
     padding-top: 4rem;
     &#page1 {
-    padding-top: 0;
+      padding-top: 0;
+    }
+    &>.mag__byline:first-child { /* if the hero is missing, move the byline down under the header */
+      margin-top:4rem;
     }
   }
   & .mag__trim {
@@ -52,6 +54,9 @@
     margin-left: auto;
     margin-right: auto;
     padding: 0 var(--gutter);
+    &::before {
+      display: none;
+    }
   }
   
   &__textbox {
@@ -68,7 +73,7 @@
     columns: 15.5em;
     column-fill: auto;
     column-gap: var(--gutter);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     overflow: hidden;
   }
   & .mag__textbox:not(:last-of-type) { 

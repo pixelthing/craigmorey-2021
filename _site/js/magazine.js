@@ -3,10 +3,30 @@ const magazine = function() {
   var intersectionObserver;
   
   const init = () => {
+    let winWidth = window.innerWidth;
     initMag();
     window.onresize = () => {
-      initMag();
+      let newWidth = window.innerWidth;
+      if (newWidth != winWidth) {
+        console.log('****RESIZE')
+        winWidth = newWidth;
+        killMag();
+        initMag();
+      } 
     }
+  }
+
+  const killMag = () => {
+    const existingPages = document.querySelectorAll('.mag__trim');
+    if (!existingPages.length) {
+      return;
+    }
+    const postContainer = document.querySelector('.post');
+    existingPages.forEach(d => {
+      const pageContent = d.innerHTML;
+      postContainer.append(pageContent);
+      d.remove();
+    });
   }
 
   const initMag = () => {

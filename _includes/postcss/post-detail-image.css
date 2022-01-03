@@ -29,12 +29,14 @@
     }
     &--wide {
       @media (min-width: 40rem) {
-        position: relative;
-        left: 50%;
-        right: 50%;
-        width: calc(100vw - 32px);
-        max-width: var(--post-max-width);
-        transform: translateX(-50%);
+        html:not(.mag) & {
+          position: relative;
+          left: 50%;
+          right: 50%;
+          width: calc(100vw - 32px);
+          max-width: var(--post-max-width);
+          transform: translateX(-50%);
+        }
       }      
     }
   }

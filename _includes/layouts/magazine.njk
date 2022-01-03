@@ -5,6 +5,7 @@ templateClass: post
 
 <div id="page1" class="mag__trim">
 
+  {% if hero %}
   <figure class="post__hero mag__hero">
     <div class="header__doppel" aria-hidden="true">
       <h3 class="header__home"><a href="{{ '/' | url }}" class="header__home__link"><span class="header__home__icon">&#10012;</span>{{ metadata.title }}</a></h3></h3>
@@ -16,6 +17,7 @@ templateClass: post
       <img src="../../img/{{ hero }}-xl.jpeg" loading="eager" width="{{ hero|imageWidth }}" height="{{ hero|imageHeight }}" alt="title image for article" class="post__hero__img mag__hero__img" />
     </picture>
   </figure> 
+  {% endif %}
 
   <div class="post__meta mag__byline">
     <a href="/" class="post__back">&#9666; <span>back</span></a>
