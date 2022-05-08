@@ -9,7 +9,7 @@ tags:
   - googleanalytics
   - ga4
 layout: layouts/post.njk
-hero: 2019-08-rc-cars-frog-ultimate-1
+hero: 2022-04-splitting-ga-in-gtms-hero
 ---
 
 I haven’t seen this anywhere yet, but I’d be pretty surprised if someone hasn’t tried or perfected it somewhere.
