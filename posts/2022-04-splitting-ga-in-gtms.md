@@ -47,7 +47,7 @@ The single GA4 analytics stream being split on the GTM server
 
 ## Splitting UA Page views
 
-UA Page views events are the simplest to deal with because all the detail needed for them is already in a GA4 `page_view` event. We create a tag in the GTMS server that pulls params out of the the GA4 client and insert them into a GA/UA tag. Actually, we don’t event need to do this much, as URL parameters are passed through from the incoming client to the outgoing tag, and the GA4 URL parameters for pageviews work in GA/UA - so we get all this for free. But for sanity checking and code readability, I like to add them in anyway (you could also do any PII cleaning on them at this stage too).
+UA Page views events are the simplest to deal with because all the detail needed for them is already in a GA4 `page_view` event. We create a tag in the GTMS server that pulls params out of the the GA4 client and insert them into a GA/UA tag. Actually, we don’t event need to parse the page location and such, as URL parameters are passed through from the incoming client to the outgoing tag, and the GA4 URL parameters for pageviews work in GA/UA - so we get all this for free.
 
 The GTMS tag for splitting page views is as below (ignore the CDs for now):
 
@@ -82,7 +82,7 @@ If anyone is really interested, I’ll give it a go.
 
 So does it work? Well, during testing we definitely saw GA/UA page views and events just as we expected, despite the web browser never sending any.
 
-But we needed to look closer into any hidden differences in the packets we were sending. We used the GTM tag assistant (ie debug) of the GTM server, here we can see what the outbound packets to the Google Analytics servers look like. Then we ran the regular production GTMS container (double-sending GA7UA & GA4), followed by our custom splitting version - in a temporary GTM workspace - and compared the two outgoing URLs.
+But we needed to look closer into any hidden differences in the packets we were sending. We used the GTM tag assistant (ie debug) of the GTM server, here we can see what the outbound packets to the Google Analytics servers look like. Then we ran the regular production GTMS container (double-sending GA/UA & GA4), followed by our custom splitting version - in a temporary GTM workspace - and compared the two outgoing URLs.
 
 ::: aside
 The cookies set by the `gtag.js` script at the client are interchangeable between GA/UA and GA4, so passing the cookie from a GA4 event over to a GA/UA event is no problem.
