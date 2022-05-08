@@ -31,17 +31,20 @@ As soon as we got a GTM server up and running (primarily for anonymisation of da
 
 ## Splitting GA on the server
 
-This is the idea. We send only one analytics stream from the browser to the GTM server. We chose the GA4 stream because we can add so much additional data into it, including things like the UA style event category, action, label and value. 
+This is the idea. We send only one GA4 analytics stream from the browser to the GTM server and we remove all the GA/UA tags from the client container so no “old” GA events are sent from the client. So, one stream up. 
 
-On the GTM server, we run the regular tags that pass through the GA4 events on to the Google Analytics servers. But in addition, we run some more customised tags that retrieve the additional GA4 parameters, and pass them over to a GA/UA event that are then sent on to the Google Analytics servers as a measurement protocol URL.
+On the GTM server, we run the regular tags that pass through the GA4 events on to the Google Analytics servers. But in addition, we run some customised tags that parse the same GA4 events into GA/UA ones that are then sent onwards.
 
-The cookies set by the `gtag.js` script at the client are interchangeable between GA/UA and GA4, so passing the cookie from a GA4 event over to a GA/UA event is no problem.
+Hence two streams from one. We get our old faithful GA/UA and the future proof GA4 stream with half the traffic.
 
 This is what it looks like:
 
+The cookies set by the `gtag.js` script at the client are interchangeable between GA/UA and GA4, so passing the cookie from a GA4 event over to a GA/UA event is no problem.
+
+
 ## Splitting UA Page views
 
-UA Page views events are the simplest to deal with because all the detail needed for them is already in a GA4 `page_view` event. We simply create a tag in the GTMS server that pulls params out of the the GA4 client and insert them into a GA/UA tag. Actually, we don’t really need to do this manually, as URL parameters are passed through from the incoming client to the outgoing tag, and the GA4 URL parameters work in GA/UA - so we get all this for free. But for sanity checking and code readability, I like to add them in anyway (you could also do any PII cleaning on them at this stage too).
+UA Page views events are the simplest to deal with because all the detail needed for them is already in a GA4 `page_view` event. We create a tag in the GTMS server that pulls params out of the the GA4 client and insert them into a GA/UA tag. Actually, we don’t really need to do this manually, as URL parameters are passed through from the incoming client to the outgoing tag, and the GA4 URL parameters work in GA/UA - so we get all this for free. But for sanity checking and code readability, I like to add them in anyway (you could also do any PII cleaning on them at this stage too).
 
 The GTMS tag for splitting page views is as so (ignore the CDs for now):
 
