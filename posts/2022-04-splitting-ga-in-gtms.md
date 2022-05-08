@@ -11,7 +11,7 @@ hero: 2022-04-splitting-ga-in-gtms-hero
 ---
 
 ::: aside
-I haven’t seen this anywhere yet, but I’d be pretty surprised if someone hasn’t tried or perfected it somewhere.
+I haven’t seen this anywhere yet, but I’d be pretty surprised if someone hasn’t tried or perfected it somewhere. In the end, we couldn’t get it to do 100% of our requirements, but it could work for you.
 :::
 
 Many Digital analytics teams are currently running both GA Universal Analytics (GA/UA) and the new, shiny GA4, whilst transitioning from the old to the new. We’ve found it invaluable to learn as much about GA4 before we rely on it fully, whilst building up some backstory of data so we don’t start from zero when we eventually push the button.
