@@ -4,7 +4,6 @@ description: Twice the GA tracking without twice the streams
 date: 2022-04-28
 tags:
   - analytics
-  - googleanalytics
   - gtm
   - ga4
 layout: layouts/post.njk
