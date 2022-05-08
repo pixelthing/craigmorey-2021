@@ -4,7 +4,7 @@ description: When your workforce is mostly remote, how do you exclude them from 
 date: 2021-09-07
 tags:
   - analytics
-  - googletagmanager
+  - gtm
 layout: layouts/post.njk
 hero: 2021-09-gtm-tracking-internal
 ---

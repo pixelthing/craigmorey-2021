@@ -4,7 +4,7 @@ description: It's a bit like inception, you need to get in their heads.
 date: 2021-06-01
 tags:
   - analytics
-  - googletagmanager
+  - gtm
 layout: layouts/post.njk
 hero: 2021-06-getting-analytics-into-dev-team-hero
 ---

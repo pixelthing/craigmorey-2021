@@ -4,7 +4,7 @@ description: Skewed average on-screen time sucks
 date: 2021-09-01
 tags:
   - analytics
-  - googletagmanager
+  - gtm
 layout: layouts/post.njk
 hero: 2021-09-gtm-onscreentime
 ---

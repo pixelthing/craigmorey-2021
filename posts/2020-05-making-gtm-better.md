@@ -4,7 +4,7 @@ description: A few tweaks from Google would really improve my day.
 date: 2020-05-20
 tags:
   - analytics
-  - googletagmanager
+  - gtm
 layout: layouts/post.njk
 hero: 2020-05-makinggtmbetter
 ---

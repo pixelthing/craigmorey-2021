@@ -4,7 +4,7 @@ description: Multi-use tags to make your life easier
 date: 2021-04-24
 tags:
   - analytics
-  - googletagmanager
+  - gtm
 layout: layouts/post.njk
 hero: 2021-04-generic-gtm-click-tracking-hero
 ---

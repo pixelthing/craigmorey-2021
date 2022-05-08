@@ -4,7 +4,7 @@ description: Spotting state updates worth tracking
 date: 2021-12-28
 tags:
   - analytics
-  - googletagmanager
+  - gtm
 layout: layouts/post.njk
 hero: 2021-12-diffing-datalayers-hero
 ---
