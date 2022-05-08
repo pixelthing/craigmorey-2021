@@ -2,7 +2,6 @@
 title: Splitting GA events in GTMS
 description: Twice the GA tracking without twice the streams
 date: 2022-04-28
-status: draft
 tags:
   - analytics
   - googleanalytics
