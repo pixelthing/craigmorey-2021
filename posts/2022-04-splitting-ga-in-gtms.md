@@ -24,6 +24,9 @@ But running these two systems in parallel seems mighty wasteful. We have a GTM c
 
 This is what it looks like:
 
+:::picture 2022-04-splitting-ga-in-gtms-flow1
+The two analytics streams from a browser to GTM server to GA
+:::
 
 > why send two streams of analytics events that are 95% the same data?
 
@@ -38,6 +41,10 @@ On the GTM server, we run the regular tags that pass through the GA4 events on t
 Hence two streams from one. We get our old faithful GA/UA and the future proof GA4 stream with half the traffic.
 
 This is what it looks like:
+
+:::picture 2022-04-splitting-ga-in-gtms-flow2
+The single GA4 analytics stream being split on the GTM server
+:::
 
 The cookies set by the `gtag.js` script at the client are interchangeable between GA/UA and GA4, so passing the cookie from a GA4 event over to a GA/UA event is no problem.
 
