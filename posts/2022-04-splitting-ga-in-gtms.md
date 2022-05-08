@@ -55,6 +55,10 @@ UA Page views events are the simplest to deal with because all the detail needed
 
 The GTMS tag for splitting page views is as so (ignore the CDs for now):
 
+:::picture 2022-04-splitting-ga-in-gtms-tag1
+The GTM server-side tag for sending a GA/UA page view from a GA4
+:::
+
 ## Splitting UA Events
 
 Events are slightly more complex as they have four optional components, the event category (ec), action (ea), label (el) and value (ev). So I added up to four additional parameters to all my existing GA4 events in the client-side GTM container, essentially encoding a regular UA event payload in these GA4 dimensions.
@@ -68,6 +72,10 @@ Doing this for each GA4 event tag in the client GTM is a pain - but at the end o
 
 On the GTM server, we do a similar thing to the page view, we add a GA/UA tag that consumes the data in the GA4 client and drops it all into the correct position. The tag looks like so:
 
+:::picture 2022-04-splitting-ga-in-gtms-tag2
+The GTM server-side tag for sending a GA/UA event from a GA4
+:::
+
 ## Splitting UA Transactions
 
 Transactions are the most complex events, but at least there’s normally just the one (or at least few) to deal with. Unfortunately this project wrapped before I could attempt it, but I’d previously written client-side JS to translate UA simple ecommerce transaction objects into GA4 ones, so writing something to do the reverse on the GTM server-side didn’t seem too hard.
@@ -80,6 +88,9 @@ So does it work? The easiest way is to check in the GTM tag assistant (ie debug)
 
 Putting them into a spreadsheet and cleaning them up, we can see which params are exactly the same and which ones we’re missing. First thing to note is that all the GA4 params are passed through to the GA/UA URL. UA will ignore anything it can't use, so over-supplying GA4 params won't make any difference - there’s non need to remove them just for GA/UA. On the other hand, it's up to us to add any additional parameters that UA needs, and that's what our server-side GTM tags are doing in the splitting process.
 
+:::picture 2022-04-splitting-ga-in-gtms-compare
+Comparing the measurement protocol URL from a normal UA pageview and one via splitting.
+:::
 
 Doing this means falling down the hole of GA measurement protocol parameters. These are littered with lots of official params that have appeared or been deprecated over time, plus lots of third party martech ones that are not documented so well. Here are some resources you might want to use. 
 
