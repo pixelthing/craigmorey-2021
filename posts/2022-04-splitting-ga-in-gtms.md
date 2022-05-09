@@ -115,9 +115,9 @@ This was the last nail in the coffin for our clever plan, but it might not be th
 
 The first few are a mix of Adsense and Doubleclick links in GA, whilst the `&xa-ga-mp2-...=` parameters are ActiveCampaign email links which might have been added by a Salesforce Cloud integration. These are all generated because of links to the martech stack added to the GA UA property by our marketing department.
 
-What they do precisely and what would happen if they were removed is a bit unclear to a non-martech person like myself, but after talking with smart people, the answer was _“nothing good”_ would come of it. We needed the parameters to link across to out marketing platforms and report on campaign effectiveness, so removing them was not an option. 
+What they do precisely and what would happen if they were removed is a bit unclear to a non-martech person like myself, but after talking with smart people, the answer was _“nothing good”_ would come of it. We needed the parameters to link across to our marketing platforms and report on campaign effectiveness, so removing them was not an option. 
 
-The alternative solution of switching these GA/UA connections to marketing systems across to GA4 was also a non-starter - as with most things GA4, the solutions are _not quite ready_. 
+The alternative solution of switching these GA/UA connections with marketing systems across to GA4 was also a non-starter - as with most things GA4, the solutions are _not quite ready_. 
 
 Lastly we could look into moving some of these marketing systems into GTM server-side tags, but that would also take our Marketing dept lots of time to understand what they could and couldn't achieve, what was ready and what would break, so that too was not an option.
 
