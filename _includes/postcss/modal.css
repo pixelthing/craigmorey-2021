@@ -7,7 +7,7 @@
     bottom: 10px;
     z-index: 19;
     opacity: 1;
-    transition: opacity 300ms;
+    transition: opacity 500ms;
     pointer-events: none;
     .modal--initial & {
       opacity: 0;
@@ -70,7 +70,7 @@
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     opacity: 1;
-    transition: opacity 200ms;
+    transition: opacity 400ms;
     .modal--initial & {
       opacity: 0;
     }

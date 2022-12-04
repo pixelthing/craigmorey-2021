@@ -24,6 +24,8 @@ const imageEnlarge = () => {
   }
   
   const modalOpen = (picUrl, anchorUrl, anchorWidthSource, anchorHeightSource) => {
+
+    console.log('model open')
     
     // create the modal, fill with the existing image
     const modalInner = `
@@ -50,6 +52,7 @@ const imageEnlarge = () => {
     var imgSource = new Image();
     imgSource.addEventListener('load', imgLoadedHandler, false)
     imgSource.src = anchorUrl;
+    modal.showModal();
     // animation
     setTimeout(() => {
       modal.classList.remove('modal--initial');
@@ -66,6 +69,8 @@ const imageEnlarge = () => {
     const anchorUrl = anchorClicked.href;
     const picCloned = anchorClicked.childNodes[0].cloneNode(true);
     const picUrl = anchorClicked.querySelector('img').currentSrc;
+
+    console.log(anchorUrl)
     // if the source image is no bigger than the one we see, say so & exit
     if (anchorWidthSource <= anchorWidthOnScreen) {
       alert('There is no larger version of this image to view.');
