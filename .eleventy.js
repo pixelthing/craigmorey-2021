@@ -177,7 +177,7 @@ module.exports = function(eleventyConfig) {
     }
   }).use(mdContainer, 'gallery', {
     validate: function(params) {
-      return params.trim().match(/^(gallery|endgallery)($|\..*$)/);
+      return params.trim().match(/^(gallery)($|\..*$)/);
     },
     render: function (tokens, idx) {
       let start = tokens[idx].info.trim().match(/^gallery/);
@@ -189,10 +189,22 @@ module.exports = function(eleventyConfig) {
         return `
       <section class="list gallery ${classList}">
         `;
-      } else if (tokens[idx].nesting === -1 && tokens[idx].level === 0 && end) {
-        // closing tag
+      } else {
+        return '';
+      }
+    }
+
+  }).use(mdContainer, 'endgallery', {
+    validate: function(params) {
+      return params.trim().match(/^(endgallery)($|\..*$)/);
+    },
+    render: function (tokens, idx) {
+      let start = tokens[idx].info.trim().match(/^endgallery/);
+      if (tokens[idx].nesting === 1 && start) {
+        // opening tag
         return `
-      </section>`;
+      </section>
+        `;
       } else {
         return '';
       }
