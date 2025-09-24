@@ -61,11 +61,13 @@ All three variations have visible sink holes on the top surface where the leg jo
 
 The legs on Mr Vitra are nicely finished in maple with all the chamfers and slots smoothly cut. The finishing on the reproductions’ wooden legs are quite frankly close to that of the dearer cousin, but Mr Pennies is much more pink colour which is obviously not maple. In addition, both the cheaper chairs have rough cuts to fit the top brackets, which are also clearly of lower quality than Mr Vitra. Like the other parts of the reproductions, it’s neat where it’s visible, and cheap and quick where it’s hidden.
 
+:::picture.post__img--wide 2015-06-few-dollars-less-4
 Legs bolts vary massively between the chairs. As with all photography, different light can alter the apparent colour, and Mr Pennies’ legs do not generally appear as pink as they appear here.
+:::
 
 The outside leg fixings (above) show the clearest differences between the three. Mr Vitra has black powder-coated cross head bolts that match the rest of the fixings (Herman Miller versions often use chrome instead). The bolts on Mr Cheap are different -- but not unattractive -- allen bolts in more of a dark steel colour. On Mr Pennies however, the bolts are quite clearly cheap, chromed allen bolts that don’t fill the holes as nicely as the others.
 
-:::picture.post__img--wide 2015-06-few-dollars-less-4
+:::picture.post__img--wide 2015-06-few-dollars-less-5
 The inner leg nuts show the different production design descisions
 :::
 
